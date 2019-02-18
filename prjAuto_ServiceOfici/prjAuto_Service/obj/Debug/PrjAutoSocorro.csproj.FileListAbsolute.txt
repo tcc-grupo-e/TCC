@@ -1,0 +1,62 @@
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\bin\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\bin\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\TCM231018\prjAuto_Service(ComTexto(FaltaFaleConosco))\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\bin\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\bin\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\prjAuto_Service(Falta por img na FaleCon)\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\bin\prjAuto_Service.dll.config
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\bin\prjAuto_Service.dll
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\bin\prjAuto_Service.pdb
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+F:\PEN_IS_A_DRIVE\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\bin\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\bin\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\prjAuto_Service(TD pronto menos probleminha no email)\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\bin\prjAuto_Service.dll.config
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\bin\prjAuto_Service.dll
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\bin\prjAuto_Service.pdb
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.CoreCompileInputs.cache
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+E:\PEN_IS_A_DRIVE\INTERESSA\sitões\TCC\prjAuto_Service\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\bin\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\bin\prjAuto_Service.pdb
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+C:\Users\ETESP\Desktop\prjAuto_Service\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\bin\prjAuto_Service.dll.config
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\bin\prjAuto_Service.dll
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\bin\prjAuto_Service.pdb
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.CoreCompileInputs.cache
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+C:\Users\Goned\Desktop\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\bin\prjAuto_Service.dll.config
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\bin\prjAuto_Service.dll
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\bin\prjAuto_Service.pdb
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojResolveAssemblyReference.cache
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+G:\PEN_IS_A_DRIVE\TCM - Grupo E\prjAuto_ServiceOfici\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
