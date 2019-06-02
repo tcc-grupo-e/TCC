@@ -7,5 +7,6 @@ namespace prjAuto_Service.Model
 {
     public class Cadastrar
     {
+        
     }
 }
