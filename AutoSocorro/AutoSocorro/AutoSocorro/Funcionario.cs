@@ -68,7 +68,7 @@ namespace AutoSocorro
         //
         //PlaceHolder
         //
-        String[] txt = { "Enviar", "Nome", "Email", "RG", "CEP", "Endereço", "Telefone", "Cidade", "Estado Civil", "Telefone do conjuge", "Nome do conjuge", "CNH", "Carteira de Trabalho", "Salário"};
+        String[] txt = { "Enviar", "Nome", "Email", "RG", "CEP", "Endereço", "Telefone", "Cidade", "Estado Civil", "Telefone do conjuge", "Nome do conjuge", "CNH", "Carteira de Trabalho", "Salário" };
         private void PlaceHolder_Enter(object sender, EventArgs e)
         {
             Bunifu.Framework.UI.BunifuMetroTextbox btxt = (Bunifu.Framework.UI.BunifuMetroTextbox)sender;
@@ -272,36 +272,157 @@ namespace AutoSocorro
                 FuncionarioBLL funcBLL = new FuncionarioBLL();
                 if (funcBLL.inserirFunc(btxtNome.Text, btxtEmail.Text, btxtRG.Text, btxtCEP.Text, btxtEnd.Text, btxtCidade.Text, bdropUF.selectedValue, bDataNasc.Value.ToString().Substring(0, 10), btxtTel.Text, btxtCNH.Text, btxtEstadoCivil.Text, nomec, btxtSalario.Text, bDropCargo.selectedValue, telc, btxtCarteira.Text, btxtNome.Text, senha))
                 {
-                    EnviarEmail();
-                    MessageBox.Show("Funcionário cadastrado");
-                    senha = "";
+                    MensagemBLL mBLL = new MensagemBLL();
+                    mBLL.setMensagem("Funcionário Cadastrado com sucesso!");
+                    mBLL.setTitulo("Mensagem");
+                    Mensagem ms = new Mensagem();
+                    ms.ShowDialog();
+                    bbtnLimpar_Click(sender, e);
+                }
+                else
+                {
+                    MensagemBLL mBLL = new MensagemBLL();
+                    mBLL.setMensagem("Funcionário Não Cadastrado!");
+                    mBLL.setTitulo("Alerta");
+                    Mensagem ms = new Mensagem();
+                    ms.ShowDialog();
                 }
             }
             else
             {
-                MessageBox.Show("Funcionário não cadastrado");
+                MensagemBLL mBLL = new MensagemBLL();
+                mBLL.setMensagem("Preencha Todos Os Campos Corretamente!");
+                mBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                ms.ShowDialog();
             }
         }
 
         private void bbtnAlterar_Click(object sender, EventArgs e)
         {
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            if (!funcBLL.getCod().Equals(""))
+            {
+                MensagemBLL msBLL = new MensagemBLL();
+                msBLL.setMensagem("Deseja Realmente Alterar Esse Funcionário");
+                msBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                MensagemS_N msn = new MensagemS_N();
+                msn.ShowDialog();
 
+                if (msBLL.getSN().Equals("S")) {
+                    if (validar() == 16)
+                    {
+                        String telc = "";
+                        if (btxtTelconjuge.Text.Equals("Telefone do conjuge"))
+                            telc = "-";
+                        else
+                            telc = btxtTelconjuge.Text;
+
+                        String nomec = "";
+                        if (btxtConjuge.Text.Equals("Nome do conjuge"))
+                            nomec = "-";
+                        else
+                            nomec = btxtConjuge.Text;
+
+                        if (funcBLL.alterarFunc(btxtNome.Text, btxtEmail.Text, btxtRG.Text, btxtCEP.Text, btxtEnd.Text, btxtCidade.Text, bdropUF.selectedValue, bDataNasc.Value.ToString().Substring(0, 10), btxtTel.Text, btxtCNH.Text, btxtEstadoCivil.Text, nomec, btxtSalario.Text, bDropCargo.selectedValue, telc, btxtCarteira.Text, funcBLL.getCod()))
+                        {
+                            MensagemBLL mBLL = new MensagemBLL();
+                            mBLL.setMensagem("Funcionário Alterado Com Sucesso!");
+                            mBLL.setTitulo("Mensagem");
+                            ms.ShowDialog();
+                            funcBLL.setCod("");
+                            funcBLL.setLinhaCod("");
+                            bbtnLimpar_Click(sender, e);
+                        }
+                        else
+                        {
+                            MensagemBLL mBLL = new MensagemBLL();
+                            mBLL.setMensagem("Funcionário Não Alterado!");
+                            mBLL.setTitulo("Alerta");
+                            ms.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        MensagemBLL mBLL = new MensagemBLL();
+                        mBLL.setMensagem("Preencha Todos Os Campos Corretamente!");
+                        mBLL.setTitulo("Alerta");
+                        ms.ShowDialog();
+                    }
+                }
+                else
+                {
+                    funcBLL.setCod("");
+                    funcBLL.setLinhaCod("");
+                }
+            }
+            else
+            {
+                MensagemBLL mBLL = new MensagemBLL();
+                mBLL.setMensagem("Selecione Um Funcionário");
+                mBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                ms.ShowDialog();
+            }
         }
 
         private void bbtnDeletar_Click(object sender, EventArgs e)
         {
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            if (!funcBLL.getCod().Equals(""))
+            {
+                MensagemBLL msBLL = new MensagemBLL();
+                msBLL.setMensagem("Deseja Realmente Deletar Esse Funcionário");
+                msBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                MensagemS_N msn = new MensagemS_N();
+                msn.ShowDialog();
 
+                if (msBLL.getSN().Equals("S"))
+                {
+                    if (funcBLL.deletarFunc(funcBLL.getCod()))
+                    {
+                        MensagemBLL mBLL = new MensagemBLL();
+                        mBLL.setMensagem("Funcionário Deletado Com Sucesso!");
+                        mBLL.setTitulo("Mensagem");
+                        ms.ShowDialog();
+                        funcBLL.setCod("");
+                        funcBLL.setLinhaCod("");
+                        bbtnLimpar_Click(sender, e);
+                    }
+                    else
+                    {
+                        MensagemBLL mBLL = new MensagemBLL();
+                        mBLL.setMensagem("Funcionário Não Deletado!");
+                        mBLL.setTitulo("Alerta");
+                        ms.ShowDialog();
+                    }
+                }
+                else
+                {
+                    funcBLL.setCod("");
+                    funcBLL.setLinhaCod("");
+                }
+            }
+            else
+            {
+                MensagemBLL mBLL = new MensagemBLL();
+                mBLL.setMensagem("Selecione Um Funcionário!");
+                mBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                ms.ShowDialog();
+            }
         }
+
 
         String[] bdropcargo1 = { "Cargo", "Atendente", "Motorista", "Gerente" };
         String[] bdropcargo2 = { "Atendente", "Motorista", "Gerente" };
-        String[] bdropUF1    = { "UF", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
-        String[] bdropUF2    = {       "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"};
+        String[] bdropUF1 = { "UF", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
+        String[] bdropUF2 = { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
 
         private void Funcionario_Load(object sender, EventArgs e)
         {
-            bDataNasc.Value = DateTime.Now.Date;
-
             bDropCargo.Items = bdropcargo1;
             bDropCargo.selectedIndex = 0;
 
@@ -311,6 +432,56 @@ namespace AutoSocorro
                 bdropUF.AddItem(bdropUF1[i]);
             }
             bdropUF.selectedIndex = 0;
+
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            if (!funcBLL.getLinhaCod().Equals(""))
+            {
+                DataTable dt = new DataTable();
+                dt = funcBLL.pesquisarTodosFunc();
+                int Linha = Convert.ToInt16(funcBLL.getLinhaCod());
+                String[] Dados = { dt.Rows[Linha]["Nome"].ToString(), dt.Rows[Linha]["Email"].ToString(), dt.Rows[Linha]["Numero_Documento"].ToString(), dt.Rows[Linha]["CEP"].ToString(), dt.Rows[Linha]["Endereco"].ToString(), dt.Rows[Linha]["Telefone"].ToString(), dt.Rows[Linha]["Cidade"].ToString(), dt.Rows[Linha]["Estado_Civil"].ToString(), dt.Rows[Linha]["Telefone_Conjuge"].ToString(), dt.Rows[Linha]["Conjuge"].ToString(), dt.Rows[Linha]["CNH"].ToString(), dt.Rows[Linha]["Carteira_de_Trabalho"].ToString(), dt.Rows[Linha]["Salario"].ToString() };
+
+
+                foreach (Control c in this.Controls)
+                {
+                    int i = 0;
+                    if (c.TabIndex >= 2 && c.TabIndex <= 14)
+                    {
+                        i++;
+                        c.Text = Dados[c.TabIndex - 2];
+                        c.ForeColor = Color.FromArgb(60, 60, 60);
+                    }
+                }
+                String Cargo = dt.Rows[Linha]["Cargo"].ToString();
+                String UF = dt.Rows[Linha]["Estado"].ToString();
+                String Data = dt.Rows[Linha]["Data_de_Nascimento"].ToString();
+
+                bdropUF.Clear();
+                for (int i = 0; i < 27; i++)
+                {
+                    bdropUF.AddItem(bdropUF2[i]);
+                }
+                bdropUF.selectedIndex = 0;
+                for (int i = 0; i <= bdropUF2.Length - 1; i++)
+                {
+                    if (UF.Equals(bdropUF2[i]))
+                    {
+                        bdropUF.selectedIndex = i;
+                    }
+                }
+
+                bDataNasc.Value = Convert.ToDateTime(Data);
+
+                bDropCargo.Items = bdropcargo2;
+                bDropCargo.selectedIndex = 0;
+                for (int i = 0; i <= bdropcargo2.Length - 1; i++)
+                {
+                    if (Cargo.Equals(bdropcargo2[i]))
+                    {
+                        bDropCargo.selectedIndex = i;
+                    }
+                }
+            }
         }
 
         private void bDropCargo_Enter(object sender, EventArgs e)
@@ -340,7 +511,8 @@ namespace AutoSocorro
             else
             {
                 double n = 0;
-                if (double.TryParse(btxtSalario.Text, out n)) {
+                if (double.TryParse(btxtSalario.Text, out n))
+                {
                     btxtSalario.Text = "R$" + btxtSalario.Text;
                     if (!btxtSalario.Text.Contains("."))
                     {
@@ -364,10 +536,14 @@ namespace AutoSocorro
             {
                 btxtSalario.Text = "";
             }
-            if (!btxtSalario.Text.Equals("Salário")) {
-                if (!btxtSalario.Text.Contains(".")) {
-                    if (!btxtSalario.Text.Contains(",")){
-                        if (!btxtSalario.Text.Contains("R$")){
+            if (!btxtSalario.Text.Equals("Salário"))
+            {
+                if (!btxtSalario.Text.Contains("."))
+                {
+                    if (!btxtSalario.Text.Contains(","))
+                    {
+                        if (!btxtSalario.Text.Contains("R$"))
+                        {
                             if (!double.TryParse(btxtSalario.Text, out n))
                                 btxtSalario.Text = "";
                         }
@@ -378,7 +554,7 @@ namespace AutoSocorro
 
         private void btxtTel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(Char.IsLetter(e.KeyChar) == true)
+            if (Char.IsLetter(e.KeyChar) == true)
                 e.Handled = true;
         }
 
@@ -406,7 +582,7 @@ namespace AutoSocorro
                 e.Handled = true;
             if (Char.IsPunctuation(e.KeyChar) == true)
             {
-                if (e.KeyChar == '-') 
+                if (e.KeyChar == '-')
                     e.Handled = false;
                 else
                     e.Handled = true;
@@ -538,7 +714,7 @@ namespace AutoSocorro
             }
         }
 
-        String[] AutoCad = { "Eduardo Rocha Santos", "lucbonnet10@gmail.com", "13901484-x", "04132-000", "Rua Jesuíno de Arruda", "(11)96783-2965", "São Paulo", "Casado", "(11)93789-5092", "Rosângela Louise Santos", "01246497344", "345.92951.31-0", "R$4000.00"};
+        String[] AutoCad = { "Eduardo Rocha Santos", "lucbonnet10@gmail.com", "13901484-x", "04132-000", "Rua Jesuíno de Arruda", "(11)96783-2965", "São Paulo", "Casado", "(11)93789-5092", "Rosângela Louise Santos", "01246497344", "345.92951.31-0", "R$4000.00" };
         private void bbtnAutoCadastro_Click(object sender, EventArgs e)
         {
             int i = 0;
@@ -564,12 +740,12 @@ namespace AutoSocorro
 
         private void lblGrid_MouseHover(object sender, EventArgs e)
         {
-            lblGrid.ForeColor = Color.FromArgb(2,136,209);
+            lblGrid.ForeColor = Color.FromArgb(2, 136, 209);
         }
 
         private void lblGrid_MouseLeave(object sender, EventArgs e)
         {
-            lblGrid.ForeColor = Color.FromArgb(1,87,155);
+            lblGrid.ForeColor = Color.FromArgb(1, 87, 155);
         }
 
         private void lblGrid_Click(object sender, EventArgs e)

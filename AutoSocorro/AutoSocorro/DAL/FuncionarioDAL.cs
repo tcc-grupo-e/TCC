@@ -28,6 +28,23 @@ namespace DAL
             }
         }
 
+        public bool alterarFunc(String nome, String email, String rg, String cep, String endereco, String cidade, String estado, String datanasc, String tel, String cnh, String estcivil, String nomeconj, String salario, String cargo, String telconj, String carteira, String codrg)
+        {
+            cc = new ClasseConexao();
+
+            String sql = "Exec usp_AlterarFuncionario  '" + nome + "','" + cargo + "','" + salario + "','" + email + "','" + rg + "','" + cnh + "','" + carteira + "','" + endereco + "','" + cidade + "','" + cep + "','" + estado + "','" + tel + "','" + datanasc + "','" + estcivil + "','" + nomeconj + "','" + telconj + "','" + codrg + "'";
+
+            try
+            {
+                cc.executa_sql(sql, true);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public DataTable pesquisarFunc(String p)
         {
             cc = new ClasseConexao();
@@ -47,6 +64,41 @@ namespace DAL
             catch{}
 
             return ds.Tables[0];
+        }
+
+        public DataTable pesquisarTodosFunc()
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+
+            sql = "Exec usp_procurarTodosFunc ";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
+        public bool deletarFunc(String codrg)
+        {
+            cc = new ClasseConexao();
+
+            String sql = "Exec usp_DeletarFuncionario '" + codrg + "'";
+
+            try
+            {
+                cc.executa_sql(sql, true);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

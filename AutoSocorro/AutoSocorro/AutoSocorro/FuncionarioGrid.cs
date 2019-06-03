@@ -98,5 +98,18 @@ namespace AutoSocorro
             if (btxtConsultar.text.Equals(""))
                 btxtConsultar.text = "Nome do Funcionário";
         }
+
+        private void GridFunc_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int Linha = Convert.ToInt32(GridFunc.CurrentCell.RowIndex);
+            String cod = GridFunc.Rows[Linha].Cells[3].Value.ToString();
+
+            FuncionarioBLL funcBLL = new FuncionarioBLL();
+            funcBLL.setCod(cod);
+            funcBLL.setLinhaCod(Linha+"");
+            Funcionario func = new Funcionario();
+            func.Show();
+            this.Hide();
+        }
     }
 }

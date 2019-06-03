@@ -94,6 +94,12 @@
     <Compile Include="Mensagem.Designer.cs">
       <DependentUpon>Mensagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="MensagemS-N.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensagemS-N.Designer.cs">
+      <DependentUpon>MensagemS-N.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mensagem.resx">
       <DependentUpon>Mensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MensagemS-N.resx">
+      <DependentUpon>MensagemS-N.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>

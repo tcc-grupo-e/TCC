@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bbtnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bbtnMinimizar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -50,11 +50,12 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bbtnLimpar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnAlterar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnAutoCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bdropAtrib = new Bunifu.Framework.UI.BunifuDropdown();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.GridCliente = new System.Windows.Forms.DataGridView();
-            this.bbtnLimpar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bbtnAlterar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnDeletar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnEnviar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btxtCPF = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -414,11 +415,12 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.bbtnLimpar);
+            this.panel4.Controls.Add(this.bbtnAlterar);
+            this.panel4.Controls.Add(this.bbtnAutoCadastro);
             this.panel4.Controls.Add(this.bdropAtrib);
             this.panel4.Controls.Add(this.btxtConsultar);
             this.panel4.Controls.Add(this.GridCliente);
-            this.panel4.Controls.Add(this.bbtnLimpar);
-            this.panel4.Controls.Add(this.bbtnAlterar);
             this.panel4.Controls.Add(this.bbtnDeletar);
             this.panel4.Controls.Add(this.bbtnEnviar);
             this.panel4.Controls.Add(this.btxtCPF);
@@ -429,101 +431,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(985, 430);
             this.panel4.TabIndex = 147;
-            // 
-            // bdropAtrib
-            // 
-            this.bdropAtrib.BackColor = System.Drawing.Color.Transparent;
-            this.bdropAtrib.BorderRadius = 20;
-            this.bdropAtrib.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdropAtrib.ForeColor = System.Drawing.Color.White;
-            this.bdropAtrib.Items = new string[] {
-        "Todos",
-        "Nome",
-        "Email",
-        "Telefone",
-        "CPF"};
-            this.bdropAtrib.Location = new System.Drawing.Point(400, 251);
-            this.bdropAtrib.Margin = new System.Windows.Forms.Padding(0);
-            this.bdropAtrib.Name = "bdropAtrib";
-            this.bdropAtrib.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bdropAtrib.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bdropAtrib.selectedIndex = 0;
-            this.bdropAtrib.Size = new System.Drawing.Size(268, 44);
-            this.bdropAtrib.TabIndex = 146;
-            this.bdropAtrib.onItemSelected += new System.EventHandler(this.bdropAtrib_onItemSelected);
-            // 
-            // btxtConsultar
-            // 
-            this.btxtConsultar.BackColor = System.Drawing.Color.White;
-            this.btxtConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.BackgroundImage")));
-            this.btxtConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btxtConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.btxtConsultar.Icon = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.Icon")));
-            this.btxtConsultar.Location = new System.Drawing.Point(48, 253);
-            this.btxtConsultar.Name = "btxtConsultar";
-            this.btxtConsultar.Size = new System.Drawing.Size(276, 42);
-            this.btxtConsultar.TabIndex = 10;
-            this.btxtConsultar.text = "Consultar";
-            this.btxtConsultar.OnTextChange += new System.EventHandler(this.btxtConsultar_OnTextChange);
-            this.btxtConsultar.Enter += new System.EventHandler(this.btxtConsultar_Enter);
-            this.btxtConsultar.Leave += new System.EventHandler(this.btxtConsultar_Leave);
-            // 
-            // GridCliente
-            // 
-            this.GridCliente.AllowUserToAddRows = false;
-            this.GridCliente.AllowUserToDeleteRows = false;
-            this.GridCliente.AllowUserToResizeColumns = false;
-            this.GridCliente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.NullValue = "\"\"";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GridCliente.Location = new System.Drawing.Point(48, 23);
-            this.GridCliente.MultiSelect = false;
-            this.GridCliente.Name = "GridCliente";
-            this.GridCliente.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.GridCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.GridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridCliente.Size = new System.Drawing.Size(620, 214);
-            this.GridCliente.TabIndex = 9;
             // 
             // bbtnLimpar
             // 
@@ -593,6 +500,139 @@
             this.bbtnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnAlterar.Textcolor = System.Drawing.Color.White;
             this.bbtnAlterar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnAlterar.Click += new System.EventHandler(this.bbtnAlterar_Click);
+            // 
+            // bbtnAutoCadastro
+            // 
+            this.bbtnAutoCadastro.Activecolor = System.Drawing.Color.White;
+            this.bbtnAutoCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.bbtnAutoCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnAutoCadastro.BorderRadius = 0;
+            this.bbtnAutoCadastro.ButtonText = "Enviar";
+            this.bbtnAutoCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnAutoCadastro.DisabledColor = System.Drawing.Color.White;
+            this.bbtnAutoCadastro.ForeColor = System.Drawing.Color.White;
+            this.bbtnAutoCadastro.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnAutoCadastro.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnAutoCadastro.Iconimage")));
+            this.bbtnAutoCadastro.Iconimage_right = null;
+            this.bbtnAutoCadastro.Iconimage_right_Selected = null;
+            this.bbtnAutoCadastro.Iconimage_Selected = null;
+            this.bbtnAutoCadastro.IconMarginLeft = 17;
+            this.bbtnAutoCadastro.IconMarginRight = 0;
+            this.bbtnAutoCadastro.IconRightVisible = true;
+            this.bbtnAutoCadastro.IconRightZoom = 0D;
+            this.bbtnAutoCadastro.IconVisible = true;
+            this.bbtnAutoCadastro.IconZoom = 40D;
+            this.bbtnAutoCadastro.IsTab = false;
+            this.bbtnAutoCadastro.Location = new System.Drawing.Point(401, 311);
+            this.bbtnAutoCadastro.Name = "bbtnAutoCadastro";
+            this.bbtnAutoCadastro.Normalcolor = System.Drawing.Color.Transparent;
+            this.bbtnAutoCadastro.OnHovercolor = System.Drawing.Color.White;
+            this.bbtnAutoCadastro.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnAutoCadastro.selected = false;
+            this.bbtnAutoCadastro.Size = new System.Drawing.Size(203, 48);
+            this.bbtnAutoCadastro.TabIndex = 147;
+            this.bbtnAutoCadastro.Text = "Enviar";
+            this.bbtnAutoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnAutoCadastro.Textcolor = System.Drawing.Color.White;
+            this.bbtnAutoCadastro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnAutoCadastro.Click += new System.EventHandler(this.bbtnAutoCadastro_Click);
+            // 
+            // bdropAtrib
+            // 
+            this.bdropAtrib.BackColor = System.Drawing.Color.Transparent;
+            this.bdropAtrib.BorderRadius = 20;
+            this.bdropAtrib.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdropAtrib.ForeColor = System.Drawing.Color.White;
+            this.bdropAtrib.Items = new string[] {
+        "Todos",
+        "Nome",
+        "Email",
+        "Telefone",
+        "CPF"};
+            this.bdropAtrib.Location = new System.Drawing.Point(387, 251);
+            this.bdropAtrib.Margin = new System.Windows.Forms.Padding(0);
+            this.bdropAtrib.Name = "bdropAtrib";
+            this.bdropAtrib.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bdropAtrib.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bdropAtrib.selectedIndex = 0;
+            this.bdropAtrib.Size = new System.Drawing.Size(204, 44);
+            this.bdropAtrib.TabIndex = 146;
+            this.bdropAtrib.onItemSelected += new System.EventHandler(this.bdropAtrib_onItemSelected);
+            // 
+            // btxtConsultar
+            // 
+            this.btxtConsultar.BackColor = System.Drawing.Color.White;
+            this.btxtConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.BackgroundImage")));
+            this.btxtConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btxtConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.btxtConsultar.Icon = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.Icon")));
+            this.btxtConsultar.Location = new System.Drawing.Point(48, 253);
+            this.btxtConsultar.Name = "btxtConsultar";
+            this.btxtConsultar.Size = new System.Drawing.Size(276, 42);
+            this.btxtConsultar.TabIndex = 10;
+            this.btxtConsultar.text = "Consultar";
+            this.btxtConsultar.OnTextChange += new System.EventHandler(this.btxtConsultar_OnTextChange);
+            this.btxtConsultar.Enter += new System.EventHandler(this.btxtConsultar_Enter);
+            this.btxtConsultar.Leave += new System.EventHandler(this.btxtConsultar_Leave);
+            // 
+            // GridCliente
+            // 
+            this.GridCliente.AllowUserToAddRows = false;
+            this.GridCliente.AllowUserToDeleteRows = false;
+            this.GridCliente.AllowUserToResizeColumns = false;
+            this.GridCliente.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.GridCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.NullValue = "\"\"";
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle8;
+            this.GridCliente.Location = new System.Drawing.Point(48, 23);
+            this.GridCliente.MultiSelect = false;
+            this.GridCliente.Name = "GridCliente";
+            this.GridCliente.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.GridCliente.RowHeadersVisible = false;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.GridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridCliente.Size = new System.Drawing.Size(543, 214);
+            this.GridCliente.TabIndex = 9;
+            this.GridCliente.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridCliente_CellMouseClick);
             // 
             // bbtnDeletar
             // 
@@ -627,6 +667,7 @@
             this.bbtnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnDeletar.Textcolor = System.Drawing.Color.White;
             this.bbtnDeletar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnDeletar.Click += new System.EventHandler(this.bbtnDeletar_Click);
             // 
             // bbtnEnviar
             // 
@@ -661,6 +702,7 @@
             this.bbtnEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnEnviar.Textcolor = System.Drawing.Color.White;
             this.bbtnEnviar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnEnviar.Click += new System.EventHandler(this.bbtnEnviar_Click);
             // 
             // btxtCPF
             // 
@@ -672,10 +714,10 @@
             this.btxtCPF.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btxtCPF.ForeColor = System.Drawing.Color.DarkGray;
             this.btxtCPF.isPassword = false;
-            this.btxtCPF.Location = new System.Drawing.Point(689, 251);
+            this.btxtCPF.Location = new System.Drawing.Point(634, 251);
             this.btxtCPF.Margin = new System.Windows.Forms.Padding(4);
             this.btxtCPF.Name = "btxtCPF";
-            this.btxtCPF.Size = new System.Drawing.Size(248, 44);
+            this.btxtCPF.Size = new System.Drawing.Size(303, 44);
             this.btxtCPF.TabIndex = 5;
             this.btxtCPF.Text = "CPF";
             this.btxtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -692,10 +734,10 @@
             this.btxtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btxtEmail.ForeColor = System.Drawing.Color.DarkGray;
             this.btxtEmail.isPassword = false;
-            this.btxtEmail.Location = new System.Drawing.Point(689, 99);
+            this.btxtEmail.Location = new System.Drawing.Point(634, 99);
             this.btxtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.btxtEmail.Name = "btxtEmail";
-            this.btxtEmail.Size = new System.Drawing.Size(248, 44);
+            this.btxtEmail.Size = new System.Drawing.Size(303, 44);
             this.btxtEmail.TabIndex = 3;
             this.btxtEmail.Text = "Email";
             this.btxtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -712,10 +754,10 @@
             this.btxtTelefone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btxtTelefone.ForeColor = System.Drawing.Color.DarkGray;
             this.btxtTelefone.isPassword = false;
-            this.btxtTelefone.Location = new System.Drawing.Point(689, 176);
+            this.btxtTelefone.Location = new System.Drawing.Point(634, 176);
             this.btxtTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.btxtTelefone.Name = "btxtTelefone";
-            this.btxtTelefone.Size = new System.Drawing.Size(248, 44);
+            this.btxtTelefone.Size = new System.Drawing.Size(303, 44);
             this.btxtTelefone.TabIndex = 4;
             this.btxtTelefone.Text = "Telefone";
             this.btxtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -732,10 +774,10 @@
             this.btxtNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btxtNome.ForeColor = System.Drawing.Color.DarkGray;
             this.btxtNome.isPassword = false;
-            this.btxtNome.Location = new System.Drawing.Point(689, 24);
+            this.btxtNome.Location = new System.Drawing.Point(634, 24);
             this.btxtNome.Margin = new System.Windows.Forms.Padding(4);
             this.btxtNome.Name = "btxtNome";
-            this.btxtNome.Size = new System.Drawing.Size(248, 44);
+            this.btxtNome.Size = new System.Drawing.Size(303, 44);
             this.btxtNome.TabIndex = 2;
             this.btxtNome.Text = "Nome";
             this.btxtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -797,5 +839,6 @@
         private System.Windows.Forms.DataGridView GridCliente;
         private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
         private Bunifu.Framework.UI.BunifuDropdown bdropAtrib;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnAutoCadastro;
     }
 }

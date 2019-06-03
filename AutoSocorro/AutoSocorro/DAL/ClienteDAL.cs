@@ -35,7 +35,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesNome " + nome;
+            sql = "Exec usp_ProcurarClientesNome '" + nome + "'";
 
             try
             {
@@ -52,7 +52,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesEmail " + email;
+            sql = "Exec usp_ProcurarClientesEmail '" + email + "'";
 
             try
             {
@@ -69,7 +69,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesTelefone " + tel;
+            sql = "Exec usp_ProcurarClientesTelefone '" + tel + "'";
 
             try
             {
@@ -86,7 +86,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesCPF " + cpf;
+            sql = "Exec usp_ProcurarClientesCPF " + cpf + "'";
 
             try
             {
@@ -95,6 +95,57 @@ namespace DAL
             catch { }
 
             return ds.Tables[0];
+        }
+
+        public bool inserirCli(String nome, String email, String tel, String cpf)
+        {
+            cc = new ClasseConexao();
+
+            String sql = "Exec usp_InserirCliente '" + nome + "','" + tel + "','" + email + "','" + cpf + "'";
+
+            try
+            {
+                cc.executa_sql(sql, true);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool alterarCli(String nome, String email, String tel, String cpf, String cod)
+        {
+            cc = new ClasseConexao();
+
+            String sql = "Exec usp_alterarCliente '" + nome + "','" + tel + "','" + email + "','" + cpf + "','" + cod + "'";
+
+            try
+            {
+                cc.executa_sql(sql, true);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool deletarCli(String cod)
+        {
+            cc = new ClasseConexao();
+
+            String sql = "Exec usp_deletarCliente '" + cod + "'";
+
+            try
+            {
+                cc.executa_sql(sql, true);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

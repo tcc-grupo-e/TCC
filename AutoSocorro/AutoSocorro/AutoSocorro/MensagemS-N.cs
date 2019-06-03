@@ -11,14 +11,14 @@ using BLL;
 
 namespace AutoSocorro
 {
-    public partial class Mensagem : Form
+    public partial class MensagemS_N : Form
     {
-        public Mensagem()
+        public MensagemS_N()
         {
             InitializeComponent();
         }
 
-        private void Mensagem_Load(object sender, EventArgs e)
+        private void MensagemS_N_Load(object sender, EventArgs e)
         {
             MensagemBLL ms = new MensagemBLL();
             lblTitulo.Text = ms.getTitulo();
@@ -27,6 +27,15 @@ namespace AutoSocorro
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MensagemBLL ms = new MensagemBLL();
+            ms.setSN("S");
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MensagemBLL ms = new MensagemBLL();
+            ms.setSN("N");
             this.Hide();
         }
     }

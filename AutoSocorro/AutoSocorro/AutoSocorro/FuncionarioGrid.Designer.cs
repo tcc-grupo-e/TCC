@@ -437,6 +437,7 @@
             this.GridFunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridFunc.Size = new System.Drawing.Size(935, 322);
             this.GridFunc.TabIndex = 1;
+            this.GridFunc.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridFunc_CellMouseDoubleClick);
             // 
             // bunifuSeparator1
             // 

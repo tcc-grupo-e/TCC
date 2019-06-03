@@ -10,6 +10,16 @@ namespace BLL
     {
         private static String Titulo;
         private static String Msm;
+        private static String SN;
+
+        public void setSN(String val)
+        {
+            SN = val;
+        }
+        public String getSN()
+        {
+            return SN;
+        }
 
         public void setMensagem(String val)
         {

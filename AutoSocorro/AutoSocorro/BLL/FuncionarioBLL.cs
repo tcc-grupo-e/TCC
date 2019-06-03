@@ -29,6 +29,36 @@ namespace BLL
         private static String Login;
         private static String Senha;
         private static DataTable ds;
+        private static DataTable TFuncionarios;
+        private static String Cod = "";
+        private static String LinhaCod = "";
+
+        public void setTFuncionarios(DataTable val)
+        {
+            TFuncionarios = val;
+        }
+        public DataTable getTFuncionarios()
+        {
+            return TFuncionarios;
+        }
+
+        public void setLinhaCod(String val)
+        {
+            LinhaCod = val;
+        }
+        public String getLinhaCod()
+        {
+            return LinhaCod;
+        }
+
+        public void setCod(String val)
+        {
+            Cod = val;
+        }
+        public String getCod()
+        {
+            return Cod;
+        }
 
         public void setDataTable(DataTable val)
         {
@@ -226,11 +256,50 @@ namespace BLL
             return funcDAL.inserirFunc(Nome, Email, RG, CEP, Endereco, Cidade, Estado, DataNasc, Telefone, CNH, EstCivil, NomeConj, Salario, Cargo, TelConjuge, Carteira, Login, Senha);
         }
 
+        public bool alterarFunc(String nome, String email, String rg, String cep, String endereco, String cidade, String estado, String datanasc, String tel, String cnh, String estcivil, String nomeconj, String salario, String cargo, String telconj, String carteira, String codrg)
+        {
+            FuncionarioDAL funcDAL = new FuncionarioDAL();
+
+            Nome = nome;
+            Email = email;
+            RG = rg;
+            CEP = cep;
+            Endereco = endereco;
+            Cidade = cidade;
+            Estado = estado;
+            DataNasc = datanasc;
+            Telefone = tel;
+            CNH = cnh;
+            EstCivil = estcivil;
+            NomeConj = nomeconj;
+            Salario = salario;
+            Cargo = cargo;
+            TelConjuge = telconj;
+            Carteira = carteira;
+
+            return funcDAL.alterarFunc(Nome, Email, RG, CEP, Endereco, Cidade, Estado, DataNasc, Telefone, CNH, EstCivil, NomeConj, Salario, Cargo, TelConjuge, Carteira, codrg);
+        }
+
+        public bool deletarFunc(String codrg)
+        {
+            FuncionarioDAL funcDAL = new FuncionarioDAL();
+
+            return funcDAL.deletarFunc(codrg);
+        }
+
         public DataTable pesquisarFunc(String p)
         {
             FuncionarioDAL funcDAL = new FuncionarioDAL();
-           
-            return funcDAL.pesquisarFunc(p);
+            if (p.Equals("*"))
+                return TFuncionarios = funcDAL.pesquisarFunc(p);
+            else
+                return funcDAL.pesquisarFunc(p);
+        }
+
+        public DataTable pesquisarTodosFunc()
+        {
+            FuncionarioDAL funcDAL = new FuncionarioDAL();
+            return TFuncionarios = funcDAL.pesquisarTodosFunc();
         }
     }
 }

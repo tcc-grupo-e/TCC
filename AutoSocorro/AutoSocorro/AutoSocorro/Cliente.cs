@@ -46,7 +46,7 @@ namespace AutoSocorro
             this.Hide();
         }
 
-       
+
         private void bbtnLogoff_Click(object sender, EventArgs e)
         {
             Login lo = new Login();
@@ -66,7 +66,7 @@ namespace AutoSocorro
         //
         //PlaceHolder
         //
-        String[] txt = { "Enviar", "Nome", "Email", "Telefone", "CPF"};
+        String[] txt = { "Enviar", "Nome", "Email", "Telefone", "CPF" };
         private void PlaceHolder_Enter(object sender, EventArgs e)
         {
             Bunifu.Framework.UI.BunifuMetroTextbox btxt = (Bunifu.Framework.UI.BunifuMetroTextbox)sender;
@@ -116,7 +116,8 @@ namespace AutoSocorro
         private void btxtConsultar_OnTextChange(object sender, EventArgs e)
         {
             ClienteBLL cliBLL = new ClienteBLL();
-            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Consultar")) {
+            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Consultar"))
+            {
                 try
                 {
                     if (bdropAtrib.selectedIndex == 0)
@@ -145,6 +146,205 @@ namespace AutoSocorro
             {
                 ClienteBLL cliBLL = new ClienteBLL();
                 GridCliente.DataSource = cliBLL.getTodClientes();
+            }
+        }
+
+        private void bbtnAutoCadastro_Click(object sender, EventArgs e)
+        {
+            btxtNome.Text = "Lara Gomes Machado";
+            btxtEmail.Text = "Lara.Gomes@gmail.com";
+            btxtTelefone.Text = "(11)96758-3902";
+            btxtCPF.Text = "164.869.358-04";
+            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCPF.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
+        }
+
+        //
+        //Validação
+        //
+        public int validar()
+        {
+            ClasseValida cv = new ClasseValida();
+            int i = 0;
+            //Nome
+            if (cv.ValidaNome(btxtNome.Text))
+            {
+                i++;
+                btxtNome.BorderColorIdle = Color.FromArgb(64, 64, 64);
+            }
+            else
+                btxtNome.BorderColorIdle = Color.Red;
+            //Email
+            if (cv.ValidaEmail(btxtEmail.Text))
+            {
+                i++;
+                btxtEmail.BorderColorIdle = Color.FromArgb(64, 64, 64);
+            }
+            else
+                btxtEmail.BorderColorIdle = Color.Red;
+            //Telefone
+            if (cv.ValidaTelefone(btxtTelefone.Text))
+            {
+                i++;
+                btxtTelefone.BorderColorIdle = Color.FromArgb(64, 64, 64);
+            }
+            else
+                btxtTelefone.BorderColorIdle = Color.Red;
+            //CPF
+            if (cv.ValidaTelefone(btxtCPF.Text))
+            {
+                i++;
+                btxtCPF.BorderColorIdle = Color.FromArgb(64, 64, 64);
+            }
+            else
+                btxtCPF.BorderColorIdle = Color.Red;
+            return i;
+        }
+
+        private void bbtnEnviar_Click(object sender, EventArgs e)
+        {
+            if (validar() == 4)
+            {
+                ClienteBLL cliBLL = new ClienteBLL();
+                if (cliBLL.inserirCli(btxtNome.Text, btxtEmail.Text, btxtTelefone.Text, btxtCPF.Text))
+                {
+                    MensagemBLL mBLL = new MensagemBLL();
+                    mBLL.setMensagem("Cliente Cadastrado com sucesso!");
+                    mBLL.setTitulo("Mensagem");
+                    Mensagem ms = new Mensagem();
+                    ms.ShowDialog();
+                    bbtnLimpar_Click(sender, e);
+                }
+                else
+                {
+                    MensagemBLL mBLL = new MensagemBLL();
+                    mBLL.setMensagem("Cliente Não Cadastrado!");
+                    mBLL.setTitulo("Alerta");
+                    Mensagem ms = new Mensagem();
+                    ms.ShowDialog();
+                }
+            }
+            else
+            {
+                MensagemBLL mBLL = new MensagemBLL();
+                mBLL.setMensagem("Preencha Todos Os Campos Corretamente!");
+                mBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                ms.ShowDialog();
+            }
+        }
+        bool alterar = false;
+        String codCpf = "";
+        private void GridCliente_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCPF.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
+            int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
+            btxtNome.Text = GridCliente.Rows[Linha].Cells[0].Value.ToString();
+            btxtEmail.Text = GridCliente.Rows[Linha].Cells[2].Value.ToString();
+            btxtTelefone.Text = GridCliente.Rows[Linha].Cells[1].Value.ToString();
+            btxtCPF.Text = GridCliente.Rows[Linha].Cells[3].Value.ToString();
+            codCpf = btxtCPF.Text;
+            alterar = true;
+        }
+
+        private void bbtnAlterar_Click(object sender, EventArgs e)
+        {
+            if (alterar)
+            {
+                MensagemBLL msBLL = new MensagemBLL();
+                msBLL.setMensagem("Deseja Realmente Alterar Esse Cliente");
+                msBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                MensagemS_N msn = new MensagemS_N();
+                msn.ShowDialog();
+
+                if (msBLL.getSN().Equals("S"))
+                {
+                    if (validar() == 3)
+                    {
+                        ClienteBLL cliBLL = new ClienteBLL();
+                        if (cliBLL.alterarCli(btxtNome.Text, btxtEmail.Text, btxtTelefone.Text, btxtCPF.Text, codCpf))
+                        {
+                            alterar = false;
+                            MensagemBLL mBLL = new MensagemBLL();
+                            mBLL.setMensagem("Cliente Alterado Com Sucesso!");
+                            mBLL.setTitulo("Mensagem");
+                            ms.ShowDialog();
+                            bbtnLimpar_Click(sender, e);
+                        }
+                        else
+                        {
+                            MensagemBLL mBLL = new MensagemBLL();
+                            mBLL.setMensagem("Cliente Não Alterado!");
+                            mBLL.setTitulo("Alerta");
+                            ms.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        MensagemBLL mBLL = new MensagemBLL();
+                        mBLL.setMensagem("Preencha Todos Os Campos Corretamente!");
+                        mBLL.setTitulo("Alerta");
+                        ms.ShowDialog();
+                    }
+                }
+                else
+                {
+                    alterar = false;
+                }
+            }
+            else
+            {
+                MensagemBLL mBLL = new MensagemBLL();
+                mBLL.setMensagem("Selecione Um Cliente");
+                mBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                ms.ShowDialog();
+            }
+        }
+
+        private void bbtnDeletar_Click(object sender, EventArgs e)
+        {
+            if (alterar)
+            {
+                MensagemBLL msBLL = new MensagemBLL();
+                msBLL.setMensagem("Deseja Realmente Deletar Esse Cliente");
+                msBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                MensagemS_N msn = new MensagemS_N();
+                msn.ShowDialog();
+
+                if (msBLL.getSN().Equals("S"))
+                {
+                    ClienteBLL cliBLL = new ClienteBLL();
+                    if (cliBLL.deletarCli(codCpf))
+                    {
+                        alterar = false;
+                        MensagemBLL mBLL = new MensagemBLL();
+                        mBLL.setMensagem("Cliente Deletado Com Sucesso!");
+                        mBLL.setTitulo("Mensagem");
+                        ms.ShowDialog();
+                        bbtnLimpar_Click(sender, e);
+                    }
+                    else
+                    {
+                        MensagemBLL mBLL = new MensagemBLL();
+                        mBLL.setMensagem("Cliente Não Deletado!");
+                        mBLL.setTitulo("Alerta");
+                        ms.ShowDialog();
+                    }
+                }
+                else
+                {
+                    alterar = false;
+                }
+            }
+            else
+            {
+                MensagemBLL mBLL = new MensagemBLL();
+                mBLL.setMensagem("Selecione Um Cliente");
+                mBLL.setTitulo("Alerta");
+                Mensagem ms = new Mensagem();
+                ms.ShowDialog();
             }
         }
     }
