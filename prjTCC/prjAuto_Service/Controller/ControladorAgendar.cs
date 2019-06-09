@@ -39,5 +39,16 @@ namespace prjAuto_Service.Controller
             con.executa_sql(sql);
         }
         #endregion Insere Abertura
+
+        #region Insere Acessorio
+        public void inserirAcessorio(Model.Agendar agen)
+        {
+            String sql = "Exec usp_InserirAce '" + agen.getNomeAcessorio() + "','" + agen.getEstado() + "','" + agen.getComentario() + "'";
+            con = new ClasseConexao();
+            con.executa_sql(sql);
+        }
+        #endregion Insere Acessorio
+
+
     }
 }

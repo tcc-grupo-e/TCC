@@ -131,6 +131,39 @@ namespace prjAuto_Service.Model
 
         #endregion MODELO ABERTURA
 
+        #region MODELO ACESSORIOS
+
+        private static string nome_acessorio, estado, comentario;
+
+        public string getNomeAcessorio()
+        {
+            return nome_acessorio;
+        }
+        public void setNomeAcessorio(string val)
+        {
+            nome_acessorio = val;
+        }
+
+        public string getEstado()
+        {
+            return estado;
+        }
+        public void setEstado(string val)
+        {
+            estado = val;
+        }
+
+        public string getComentario()
+        {
+            return comentario;
+        }
+        public void setComentario(string val)
+        {
+            comentario = val;
+        }
+        #endregion MODELO ACESSORIOS
+
+
 
 
     }
