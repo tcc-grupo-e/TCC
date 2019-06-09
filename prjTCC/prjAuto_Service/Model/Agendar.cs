@@ -57,7 +57,7 @@ namespace prjAuto_Service.Model
         }
         public void setTelefone(string val)
         {
-            nome = val;
+            telefone = val;
         }
         public string getCpf()
         {
@@ -65,10 +65,71 @@ namespace prjAuto_Service.Model
         }
         public void setCpf(string val)
         {
-            nome = val;
+            cpf = val;
         }
 
         #endregion MODELO CLIENTE
+
+
+        #region MODELO ABERTURA
+
+        private static string marca, modelo, cor, ano, placa, retirada;
+
+        public string getMarca()
+        {
+            return marca;
+        }
+        public void setMarca(string val)
+        {
+            marca = val;
+        }
+
+        public string getModelo()
+        {
+            return modelo;
+        }
+        public void setModelo(string val)
+        {
+            modelo = val;
+        }
+
+        public string getCor()
+        {
+            return cor;
+        }
+        public void setCor(string val)
+        {
+            cor = val;
+        }
+
+        public string getAno()
+        {
+            return ano;
+        }
+        public void setAno(string val)
+        {
+            ano = val;
+        }
+
+        public string getPlaca()
+        {
+            return placa;
+        }
+        public void setPlaca(string val)
+        {
+            placa = val;
+        }
+
+        public string getRetirada()
+        {
+            return retirada;
+        }
+        public void setRetirada(string val)
+        {
+            retirada = val;
+        }
+
+        #endregion MODELO ABERTURA
 
 
 

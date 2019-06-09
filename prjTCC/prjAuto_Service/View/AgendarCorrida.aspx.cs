@@ -109,7 +109,17 @@ namespace prjAuto_Service
             agendar.setEmail("mer.mer@gmauil.com");
             agendar.setNome("Alcimar Monteiro");
             agendar.setTelefone("40028922");
+            
+            agendar.setAno("");
+            agendar.setCor("");
+            agendar.setModelo("");
+            agendar.setMarca("");
+            agendar.setPlaca("");
+            agendar.setRetirada("");
+
+
             control.inserirCliente(agendar);
+            control.inserirAbertura(agendar);
 
 
         }

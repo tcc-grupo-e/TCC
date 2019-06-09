@@ -76,3 +76,12 @@ C:\Users\Lab\Desktop\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.
 C:\Users\Lab\Desktop\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.Cache
 C:\Users\Lab\Desktop\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.dll
 C:\Users\Lab\Desktop\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\bin\prjAuto_Service.dll.config
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\bin\prjAuto_Service.dll
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\bin\prjAuto_Service.pdb
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojAssemblyReference.cache
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.Validador.resources
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.GenerateResource.cache
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.CoreCompileInputs.cache
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.dll
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
