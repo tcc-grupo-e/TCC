@@ -441,7 +441,6 @@ namespace AutoSocorro
                 int Linha = Convert.ToInt16(funcBLL.getLinhaCod());
                 String[] Dados = { dt.Rows[Linha]["Nome"].ToString(), dt.Rows[Linha]["Email"].ToString(), dt.Rows[Linha]["Numero_Documento"].ToString(), dt.Rows[Linha]["CEP"].ToString(), dt.Rows[Linha]["Endereco"].ToString(), dt.Rows[Linha]["Telefone"].ToString(), dt.Rows[Linha]["Cidade"].ToString(), dt.Rows[Linha]["Estado_Civil"].ToString(), dt.Rows[Linha]["Telefone_Conjuge"].ToString(), dt.Rows[Linha]["Conjuge"].ToString(), dt.Rows[Linha]["CNH"].ToString(), dt.Rows[Linha]["Carteira_de_Trabalho"].ToString(), dt.Rows[Linha]["Salario"].ToString() };
 
-
                 foreach (Control c in this.Controls)
                 {
                     int i = 0;
@@ -753,6 +752,18 @@ namespace AutoSocorro
             FuncionarioGrid fung = new FuncionarioGrid();
             fung.Show();
             this.Hide();
+        }
+
+        private void bbtnClienteJuridico_Click(object sender, EventArgs e)
+        {
+            ClienteJu clij = new ClienteJu();
+            clij.Show();
+            this.Hide();
+        }
+
+        private void bbtnServiço_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

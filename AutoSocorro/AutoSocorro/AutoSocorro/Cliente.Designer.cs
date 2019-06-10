@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bbtnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bbtnMinimizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bbtnFechar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -42,11 +41,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_tit = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bbtnClienteJu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnServiço = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnPedido = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnFuncionario = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -69,41 +70,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bbtnCliente
-            // 
-            this.bbtnCliente.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnCliente.BorderRadius = 0;
-            this.bbtnCliente.ButtonText = "Clientes";
-            this.bbtnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnCliente.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnCliente.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnCliente.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCliente.Iconimage")));
-            this.bbtnCliente.Iconimage_right = null;
-            this.bbtnCliente.Iconimage_right_Selected = null;
-            this.bbtnCliente.Iconimage_Selected = null;
-            this.bbtnCliente.IconMarginLeft = 0;
-            this.bbtnCliente.IconMarginRight = 0;
-            this.bbtnCliente.IconRightVisible = true;
-            this.bbtnCliente.IconRightZoom = 0D;
-            this.bbtnCliente.IconVisible = true;
-            this.bbtnCliente.IconZoom = 40D;
-            this.bbtnCliente.IsTab = false;
-            this.bbtnCliente.Location = new System.Drawing.Point(0, 93);
-            this.bbtnCliente.Name = "bbtnCliente";
-            this.bbtnCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnCliente.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnCliente.selected = false;
-            this.bbtnCliente.Size = new System.Drawing.Size(213, 48);
-            this.bbtnCliente.TabIndex = 234;
-            this.bbtnCliente.Text = "Clientes";
-            this.bbtnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnCliente.Textcolor = System.Drawing.Color.White;
-            this.bbtnCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbtnCliente.Click += new System.EventHandler(this.bbtnCliente_Click);
             // 
             // panel1
             // 
@@ -204,16 +170,52 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.bbtnClienteJu);
             this.panel3.Controls.Add(this.bbtnHome);
-            this.panel3.Controls.Add(this.bbtnLogoff);
             this.panel3.Controls.Add(this.bbtnServiço);
             this.panel3.Controls.Add(this.bbtnPedido);
             this.panel3.Controls.Add(this.bbtnFuncionario);
             this.panel3.Controls.Add(this.bbtnCliente);
+            this.panel3.Controls.Add(this.bbtnLogoff);
             this.panel3.Location = new System.Drawing.Point(0, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 121;
+            // 
+            // bbtnClienteJu
+            // 
+            this.bbtnClienteJu.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnClienteJu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnClienteJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnClienteJu.BorderRadius = 0;
+            this.bbtnClienteJu.ButtonText = "Clientes Jurídicos";
+            this.bbtnClienteJu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnClienteJu.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnClienteJu.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnClienteJu.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnClienteJu.Iconimage")));
+            this.bbtnClienteJu.Iconimage_right = null;
+            this.bbtnClienteJu.Iconimage_right_Selected = null;
+            this.bbtnClienteJu.Iconimage_Selected = null;
+            this.bbtnClienteJu.IconMarginLeft = 0;
+            this.bbtnClienteJu.IconMarginRight = 0;
+            this.bbtnClienteJu.IconRightVisible = true;
+            this.bbtnClienteJu.IconRightZoom = 0D;
+            this.bbtnClienteJu.IconVisible = true;
+            this.bbtnClienteJu.IconZoom = 40D;
+            this.bbtnClienteJu.IsTab = false;
+            this.bbtnClienteJu.Location = new System.Drawing.Point(0, 141);
+            this.bbtnClienteJu.Name = "bbtnClienteJu";
+            this.bbtnClienteJu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnClienteJu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnClienteJu.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnClienteJu.selected = false;
+            this.bbtnClienteJu.Size = new System.Drawing.Size(213, 48);
+            this.bbtnClienteJu.TabIndex = 16;
+            this.bbtnClienteJu.Text = "Clientes Jurídicos";
+            this.bbtnClienteJu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnClienteJu.Textcolor = System.Drawing.Color.White;
+            this.bbtnClienteJu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnClienteJu.Click += new System.EventHandler(this.bbtnClinteJu_Click);
             // 
             // bbtnHome
             // 
@@ -236,19 +238,159 @@
             this.bbtnHome.IconVisible = true;
             this.bbtnHome.IconZoom = 40D;
             this.bbtnHome.IsTab = false;
-            this.bbtnHome.Location = new System.Drawing.Point(0, -1);
+            this.bbtnHome.Location = new System.Drawing.Point(0, 0);
             this.bbtnHome.Name = "bbtnHome";
             this.bbtnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
             this.bbtnHome.OnHoverTextColor = System.Drawing.Color.White;
             this.bbtnHome.selected = false;
             this.bbtnHome.Size = new System.Drawing.Size(213, 48);
-            this.bbtnHome.TabIndex = 934;
+            this.bbtnHome.TabIndex = 15;
             this.bbtnHome.Text = "Home";
             this.bbtnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnHome.Textcolor = System.Drawing.Color.White;
             this.bbtnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnHome.Click += new System.EventHandler(this.bbtnHome_Click);
+            // 
+            // bbtnServiço
+            // 
+            this.bbtnServiço.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnServiço.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnServiço.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnServiço.BorderRadius = 0;
+            this.bbtnServiço.ButtonText = "Adicionais";
+            this.bbtnServiço.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnServiço.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnServiço.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnServiço.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnServiço.Iconimage")));
+            this.bbtnServiço.Iconimage_right = null;
+            this.bbtnServiço.Iconimage_right_Selected = null;
+            this.bbtnServiço.Iconimage_Selected = null;
+            this.bbtnServiço.IconMarginLeft = 0;
+            this.bbtnServiço.IconMarginRight = 0;
+            this.bbtnServiço.IconRightVisible = true;
+            this.bbtnServiço.IconRightZoom = 0D;
+            this.bbtnServiço.IconVisible = true;
+            this.bbtnServiço.IconZoom = 40D;
+            this.bbtnServiço.IsTab = false;
+            this.bbtnServiço.Location = new System.Drawing.Point(0, 234);
+            this.bbtnServiço.Name = "bbtnServiço";
+            this.bbtnServiço.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnServiço.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnServiço.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnServiço.selected = false;
+            this.bbtnServiço.Size = new System.Drawing.Size(213, 48);
+            this.bbtnServiço.TabIndex = 14;
+            this.bbtnServiço.Text = "Adicionais";
+            this.bbtnServiço.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnServiço.Textcolor = System.Drawing.Color.White;
+            this.bbtnServiço.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnServiço.Click += new System.EventHandler(this.bbtnServiço_Click);
+            // 
+            // bbtnPedido
+            // 
+            this.bbtnPedido.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnPedido.BorderRadius = 0;
+            this.bbtnPedido.ButtonText = "Chamadas";
+            this.bbtnPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnPedido.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnPedido.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnPedido.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnPedido.Iconimage")));
+            this.bbtnPedido.Iconimage_right = null;
+            this.bbtnPedido.Iconimage_right_Selected = null;
+            this.bbtnPedido.Iconimage_Selected = null;
+            this.bbtnPedido.IconMarginLeft = 17;
+            this.bbtnPedido.IconMarginRight = 0;
+            this.bbtnPedido.IconRightVisible = true;
+            this.bbtnPedido.IconRightZoom = 0D;
+            this.bbtnPedido.IconVisible = true;
+            this.bbtnPedido.IconZoom = 40D;
+            this.bbtnPedido.IsTab = false;
+            this.bbtnPedido.Location = new System.Drawing.Point(0, 47);
+            this.bbtnPedido.Name = "bbtnPedido";
+            this.bbtnPedido.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnPedido.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnPedido.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnPedido.selected = false;
+            this.bbtnPedido.Size = new System.Drawing.Size(213, 48);
+            this.bbtnPedido.TabIndex = 13;
+            this.bbtnPedido.Text = "Chamadas";
+            this.bbtnPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnPedido.Textcolor = System.Drawing.Color.White;
+            this.bbtnPedido.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnPedido.Click += new System.EventHandler(this.bbtnPedido_Click);
+            // 
+            // bbtnFuncionario
+            // 
+            this.bbtnFuncionario.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnFuncionario.BorderRadius = 0;
+            this.bbtnFuncionario.ButtonText = "Funcionários";
+            this.bbtnFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnFuncionario.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnFuncionario.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnFuncionario.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnFuncionario.Iconimage")));
+            this.bbtnFuncionario.Iconimage_right = null;
+            this.bbtnFuncionario.Iconimage_right_Selected = null;
+            this.bbtnFuncionario.Iconimage_Selected = null;
+            this.bbtnFuncionario.IconMarginLeft = 0;
+            this.bbtnFuncionario.IconMarginRight = 0;
+            this.bbtnFuncionario.IconRightVisible = true;
+            this.bbtnFuncionario.IconRightZoom = 0D;
+            this.bbtnFuncionario.IconVisible = true;
+            this.bbtnFuncionario.IconZoom = 40D;
+            this.bbtnFuncionario.IsTab = false;
+            this.bbtnFuncionario.Location = new System.Drawing.Point(0, 187);
+            this.bbtnFuncionario.Name = "bbtnFuncionario";
+            this.bbtnFuncionario.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnFuncionario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnFuncionario.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnFuncionario.selected = false;
+            this.bbtnFuncionario.Size = new System.Drawing.Size(213, 48);
+            this.bbtnFuncionario.TabIndex = 12;
+            this.bbtnFuncionario.Text = "Funcionários";
+            this.bbtnFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnFuncionario.Textcolor = System.Drawing.Color.White;
+            this.bbtnFuncionario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnFuncionario.Click += new System.EventHandler(this.bbtnFuncionario_Click);
+            // 
+            // bbtnCliente
+            // 
+            this.bbtnCliente.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnCliente.BorderRadius = 0;
+            this.bbtnCliente.ButtonText = "Clientes Físicos";
+            this.bbtnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnCliente.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnCliente.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnCliente.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCliente.Iconimage")));
+            this.bbtnCliente.Iconimage_right = null;
+            this.bbtnCliente.Iconimage_right_Selected = null;
+            this.bbtnCliente.Iconimage_Selected = null;
+            this.bbtnCliente.IconMarginLeft = 0;
+            this.bbtnCliente.IconMarginRight = 0;
+            this.bbtnCliente.IconRightVisible = true;
+            this.bbtnCliente.IconRightZoom = 0D;
+            this.bbtnCliente.IconVisible = true;
+            this.bbtnCliente.IconZoom = 40D;
+            this.bbtnCliente.IsTab = false;
+            this.bbtnCliente.Location = new System.Drawing.Point(0, 94);
+            this.bbtnCliente.Name = "bbtnCliente";
+            this.bbtnCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnCliente.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnCliente.selected = false;
+            this.bbtnCliente.Size = new System.Drawing.Size(213, 48);
+            this.bbtnCliente.TabIndex = 11;
+            this.bbtnCliente.Text = "Clientes Físicos";
+            this.bbtnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnCliente.Textcolor = System.Drawing.Color.White;
+            this.bbtnCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnCliente.Click += new System.EventHandler(this.bbtnCliente_Click);
             // 
             // bbtnLogoff
             // 
@@ -285,110 +427,6 @@
             this.bbtnLogoff.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnLogoff.Click += new System.EventHandler(this.bbtnLogoff_Click);
             // 
-            // bbtnServiço
-            // 
-            this.bbtnServiço.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnServiço.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnServiço.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnServiço.BorderRadius = 0;
-            this.bbtnServiço.ButtonText = "Serviços";
-            this.bbtnServiço.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnServiço.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnServiço.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnServiço.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnServiço.Iconimage")));
-            this.bbtnServiço.Iconimage_right = null;
-            this.bbtnServiço.Iconimage_right_Selected = null;
-            this.bbtnServiço.Iconimage_Selected = null;
-            this.bbtnServiço.IconMarginLeft = 0;
-            this.bbtnServiço.IconMarginRight = 0;
-            this.bbtnServiço.IconRightVisible = true;
-            this.bbtnServiço.IconRightZoom = 0D;
-            this.bbtnServiço.IconVisible = true;
-            this.bbtnServiço.IconZoom = 40D;
-            this.bbtnServiço.IsTab = false;
-            this.bbtnServiço.Location = new System.Drawing.Point(0, 187);
-            this.bbtnServiço.Name = "bbtnServiço";
-            this.bbtnServiço.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnServiço.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnServiço.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnServiço.selected = false;
-            this.bbtnServiço.Size = new System.Drawing.Size(213, 48);
-            this.bbtnServiço.TabIndex = 7;
-            this.bbtnServiço.Text = "Serviços";
-            this.bbtnServiço.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnServiço.Textcolor = System.Drawing.Color.White;
-            this.bbtnServiço.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bbtnPedido
-            // 
-            this.bbtnPedido.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnPedido.BorderRadius = 0;
-            this.bbtnPedido.ButtonText = "Chamadas";
-            this.bbtnPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnPedido.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnPedido.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnPedido.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnPedido.Iconimage")));
-            this.bbtnPedido.Iconimage_right = null;
-            this.bbtnPedido.Iconimage_right_Selected = null;
-            this.bbtnPedido.Iconimage_Selected = null;
-            this.bbtnPedido.IconMarginLeft = 17;
-            this.bbtnPedido.IconMarginRight = 0;
-            this.bbtnPedido.IconRightVisible = true;
-            this.bbtnPedido.IconRightZoom = 0D;
-            this.bbtnPedido.IconVisible = true;
-            this.bbtnPedido.IconZoom = 40D;
-            this.bbtnPedido.IsTab = false;
-            this.bbtnPedido.Location = new System.Drawing.Point(0, 46);
-            this.bbtnPedido.Name = "bbtnPedido";
-            this.bbtnPedido.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnPedido.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnPedido.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnPedido.selected = false;
-            this.bbtnPedido.Size = new System.Drawing.Size(213, 48);
-            this.bbtnPedido.TabIndex = 236;
-            this.bbtnPedido.Text = "Chamadas";
-            this.bbtnPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnPedido.Textcolor = System.Drawing.Color.White;
-            this.bbtnPedido.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbtnPedido.Click += new System.EventHandler(this.bbtnPedido_Click);
-            // 
-            // bbtnFuncionario
-            // 
-            this.bbtnFuncionario.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnFuncionario.BorderRadius = 0;
-            this.bbtnFuncionario.ButtonText = "Funcionários";
-            this.bbtnFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnFuncionario.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnFuncionario.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnFuncionario.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnFuncionario.Iconimage")));
-            this.bbtnFuncionario.Iconimage_right = null;
-            this.bbtnFuncionario.Iconimage_right_Selected = null;
-            this.bbtnFuncionario.Iconimage_Selected = null;
-            this.bbtnFuncionario.IconMarginLeft = 0;
-            this.bbtnFuncionario.IconMarginRight = 0;
-            this.bbtnFuncionario.IconRightVisible = true;
-            this.bbtnFuncionario.IconRightZoom = 0D;
-            this.bbtnFuncionario.IconVisible = true;
-            this.bbtnFuncionario.IconZoom = 40D;
-            this.bbtnFuncionario.IsTab = false;
-            this.bbtnFuncionario.Location = new System.Drawing.Point(0, 140);
-            this.bbtnFuncionario.Name = "bbtnFuncionario";
-            this.bbtnFuncionario.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnFuncionario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnFuncionario.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnFuncionario.selected = false;
-            this.bbtnFuncionario.Size = new System.Drawing.Size(213, 48);
-            this.bbtnFuncionario.TabIndex = 565;
-            this.bbtnFuncionario.Text = "Funcionários";
-            this.bbtnFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnFuncionario.Textcolor = System.Drawing.Color.White;
-            this.bbtnFuncionario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbtnFuncionario.Click += new System.EventHandler(this.bbtnFuncionario_Click);
-            // 
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
@@ -410,7 +448,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(985, 72);
             this.label1.TabIndex = 139;
-            this.label1.Text = "Clientes";
+            this.label1.Text = "Clientes Físicos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -550,7 +588,7 @@
         "Email",
         "Telefone",
         "CPF"};
-            this.bdropAtrib.Location = new System.Drawing.Point(387, 251);
+            this.bdropAtrib.Location = new System.Drawing.Point(385, 251);
             this.bdropAtrib.Margin = new System.Windows.Forms.Padding(0);
             this.bdropAtrib.Name = "bdropAtrib";
             this.bdropAtrib.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
@@ -582,55 +620,59 @@
             this.GridCliente.AllowUserToDeleteRows = false;
             this.GridCliente.AllowUserToResizeColumns = false;
             this.GridCliente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.NullValue = "\"\"";
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.NullValue = "\"\"";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GridCliente.EnableHeadersVisualStyles = false;
+            this.GridCliente.GridColor = System.Drawing.Color.White;
             this.GridCliente.Location = new System.Drawing.Point(48, 23);
             this.GridCliente.MultiSelect = false;
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.GridCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridCliente.Size = new System.Drawing.Size(543, 214);
+            this.GridCliente.Size = new System.Drawing.Size(541, 214);
             this.GridCliente.TabIndex = 9;
             this.GridCliente.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridCliente_CellMouseClick);
             // 
@@ -722,6 +764,7 @@
             this.btxtCPF.Text = "CPF";
             this.btxtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btxtCPF.Enter += new System.EventHandler(this.PlaceHolder_Enter);
+            this.btxtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btxtCPF_KeyPress);
             this.btxtCPF.Leave += new System.EventHandler(this.PlaceHolder_Leave);
             // 
             // btxtEmail
@@ -762,7 +805,8 @@
             this.btxtTelefone.Text = "Telefone";
             this.btxtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btxtTelefone.Enter += new System.EventHandler(this.PlaceHolder_Enter);
-            this.btxtTelefone.Leave += new System.EventHandler(this.PlaceHolder_Leave);
+            this.btxtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btxtTelefone_KeyPress);
+            this.btxtTelefone.Leave += new System.EventHandler(this.btxtTelefone_Leave);
             // 
             // btxtNome
             // 
@@ -782,6 +826,7 @@
             this.btxtNome.Text = "Nome";
             this.btxtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btxtNome.Enter += new System.EventHandler(this.PlaceHolder_Enter);
+            this.btxtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btxtNome_KeyPress);
             this.btxtNome.Leave += new System.EventHandler(this.PlaceHolder_Leave);
             // 
             // Cliente
@@ -811,8 +856,6 @@
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnCliente;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuThinButton2 bbtnMinimizar;
         private Bunifu.Framework.UI.BunifuThinButton2 bbtnFechar;
@@ -820,11 +863,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_tit;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnHome;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnLogoff;
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnServiço;
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnPedido;
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnFuncionario;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
@@ -840,5 +879,11 @@
         private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
         private Bunifu.Framework.UI.BunifuDropdown bdropAtrib;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnAutoCadastro;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnClienteJu;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnHome;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnServiço;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnPedido;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnFuncionario;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnCliente;
     }
 }

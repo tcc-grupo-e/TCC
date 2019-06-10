@@ -58,6 +58,12 @@
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClienteJu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteJu.Designer.cs">
+      <DependentUpon>ClienteJu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteJu.resx">
+      <DependentUpon>ClienteJu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionario.resx">
       <DependentUpon>Funcionario.cs</DependentUpon>

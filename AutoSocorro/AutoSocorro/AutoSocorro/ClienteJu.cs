@@ -11,9 +11,9 @@ using BLL;
 
 namespace AutoSocorro
 {
-    public partial class Cliente : Form
+    public partial class ClienteJu : Form
     {
-        public Cliente()
+        public ClienteJu()
         {
             InitializeComponent();
         }
@@ -66,7 +66,7 @@ namespace AutoSocorro
         //
         //PlaceHolder
         //
-        String[] txt = { "Enviar", "Nome", "Email", "Telefone", "CPF" };
+        String[] txt = { "Enviar", "Nome", "Email", "Telefone", "CNPJ", "Inscrição Estadual"};
         private void PlaceHolder_Enter(object sender, EventArgs e)
         {
             Bunifu.Framework.UI.BunifuMetroTextbox btxt = (Bunifu.Framework.UI.BunifuMetroTextbox)sender;
@@ -89,10 +89,10 @@ namespace AutoSocorro
         private void Cliente_Load(object sender, EventArgs e)
         {
             bdropAtrib.selectedIndex = 0;
-            ClienteBLL cliBLL = new ClienteBLL();
+            EmpresaBLL cliBLL = new EmpresaBLL();
             try
             {
-                GridCliente.DataSource = cliBLL.pesquisarCli();
+                GridCliente.DataSource = cliBLL.pesquisarTodasEmpresas();
             }
             catch { }
         }
@@ -151,11 +151,12 @@ namespace AutoSocorro
 
         private void bbtnAutoCadastro_Click(object sender, EventArgs e)
         {
-            btxtNome.Text = "Lara Gomes Machado";
-            btxtEmail.Text = "Lara.Gomes@gmail.com";
-            btxtTelefone.Text = "(11)96758-3902";
-            btxtCPF.Text = "164.869.358-04";
-            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCPF.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
+            btxtNome.Text = "Acroni";
+            btxtEmail.Text = "contato@Acroni.com";
+            btxtTelefone.Text = "(11)97502-7389";
+            btxtCNPJ.Text = "65.567.325/0001-04";
+            btxtIE.Text = "396.638.830.393";
+            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCNPJ.ForeColor = btxtTelefone.ForeColor = btxtIE.ForeColor = Color.FromArgb(64, 64, 64);
         }
 
         //
@@ -189,23 +190,25 @@ namespace AutoSocorro
             }
             else
                 btxtTelefone.BorderColorIdle = Color.Red;
-            //CPF
-            if (cv.ValidaCPF(btxtCPF.Text))
+            //CNPJ
+            if (cv.ValidaCNPJ(btxtCNPJ.Text))
             {
                 i++;
-                btxtCPF.BorderColorIdle = Color.FromArgb(64, 64, 64);
+                btxtCNPJ.BorderColorIdle = Color.FromArgb(64, 64, 64);
             }
             else
-                btxtCPF.BorderColorIdle = Color.Red;
+                btxtCNPJ.BorderColorIdle = Color.Red;
+            //IE
+            i++;
             return i;
         }
 
         private void bbtnEnviar_Click(object sender, EventArgs e)
         {
-            if (validar() == 4)
+            if (validar() == 5)
             {
-                ClienteBLL cliBLL = new ClienteBLL();
-                if (cliBLL.inserirCli(btxtNome.Text, btxtEmail.Text, btxtTelefone.Text, btxtCPF.Text))
+                EmpresaBLL cliBLL = new EmpresaBLL();
+                if (cliBLL.inserirEmpresa(btxtNome.Text, btxtEmail.Text, btxtTelefone.Text, btxtCNPJ.Text, btxtIE.Text))
                 {
                     MensagemBLL mBLL = new MensagemBLL();
                     mBLL.setMensagem("Cliente Cadastrado com sucesso!");
@@ -233,18 +236,17 @@ namespace AutoSocorro
             }
         }
         bool alterar = false;
-        String codCpf = "";
+        String codCnpj = "";
         private void GridCliente_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCPF.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
+            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCNPJ.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
             int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
-            btxtNome.Text = GridCliente.Rows[Linha].Cells[0].Value.ToString();
-            btxtEmail.Text = GridCliente.Rows[Linha].Cells[2].Value.ToString();
-            btxtTelefone.Text = GridCliente.Rows[Linha].Cells[1].Value.ToString();
-            btxtCPF.Text = GridCliente.Rows[Linha].Cells[3].Value.ToString();
-            codCpf = btxtCPF.Text;
-            if (btxtCPF.Text.Equals("-"))
-                btxtCPF.Enabled = true;
+            btxtNome.Text = GridCliente.Rows[Linha].Cells["Nome"].Value.ToString();
+            btxtEmail.Text = GridCliente.Rows[Linha].Cells["E-Mail"].Value.ToString();
+            btxtTelefone.Text = GridCliente.Rows[Linha].Cells["Telefone"].Value.ToString();
+            btxtCNPJ.Text = GridCliente.Rows[Linha].Cells["CNPJ"].Value.ToString();
+            btxtIE.Text = GridCliente.Rows[Linha].Cells["IE"].Value.ToString();
+            codCnpj = btxtCNPJ.Text;
             alterar = true;
         }
 
@@ -261,10 +263,10 @@ namespace AutoSocorro
 
                 if (msBLL.getSN().Equals("S"))
                 {
-                    if (validar() == 4)
+                    if (validar() == 5)
                     {
-                        ClienteBLL cliBLL = new ClienteBLL();
-                        if (cliBLL.alterarCli(btxtNome.Text, btxtEmail.Text, btxtTelefone.Text, btxtCPF.Text, codCpf))
+                       EmpresaBLL cliBLL = new EmpresaBLL();
+                        if (cliBLL.alterarEmpresa(btxtNome.Text, btxtEmail.Text, btxtTelefone.Text, btxtCNPJ.Text, btxtIE.Text, codCnpj))
                         {
                             alterar = false;
                             MensagemBLL mBLL = new MensagemBLL();
@@ -318,7 +320,7 @@ namespace AutoSocorro
                 if (msBLL.getSN().Equals("S"))
                 {
                     ClienteBLL cliBLL = new ClienteBLL();
-                    if (cliBLL.deletarCli(codCpf))
+                    if (cliBLL.deletarCli(codCnpj))
                     {
                         alterar = false;
                         MensagemBLL mBLL = new MensagemBLL();
@@ -398,7 +400,7 @@ namespace AutoSocorro
             }
         }
 
-        private void bbtnClinteJu_Click(object sender, EventArgs e)
+        private void bbtnClienteJu_Click(object sender, EventArgs e)
         {
             ClienteJu clij = new ClienteJu();
             clij.Show();

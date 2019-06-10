@@ -65,6 +65,7 @@ public class ClasseConexao
             SqlDataAdapter adaptador = new SqlDataAdapter(comando_sql, conectar());
             DataSet ds = new DataSet();
             adaptador.Fill(ds);
+            
 
             if (!Ins)
                 return ds;

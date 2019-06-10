@@ -68,5 +68,17 @@ namespace AutoSocorro
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Pedidos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bbtnClienteJu_Click(object sender, EventArgs e)
+        {
+            ClienteJu clij = new ClienteJu();
+            clij.Show();
+            this.Hide();
+        }
     }
 }

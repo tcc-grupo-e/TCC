@@ -19,7 +19,7 @@ namespace DAL
 
             try
             {
-                cc.executa_sql(sql, true);
+                int a = cc.manutencao(sql);
                 return true;
             }
             catch
@@ -73,7 +73,7 @@ namespace DAL
 
             String sql = "";
 
-            sql = "Exec usp_procurarTodosFunc ";
+            sql = "Exec usp_procurarTodosFunc";
 
             try
             {

@@ -69,3 +69,10 @@ C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\BLL.pdb
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.dll
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.pdb
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.csproj.CopyComplete
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\BLL.dll
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\BLL.pdb
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.dll
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.pdb
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.dll
+G:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.pdb

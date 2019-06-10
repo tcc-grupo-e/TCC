@@ -569,6 +569,23 @@ namespace AutoSocorro
             y = 0;
         }
 
+        private void bbtnNovoPed_Click(object sender, EventArgs e)
+        {
+            bbtnPedido_Click(sender, e);
+        }
+
+        private void bbtnClienteJuridico_Click(object sender, EventArgs e)
+        {
+            ClienteJu clij = new ClienteJu();
+            clij.Show();
+            this.Hide();
+        }
+
+        private void bbtnServiço_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lblDayz_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;

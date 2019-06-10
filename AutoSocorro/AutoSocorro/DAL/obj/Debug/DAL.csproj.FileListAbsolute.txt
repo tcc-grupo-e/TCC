@@ -47,3 +47,8 @@ C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.cspr
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb
+G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.dll
+G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.pdb
+G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
+G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb
