@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bbtnMinimizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bbtnFechar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -63,6 +63,7 @@
             this.btxtEmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btxtTelefone = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btxtNome = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -453,6 +454,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.bbtnCancelar);
             this.panel4.Controls.Add(this.bbtnLimpar);
             this.panel4.Controls.Add(this.bbtnAlterar);
             this.panel4.Controls.Add(this.bbtnAutoCadastro);
@@ -491,7 +493,7 @@
             this.bbtnLimpar.IconVisible = true;
             this.bbtnLimpar.IconZoom = 40D;
             this.bbtnLimpar.IsTab = false;
-            this.bbtnLimpar.Location = new System.Drawing.Point(277, 330);
+            this.bbtnLimpar.Location = new System.Drawing.Point(275, 330);
             this.bbtnLimpar.Name = "bbtnLimpar";
             this.bbtnLimpar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnLimpar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -620,57 +622,57 @@
             this.GridCliente.AllowUserToDeleteRows = false;
             this.GridCliente.AllowUserToResizeColumns = false;
             this.GridCliente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.NullValue = "\"\"";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.NullValue = "\"\"";
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle13;
             this.GridCliente.EnableHeadersVisualStyles = false;
             this.GridCliente.GridColor = System.Drawing.Color.White;
             this.GridCliente.Location = new System.Drawing.Point(48, 23);
             this.GridCliente.MultiSelect = false;
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.GridCliente.RowHeadersVisible = false;
             this.GridCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.GridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridCliente.Size = new System.Drawing.Size(541, 214);
             this.GridCliente.TabIndex = 9;
@@ -829,6 +831,43 @@
             this.btxtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btxtNome_KeyPress);
             this.btxtNome.Leave += new System.EventHandler(this.PlaceHolder_Leave);
             // 
+            // bbtnCancelar
+            // 
+            this.bbtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnCancelar.BorderRadius = 0;
+            this.bbtnCancelar.ButtonText = "Cancelar";
+            this.bbtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnCancelar.Enabled = false;
+            this.bbtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCancelar.Iconimage")));
+            this.bbtnCancelar.Iconimage_right = null;
+            this.bbtnCancelar.Iconimage_right_Selected = null;
+            this.bbtnCancelar.Iconimage_Selected = null;
+            this.bbtnCancelar.IconMarginLeft = 17;
+            this.bbtnCancelar.IconMarginRight = 0;
+            this.bbtnCancelar.IconRightVisible = true;
+            this.bbtnCancelar.IconRightZoom = 0D;
+            this.bbtnCancelar.IconVisible = true;
+            this.bbtnCancelar.IconZoom = 45D;
+            this.bbtnCancelar.IsTab = false;
+            this.bbtnCancelar.Location = new System.Drawing.Point(734, 330);
+            this.bbtnCancelar.Name = "bbtnCancelar";
+            this.bbtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnCancelar.selected = false;
+            this.bbtnCancelar.Size = new System.Drawing.Size(203, 48);
+            this.bbtnCancelar.TabIndex = 157;
+            this.bbtnCancelar.Text = "Cancelar";
+            this.bbtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnCancelar.Textcolor = System.Drawing.Color.White;
+            this.bbtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnCancelar.Visible = false;
+            this.bbtnCancelar.Click += new System.EventHandler(this.bbtnCancelar_Click);
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -885,5 +924,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bbtnPedido;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnFuncionario;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCliente;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnCancelar;
     }
 }

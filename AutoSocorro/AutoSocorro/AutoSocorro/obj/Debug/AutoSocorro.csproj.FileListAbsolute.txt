@@ -247,3 +247,5 @@ G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Pedi
 G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Properties.Resources.resources
 G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.csproj.GenerateResource.Cache
 G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.ClienteJu.resources
+C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.ClienteJu.resources
+C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Pedidos2.resources

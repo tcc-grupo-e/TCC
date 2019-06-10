@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteJu));
             this.bdropAtrib = new Bunifu.Framework.UI.BunifuDropdown();
             this.GridCliente = new System.Windows.Forms.DataGridView();
@@ -41,14 +41,19 @@
             this.btxtTelefone = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btxtNome = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btxtIE = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_tit = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bbtnLimpar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnAlterar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnAutoCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.bbtnDeletar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnEnviar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.bbtnClienteJu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnServiço = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -56,20 +61,16 @@
             this.bbtnFuncionario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lbl_tit = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.bbtnMinimizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bbtnFechar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.btxtIE = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bdropAtrib
@@ -102,57 +103,57 @@
             this.GridCliente.AllowUserToDeleteRows = false;
             this.GridCliente.AllowUserToResizeColumns = false;
             this.GridCliente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.NullValue = "\"\"";
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.NullValue = "\"\"";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle3;
             this.GridCliente.EnableHeadersVisualStyles = false;
             this.GridCliente.GridColor = System.Drawing.Color.White;
             this.GridCliente.Location = new System.Drawing.Point(48, 23);
             this.GridCliente.MultiSelect = false;
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridCliente.RowHeadersVisible = false;
             this.GridCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridCliente.Size = new System.Drawing.Size(571, 214);
             this.GridCliente.TabIndex = 9;
@@ -241,6 +242,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.bbtnCancelar);
             this.panel4.Controls.Add(this.btxtIE);
             this.panel4.Controls.Add(this.bbtnLimpar);
             this.panel4.Controls.Add(this.bbtnAlterar);
@@ -258,6 +260,99 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(985, 430);
             this.panel4.TabIndex = 152;
+            // 
+            // btxtIE
+            // 
+            this.btxtIE.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.btxtIE.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btxtIE.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.btxtIE.BorderThickness = 1;
+            this.btxtIE.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.btxtIE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btxtIE.ForeColor = System.Drawing.Color.DarkGray;
+            this.btxtIE.isPassword = false;
+            this.btxtIE.Location = new System.Drawing.Point(634, 251);
+            this.btxtIE.Margin = new System.Windows.Forms.Padding(4);
+            this.btxtIE.Name = "btxtIE";
+            this.btxtIE.Size = new System.Drawing.Size(303, 44);
+            this.btxtIE.TabIndex = 6;
+            this.btxtIE.Text = "Inscrição Estadual";
+            this.btxtIE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btxtIE.Enter += new System.EventHandler(this.PlaceHolder_Enter);
+            this.btxtIE.Leave += new System.EventHandler(this.PlaceHolder_Leave);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(213, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(985, 72);
+            this.label1.TabIndex = 150;
+            this.label1.Text = "Clientes Jurídicos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.bbtnClienteJu);
+            this.panel3.Controls.Add(this.bbtnHome);
+            this.panel3.Controls.Add(this.bbtnServiço);
+            this.panel3.Controls.Add(this.bbtnPedido);
+            this.panel3.Controls.Add(this.bbtnFuncionario);
+            this.panel3.Controls.Add(this.bbtnCliente);
+            this.panel3.Controls.Add(this.bbtnLogoff);
+            this.panel3.Location = new System.Drawing.Point(0, 92);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(213, 505);
+            this.panel3.TabIndex = 149;
+            // 
+            // lbl_tit
+            // 
+            this.lbl_tit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.lbl_tit.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tit.ForeColor = System.Drawing.Color.White;
+            this.lbl_tit.Location = new System.Drawing.Point(203, 0);
+            this.lbl_tit.Name = "lbl_tit";
+            this.lbl_tit.Size = new System.Drawing.Size(995, 92);
+            this.lbl_tit.TabIndex = 0;
+            this.lbl_tit.Text = "Auto Socorro";
+            this.lbl_tit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 92);
+            this.panel2.TabIndex = 8970;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.bbtnMinimizar);
+            this.panel1.Controls.Add(this.bbtnFechar);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lbl_tit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1198, 92);
+            this.panel1.TabIndex = 148;
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(213, 149);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(985, 35);
+            this.bunifuSeparator1.TabIndex = 151;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
             // 
             // bbtnLimpar
             // 
@@ -280,7 +375,7 @@
             this.bbtnLimpar.IconVisible = true;
             this.bbtnLimpar.IconZoom = 40D;
             this.bbtnLimpar.IsTab = false;
-            this.bbtnLimpar.Location = new System.Drawing.Point(277, 329);
+            this.bbtnLimpar.Location = new System.Drawing.Point(279, 330);
             this.bbtnLimpar.Name = "bbtnLimpar";
             this.bbtnLimpar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnLimpar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -450,33 +545,6 @@
             this.bbtnEnviar.Textcolor = System.Drawing.Color.White;
             this.bbtnEnviar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnEnviar.Click += new System.EventHandler(this.bbtnEnviar_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(213, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(985, 72);
-            this.label1.TabIndex = 150;
-            this.label1.Text = "Clientes Jurídicos";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.panel3.Controls.Add(this.bbtnClienteJu);
-            this.panel3.Controls.Add(this.bbtnHome);
-            this.panel3.Controls.Add(this.bbtnServiço);
-            this.panel3.Controls.Add(this.bbtnPedido);
-            this.panel3.Controls.Add(this.bbtnFuncionario);
-            this.panel3.Controls.Add(this.bbtnCliente);
-            this.panel3.Controls.Add(this.bbtnLogoff);
-            this.panel3.Location = new System.Drawing.Point(0, 92);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(213, 505);
-            this.panel3.TabIndex = 149;
             // 
             // bbtnClienteJu
             // 
@@ -722,50 +790,6 @@
             this.bbtnLogoff.Textcolor = System.Drawing.Color.White;
             this.bbtnLogoff.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // lbl_tit
-            // 
-            this.lbl_tit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.lbl_tit.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tit.ForeColor = System.Drawing.Color.White;
-            this.lbl_tit.Location = new System.Drawing.Point(203, 0);
-            this.lbl_tit.Name = "lbl_tit";
-            this.lbl_tit.Size = new System.Drawing.Size(995, 92);
-            this.lbl_tit.TabIndex = 0;
-            this.lbl_tit.Text = "Auto Socorro";
-            this.lbl_tit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 92);
-            this.panel2.TabIndex = 8970;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AutoSocorro.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.panel1.Controls.Add(this.bbtnMinimizar);
-            this.panel1.Controls.Add(this.bbtnFechar);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lbl_tit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1198, 92);
-            this.panel1.TabIndex = 148;
-            // 
             // bbtnMinimizar
             // 
             this.bbtnMinimizar.ActiveBorderThickness = 1;
@@ -818,37 +842,52 @@
             this.bbtnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnFechar.Click += new System.EventHandler(this.bbtnFechar_Click);
             // 
-            // bunifuSeparator1
+            // pictureBox1
             // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(213, 149);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(985, 35);
-            this.bunifuSeparator1.TabIndex = 151;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
+            this.pictureBox1.Image = global::AutoSocorro.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // btxtIE
+            // bbtnCancelar
             // 
-            this.btxtIE.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.btxtIE.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btxtIE.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.btxtIE.BorderThickness = 1;
-            this.btxtIE.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btxtIE.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btxtIE.ForeColor = System.Drawing.Color.DarkGray;
-            this.btxtIE.isPassword = false;
-            this.btxtIE.Location = new System.Drawing.Point(634, 251);
-            this.btxtIE.Margin = new System.Windows.Forms.Padding(4);
-            this.btxtIE.Name = "btxtIE";
-            this.btxtIE.Size = new System.Drawing.Size(303, 44);
-            this.btxtIE.TabIndex = 6;
-            this.btxtIE.Text = "Inscrição Estadual";
-            this.btxtIE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btxtIE.Enter += new System.EventHandler(this.PlaceHolder_Enter);
-            this.btxtIE.Leave += new System.EventHandler(this.PlaceHolder_Leave);
+            this.bbtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnCancelar.BorderRadius = 0;
+            this.bbtnCancelar.ButtonText = "Cancelar";
+            this.bbtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnCancelar.Enabled = false;
+            this.bbtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCancelar.Iconimage")));
+            this.bbtnCancelar.Iconimage_right = null;
+            this.bbtnCancelar.Iconimage_right_Selected = null;
+            this.bbtnCancelar.Iconimage_Selected = null;
+            this.bbtnCancelar.IconMarginLeft = 17;
+            this.bbtnCancelar.IconMarginRight = 0;
+            this.bbtnCancelar.IconRightVisible = true;
+            this.bbtnCancelar.IconRightZoom = 0D;
+            this.bbtnCancelar.IconVisible = true;
+            this.bbtnCancelar.IconZoom = 45D;
+            this.bbtnCancelar.IsTab = false;
+            this.bbtnCancelar.Location = new System.Drawing.Point(734, 330);
+            this.bbtnCancelar.Name = "bbtnCancelar";
+            this.bbtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnCancelar.selected = false;
+            this.bbtnCancelar.Size = new System.Drawing.Size(203, 48);
+            this.bbtnCancelar.TabIndex = 158;
+            this.bbtnCancelar.Text = "Cancelar";
+            this.bbtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnCancelar.Textcolor = System.Drawing.Color.White;
+            this.bbtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnCancelar.Visible = false;
+            this.bbtnCancelar.Click += new System.EventHandler(this.bbtnCancelar_Click);
             // 
             // ClienteJu
             // 
@@ -864,12 +903,13 @@
             this.Name = "ClienteJu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClienteJu";
+            this.Load += new System.EventHandler(this.Cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -906,5 +946,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuMetroTextbox btxtIE;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnCancelar;
     }
 }

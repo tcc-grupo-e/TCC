@@ -95,6 +95,16 @@ namespace AutoSocorro
                 GridCliente.DataSource = cliBLL.pesquisarTodasEmpresas();
             }
             catch { }
+            PedidosBLL peBLL = new PedidosBLL();
+            if (peBLL.getNovoCadastro().Equals("S"))
+            {
+                peBLL.setNovoCadastro("");
+                bbtnAlterar.Visible = false;
+                bbtnDeletar.Visible = false;
+                bbtnLimpar.Location = new Point(415, 330);
+                bbtnCancelar.Visible = true;
+                bbtnCancelar.Enabled = true;
+            }
         }
 
         private void btxtConsultar_Leave(object sender, EventArgs e)
@@ -216,6 +226,14 @@ namespace AutoSocorro
                     Mensagem ms = new Mensagem();
                     ms.ShowDialog();
                     bbtnLimpar_Click(sender, e);
+                    PedidosBLL peBLL = new PedidosBLL();
+                    if (peBLL.getNovoCadastro().Equals("S"))
+                    {
+                        peBLL.setNovoCadastro("");
+                        Pedidos2 pe2 = new Pedidos2();
+                        pe2.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
@@ -405,6 +423,11 @@ namespace AutoSocorro
             ClienteJu clij = new ClienteJu();
             clij.Show();
             this.Hide();
+        }
+
+        private void bbtnCancelar_Click(object sender, EventArgs e)
+        {
+            bbtnPedido_Click(sender, e);
         }
     }
 }

@@ -11,9 +11,9 @@ using BLL;
 
 namespace AutoSocorro
 {
-    public partial class Pedidos : Form
+    public partial class Pedidos2 : Form
     {
-        public Pedidos()
+        public Pedidos2()
         {
             InitializeComponent();
         }
@@ -72,12 +72,7 @@ namespace AutoSocorro
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
-            PedidosBLL peBLL = new PedidosBLL();
-            try
-            {
-                GridCliente.DataSource = peBLL.pesquisar_Todos_Clientes().DefaultView;
-            }
-            catch { }
+           
         }
 
         private void bbtnClienteJu_Click(object sender, EventArgs e)
@@ -92,20 +87,6 @@ namespace AutoSocorro
             bbtnHome_Click(sender, e);
         }
 
-        private void bbtnCadastroCliF_Click(object sender, EventArgs e)
-        {
-            PedidosBLL peBLL = new PedidosBLL();
-            peBLL.setNovoCadastro("S");
-            bbtnCliente_Click(sender, e);
-        }
-
-        private void bbtnCadastroCliJ_Click(object sender, EventArgs e)
-        {
-            PedidosBLL peBLL = new PedidosBLL();
-            peBLL.setNovoCadastro("S");
-            bbtnClienteJu_Click(sender, e);
-        }
-
         private void bbtnContinuar_Click(object sender, EventArgs e)
         {
             Pedidos2 pe2 = new Pedidos2();
@@ -117,43 +98,6 @@ namespace AutoSocorro
         {
             Adicionais ad = new Adicionais();
             ad.Show();
-            this.Hide();
-        }
-
-        private void btxtConsultar_OnTextChange(object sender, EventArgs e)
-        {
-            PedidosBLL peBLL = new PedidosBLL();
-            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Consultar"))
-            {
-                try
-                {
-                    GridCliente.DataSource = peBLL.pesquisar_Clientes_Nome(btxtConsultar.Text);
-                }
-                catch { }
-            }
-        }
-
-        private void btxtConsultar_Leave(object sender, EventArgs e)
-        {
-            if (btxtConsultar.text.Equals(""))
-                btxtConsultar.text = "Nome Cliente";
-        }
-
-        private void btxtConsultar_Enter(object sender, EventArgs e)
-        {
-            if (btxtConsultar.text.Equals("Nome Cliente"))
-                btxtConsultar.text = "";
-        }
-
-        private void GridCliente_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
-            String Nome = GridCliente.Rows[Linha].Cells["Nome"].Value.ToString();
-            PedidosBLL peBLL = new PedidosBLL();
-            int ID = peBLL.pesquisar_Id_Clientes_Nome(Nome);
-            peBLL.setIdCliente(ID);
-            Pedidos2 pe2 = new Pedidos2();
-            pe2.Show();
             this.Hide();
         }
     }

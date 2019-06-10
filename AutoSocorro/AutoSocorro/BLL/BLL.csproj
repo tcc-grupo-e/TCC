@@ -46,6 +46,7 @@
     <Compile Include="FuncionarioBLL.cs" />
     <Compile Include="LoginBLL.cs" />
     <Compile Include="MensagemBLL.cs" />
+    <Compile Include="PedidosBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -46,6 +46,7 @@
     <Compile Include="EmpresaDAL.cs" />
     <Compile Include="FuncionarioDAL.cs" />
     <Compile Include="LoginDAL.cs" />
+    <Compile Include="PedidosDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
