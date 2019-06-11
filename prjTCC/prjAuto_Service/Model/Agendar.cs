@@ -180,6 +180,40 @@ namespace prjAuto_Service.Model
 
         #endregion MODELO RETIRADA
 
+        #region MODELO DESTINO
+
+        private static string endereco_destino, referencia_destino, ordem;
+
+        public string getEnderecoDestino()
+        {
+            return endereco_destino;
+        }
+        public void setEnderecoDestino(string val)
+        {
+            endereco_destino = val;
+        }
+
+        public string getReferenciaDestino()
+        {
+            return referencia_destino;
+        }
+        public void setReferenciaDestino(string val)
+        {
+            referencia_destino = val;
+        }
+
+        public string getOrdem()
+        {
+            return ordem;
+        }
+        public void setOrdem(string val)
+        {
+            ordem = val;
+        }
+        
+
+        #endregion MODELO DESTINO
+
 
 
     }

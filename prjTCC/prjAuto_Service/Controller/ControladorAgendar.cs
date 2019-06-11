@@ -59,5 +59,14 @@ namespace prjAuto_Service.Controller
         #endregion Insere Retirada
 
 
+        #region Insere Destino
+        public void inserirDestino(Model.Agendar agen)
+        {
+            String sql = "Exec usp_InserirDes '" + agen.getReferenciaDestino() + "','" + agen.getEnderecoDestino() + "','" + agen.getOrdem() + "'";
+            con = new ClasseConexao();
+            con.executa_sql(sql);
+        }
+        #endregion Insere Destino
+
     }
 }

@@ -124,10 +124,16 @@ namespace prjAuto_Service
             agendar.setEndereco("");
             agendar.setReferencia("");
 
+
+            agendar.setEnderecoDestino("");
+            agendar.setReferenciaDestino("");
+            agendar.setOrdem("");
+
             control.inserirCliente(agendar);
             control.inserirAbertura(agendar);
             control.inserirAcessorio(agendar);
             control.inserirRetirada(agendar);
+            control.inserirDestino(agendar);
 
 
         }
