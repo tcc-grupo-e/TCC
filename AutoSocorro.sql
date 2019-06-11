@@ -44,7 +44,7 @@ create table Abertura (
 	Cor varchar(10),
 	Ano varchar(4),
 	Placa varchar(8),
-	Local_Retirada varchar(255),
+	Local_Retirada varchar(255),--mata
 	KM_Saida varchar(7),
 	Hora_Saida varchar(5),
 	Observacao text 
@@ -69,7 +69,7 @@ create table Fechamento (
 	Cor varchar(10),
 	Ano varchar(4),
 	Placa varchar(8),
-	Local_Retirada varchar(255),
+	Local_Retirada varchar(255),--mata
 	KM_Saida varchar(7),
 	Hora_Saida varchar(5),
 	Observacao text,

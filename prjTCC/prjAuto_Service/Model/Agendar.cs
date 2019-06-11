@@ -73,7 +73,7 @@ namespace prjAuto_Service.Model
 
         #region MODELO ABERTURA
 
-        private static string marca, modelo, cor, ano, placa, retirada;
+        private static string marca, modelo, cor, ano, placa;
 
         public string getMarca()
         {
@@ -120,14 +120,7 @@ namespace prjAuto_Service.Model
             placa = val;
         }
 
-        public string getRetirada()
-        {
-            return retirada;
-        }
-        public void setRetirada(string val)
-        {
-            retirada = val;
-        }
+        
 
         #endregion MODELO ABERTURA
 
@@ -163,6 +156,29 @@ namespace prjAuto_Service.Model
         }
         #endregion MODELO ACESSORIOS
 
+        #region MODELO RETIRADA
+
+        private static string endereco, referencia;
+
+        public string getEndereco()
+        {
+            return endereco;
+        }
+        public void setEndereco(string val)
+        {
+            endereco = val;
+        }
+
+        public string getReferencia()
+        {
+            return referencia;
+        }
+        public void setReferencia(string val)
+        {
+            referencia = val;
+        }
+
+        #endregion MODELO RETIRADA
 
 
 

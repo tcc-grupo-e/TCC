@@ -34,7 +34,7 @@ namespace prjAuto_Service.Controller
         #region Insere Abertura
         public void inserirAbertura(Model.Agendar agen)
         {
-            String sql = "Exec usp_InserirAber '" + agen.getAno() + "','" + agen.getCor() + "','" + agen.getModelo() + "','" + agen.getMarca() + "','" + agen.getPlaca() + "','" + agen.getRetirada() + "'";
+            String sql = "Exec usp_InserirAber '" + agen.getAno() + "','" + agen.getCor() + "','" + agen.getModelo() + "','" + agen.getMarca() + "','" + agen.getPlaca() + "'";
             con = new ClasseConexao();
             con.executa_sql(sql);
         }
@@ -48,6 +48,15 @@ namespace prjAuto_Service.Controller
             con.executa_sql(sql);
         }
         #endregion Insere Acessorio
+
+        #region Insere Retirada
+        public void inserirRetirada(Model.Agendar agen)
+        {
+            String sql = "Exec usp_InserirRet '" + agen.getReferencia() + "','" + agen.getEndereco() + "'";
+            con = new ClasseConexao();
+            con.executa_sql(sql);
+        }
+        #endregion Insere Retirada
 
 
     }

@@ -115,15 +115,19 @@ namespace prjAuto_Service
             agendar.setModelo("");
             agendar.setMarca("");
             agendar.setPlaca("");
-            agendar.setRetirada("");
+            
 
             agendar.setNomeAcessorio("");
             agendar.setEstado("");
             agendar.setComentario("");
 
+            agendar.setEndereco("");
+            agendar.setReferencia("");
+
             control.inserirCliente(agendar);
             control.inserirAbertura(agendar);
             control.inserirAcessorio(agendar);
+            control.inserirRetirada(agendar);
 
 
         }
