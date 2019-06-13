@@ -70,6 +70,7 @@ namespace AutoSocorro
                 LoginBLL loBLL = new LoginBLL();
                 //Verifica o Login e a Senha
                 int log = loBLL.buscarUsuarios(btxtLogin.Text, criptografarSenha(btxtSenha.Text));
+
                 if (log != 0)
                 {
                     if (log == 1)

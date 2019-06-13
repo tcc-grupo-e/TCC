@@ -16,7 +16,8 @@ class ClasseValida
     {
         if (Texto.Equals("") || Texto.Equals("Cargo"))
             return false;
-        else {
+        else
+        {
             if (Texto.Equals("Motorista") || Texto.Equals("Atendente") || Texto.Equals("Gerente"))
             {
                 return true;
@@ -26,6 +27,79 @@ class ClasseValida
                 return false;
             }
         }
+    }
+
+    public Boolean ValidaLocal(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Local Retirada"))
+            return false;
+        else
+            return true;
+    }
+
+    public Boolean ValidaPreco(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Preço"))
+            return false;
+        else
+            return true;
+    }
+
+    public Boolean ValidaMarca(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Marca"))
+            return false;
+        else
+            return true;
+    }
+
+    public Boolean ValidaCor(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Cor"))
+            return false;
+        else
+            return true;
+    }
+
+    public Boolean ValidaModelo(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Modelo"))
+            return false;
+        else
+            return true;
+    }
+
+    public Boolean ValidaAno(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Ano"))
+            return false;
+        else
+        {
+            if (Texto.Length == 4)
+                return true;
+            else
+                return false;                
+        }
+    }
+
+    public Boolean ValidaHora(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Hora Saída"))
+            return false;
+        else
+        {
+            if (Texto.Contains(":") && Texto.Length == 5)
+                return true;
+            else
+                return false;
+        }
+    }
+
+    public Boolean ValidaKm(String Texto)
+    {
+        if (Texto.Equals("") || Texto.Equals("Km Saída"))
+            return false;
+        return true;
     }
 
     public Boolean ValidaEstadoCivil(String Texto)
@@ -47,7 +121,7 @@ class ClasseValida
 
     public Boolean ValidaSalário(String Texto)
     {
-        return true;            
+        return true;
     }
 
     public Boolean ValidaCarteira(String Texto)
@@ -259,7 +333,7 @@ class ClasseValida
 
     public Boolean ValidaNome(String Nome)
     {
-        if (Nome.Length < 3 || Nome.Equals("Nome") || Nome.Equals("Nome do conjuge")) 
+        if (Nome.Length < 3 || Nome.Equals("Nome") || Nome.Equals("Nome do conjuge"))
         {
             return false;
         }
@@ -273,7 +347,7 @@ class ClasseValida
     {
         Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
-        if (rg.IsMatch(Email) )
+        if (rg.IsMatch(Email))
         {
             return true;
         }
@@ -285,7 +359,7 @@ class ClasseValida
 
     public Boolean ValidaCelular(String Celular)
     {
-        Celular = Celular.Replace("(","");
+        Celular = Celular.Replace("(", "");
         Celular = Celular.Replace(")", "");
         Celular = Celular.Replace("-", "");
         if (Celular.Length != 11)
@@ -315,7 +389,7 @@ class ClasseValida
 
     public Boolean ValidaRG(String RG)
     {
-        RG = RG.Replace(".","");
+        RG = RG.Replace(".", "");
         RG = RG.Replace("-", "");
         if (RG.Length < 5)
         {
@@ -373,7 +447,7 @@ class ClasseValida
         try
         {
             Regex Rgx = new Regex(@"^\d{5}-\d{3}$");
-            
+
             if (!Rgx.IsMatch(CEP))
                 return false;
             else
@@ -382,7 +456,7 @@ class ClasseValida
             //var ws = new AutoSocorro.ValCep.AtendeClienteClient();
             //var resposta = ws.consultaCEP(CEP);
         }
-        catch 
+        catch
         {
             return false;
         }

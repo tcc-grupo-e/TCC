@@ -586,6 +586,13 @@ namespace AutoSocorro
 
         }
 
+        private void bbtnChamadas_Click(object sender, EventArgs e)
+        {
+            PedidosGrid pegrid = new PedidosGrid();
+            pegrid.Show();
+            this.Hide();
+        }
+
         private void lblDayz_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;

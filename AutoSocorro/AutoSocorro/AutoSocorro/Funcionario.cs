@@ -273,7 +273,7 @@ namespace AutoSocorro
                 if (funcBLL.inserirFunc(btxtNome.Text, btxtEmail.Text, btxtRG.Text, btxtCEP.Text, btxtEnd.Text, btxtCidade.Text, bdropUF.selectedValue, bDataNasc.Value.ToString().Substring(0, 10), btxtTel.Text, btxtCNH.Text, btxtEstadoCivil.Text, nomec, btxtSalario.Text, bDropCargo.selectedValue, telc, btxtCarteira.Text, btxtNome.Text, senha))
                 {
                     MensagemBLL mBLL = new MensagemBLL();
-                    mBLL.setMensagem("Funcionário Cadastrado com sucesso!");
+                    mBLL.setMensagem("Funcionário Cadastrado Com Sucesso!");
                     mBLL.setTitulo("Mensagem");
                     Mensagem ms = new Mensagem();
                     ms.ShowDialog();

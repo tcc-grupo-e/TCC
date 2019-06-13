@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos2));
-            this.bdropAtrib = new Bunifu.Framework.UI.BunifuDropdown();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.GridCliente = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbl_tit = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bbtnCadastroCliF = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bbtnContinuar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.bbtnClienteJu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -53,38 +44,22 @@
             this.bbtnPedido = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnFuncionario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bbtnCadastroCliJ = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lbl_tit = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bbtnMinimizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bbtnFechar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
+            this.bbtnContinuar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
+            this.GridMotorista = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridMotorista)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bdropAtrib
-            // 
-            this.bdropAtrib.BackColor = System.Drawing.Color.Transparent;
-            this.bdropAtrib.BorderRadius = 20;
-            this.bdropAtrib.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdropAtrib.ForeColor = System.Drawing.Color.White;
-            this.bdropAtrib.Items = new string[] {
-        "Todos",
-        "Nome",
-        "Email",
-        "Telefone",
-        "CNPJ",
-        "IE"};
-            this.bdropAtrib.Location = new System.Drawing.Point(237, 185);
-            this.bdropAtrib.Margin = new System.Windows.Forms.Padding(0);
-            this.bdropAtrib.Name = "bdropAtrib";
-            this.bdropAtrib.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bdropAtrib.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bdropAtrib.selectedIndex = -1;
-            this.bdropAtrib.Size = new System.Drawing.Size(276, 44);
-            this.bdropAtrib.TabIndex = 168;
             // 
             // label1
             // 
@@ -95,7 +70,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(985, 72);
             this.label1.TabIndex = 165;
-            this.label1.Text = "O Cliente já é cadastrado ? ";
+            this.label1.Text = "Motorista ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuSeparator1
@@ -109,67 +84,6 @@
             this.bunifuSeparator1.TabIndex = 166;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
-            // 
-            // GridCliente
-            // 
-            this.GridCliente.AllowUserToAddRows = false;
-            this.GridCliente.AllowUserToDeleteRows = false;
-            this.GridCliente.AllowUserToResizeColumns = false;
-            this.GridCliente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.NullValue = "\"\"";
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.DefaultCellStyle = dataGridViewCellStyle8;
-            this.GridCliente.EnableHeadersVisualStyles = false;
-            this.GridCliente.GridColor = System.Drawing.Color.White;
-            this.GridCliente.Location = new System.Drawing.Point(530, 185);
-            this.GridCliente.MultiSelect = false;
-            this.GridCliente.Name = "GridCliente";
-            this.GridCliente.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.GridCliente.RowHeadersVisible = false;
-            this.GridCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridCliente.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.GridCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridCliente.Size = new System.Drawing.Size(638, 279);
-            this.GridCliente.TabIndex = 164;
             // 
             // panel3
             // 
@@ -185,156 +99,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 163;
-            // 
-            // lbl_tit
-            // 
-            this.lbl_tit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.lbl_tit.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tit.ForeColor = System.Drawing.Color.White;
-            this.lbl_tit.Location = new System.Drawing.Point(203, 0);
-            this.lbl_tit.Name = "lbl_tit";
-            this.lbl_tit.Size = new System.Drawing.Size(995, 92);
-            this.lbl_tit.TabIndex = 0;
-            this.lbl_tit.Text = "Auto Socorro";
-            this.lbl_tit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 92);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.panel1.Controls.Add(this.bbtnMinimizar);
-            this.panel1.Controls.Add(this.bbtnFechar);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lbl_tit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1198, 92);
-            this.panel1.TabIndex = 162;
-            // 
-            // bbtnCadastroCliF
-            // 
-            this.bbtnCadastroCliF.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCadastroCliF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCadastroCliF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnCadastroCliF.BorderRadius = 0;
-            this.bbtnCadastroCliF.ButtonText = "Novo Cliente Físico";
-            this.bbtnCadastroCliF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnCadastroCliF.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnCadastroCliF.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnCadastroCliF.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCadastroCliF.Iconimage")));
-            this.bbtnCadastroCliF.Iconimage_right = null;
-            this.bbtnCadastroCliF.Iconimage_right_Selected = null;
-            this.bbtnCadastroCliF.Iconimage_Selected = null;
-            this.bbtnCadastroCliF.IconMarginLeft = 0;
-            this.bbtnCadastroCliF.IconMarginRight = 0;
-            this.bbtnCadastroCliF.IconRightVisible = true;
-            this.bbtnCadastroCliF.IconRightZoom = 0D;
-            this.bbtnCadastroCliF.IconVisible = true;
-            this.bbtnCadastroCliF.IconZoom = 40D;
-            this.bbtnCadastroCliF.IsTab = false;
-            this.bbtnCadastroCliF.Location = new System.Drawing.Point(477, 520);
-            this.bbtnCadastroCliF.Name = "bbtnCadastroCliF";
-            this.bbtnCadastroCliF.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCadastroCliF.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnCadastroCliF.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnCadastroCliF.selected = false;
-            this.bbtnCadastroCliF.Size = new System.Drawing.Size(203, 48);
-            this.bbtnCadastroCliF.TabIndex = 172;
-            this.bbtnCadastroCliF.Text = "Novo Cliente Físico";
-            this.bbtnCadastroCliF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnCadastroCliF.Textcolor = System.Drawing.Color.White;
-            this.bbtnCadastroCliF.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bbtnContinuar
-            // 
-            this.bbtnContinuar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnContinuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnContinuar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnContinuar.BorderRadius = 0;
-            this.bbtnContinuar.ButtonText = "Continuar";
-            this.bbtnContinuar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnContinuar.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnContinuar.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnContinuar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnContinuar.Iconimage")));
-            this.bbtnContinuar.Iconimage_right = null;
-            this.bbtnContinuar.Iconimage_right_Selected = null;
-            this.bbtnContinuar.Iconimage_Selected = null;
-            this.bbtnContinuar.IconMarginLeft = 17;
-            this.bbtnContinuar.IconMarginRight = 0;
-            this.bbtnContinuar.IconRightVisible = true;
-            this.bbtnContinuar.IconRightZoom = 0D;
-            this.bbtnContinuar.IconVisible = true;
-            this.bbtnContinuar.IconZoom = 40D;
-            this.bbtnContinuar.IsTab = false;
-            this.bbtnContinuar.Location = new System.Drawing.Point(965, 520);
-            this.bbtnContinuar.Name = "bbtnContinuar";
-            this.bbtnContinuar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnContinuar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnContinuar.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnContinuar.selected = false;
-            this.bbtnContinuar.Size = new System.Drawing.Size(203, 48);
-            this.bbtnContinuar.TabIndex = 170;
-            this.bbtnContinuar.Text = "Continuar";
-            this.bbtnContinuar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnContinuar.Textcolor = System.Drawing.Color.White;
-            this.bbtnContinuar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bbtnCancelar
-            // 
-            this.bbtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnCancelar.BorderRadius = 0;
-            this.bbtnCancelar.ButtonText = "Cancelar";
-            this.bbtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnCancelar.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCancelar.Iconimage")));
-            this.bbtnCancelar.Iconimage_right = null;
-            this.bbtnCancelar.Iconimage_right_Selected = null;
-            this.bbtnCancelar.Iconimage_Selected = null;
-            this.bbtnCancelar.IconMarginLeft = 17;
-            this.bbtnCancelar.IconMarginRight = 0;
-            this.bbtnCancelar.IconRightVisible = true;
-            this.bbtnCancelar.IconRightZoom = 0D;
-            this.bbtnCancelar.IconVisible = true;
-            this.bbtnCancelar.IconZoom = 45D;
-            this.bbtnCancelar.IsTab = false;
-            this.bbtnCancelar.Location = new System.Drawing.Point(237, 520);
-            this.bbtnCancelar.Name = "bbtnCancelar";
-            this.bbtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnCancelar.selected = false;
-            this.bbtnCancelar.Size = new System.Drawing.Size(203, 48);
-            this.bbtnCancelar.TabIndex = 169;
-            this.bbtnCancelar.Text = "Cancelar";
-            this.bbtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnCancelar.Textcolor = System.Drawing.Color.White;
-            this.bbtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbtnCancelar.Click += new System.EventHandler(this.bbtnCancelar_Click);
-            // 
-            // btxtConsultar
-            // 
-            this.btxtConsultar.BackColor = System.Drawing.Color.White;
-            this.btxtConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.BackgroundImage")));
-            this.btxtConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btxtConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.btxtConsultar.Icon = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.Icon")));
-            this.btxtConsultar.Location = new System.Drawing.Point(237, 238);
-            this.btxtConsultar.Name = "btxtConsultar";
-            this.btxtConsultar.Size = new System.Drawing.Size(276, 42);
-            this.btxtConsultar.TabIndex = 167;
-            this.btxtConsultar.text = "Consultar";
             // 
             // bbtnClienteJu
             // 
@@ -581,39 +345,49 @@
             this.bbtnCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnCliente.Click += new System.EventHandler(this.bbtnCliente_Click);
             // 
-            // bbtnCadastroCliJ
+            // lbl_tit
             // 
-            this.bbtnCadastroCliJ.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCadastroCliJ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCadastroCliJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnCadastroCliJ.BorderRadius = 0;
-            this.bbtnCadastroCliJ.ButtonText = "Novo Cliente Jurídico";
-            this.bbtnCadastroCliJ.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnCadastroCliJ.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnCadastroCliJ.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnCadastroCliJ.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCadastroCliJ.Iconimage")));
-            this.bbtnCadastroCliJ.Iconimage_right = null;
-            this.bbtnCadastroCliJ.Iconimage_right_Selected = null;
-            this.bbtnCadastroCliJ.Iconimage_Selected = null;
-            this.bbtnCadastroCliJ.IconMarginLeft = 0;
-            this.bbtnCadastroCliJ.IconMarginRight = 0;
-            this.bbtnCadastroCliJ.IconRightVisible = true;
-            this.bbtnCadastroCliJ.IconRightZoom = 0D;
-            this.bbtnCadastroCliJ.IconVisible = true;
-            this.bbtnCadastroCliJ.IconZoom = 40D;
-            this.bbtnCadastroCliJ.IsTab = false;
-            this.bbtnCadastroCliJ.Location = new System.Drawing.Point(722, 520);
-            this.bbtnCadastroCliJ.Name = "bbtnCadastroCliJ";
-            this.bbtnCadastroCliJ.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCadastroCliJ.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnCadastroCliJ.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnCadastroCliJ.selected = false;
-            this.bbtnCadastroCliJ.Size = new System.Drawing.Size(203, 48);
-            this.bbtnCadastroCliJ.TabIndex = 171;
-            this.bbtnCadastroCliJ.Text = "Novo Cliente Jurídico";
-            this.bbtnCadastroCliJ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnCadastroCliJ.Textcolor = System.Drawing.Color.White;
-            this.bbtnCadastroCliJ.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.lbl_tit.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tit.ForeColor = System.Drawing.Color.White;
+            this.lbl_tit.Location = new System.Drawing.Point(203, 0);
+            this.lbl_tit.Name = "lbl_tit";
+            this.lbl_tit.Size = new System.Drawing.Size(995, 92);
+            this.lbl_tit.TabIndex = 0;
+            this.lbl_tit.Text = "Auto Socorro";
+            this.lbl_tit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 92);
+            this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AutoSocorro.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.bbtnMinimizar);
+            this.panel1.Controls.Add(this.bbtnFechar);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lbl_tit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1198, 92);
+            this.panel1.TabIndex = 162;
             // 
             // bbtnMinimizar
             // 
@@ -639,6 +413,7 @@
             this.bbtnMinimizar.Size = new System.Drawing.Size(40, 40);
             this.bbtnMinimizar.TabIndex = 2;
             this.bbtnMinimizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnMinimizar.Click += new System.EventHandler(this.bbtnMinimizar_Click);
             // 
             // bbtnFechar
             // 
@@ -664,16 +439,155 @@
             this.bbtnFechar.Size = new System.Drawing.Size(40, 40);
             this.bbtnFechar.TabIndex = 0;
             this.bbtnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnFechar.Click += new System.EventHandler(this.bbtnFechar_Click);
             // 
-            // pictureBox1
+            // bbtnContinuar
             // 
-            this.pictureBox1.Image = global::AutoSocorro.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.bbtnContinuar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnContinuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnContinuar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnContinuar.BorderRadius = 0;
+            this.bbtnContinuar.ButtonText = "Continuar";
+            this.bbtnContinuar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnContinuar.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnContinuar.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnContinuar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnContinuar.Iconimage")));
+            this.bbtnContinuar.Iconimage_right = null;
+            this.bbtnContinuar.Iconimage_right_Selected = null;
+            this.bbtnContinuar.Iconimage_Selected = null;
+            this.bbtnContinuar.IconMarginLeft = 17;
+            this.bbtnContinuar.IconMarginRight = 0;
+            this.bbtnContinuar.IconRightVisible = true;
+            this.bbtnContinuar.IconRightZoom = 0D;
+            this.bbtnContinuar.IconVisible = true;
+            this.bbtnContinuar.IconZoom = 40D;
+            this.bbtnContinuar.IsTab = false;
+            this.bbtnContinuar.Location = new System.Drawing.Point(965, 520);
+            this.bbtnContinuar.Name = "bbtnContinuar";
+            this.bbtnContinuar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnContinuar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnContinuar.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnContinuar.selected = false;
+            this.bbtnContinuar.Size = new System.Drawing.Size(203, 48);
+            this.bbtnContinuar.TabIndex = 170;
+            this.bbtnContinuar.Text = "Continuar";
+            this.bbtnContinuar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnContinuar.Textcolor = System.Drawing.Color.White;
+            this.bbtnContinuar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnContinuar.Click += new System.EventHandler(this.bbtnContinuar_Click);
+            // 
+            // bbtnCancelar
+            // 
+            this.bbtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnCancelar.BorderRadius = 0;
+            this.bbtnCancelar.ButtonText = "Cancelar";
+            this.bbtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCancelar.Iconimage")));
+            this.bbtnCancelar.Iconimage_right = null;
+            this.bbtnCancelar.Iconimage_right_Selected = null;
+            this.bbtnCancelar.Iconimage_Selected = null;
+            this.bbtnCancelar.IconMarginLeft = 17;
+            this.bbtnCancelar.IconMarginRight = 0;
+            this.bbtnCancelar.IconRightVisible = true;
+            this.bbtnCancelar.IconRightZoom = 0D;
+            this.bbtnCancelar.IconVisible = true;
+            this.bbtnCancelar.IconZoom = 45D;
+            this.bbtnCancelar.IsTab = false;
+            this.bbtnCancelar.Location = new System.Drawing.Point(237, 520);
+            this.bbtnCancelar.Name = "bbtnCancelar";
+            this.bbtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnCancelar.selected = false;
+            this.bbtnCancelar.Size = new System.Drawing.Size(203, 48);
+            this.bbtnCancelar.TabIndex = 169;
+            this.bbtnCancelar.Text = "Cancelar";
+            this.bbtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnCancelar.Textcolor = System.Drawing.Color.White;
+            this.bbtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnCancelar.Click += new System.EventHandler(this.bbtnCancelar_Click);
+            // 
+            // btxtConsultar
+            // 
+            this.btxtConsultar.BackColor = System.Drawing.Color.White;
+            this.btxtConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.BackgroundImage")));
+            this.btxtConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btxtConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.btxtConsultar.Icon = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.Icon")));
+            this.btxtConsultar.Location = new System.Drawing.Point(965, 185);
+            this.btxtConsultar.Name = "btxtConsultar";
+            this.btxtConsultar.Size = new System.Drawing.Size(203, 42);
+            this.btxtConsultar.TabIndex = 172;
+            this.btxtConsultar.text = "Nome Motorista";
+            this.btxtConsultar.OnTextChange += new System.EventHandler(this.btxtConsultar_OnTextChange);
+            this.btxtConsultar.Enter += new System.EventHandler(this.btxtConsultar_Enter);
+            this.btxtConsultar.Leave += new System.EventHandler(this.btxtConsultar_Leave);
+            // 
+            // GridMotorista
+            // 
+            this.GridMotorista.AllowUserToAddRows = false;
+            this.GridMotorista.AllowUserToDeleteRows = false;
+            this.GridMotorista.AllowUserToResizeColumns = false;
+            this.GridMotorista.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridMotorista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridMotorista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridMotorista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridMotorista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridMotorista.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.GridMotorista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridMotorista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GridMotorista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.NullValue = "\"\"";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridMotorista.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GridMotorista.EnableHeadersVisualStyles = false;
+            this.GridMotorista.GridColor = System.Drawing.Color.White;
+            this.GridMotorista.Location = new System.Drawing.Point(237, 189);
+            this.GridMotorista.MultiSelect = false;
+            this.GridMotorista.Name = "GridMotorista";
+            this.GridMotorista.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridMotorista.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.GridMotorista.RowHeadersVisible = false;
+            this.GridMotorista.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridMotorista.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.GridMotorista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridMotorista.Size = new System.Drawing.Size(702, 286);
+            this.GridMotorista.TabIndex = 171;
+            this.GridMotorista.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridMotorista_CellMouseClick);
             // 
             // Pedidos2
             // 
@@ -681,39 +595,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1198, 597);
-            this.Controls.Add(this.bbtnCadastroCliF);
+            this.Controls.Add(this.btxtConsultar);
+            this.Controls.Add(this.GridMotorista);
             this.Controls.Add(this.bbtnContinuar);
             this.Controls.Add(this.bbtnCancelar);
-            this.Controls.Add(this.bdropAtrib);
-            this.Controls.Add(this.btxtConsultar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuSeparator1);
-            this.Controls.Add(this.GridCliente);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.bbtnCadastroCliJ);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Pedidos2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos2";
-            ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
+            this.Load += new System.EventHandler(this.Pedidos2_Load);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridMotorista)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnCadastroCliF;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnContinuar;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCancelar;
-        private Bunifu.Framework.UI.BunifuDropdown bdropAtrib;
-        private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.DataGridView GridCliente;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnClienteJu;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnHome;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnLogoff;
@@ -727,7 +635,8 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bbtnMinimizar;
         private Bunifu.Framework.UI.BunifuThinButton2 bbtnFechar;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnCadastroCliJ;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
+        private System.Windows.Forms.DataGridView GridMotorista;
     }
 }

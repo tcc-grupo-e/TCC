@@ -124,8 +124,29 @@
     <Compile Include="Pedidos2.Designer.cs">
       <DependentUpon>Pedidos2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedidos3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos3.Designer.cs">
+      <DependentUpon>Pedidos3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos4.Designer.cs">
+      <DependentUpon>Pedidos4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosGrid.Designer.cs">
+      <DependentUpon>PedidosGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Adicionais.resx">
+      <DependentUpon>Adicionais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +179,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos2.resx">
       <DependentUpon>Pedidos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos3.resx">
+      <DependentUpon>Pedidos3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos4.resx">
+      <DependentUpon>Pedidos4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosGrid.resx">
+      <DependentUpon>PedidosGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

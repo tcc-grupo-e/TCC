@@ -70,11 +70,6 @@ namespace AutoSocorro
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Pedidos_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void bbtnClienteJu_Click(object sender, EventArgs e)
         {
             ClienteJu clij = new ClienteJu();
@@ -89,9 +84,21 @@ namespace AutoSocorro
 
         private void bbtnContinuar_Click(object sender, EventArgs e)
         {
-            Pedidos2 pe2 = new Pedidos2();
-            pe2.Show();
-            this.Hide();
+            PedidosBLL peBLL = new PedidosBLL();
+            if (peBLL.getIdMotorista() == 0)
+            {
+                Mensagem ms = new Mensagem();
+                MensagemBLL msBLL = new MensagemBLL();
+                msBLL.setMensagem("Selecione um Motorista");
+                msBLL.setTitulo("Aviso");
+                ms.ShowDialog();
+            }
+            else
+            {
+                Pedidos3 pe3 = new Pedidos3();
+                pe3.Show();
+                this.Hide();
+            }
         }
 
         private void bbtnServiço_Click(object sender, EventArgs e)
@@ -99,6 +106,55 @@ namespace AutoSocorro
             Adicionais ad = new Adicionais();
             ad.Show();
             this.Hide();
+        }
+
+        private void btxtConsultar_OnTextChange(object sender, EventArgs e)
+        {
+            PedidosBLL peBLL = new PedidosBLL();
+            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Nome Motorista"))
+            {
+                try
+                {
+                    GridMotorista.DataSource = peBLL.pesquisar_Motoristas_Nome(btxtConsultar.Text);
+                }
+                catch { }
+            }
+        }
+
+        private void btxtConsultar_Enter(object sender, EventArgs e)
+        {
+            if (btxtConsultar.text.Equals("Nome Motorista"))
+                btxtConsultar.text = "";
+        }
+
+        private void btxtConsultar_Leave(object sender, EventArgs e)
+        {
+            if (btxtConsultar.text.Equals(""))
+                btxtConsultar.text = "Nome Motorista";
+        }
+
+        private void GridMotorista_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int Linha = Convert.ToInt32(GridMotorista.CurrentCell.RowIndex);
+            String Nome = GridMotorista.Rows[Linha].Cells["Nome"].Value.ToString();
+            Mensagem ms = new Mensagem();
+            MensagemBLL msBLL = new MensagemBLL();
+            msBLL.setMensagem("Motorista: \n" + Nome);
+            msBLL.setTitulo("Aviso");
+            ms.ShowDialog();
+            PedidosBLL peBLL = new PedidosBLL();
+            int ID = peBLL.pesquisar_Id_Motoristas_Nome(Nome);
+            peBLL.setIdMotorista(ID);
+        }
+
+        private void Pedidos2_Load(object sender, EventArgs e)
+        {
+            PedidosBLL peBLL = new PedidosBLL();
+            try
+            {
+                GridMotorista.DataSource = peBLL.pesquisar_Todos_Motoristas();
+            }
+            catch { }
         }
     }
 }

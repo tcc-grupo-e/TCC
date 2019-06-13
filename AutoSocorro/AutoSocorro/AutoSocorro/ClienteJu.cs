@@ -259,11 +259,11 @@ namespace AutoSocorro
         {
             btxtNome.ForeColor = btxtEmail.ForeColor = btxtCNPJ.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
             int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
-            btxtNome.Text = GridCliente.Rows[Linha].Cells["Nome"].Value.ToString();
-            btxtEmail.Text = GridCliente.Rows[Linha].Cells["E-Mail"].Value.ToString();
-            btxtTelefone.Text = GridCliente.Rows[Linha].Cells["Telefone"].Value.ToString();
-            btxtCNPJ.Text = GridCliente.Rows[Linha].Cells["CNPJ"].Value.ToString();
-            btxtIE.Text = GridCliente.Rows[Linha].Cells["IE"].Value.ToString();
+            btxtNome.Text = GridCliente.Rows[Linha].Cells["0"].Value.ToString();
+            btxtEmail.Text = GridCliente.Rows[Linha].Cells["1"].Value.ToString();
+            btxtTelefone.Text = GridCliente.Rows[Linha].Cells["2"].Value.ToString();
+            btxtCNPJ.Text = GridCliente.Rows[Linha].Cells["3"].Value.ToString();
+            btxtIE.Text = GridCliente.Rows[Linha].Cells["4"].Value.ToString();
             codCnpj = btxtCNPJ.Text;
             alterar = true;
         }

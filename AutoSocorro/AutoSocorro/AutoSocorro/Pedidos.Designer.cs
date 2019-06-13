@@ -55,6 +55,7 @@
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.bbtnCadastroCliJ = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnCadastroCliF = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnContinuar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -444,6 +445,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -576,7 +578,7 @@
             this.bbtnCadastroCliJ.IconVisible = true;
             this.bbtnCadastroCliJ.IconZoom = 40D;
             this.bbtnCadastroCliJ.IsTab = false;
-            this.bbtnCadastroCliJ.Location = new System.Drawing.Point(965, 520);
+            this.bbtnCadastroCliJ.Location = new System.Drawing.Point(724, 520);
             this.bbtnCadastroCliJ.Name = "bbtnCadastroCliJ";
             this.bbtnCadastroCliJ.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnCadastroCliJ.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -611,7 +613,7 @@
             this.bbtnCadastroCliF.IconVisible = true;
             this.bbtnCadastroCliF.IconZoom = 40D;
             this.bbtnCadastroCliF.IsTab = false;
-            this.bbtnCadastroCliF.Location = new System.Drawing.Point(608, 520);
+            this.bbtnCadastroCliF.Location = new System.Drawing.Point(477, 520);
             this.bbtnCadastroCliF.Name = "bbtnCadastroCliF";
             this.bbtnCadastroCliF.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnCadastroCliF.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -625,12 +627,48 @@
             this.bbtnCadastroCliF.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnCadastroCliF.Click += new System.EventHandler(this.bbtnCadastroCliF_Click);
             // 
+            // bbtnContinuar
+            // 
+            this.bbtnContinuar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnContinuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnContinuar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnContinuar.BorderRadius = 0;
+            this.bbtnContinuar.ButtonText = "Continuar";
+            this.bbtnContinuar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnContinuar.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnContinuar.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnContinuar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnContinuar.Iconimage")));
+            this.bbtnContinuar.Iconimage_right = null;
+            this.bbtnContinuar.Iconimage_right_Selected = null;
+            this.bbtnContinuar.Iconimage_Selected = null;
+            this.bbtnContinuar.IconMarginLeft = 17;
+            this.bbtnContinuar.IconMarginRight = 0;
+            this.bbtnContinuar.IconRightVisible = true;
+            this.bbtnContinuar.IconRightZoom = 0D;
+            this.bbtnContinuar.IconVisible = true;
+            this.bbtnContinuar.IconZoom = 40D;
+            this.bbtnContinuar.IsTab = false;
+            this.bbtnContinuar.Location = new System.Drawing.Point(965, 520);
+            this.bbtnContinuar.Name = "bbtnContinuar";
+            this.bbtnContinuar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnContinuar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnContinuar.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnContinuar.selected = false;
+            this.bbtnContinuar.Size = new System.Drawing.Size(203, 48);
+            this.bbtnContinuar.TabIndex = 171;
+            this.bbtnContinuar.Text = "Continuar";
+            this.bbtnContinuar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnContinuar.Textcolor = System.Drawing.Color.White;
+            this.bbtnContinuar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnContinuar.Click += new System.EventHandler(this.bbtnContinuar_Click);
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1198, 597);
+            this.Controls.Add(this.bbtnContinuar);
             this.Controls.Add(this.bbtnCadastroCliF);
             this.Controls.Add(this.bbtnCadastroCliJ);
             this.Controls.Add(this.bbtnCancelar);
@@ -677,5 +715,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCancelar;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCadastroCliJ;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCadastroCliF;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnContinuar;
     }
 }

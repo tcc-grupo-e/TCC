@@ -76,6 +76,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblDiaEsc = new System.Windows.Forms.Label();
             this.bbtnNovoPed = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnChamadas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -447,7 +448,7 @@
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.lblAno);
-            this.panel7.Location = new System.Drawing.Point(243, 126);
+            this.panel7.Location = new System.Drawing.Point(243, 110);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(434, 41);
             this.panel7.TabIndex = 117;
@@ -477,7 +478,7 @@
             this.panel5.Controls.Add(this.label34);
             this.panel5.Controls.Add(this.label31);
             this.panel5.Controls.Add(this.label37);
-            this.panel5.Location = new System.Drawing.Point(243, 126);
+            this.panel5.Location = new System.Drawing.Point(243, 110);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(434, 356);
             this.panel5.TabIndex = 116;
@@ -1143,9 +1144,9 @@
             this.panel10.AutoScroll = true;
             this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Location = new System.Drawing.Point(712, 166);
+            this.panel10.Location = new System.Drawing.Point(712, 150);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(456, 397);
+            this.panel10.Size = new System.Drawing.Size(456, 424);
             this.panel10.TabIndex = 118;
             // 
             // lblDiaEsc
@@ -1154,7 +1155,7 @@
             this.lblDiaEsc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDiaEsc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaEsc.ForeColor = System.Drawing.Color.White;
-            this.lblDiaEsc.Location = new System.Drawing.Point(712, 126);
+            this.lblDiaEsc.Location = new System.Drawing.Point(712, 110);
             this.lblDiaEsc.Name = "lblDiaEsc";
             this.lblDiaEsc.Size = new System.Drawing.Size(456, 41);
             this.lblDiaEsc.TabIndex = 1;
@@ -1166,7 +1167,7 @@
             this.bbtnNovoPed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnNovoPed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bbtnNovoPed.BorderRadius = 0;
-            this.bbtnNovoPed.ButtonText = "Novo Pedido";
+            this.bbtnNovoPed.ButtonText = "Nova Chamada";
             this.bbtnNovoPed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bbtnNovoPed.DisabledColor = System.Drawing.Color.Gray;
             this.bbtnNovoPed.Iconcolor = System.Drawing.Color.Transparent;
@@ -1181,7 +1182,7 @@
             this.bbtnNovoPed.IconVisible = true;
             this.bbtnNovoPed.IconZoom = 40D;
             this.bbtnNovoPed.IsTab = false;
-            this.bbtnNovoPed.Location = new System.Drawing.Point(243, 515);
+            this.bbtnNovoPed.Location = new System.Drawing.Point(244, 472);
             this.bbtnNovoPed.Name = "bbtnNovoPed";
             this.bbtnNovoPed.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnNovoPed.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -1189,11 +1190,46 @@
             this.bbtnNovoPed.selected = false;
             this.bbtnNovoPed.Size = new System.Drawing.Size(434, 48);
             this.bbtnNovoPed.TabIndex = 119;
-            this.bbtnNovoPed.Text = "Novo Pedido";
+            this.bbtnNovoPed.Text = "Nova Chamada";
             this.bbtnNovoPed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnNovoPed.Textcolor = System.Drawing.Color.White;
             this.bbtnNovoPed.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnNovoPed.Click += new System.EventHandler(this.bbtnNovoPed_Click);
+            // 
+            // bbtnChamadas
+            // 
+            this.bbtnChamadas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnChamadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnChamadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnChamadas.BorderRadius = 0;
+            this.bbtnChamadas.ButtonText = "Chamadas";
+            this.bbtnChamadas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnChamadas.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnChamadas.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnChamadas.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnChamadas.Iconimage")));
+            this.bbtnChamadas.Iconimage_right = null;
+            this.bbtnChamadas.Iconimage_right_Selected = null;
+            this.bbtnChamadas.Iconimage_Selected = null;
+            this.bbtnChamadas.IconMarginLeft = 17;
+            this.bbtnChamadas.IconMarginRight = 0;
+            this.bbtnChamadas.IconRightVisible = true;
+            this.bbtnChamadas.IconRightZoom = 0D;
+            this.bbtnChamadas.IconVisible = true;
+            this.bbtnChamadas.IconZoom = 40D;
+            this.bbtnChamadas.IsTab = false;
+            this.bbtnChamadas.Location = new System.Drawing.Point(243, 526);
+            this.bbtnChamadas.Name = "bbtnChamadas";
+            this.bbtnChamadas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnChamadas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnChamadas.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnChamadas.selected = false;
+            this.bbtnChamadas.Size = new System.Drawing.Size(434, 48);
+            this.bbtnChamadas.TabIndex = 120;
+            this.bbtnChamadas.Text = "Chamadas";
+            this.bbtnChamadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnChamadas.Textcolor = System.Drawing.Color.White;
+            this.bbtnChamadas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnChamadas.Click += new System.EventHandler(this.bbtnChamadas_Click);
             // 
             // Home
             // 
@@ -1201,6 +1237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1198, 597);
+            this.Controls.Add(this.bbtnChamadas);
             this.Controls.Add(this.bbtnNovoPed);
             this.Controls.Add(this.lblDiaEsc);
             this.Controls.Add(this.panel10);
@@ -1275,5 +1312,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bbtnPedido;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnFuncionario;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCliente;
+        private Bunifu.Framework.UI.BunifuFlatButton bbtnChamadas;
     }
 }

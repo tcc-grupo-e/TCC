@@ -12,8 +12,24 @@ namespace BLL
     {
         public static DataTable TodosClientes;
         public static DataTable NomeClientes;
-        public static int IdCliente;
+        public static DataTable TodosMotoristas;
+        public static DataTable NomeMotoristas;
+        public static DataTable TodosCaminhoes;
+        public static DataTable PlacaCaminhoes;
+        public static int IdCliente = 0;
+        public static int IdMotorista = 0;
+        public static int IdCaminhao = 0;
         public static String NovoCadastro = "";
+        public static String ClienteFJ = "";
+
+        public void setClienteFJ(String val)
+        {
+            ClienteFJ = val;
+        }
+        public String getClienteFJ()
+        {
+            return ClienteFJ;
+        }
 
         public void setTodosClientes(DataTable val)
         {
@@ -51,6 +67,60 @@ namespace BLL
             return IdCliente;
         }
 
+        public void setTodosMotoristas(DataTable val)
+        {
+            TodosMotoristas = val;
+        }
+        public DataTable getTodosMotoristas()
+        {
+            return TodosMotoristas;
+        }
+
+        public void setNomeMotoristas(DataTable val)
+        {
+            NomeMotoristas = val;
+        }
+        public DataTable getNomeMotoristas()
+        {
+            return NomeMotoristas;
+        }
+
+        public void setIdMotorista(int val)
+        {
+            IdMotorista = val;
+        }
+        public int getIdMotorista()
+        {
+            return IdMotorista;
+        }
+
+        public void setTodosCaminhoes(DataTable val)
+        {
+            TodosCaminhoes = val;
+        }
+        public DataTable getTodosCaminhoes()
+        {
+            return TodosCaminhoes;
+        }
+
+        public void setPlacaCaminhoes(DataTable val)
+        {
+            PlacaCaminhoes = val;
+        }
+        public DataTable getPlacaCaminhoes()
+        {
+            return PlacaCaminhoes;
+        }
+
+        public void setIdCaminhao(int val)
+        {
+            IdCaminhao = val;
+        }
+        public int getIdCaminhao()
+        {
+            return IdCaminhao;
+        }
+
         public DataTable pesquisar_Todos_Clientes()
         {
             PedidosDAL peDAL = new PedidosDAL();
@@ -61,7 +131,7 @@ namespace BLL
         public DataTable pesquisar_Clientes_Nome(String nome)
         {
             PedidosDAL peDAL = new PedidosDAL();
-            TodosClientes = peDAL.pesquisar_Clientes_Nome(nome);
+            NomeClientes = peDAL.pesquisar_Clientes_Nome(nome);
             return NomeClientes;
         }
 
@@ -70,6 +140,48 @@ namespace BLL
             PedidosDAL peDAL = new PedidosDAL();
             IdCliente = peDAL.pesquisar_Id_Clientes_Nome(nome);
             return IdCliente;
+        }
+
+        public DataTable pesquisar_Todos_Motoristas()
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            TodosMotoristas = peDAL.pesquisar_Todos_Motoristas();
+            return TodosMotoristas;
+        }
+
+        public DataTable pesquisar_Motoristas_Nome(String nome)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            NomeMotoristas = peDAL.pesquisar_Motoristas_Nome(nome);
+            return NomeMotoristas;
+        }
+
+        public int pesquisar_Id_Motoristas_Nome(String nome)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            IdMotorista = peDAL.pesquisar_Id_Motoristas_Nome(nome);
+            return IdMotorista;
+        }
+
+        public DataTable pesquisar_Todos_Caminhoes()
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            TodosCaminhoes = peDAL.pesquisar_Todos_Caminhoes();
+            return TodosCaminhoes;
+        }
+
+        public DataTable pesquisar_Caminhoes_Placa(String placa)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            PlacaCaminhoes = peDAL.pesquisar_Caminhoes_Placa(placa);
+            return PlacaCaminhoes;
+        }
+
+        public int pesquisar_Id_Caminhoes_Placa(String placa)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            IdCaminhao = peDAL.pesquisar_Id_Caminhoes_Placa(placa);
+            return IdCaminhao;
         }
     }
 }

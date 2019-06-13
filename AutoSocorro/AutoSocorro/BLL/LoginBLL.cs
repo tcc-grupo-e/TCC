@@ -12,6 +12,16 @@ namespace BLL
         private static String Usu;
         private static String Senha;
         private static String NivelAcesso;
+        public static String Nome;
+
+        public void setNome(String val)
+        {
+            Nome = val;
+        }
+        public String getNome()
+        {
+            return Nome;
+        }
 
         public void setNivelAcesso(String val)
         {
@@ -21,6 +31,7 @@ namespace BLL
         {
             return NivelAcesso;
         }
+
         public void setUsuario(String val)
         {
             Usu = val;

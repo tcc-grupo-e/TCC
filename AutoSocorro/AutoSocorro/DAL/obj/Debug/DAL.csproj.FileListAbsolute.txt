@@ -52,3 +52,8 @@ G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.pdb
 G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
 G:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb
+F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.dll
+F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.pdb
+F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
+F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb

@@ -108,9 +108,21 @@ namespace AutoSocorro
 
         private void bbtnContinuar_Click(object sender, EventArgs e)
         {
-            Pedidos2 pe2 = new Pedidos2();
-            pe2.Show();
-            this.Hide();
+            PedidosBLL peBLL = new PedidosBLL();
+            if (peBLL.getIdCliente() == 0)
+            {
+                Mensagem ms = new Mensagem();
+                MensagemBLL msBLL = new MensagemBLL();
+                msBLL.setMensagem("Selecione um Cliente");
+                msBLL.setTitulo("Aviso");
+                ms.ShowDialog();
+            }
+            else
+            {
+                Pedidos2 pe2 = new Pedidos2();
+                pe2.Show();
+                this.Hide();
+            }
         }
 
         private void bbtnServiço_Click(object sender, EventArgs e)
@@ -123,7 +135,7 @@ namespace AutoSocorro
         private void btxtConsultar_OnTextChange(object sender, EventArgs e)
         {
             PedidosBLL peBLL = new PedidosBLL();
-            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Consultar"))
+            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Nome Cliente"))
             {
                 try
                 {
@@ -149,12 +161,21 @@ namespace AutoSocorro
         {
             int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
             String Nome = GridCliente.Rows[Linha].Cells["Nome"].Value.ToString();
+            String CPF = GridCliente.Rows[Linha].Cells["CPF"].Value.ToString();
+            Mensagem ms = new Mensagem();
+            MensagemBLL msBLL = new MensagemBLL();
+            msBLL.setMensagem("Cliente: \n" + Nome);
+            msBLL.setTitulo("Aviso");
+            ms.ShowDialog();
             PedidosBLL peBLL = new PedidosBLL();
+
+            if (CPF.Equals("-"))
+                peBLL.setClienteFJ("J");
+            else
+                peBLL.setClienteFJ("F");
+
             int ID = peBLL.pesquisar_Id_Clientes_Nome(Nome);
             peBLL.setIdCliente(ID);
-            Pedidos2 pe2 = new Pedidos2();
-            pe2.Show();
-            this.Hide();
         }
     }
 }
