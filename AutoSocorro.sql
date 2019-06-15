@@ -108,19 +108,6 @@ insert into Fechamento values
 	'10:30', '0:00', '1:00', 'Maria Lúcia Mustang', 'Não danificado', 'Não')
 --------------------------------------------------------------------------------
 go
-create table Local_Retirada (
-	ID_Local_Retirada int primary key,
-	ID_Chamado int foreign key references Abertura(ID_Chamado),
-	Endereco text,
-	Referencia text,
-)
-go
-insert into Local_Retirada values
-	(1, 1, 'Rua dos Alfeneiros, 4', 'Casa do Harry Potter'), 
-	(2, 2, 'Rua do Oratório, 1074', 'Lello Condomínios'), 
-	(3, 3, 'Rua Morumbi, 45', 'Próximo ao Terminal Sacomã')
---------------------------------------------------------------------------------
-go
 create table Destino (
 	ID_Destino int primary key,
 	ID_Chamado int foreign key references Abertura(ID_Chamado),
@@ -201,14 +188,13 @@ go
 create table Adicionais (
 	ID_Adicionais int primary key,
 	Nome varchar(50),
-	Preco varchar(10),
-	Quantidade int,
+	Preco varchar(10)
 )
 go
 insert into Adicionais values
-	(1, 'Chaveiro', 'R$50,00', 1),
-	(2, 'Patins', 'R$250,00', 1), 
-	(3, 'Subsolo', 'R$35,00', 1)
+	(1, 'Chaveiro', 'R$50,00'),
+	(2, 'Patins', 'R$250,00'), 
+	(3, 'Subsolo', 'R$35,00')
 --------------------------------------------------------------------------------
 go
 create table Funcionario_Abertura (
@@ -241,13 +227,13 @@ select * from Adicionais
 select * from Adicional_Abertura
 select * from Caminhao
 select * from Cliente
+select * from Empresa
 select * from Declaracao
 select * from Destino
-select * from Empresa
 select * from Fechamento
 select * from Funcionario
 select * from Funcionario_Abertura
-select * from Local_Retirada
+
 
 -----------------------PROCEDURES------------------------------
 
@@ -284,13 +270,90 @@ exec usp_inserirfunc 4, 'Nicolas Castro', 'Ele escreve', '1000,00', 'nicolascast
 --------------------------------------------------------------------------------
 create procedure usp_InserirCliente
 	@Nome varchar(50),
-	@Email varchar(100),
 	@Telefone varchar(14),
+	@Email varchar(100),
 	@CPF varchar(14)
 as
-	
 	declare @ultimo_id int = (select top 1 ID_Cliente from Cliente order by ID_Cliente desc), @id int
-	if (@ultimo_id=0)
+	if @ultimo_id=0
 	begin
-		@id = 1,
+		set @id = 1
 	end
+	else
+	begin
+		set @id = @ultimo_id + 1
+	end
+	insert into Cliente values
+		(@id, @Telefone, @Telefone, @Email, @CPF)
+go
+
+exec usp_InserirCliente
+--------------------------------------------------------------------------------
+create procedure usp_InserirEmpresa
+	@Nome varchar(50),
+	@Email varchar(80),
+	@Telefone varchar(14),
+	@CPF varchar(14),
+	@IE varchar(255),
+	@CNPJ varchar(18)
+as
+	declare @ultimo_id int = (select top 1 ID_Cliente from Cliente order by ID_Cliente desc), @id int
+	if @ultimo_id=0
+	begin
+		set @id = 1
+	end
+	else
+	begin
+		set @id = @ultimo_id + 1
+	end
+	insert into Empresa values
+		(@id, @IE, @CNPJ)
+	insert into Cliente values
+		(@id, @Nome ,@Telefone, @Email, @CPF)
+go
+------------------------------------------------------------------------------
+create procedure InserirAdicionais
+	@Nome varchar(50),
+	@Preco varchar(10)
+as
+	declare @ultimo_id int = (select top 1 ID_Adicionais from Adicionais order by ID_Adicionais desc), @id int
+	if @ultimo_id=0
+	begin
+		set @id = 1
+	end
+	else
+	begin
+		set @id = @ultimo_id + 1
+	end
+	insert into Adicionais values
+		(@id, @Nome, @Preco)
+go
+------------------------------------------------------------------------------
+create procedure usp_InserirAbertura
+	@ID_Cliente int,
+	@ID_Caminhao int,
+	@Atendente varchar(50),
+	@Apolice varchar(255),
+	@Data_Servico varchar(10),
+	@Marca varchar(30),
+	@Modelo varchar(20),
+	@Cor varchar(10),
+	@Ano varchar(4),
+	@Placa varchar(8),
+	@KM_Saida varchar(7),
+	@Hora_Saida varchar(5),
+	@Observacao text	
+as
+	declare @ultimo_id int = (select top 1 ID_Chamado from Abertura order by ID_Chamado desc), @id int
+	if @ultimo_id=0
+	begin
+		set @id = 1
+	end
+	else
+	begin
+		set @id = @ultimo_id + 1
+	end
+	insert into Abertura values
+		(@id, @ID_Cliente, @ID_Caminhao, @Atendente, @Apolice, @Data_Servico, @Marca, @Modelo, @Cor, @Ano, @Placa, @KM_Saida, @Hora_Saida, @Observacao)
+go
+------------------------------------------------------------------------------
