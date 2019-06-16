@@ -116,6 +116,16 @@ namespace AutoSocorro
         List<String> referencias = new List<String>();
         private void Pedidos4_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             dt.Columns.Add("Ordem", typeof(string));
             dt.Columns.Add("Destinos", typeof(string));
             dt.Columns.Add("Referências", typeof(string));
@@ -176,7 +186,20 @@ namespace AutoSocorro
 
         private void bbtnAutoCadastro_Click(object sender, EventArgs e)
         {
-
+            btxtAno.Text = "2014";
+            btxtApolice.Text ="1098F/A";
+            btxtCor.Text = "Prata";
+            btxtDestino.Text = "Rua Lopes Chaves, 243 - Barra Funda";
+            btxtHr.Text = "08:35";
+            btxtKmSaida.Text = "10678 Km";
+            btxtLocalRet.Text = "Rua João Rudge, 420 - Casa Verde";
+            btxtMarca.Text = "Honda";
+            btxtModelo.Text = "City";
+            btxtObs.Text = "O carro está sem chave";
+            btxtPlaca.Text = "FTH-9572";
+            btxtRefDest.Text = "Na esquina da rua";
+            bDataNasc.Value = DateTime.Today.AddDays(1);
+            btxtAno.ForeColor = btxtApolice.ForeColor = btxtCor.ForeColor = btxtDestino.ForeColor = btxtHr.ForeColor = btxtKmSaida.ForeColor = btxtLocalRet.ForeColor = btxtMarca.ForeColor = btxtModelo.ForeColor = btxtObs.ForeColor = btxtPlaca.ForeColor = btxtRefDest.ForeColor = Color.FromArgb(64, 64, 64);
         }
 
         private void btxtObs_Enter(object sender, EventArgs e)
@@ -274,7 +297,7 @@ namespace AutoSocorro
             else
                 btxtHr.BorderColorIdle = Color.Red;
             //Placa
-            if (cv.ValidaPlaca(btxtHr.Text))
+            if (cv.ValidaPlaca(btxtPlaca.Text))
             {
                 i++;
                 btxtPlaca.BorderColorIdle = Color.FromArgb(64, 64, 64);
@@ -298,7 +321,7 @@ namespace AutoSocorro
             else
                 btxtMarca.BorderColorIdle = Color.Red;
             //Observação
-                i++;
+            i++;
             //Data
             if (cv.ValidaData(bDataNasc.Value))
                 i++;
@@ -316,7 +339,7 @@ namespace AutoSocorro
             if (destinos.Count >= 1)
             {
                 i++;
-                btxtDestino .BorderColorIdle = Color.FromArgb(64, 64, 64);
+                btxtDestino.BorderColorIdle = Color.FromArgb(64, 64, 64);
             }
             else
                 btxtDestino.BorderColorIdle = Color.Red;
@@ -329,14 +352,32 @@ namespace AutoSocorro
             if (validar() == 12)
             {
                 Pedidos4BLL pe4BLL = new Pedidos4BLL();
-                if (pe4BLL.inserirAbertura(btxtRefDest.Text, btxtAno.Text, btxtHr.Text, btxtKmSaida.Text, btxtModelo.Text, btxtMarca.Text, btxtPlaca.Text, btxtObs.Text, bDataNasc.Value.ToString().Substring(0, 10), btxtCor.Text, btxtApolice.Text))
+                if (!btxtApolice.Visible)
+                    btxtApolice.Text = "-";
+                if (pe4BLL.inserirAbertura(btxtLocalRet.Text, btxtAno.Text, btxtHr.Text, btxtKmSaida.Text, btxtModelo.Text, btxtMarca.Text, btxtPlaca.Text, btxtObs.Text, bDataNasc.Value.ToString().Substring(0, 10), btxtCor.Text, btxtApolice.Text))
                 {
+                    int idChamado = pe4BLL.UltimoId();
+
+                    for (int i = 0; i < destinos.Count; i++)
+                    {
+                        try {pe4BLL.inserirDestinos(i+1, destinos[i], referencias[i], idChamado);}
+                        catch {}
+                    }
+
+                    pe4BLL.inserirFuncAber();
+
+                    PedidosBLL peBLL = new PedidosBLL();
+                    peBLL.setIdCaminhao(0);
+                    peBLL.setIdCliente(0);
+                    peBLL.setIdMotorista(0);
                     MensagemBLL mBLL = new MensagemBLL();
                     mBLL.setMensagem("Chamada Cadastrada Com Sucesso!");
                     mBLL.setTitulo("Mensagem");
                     Mensagem ms = new Mensagem();
                     ms.ShowDialog();
-                    bbtnLimpar_Click(sender, e);
+                    Home pe = new Home();
+                    pe.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -408,6 +449,13 @@ namespace AutoSocorro
                 e.Handled = true;
             if (Char.IsPunctuation(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void lblGrid_Click(object sender, EventArgs e)
+        {
+            PedidosGrid pg = new PedidosGrid();
+            pg.Show();
+            this.Hide();
         }
     }
 }

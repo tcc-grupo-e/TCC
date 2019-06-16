@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_tit = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.bbtnClienteJuridico = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnServiço = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -73,7 +74,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlChamadas = new System.Windows.Forms.Panel();
             this.lblDiaEsc = new System.Windows.Forms.Label();
             this.bbtnNovoPed = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnChamadas = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -187,6 +188,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.lblUsu);
             this.panel3.Controls.Add(this.bbtnClienteJuridico);
             this.panel3.Controls.Add(this.bbtnHome);
             this.panel3.Controls.Add(this.bbtnServiço);
@@ -198,6 +200,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 115;
+            // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 17;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bbtnClienteJuridico
             // 
@@ -1139,15 +1152,15 @@
             this.label37.Text = "Sab";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel10
+            // pnlChamadas
             // 
-            this.panel10.AutoScroll = true;
-            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Location = new System.Drawing.Point(712, 150);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(456, 424);
-            this.panel10.TabIndex = 118;
+            this.pnlChamadas.AutoScroll = true;
+            this.pnlChamadas.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlChamadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlChamadas.Location = new System.Drawing.Point(712, 150);
+            this.pnlChamadas.Name = "pnlChamadas";
+            this.pnlChamadas.Size = new System.Drawing.Size(456, 424);
+            this.pnlChamadas.TabIndex = 118;
             // 
             // lblDiaEsc
             // 
@@ -1240,7 +1253,7 @@
             this.Controls.Add(this.bbtnChamadas);
             this.Controls.Add(this.bbtnNovoPed);
             this.Controls.Add(this.lblDiaEsc);
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.pnlChamadas);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
@@ -1303,7 +1316,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnlChamadas;
         private System.Windows.Forms.Label lblDiaEsc;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnNovoPed;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnClienteJuridico;
@@ -1313,5 +1326,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bbtnFuncionario;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCliente;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnChamadas;
+        private System.Windows.Forms.Label lblUsu;
     }
 }

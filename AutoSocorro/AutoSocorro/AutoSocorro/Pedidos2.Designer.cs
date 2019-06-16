@@ -54,6 +54,7 @@
             this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.GridMotorista = new System.Windows.Forms.DataGridView();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,6 +89,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.lblUsu);
             this.panel3.Controls.Add(this.bbtnClienteJu);
             this.panel3.Controls.Add(this.bbtnHome);
             this.panel3.Controls.Add(this.bbtnLogoff);
@@ -589,6 +591,17 @@
             this.GridMotorista.TabIndex = 171;
             this.GridMotorista.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridMotorista_CellMouseClick);
             // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 19;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Pedidos2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,5 +651,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
         private System.Windows.Forms.DataGridView GridMotorista;
+        private System.Windows.Forms.Label lblUsu;
     }
 }

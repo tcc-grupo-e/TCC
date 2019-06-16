@@ -367,55 +367,6 @@ namespace AutoSocorro
             }
         }
 
-        private void bbtnDeletar_Click(object sender, EventArgs e)
-        {
-            FuncionarioBLL funcBLL = new FuncionarioBLL();
-            if (!funcBLL.getCod().Equals(""))
-            {
-                MensagemBLL msBLL = new MensagemBLL();
-                msBLL.setMensagem("Deseja Realmente Deletar Esse Funcionário");
-                msBLL.setTitulo("Alerta");
-                Mensagem ms = new Mensagem();
-                MensagemS_N msn = new MensagemS_N();
-                msn.ShowDialog();
-
-                if (msBLL.getSN().Equals("S"))
-                {
-                    if (funcBLL.deletarFunc(funcBLL.getCod()))
-                    {
-                        MensagemBLL mBLL = new MensagemBLL();
-                        mBLL.setMensagem("Funcionário Deletado Com Sucesso!");
-                        mBLL.setTitulo("Mensagem");
-                        ms.ShowDialog();
-                        funcBLL.setCod("");
-                        funcBLL.setLinhaCod("");
-                        bbtnLimpar_Click(sender, e);
-                    }
-                    else
-                    {
-                        MensagemBLL mBLL = new MensagemBLL();
-                        mBLL.setMensagem("Funcionário Não Deletado!");
-                        mBLL.setTitulo("Alerta");
-                        ms.ShowDialog();
-                    }
-                }
-                else
-                {
-                    funcBLL.setCod("");
-                    funcBLL.setLinhaCod("");
-                }
-            }
-            else
-            {
-                MensagemBLL mBLL = new MensagemBLL();
-                mBLL.setMensagem("Selecione Um Funcionário!");
-                mBLL.setTitulo("Alerta");
-                Mensagem ms = new Mensagem();
-                ms.ShowDialog();
-            }
-        }
-
-
         String[] bdropcargo1 = { "Cargo", "Atendente", "Motorista", "Gerente" };
         String[] bdropcargo2 = { "Atendente", "Motorista", "Gerente" };
         String[] bdropUF1 = { "UF", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
@@ -423,6 +374,16 @@ namespace AutoSocorro
 
         private void Funcionario_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             bDropCargo.Items = bdropcargo1;
             bDropCargo.selectedIndex = 0;
 
@@ -763,7 +724,9 @@ namespace AutoSocorro
 
         private void bbtnServiço_Click(object sender, EventArgs e)
         {
-
+            Adicionais add = new Adicionais();
+            add.Show();
+            this.Hide();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace AutoSocorro
 {
@@ -28,9 +29,17 @@ namespace AutoSocorro
             if (c == 100)
             {
                 timer.Enabled = false;
-                Home ho = new Home();
-                ho.Show();
-                this.Hide();
+                LoginBLL loBLL = new LoginBLL();
+                if (loBLL.getPrimCad().Equals("S"))
+                {
+
+                }
+                else
+                {
+                    Home ho = new Home();
+                    ho.Show();
+                    this.Hide();
+                }
             }
         }
 

@@ -41,19 +41,16 @@
             this.btxtTelefone = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btxtNome = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btxtIE = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lbl_tit = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bbtnLimpar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnAlterar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnAutoCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bbtnDeletar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnEnviar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.bbtnClienteJu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnServiço = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -61,16 +58,19 @@
             this.bbtnFuncionario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lbl_tit = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bbtnMinimizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bbtnFechar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bdropAtrib
@@ -109,7 +109,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.GridCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -250,7 +250,6 @@
             this.panel4.Controls.Add(this.bdropAtrib);
             this.panel4.Controls.Add(this.btxtConsultar);
             this.panel4.Controls.Add(this.GridCliente);
-            this.panel4.Controls.Add(this.bbtnDeletar);
             this.panel4.Controls.Add(this.bbtnEnviar);
             this.panel4.Controls.Add(this.btxtCNPJ);
             this.panel4.Controls.Add(this.btxtEmail);
@@ -260,6 +259,43 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(985, 430);
             this.panel4.TabIndex = 152;
+            // 
+            // bbtnCancelar
+            // 
+            this.bbtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.bbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bbtnCancelar.BorderRadius = 0;
+            this.bbtnCancelar.ButtonText = "Cancelar";
+            this.bbtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.bbtnCancelar.Enabled = false;
+            this.bbtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.bbtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCancelar.Iconimage")));
+            this.bbtnCancelar.Iconimage_right = null;
+            this.bbtnCancelar.Iconimage_right_Selected = null;
+            this.bbtnCancelar.Iconimage_Selected = null;
+            this.bbtnCancelar.IconMarginLeft = 17;
+            this.bbtnCancelar.IconMarginRight = 0;
+            this.bbtnCancelar.IconRightVisible = true;
+            this.bbtnCancelar.IconRightZoom = 0D;
+            this.bbtnCancelar.IconVisible = true;
+            this.bbtnCancelar.IconZoom = 45D;
+            this.bbtnCancelar.IsTab = false;
+            this.bbtnCancelar.Location = new System.Drawing.Point(734, 330);
+            this.bbtnCancelar.Name = "bbtnCancelar";
+            this.bbtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bbtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.bbtnCancelar.selected = false;
+            this.bbtnCancelar.Size = new System.Drawing.Size(203, 48);
+            this.bbtnCancelar.TabIndex = 158;
+            this.bbtnCancelar.Text = "Cancelar";
+            this.bbtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnCancelar.Textcolor = System.Drawing.Color.White;
+            this.bbtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnCancelar.Visible = false;
+            this.bbtnCancelar.Click += new System.EventHandler(this.bbtnCancelar_Click);
             // 
             // btxtIE
             // 
@@ -280,79 +316,6 @@
             this.btxtIE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btxtIE.Enter += new System.EventHandler(this.PlaceHolder_Enter);
             this.btxtIE.Leave += new System.EventHandler(this.PlaceHolder_Leave);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(213, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(985, 72);
-            this.label1.TabIndex = 150;
-            this.label1.Text = "Clientes Jurídicos";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.panel3.Controls.Add(this.bbtnClienteJu);
-            this.panel3.Controls.Add(this.bbtnHome);
-            this.panel3.Controls.Add(this.bbtnServiço);
-            this.panel3.Controls.Add(this.bbtnPedido);
-            this.panel3.Controls.Add(this.bbtnFuncionario);
-            this.panel3.Controls.Add(this.bbtnCliente);
-            this.panel3.Controls.Add(this.bbtnLogoff);
-            this.panel3.Location = new System.Drawing.Point(0, 92);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(213, 505);
-            this.panel3.TabIndex = 149;
-            // 
-            // lbl_tit
-            // 
-            this.lbl_tit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.lbl_tit.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tit.ForeColor = System.Drawing.Color.White;
-            this.lbl_tit.Location = new System.Drawing.Point(203, 0);
-            this.lbl_tit.Name = "lbl_tit";
-            this.lbl_tit.Size = new System.Drawing.Size(995, 92);
-            this.lbl_tit.TabIndex = 0;
-            this.lbl_tit.Text = "Auto Socorro";
-            this.lbl_tit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 92);
-            this.panel2.TabIndex = 8970;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.panel1.Controls.Add(this.bbtnMinimizar);
-            this.panel1.Controls.Add(this.bbtnFechar);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lbl_tit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1198, 92);
-            this.panel1.TabIndex = 148;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(213, 149);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(985, 35);
-            this.bunifuSeparator1.TabIndex = 151;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
             // 
             // bbtnLimpar
             // 
@@ -375,7 +338,7 @@
             this.bbtnLimpar.IconVisible = true;
             this.bbtnLimpar.IconZoom = 40D;
             this.bbtnLimpar.IsTab = false;
-            this.bbtnLimpar.Location = new System.Drawing.Point(279, 330);
+            this.bbtnLimpar.Location = new System.Drawing.Point(416, 330);
             this.bbtnLimpar.Name = "bbtnLimpar";
             this.bbtnLimpar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnLimpar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -410,7 +373,7 @@
             this.bbtnAlterar.IconVisible = true;
             this.bbtnAlterar.IconZoom = 40D;
             this.bbtnAlterar.IsTab = false;
-            this.bbtnAlterar.Location = new System.Drawing.Point(507, 330);
+            this.bbtnAlterar.Location = new System.Drawing.Point(734, 330);
             this.bbtnAlterar.Name = "bbtnAlterar";
             this.bbtnAlterar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.bbtnAlterar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
@@ -476,41 +439,6 @@
             this.btxtConsultar.Enter += new System.EventHandler(this.btxtConsultar_Enter);
             this.btxtConsultar.Leave += new System.EventHandler(this.btxtConsultar_Leave);
             // 
-            // bbtnDeletar
-            // 
-            this.bbtnDeletar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnDeletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnDeletar.BorderRadius = 0;
-            this.bbtnDeletar.ButtonText = "Deletar";
-            this.bbtnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnDeletar.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnDeletar.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnDeletar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnDeletar.Iconimage")));
-            this.bbtnDeletar.Iconimage_right = null;
-            this.bbtnDeletar.Iconimage_right_Selected = null;
-            this.bbtnDeletar.Iconimage_Selected = null;
-            this.bbtnDeletar.IconMarginLeft = 17;
-            this.bbtnDeletar.IconMarginRight = 0;
-            this.bbtnDeletar.IconRightVisible = true;
-            this.bbtnDeletar.IconRightZoom = 0D;
-            this.bbtnDeletar.IconVisible = true;
-            this.bbtnDeletar.IconZoom = 40D;
-            this.bbtnDeletar.IsTab = false;
-            this.bbtnDeletar.Location = new System.Drawing.Point(734, 330);
-            this.bbtnDeletar.Name = "bbtnDeletar";
-            this.bbtnDeletar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnDeletar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnDeletar.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnDeletar.selected = false;
-            this.bbtnDeletar.Size = new System.Drawing.Size(203, 48);
-            this.bbtnDeletar.TabIndex = 9;
-            this.bbtnDeletar.Text = "Deletar";
-            this.bbtnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnDeletar.Textcolor = System.Drawing.Color.White;
-            this.bbtnDeletar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbtnDeletar.Click += new System.EventHandler(this.bbtnDeletar_Click);
-            // 
             // bbtnEnviar
             // 
             this.bbtnEnviar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
@@ -545,6 +473,45 @@
             this.bbtnEnviar.Textcolor = System.Drawing.Color.White;
             this.bbtnEnviar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnEnviar.Click += new System.EventHandler(this.bbtnEnviar_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(213, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(985, 72);
+            this.label1.TabIndex = 150;
+            this.label1.Text = "Clientes Jurídicos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.lblUsu);
+            this.panel3.Controls.Add(this.bbtnClienteJu);
+            this.panel3.Controls.Add(this.bbtnHome);
+            this.panel3.Controls.Add(this.bbtnServiço);
+            this.panel3.Controls.Add(this.bbtnPedido);
+            this.panel3.Controls.Add(this.bbtnFuncionario);
+            this.panel3.Controls.Add(this.bbtnCliente);
+            this.panel3.Controls.Add(this.bbtnLogoff);
+            this.panel3.Location = new System.Drawing.Point(0, 92);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(213, 505);
+            this.panel3.TabIndex = 149;
+            // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 877;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bbtnClienteJu
             // 
@@ -790,6 +757,50 @@
             this.bbtnLogoff.Textcolor = System.Drawing.Color.White;
             this.bbtnLogoff.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // lbl_tit
+            // 
+            this.lbl_tit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.lbl_tit.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tit.ForeColor = System.Drawing.Color.White;
+            this.lbl_tit.Location = new System.Drawing.Point(203, 0);
+            this.lbl_tit.Name = "lbl_tit";
+            this.lbl_tit.Size = new System.Drawing.Size(995, 92);
+            this.lbl_tit.TabIndex = 0;
+            this.lbl_tit.Text = "Auto Socorro";
+            this.lbl_tit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 92);
+            this.panel2.TabIndex = 8970;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AutoSocorro.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.bbtnMinimizar);
+            this.panel1.Controls.Add(this.bbtnFechar);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lbl_tit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1198, 92);
+            this.panel1.TabIndex = 148;
+            // 
             // bbtnMinimizar
             // 
             this.bbtnMinimizar.ActiveBorderThickness = 1;
@@ -842,52 +853,17 @@
             this.bbtnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnFechar.Click += new System.EventHandler(this.bbtnFechar_Click);
             // 
-            // pictureBox1
+            // bunifuSeparator1
             // 
-            this.pictureBox1.Image = global::AutoSocorro.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // bbtnCancelar
-            // 
-            this.bbtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.bbtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bbtnCancelar.BorderRadius = 0;
-            this.bbtnCancelar.ButtonText = "Cancelar";
-            this.bbtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bbtnCancelar.DisabledColor = System.Drawing.Color.Gray;
-            this.bbtnCancelar.Enabled = false;
-            this.bbtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.bbtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("bbtnCancelar.Iconimage")));
-            this.bbtnCancelar.Iconimage_right = null;
-            this.bbtnCancelar.Iconimage_right_Selected = null;
-            this.bbtnCancelar.Iconimage_Selected = null;
-            this.bbtnCancelar.IconMarginLeft = 17;
-            this.bbtnCancelar.IconMarginRight = 0;
-            this.bbtnCancelar.IconRightVisible = true;
-            this.bbtnCancelar.IconRightZoom = 0D;
-            this.bbtnCancelar.IconVisible = true;
-            this.bbtnCancelar.IconZoom = 45D;
-            this.bbtnCancelar.IsTab = false;
-            this.bbtnCancelar.Location = new System.Drawing.Point(734, 330);
-            this.bbtnCancelar.Name = "bbtnCancelar";
-            this.bbtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bbtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bbtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
-            this.bbtnCancelar.selected = false;
-            this.bbtnCancelar.Size = new System.Drawing.Size(203, 48);
-            this.bbtnCancelar.TabIndex = 158;
-            this.bbtnCancelar.Text = "Cancelar";
-            this.bbtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bbtnCancelar.Textcolor = System.Drawing.Color.White;
-            this.bbtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bbtnCancelar.Visible = false;
-            this.bbtnCancelar.Click += new System.EventHandler(this.bbtnCancelar_Click);
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(213, 149);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(985, 35);
+            this.bunifuSeparator1.TabIndex = 151;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
             // 
             // ClienteJu
             // 
@@ -908,8 +884,8 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -922,7 +898,6 @@
         private Bunifu.Framework.UI.BunifuDropdown bdropAtrib;
         private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
         private System.Windows.Forms.DataGridView GridCliente;
-        private Bunifu.Framework.UI.BunifuFlatButton bbtnDeletar;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnEnviar;
         private Bunifu.Framework.UI.BunifuMetroTextbox btxtCNPJ;
         private Bunifu.Framework.UI.BunifuMetroTextbox btxtEmail;
@@ -947,5 +922,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuMetroTextbox btxtIE;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCancelar;
+        private System.Windows.Forms.Label lblUsu;
     }
 }

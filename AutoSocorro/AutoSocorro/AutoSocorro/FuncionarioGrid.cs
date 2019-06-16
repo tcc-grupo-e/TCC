@@ -72,6 +72,16 @@ namespace AutoSocorro
         //
         private void FuncionarioGrid_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             FuncionarioBLL funcBLL = new FuncionarioBLL();
             GridFunc.DataSource = funcBLL.pesquisarFunc("*");
         }
@@ -80,10 +90,10 @@ namespace AutoSocorro
         //
         private void btxtConsultar_OnTextChange(object sender, EventArgs e)
         {
-            if (!btxtConsultar.Equals("") && !btxtConsultar.Equals("Nome do Funcionário"))
+            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Nome do Funcionário"))
             {
                 FuncionarioBLL funcBLL = new FuncionarioBLL();
-                funcBLL.pesquisarFunc(btxtConsultar.Text);
+                GridFunc.DataSource = funcBLL.pesquisarFunc(btxtConsultar.text);
             }
         }
 
@@ -121,7 +131,9 @@ namespace AutoSocorro
 
         private void bbtnServiço_Click(object sender, EventArgs e)
         {
-
+            Adicionais add = new Adicionais();
+            add.Show();
+            this.Hide();
         }
     }
 }

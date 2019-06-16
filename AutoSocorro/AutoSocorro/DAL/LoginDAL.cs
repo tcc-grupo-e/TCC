@@ -11,29 +11,32 @@ namespace DAL
     {
         ClasseConexao cc;
         DataSet ds;
-        public int buscarUsuarios(String usuario, String senha)
+        public DataTable buscarUsuarios(String usuario, String senha)
         {
             cc = new ClasseConexao();
-            String sql = "Exec uspProcurarLoginFunc '" + usuario + "', '" + senha + "'";
+            String sql = "Exec usp_ProcurarLoginFunc '" + usuario + "', '" + senha + "'";
             try
             {
                 ds = cc.executa_sql(sql, false);
+            }
+            catch
+            { }
 
-                if (ds.Tables[0].Rows[0]["T/F"].ToString().Equals("F"))
-                    return 0;
-                else
-                {
-                    if (ds.Tables[0].Rows[0]["Cargo"].ToString().Equals("Gerente"))
-                        return 2;
-                    else if (ds.Tables[0].Rows[0]["Cargo"].ToString().Equals("Atendente"))
-                        return 1;
-                    else
-                        return 3;
-                }
+            return ds.Tables[0];
+        }
+
+        public bool alterar_senha(String senha, int id)
+        {
+            cc = new ClasseConexao();
+            String sql = "Exec usp_AlterarSenhaPC '" + senha + "', " + id;
+            try
+            {
+                cc.executa_sql(sql, false);
+                return true;
             }
             catch
             {
-                return 0;
+                return false;
             }
         }
     }

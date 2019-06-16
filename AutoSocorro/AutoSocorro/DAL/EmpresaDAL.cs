@@ -17,7 +17,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodasEmpresas";
+            sql = "Exec usp_PesquisarTodasEmpresas";
 
             try
             {
@@ -34,7 +34,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodasEmpresas '" + nome + "'";
+            sql = "Exec usp_PesquisarEmpresasNome '" + nome + "'";
 
             try
             {
@@ -51,7 +51,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodasEmpresas '" + email + "'";
+            sql = "Exec usp_PesquisarEmpresasEmail '" + email + "'";
 
             try
             {
@@ -68,7 +68,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodasEmpresas '" + tel + "'";
+            sql = "Exec usp_PesquisarEmpresasTelefone '" + tel + "'";
 
             try
             {
@@ -85,7 +85,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodasEmpresas '" + cnpj + "'";
+            sql = "Exec usp_PesquisarEmpresasCNPJ '" + cnpj + "'";
 
             try
             {
@@ -102,7 +102,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodasEmpresas '" + IE + "'";
+            sql = "Exec usp_PesquisarEmpresasIE '" + IE + "'";
 
             try
             {
@@ -117,14 +117,12 @@ namespace DAL
         {
             cc = new ClasseConexao();
 
-            String sql = "Exec usp_InserirEmpresa '" + nome + "','" + tel + "','" + email + "','" + cnpj + "','" + ie + "'";
+            String sql = "Exec usp_InserirEmpresa '" + nome + "','" + email + "','" + tel + "','-','" + ie + "','" + cnpj + "'";
 
             try
             {
-                if (cc.manutencao(sql) == 0)
-                    return false;
-                else
-                    return false;
+                cc.executa_sql(sql, true);
+                return true;
             }
             catch
             {

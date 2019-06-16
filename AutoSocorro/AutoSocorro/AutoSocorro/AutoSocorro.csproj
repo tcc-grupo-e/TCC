@@ -70,6 +70,12 @@
     <Compile Include="ClienteJu.Designer.cs">
       <DependentUpon>ClienteJu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fechamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fechamento.Designer.cs">
+      <DependentUpon>Fechamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="MensagemS-N.Designer.cs">
       <DependentUpon>MensagemS-N.cs</DependentUpon>
     </Compile>
+    <Compile Include="NovaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaSenha.Designer.cs">
+      <DependentUpon>NovaSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,9 @@
     <EmbeddedResource Include="ClienteJu.resx">
       <DependentUpon>ClienteJu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fechamento.resx">
+      <DependentUpon>Fechamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Funcionario.resx">
       <DependentUpon>Funcionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MensagemS-N.resx">
       <DependentUpon>MensagemS-N.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaSenha.resx">
+      <DependentUpon>NovaSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>

@@ -154,7 +154,6 @@ class ClasseValida
 
     public Boolean ValidaPlaca(String placa)
     {
-        placa = placa.Replace("-", "");
         if (placa.Length == 8)
         {
             return true;
@@ -333,7 +332,7 @@ class ClasseValida
 
     public Boolean ValidaNome(String Nome)
     {
-        if (Nome.Length < 3 || Nome.Equals("Nome") || Nome.Equals("Nome do conjuge"))
+        if (Nome.Length < 3 || Nome.Equals("Nome") || Nome.Equals("Nome do conjuge") || Nome.Equals("Contato"))
         {
             return false;
         }

@@ -45,6 +45,7 @@
     <Compile Include="ClienteBLL.cs" />
     <Compile Include="EmpresaBLL.cs" />
     <Compile Include="FuncionarioBLL.cs" />
+    <Compile Include="HomeBLL.cs" />
     <Compile Include="LoginBLL.cs" />
     <Compile Include="MensagemBLL.cs" />
     <Compile Include="Pedidos4BLL.cs" />

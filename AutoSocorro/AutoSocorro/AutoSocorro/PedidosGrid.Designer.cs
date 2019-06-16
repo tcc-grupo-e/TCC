@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosGrid));
-            this.GridFunc = new System.Windows.Forms.DataGridView();
+            this.GridChamadas = new System.Windows.Forms.DataGridView();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuCustomTextbox1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -53,75 +53,76 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bdropUF = new Bunifu.Framework.UI.BunifuDropdown();
-            ((System.ComponentModel.ISupportInitialize)(this.GridFunc)).BeginInit();
+            this.lblUsu = new System.Windows.Forms.Label();
+            this.bdropAtrib = new Bunifu.Framework.UI.BunifuDropdown();
+            ((System.ComponentModel.ISupportInitialize)(this.GridChamadas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GridFunc
+            // GridChamadas
             // 
-            this.GridFunc.AllowUserToAddRows = false;
-            this.GridFunc.AllowUserToDeleteRows = false;
-            this.GridFunc.AllowUserToResizeColumns = false;
-            this.GridFunc.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridFunc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.GridFunc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridFunc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridFunc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridFunc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridFunc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFunc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.GridFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridFunc.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.NullValue = "\"\"";
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFunc.DefaultCellStyle = dataGridViewCellStyle8;
-            this.GridFunc.EnableHeadersVisualStyles = false;
-            this.GridFunc.GridColor = System.Drawing.Color.White;
-            this.GridFunc.Location = new System.Drawing.Point(242, 196);
-            this.GridFunc.MultiSelect = false;
-            this.GridFunc.Name = "GridFunc";
-            this.GridFunc.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridFunc.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.GridFunc.RowHeadersVisible = false;
-            this.GridFunc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.GridFunc.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.GridFunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridFunc.Size = new System.Drawing.Size(935, 317);
-            this.GridFunc.TabIndex = 221;
+            this.GridChamadas.AllowUserToAddRows = false;
+            this.GridChamadas.AllowUserToDeleteRows = false;
+            this.GridChamadas.AllowUserToResizeColumns = false;
+            this.GridChamadas.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridChamadas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridChamadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridChamadas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridChamadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridChamadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.GridChamadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridChamadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GridChamadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridChamadas.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.NullValue = "\"\"";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridChamadas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GridChamadas.EnableHeadersVisualStyles = false;
+            this.GridChamadas.GridColor = System.Drawing.Color.White;
+            this.GridChamadas.Location = new System.Drawing.Point(242, 196);
+            this.GridChamadas.MultiSelect = false;
+            this.GridChamadas.Name = "GridChamadas";
+            this.GridChamadas.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridChamadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.GridChamadas.RowHeadersVisible = false;
+            this.GridChamadas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GridChamadas.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.GridChamadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridChamadas.Size = new System.Drawing.Size(935, 317);
+            this.GridChamadas.TabIndex = 221;
             // 
             // btxtConsultar
             // 
@@ -132,9 +133,12 @@
             this.btxtConsultar.Icon = ((System.Drawing.Image)(resources.GetObject("btxtConsultar.Icon")));
             this.btxtConsultar.Location = new System.Drawing.Point(242, 531);
             this.btxtConsultar.Name = "btxtConsultar";
-            this.btxtConsultar.Size = new System.Drawing.Size(430, 42);
+            this.btxtConsultar.Size = new System.Drawing.Size(448, 42);
             this.btxtConsultar.TabIndex = 215;
             this.btxtConsultar.text = "Consultar";
+            this.btxtConsultar.OnTextChange += new System.EventHandler(this.btxtConsultar_OnTextChange);
+            this.btxtConsultar.Enter += new System.EventHandler(this.btxtConsultar_Enter);
+            this.btxtConsultar.Leave += new System.EventHandler(this.btxtConsultar_Leave);
             // 
             // bunifuCustomTextbox1
             // 
@@ -149,23 +153,24 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(221, 155);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(213, 155);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(985, 35);
             this.bunifuSeparator1.TabIndex = 219;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
+            this.bunifuSeparator1.Load += new System.EventHandler(this.bunifuSeparator1_Load);
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 22F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(221, 98);
+            this.label1.Location = new System.Drawing.Point(213, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(985, 72);
+            this.label1.Size = new System.Drawing.Size(985, 79);
             this.label1.TabIndex = 218;
-            this.label1.Text = "Consultar Funcionário";
+            this.label1.Text = "Consultar Chamada";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bbtnClienteJuridico
@@ -201,6 +206,7 @@
             this.bbtnClienteJuridico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnClienteJuridico.Textcolor = System.Drawing.Color.White;
             this.bbtnClienteJuridico.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnClienteJuridico.Click += new System.EventHandler(this.bbtnClienteJuridico_Click);
             // 
             // bbtnHome
             // 
@@ -235,6 +241,7 @@
             this.bbtnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnHome.Textcolor = System.Drawing.Color.White;
             this.bbtnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnHome.Click += new System.EventHandler(this.bbtnHome_Click);
             // 
             // bbtnServiço
             // 
@@ -269,6 +276,7 @@
             this.bbtnServiço.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnServiço.Textcolor = System.Drawing.Color.White;
             this.bbtnServiço.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnServiço.Click += new System.EventHandler(this.bbtnServiço_Click);
             // 
             // lbl_tit
             // 
@@ -325,6 +333,7 @@
             this.bbtnPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnPedido.Textcolor = System.Drawing.Color.White;
             this.bbtnPedido.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnPedido.Click += new System.EventHandler(this.bbtnPedido_Click);
             // 
             // bbtnFuncionario
             // 
@@ -359,6 +368,7 @@
             this.bbtnFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnFuncionario.Textcolor = System.Drawing.Color.White;
             this.bbtnFuncionario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnFuncionario.Click += new System.EventHandler(this.bbtnFuncionario_Click);
             // 
             // bbtnCliente
             // 
@@ -393,6 +403,7 @@
             this.bbtnCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnCliente.Textcolor = System.Drawing.Color.White;
             this.bbtnCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnCliente.Click += new System.EventHandler(this.bbtnCliente_Click);
             // 
             // bbtnLogoff
             // 
@@ -427,6 +438,7 @@
             this.bbtnLogoff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bbtnLogoff.Textcolor = System.Drawing.Color.White;
             this.bbtnLogoff.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnLogoff.Click += new System.EventHandler(this.bbtnLogoff_Click);
             // 
             // bbtnMinimizar
             // 
@@ -452,6 +464,7 @@
             this.bbtnMinimizar.Size = new System.Drawing.Size(40, 40);
             this.bbtnMinimizar.TabIndex = 2;
             this.bbtnMinimizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnMinimizar.Click += new System.EventHandler(this.bbtnMinimizar_Click);
             // 
             // bbtnFechar
             // 
@@ -477,6 +490,7 @@
             this.bbtnFechar.Size = new System.Drawing.Size(40, 40);
             this.bbtnFechar.TabIndex = 0;
             this.bbtnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnFechar.Click += new System.EventHandler(this.bbtnFechar_Click);
             // 
             // panel2
             // 
@@ -503,6 +517,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.lblUsu);
             this.panel3.Controls.Add(this.bbtnClienteJuridico);
             this.panel3.Controls.Add(this.bbtnHome);
             this.panel3.Controls.Add(this.bbtnServiço);
@@ -510,27 +525,43 @@
             this.panel3.Controls.Add(this.bbtnFuncionario);
             this.panel3.Controls.Add(this.bbtnCliente);
             this.panel3.Controls.Add(this.bbtnLogoff);
-            this.panel3.Location = new System.Drawing.Point(8, 99);
+            this.panel3.Location = new System.Drawing.Point(0, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 217;
             // 
-            // bdropUF
+            // lblUsu
             // 
-            this.bdropUF.BackColor = System.Drawing.Color.Transparent;
-            this.bdropUF.BorderRadius = 3;
-            this.bdropUF.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdropUF.ForeColor = System.Drawing.Color.White;
-            this.bdropUF.Items = new string[] {
-        "UF"};
-            this.bdropUF.Location = new System.Drawing.Point(747, 531);
-            this.bdropUF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bdropUF.Name = "bdropUF";
-            this.bdropUF.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.bdropUF.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.bdropUF.selectedIndex = 0;
-            this.bdropUF.Size = new System.Drawing.Size(430, 44);
-            this.bdropUF.TabIndex = 222;
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 19;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bdropAtrib
+            // 
+            this.bdropAtrib.BackColor = System.Drawing.Color.Transparent;
+            this.bdropAtrib.BorderRadius = 3;
+            this.bdropAtrib.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdropAtrib.ForeColor = System.Drawing.Color.White;
+            this.bdropAtrib.Items = new string[] {
+        "Todos",
+        "Data",
+        "Placa Carro",
+        "Modelo do Carro",
+        "Motorista",
+        "Destino"};
+            this.bdropAtrib.Location = new System.Drawing.Point(719, 531);
+            this.bdropAtrib.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bdropAtrib.Name = "bdropAtrib";
+            this.bdropAtrib.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bdropAtrib.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.bdropAtrib.selectedIndex = -1;
+            this.bdropAtrib.Size = new System.Drawing.Size(458, 44);
+            this.bdropAtrib.TabIndex = 222;
             // 
             // PedidosGrid
             // 
@@ -538,8 +569,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1198, 597);
-            this.Controls.Add(this.bdropUF);
-            this.Controls.Add(this.GridFunc);
+            this.Controls.Add(this.bdropAtrib);
+            this.Controls.Add(this.GridChamadas);
             this.Controls.Add(this.btxtConsultar);
             this.Controls.Add(this.bunifuCustomTextbox1);
             this.Controls.Add(this.bunifuSeparator1);
@@ -548,8 +579,10 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PedidosGrid";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PedidosGrid";
-            ((System.ComponentModel.ISupportInitialize)(this.GridFunc)).EndInit();
+            this.Load += new System.EventHandler(this.PedidosGrid_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridChamadas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -561,7 +594,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView GridFunc;
+        private System.Windows.Forms.DataGridView GridChamadas;
         private Bunifu.Framework.UI.BunifuTextbox btxtConsultar;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
@@ -580,6 +613,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuDropdown bdropUF;
+        private Bunifu.Framework.UI.BunifuDropdown bdropAtrib;
+        private System.Windows.Forms.Label lblUsu;
     }
 }

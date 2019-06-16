@@ -88,6 +88,16 @@ namespace AutoSocorro
 
         private void Cliente_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             bdropAtrib.selectedIndex = 0;
             EmpresaBLL cliBLL = new EmpresaBLL();
             try
@@ -100,7 +110,6 @@ namespace AutoSocorro
             {
                 peBLL.setNovoCadastro("");
                 bbtnAlterar.Visible = false;
-                bbtnDeletar.Visible = false;
                 bbtnLimpar.Location = new Point(415, 330);
                 bbtnCancelar.Visible = true;
                 bbtnCancelar.Enabled = true;
@@ -125,21 +134,24 @@ namespace AutoSocorro
 
         private void btxtConsultar_OnTextChange(object sender, EventArgs e)
         {
-            ClienteBLL cliBLL = new ClienteBLL();
+            EmpresaBLL cliBLL = new EmpresaBLL 
+            ();
             if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Consultar"))
             {
                 try
                 {
                     if (bdropAtrib.selectedIndex == 0)
-                        GridCliente.DataSource = cliBLL.pesquisarCli();
+                        GridCliente.DataSource = cliBLL.pesquisarTodasEmpresas();
                     else if (bdropAtrib.selectedIndex == 1)
-                        GridCliente.DataSource = cliBLL.pesquisarCliNome(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarEmpresaNome(btxtConsultar.text);
                     else if (bdropAtrib.selectedIndex == 2)
-                        GridCliente.DataSource = cliBLL.pesquisarCliEmail(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarEmpresaEmail(btxtConsultar.text);
                     else if (bdropAtrib.selectedIndex == 3)
-                        GridCliente.DataSource = cliBLL.pesquisarCliTelefone(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarEmpresaTelefone(btxtConsultar.text);
+                    else if (bdropAtrib.selectedIndex == 4)
+                        GridCliente.DataSource = cliBLL.pesquisarEmpresaCnpj(btxtConsultar.text);
                     else
-                        GridCliente.DataSource = cliBLL.pesquisarCliCPF(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarEmpresaIE(btxtConsultar.text);
                 }
                 catch { }
             }
@@ -147,15 +159,15 @@ namespace AutoSocorro
 
         private void bbtnLimpar_Click(object sender, EventArgs e)
         {
-            bbtnCliente_Click(sender, e);
+            bbtnClienteJu_Click(sender, e);
         }
 
         private void bdropAtrib_onItemSelected(object sender, EventArgs e)
         {
             if (bdropAtrib.selectedIndex == 0)
             {
-                ClienteBLL cliBLL = new ClienteBLL();
-                GridCliente.DataSource = cliBLL.getTodClientes();
+                EmpresaBLL cliBLL = new EmpresaBLL();
+                GridCliente.DataSource = cliBLL.getTodEmpresa();
             }
         }
 
@@ -257,13 +269,13 @@ namespace AutoSocorro
         String codCnpj = "";
         private void GridCliente_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            btxtNome.ForeColor = btxtEmail.ForeColor = btxtCNPJ.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
+            btxtIE.ForeColor = btxtNome.ForeColor = btxtEmail.ForeColor = btxtCNPJ.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
             int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
-            btxtNome.Text = GridCliente.Rows[Linha].Cells["0"].Value.ToString();
-            btxtEmail.Text = GridCliente.Rows[Linha].Cells["1"].Value.ToString();
-            btxtTelefone.Text = GridCliente.Rows[Linha].Cells["2"].Value.ToString();
-            btxtCNPJ.Text = GridCliente.Rows[Linha].Cells["3"].Value.ToString();
-            btxtIE.Text = GridCliente.Rows[Linha].Cells["4"].Value.ToString();
+            btxtNome.Text = GridCliente.Rows[Linha].Cells[0].Value.ToString();
+            btxtEmail.Text = GridCliente.Rows[Linha].Cells[1].Value.ToString();
+            btxtTelefone.Text = GridCliente.Rows[Linha].Cells[2].Value.ToString();
+            btxtCNPJ.Text = GridCliente.Rows[Linha].Cells[4].Value.ToString();
+            btxtIE.Text = GridCliente.Rows[Linha].Cells[3].Value.ToString();
             codCnpj = btxtCNPJ.Text;
             alterar = true;
         }
@@ -324,55 +336,11 @@ namespace AutoSocorro
             }
         }
 
-        private void bbtnDeletar_Click(object sender, EventArgs e)
-        {
-            if (alterar)
-            {
-                MensagemBLL msBLL = new MensagemBLL();
-                msBLL.setMensagem("Deseja Realmente Deletar Esse Cliente");
-                msBLL.setTitulo("Alerta");
-                Mensagem ms = new Mensagem();
-                MensagemS_N msn = new MensagemS_N();
-                msn.ShowDialog();
-
-                if (msBLL.getSN().Equals("S"))
-                {
-                    ClienteBLL cliBLL = new ClienteBLL();
-                    if (cliBLL.deletarCli(codCnpj))
-                    {
-                        alterar = false;
-                        MensagemBLL mBLL = new MensagemBLL();
-                        mBLL.setMensagem("Cliente Deletado Com Sucesso!");
-                        mBLL.setTitulo("Mensagem");
-                        ms.ShowDialog();
-                        bbtnLimpar_Click(sender, e);
-                    }
-                    else
-                    {
-                        MensagemBLL mBLL = new MensagemBLL();
-                        mBLL.setMensagem("Cliente Não Deletado!");
-                        mBLL.setTitulo("Alerta");
-                        ms.ShowDialog();
-                    }
-                }
-                else
-                {
-                    alterar = false;
-                }
-            }
-            else
-            {
-                MensagemBLL mBLL = new MensagemBLL();
-                mBLL.setMensagem("Selecione Um Cliente");
-                mBLL.setTitulo("Alerta");
-                Mensagem ms = new Mensagem();
-                ms.ShowDialog();
-            }
-        }
-
         private void bbtnServiço_Click(object sender, EventArgs e)
         {
-
+            Adicionais add = new Adicionais();
+            add.Show();
+            this.Hide();
         }
 
         private void btxtNome_KeyPress(object sender, KeyPressEventArgs e)

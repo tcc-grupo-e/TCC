@@ -334,3 +334,7 @@ F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Prop
 F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.csproj.GenerateResource.Cache
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Pedidos3.resources
 C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Pedidos4.resources
+C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Adicionais.resources
+C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.PedidosGrid.resources
+C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Fechamento.resources
+C:\Users\Luc\Documents\GitHub\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.NovaSenha.resources

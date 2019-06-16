@@ -18,7 +18,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodosClientes";
+            sql = "Exec usp_PesquisarTodosClientes";
 
             try
             {
@@ -35,7 +35,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesNome '" + nome + "'";
+            sql = "Exec usp_PesquisarClientesNome '" + nome + "'";
 
             try
             {
@@ -52,7 +52,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesEmail '" + email + "'";
+            sql = "Exec usp_PesquisarClientesEmail '" + email + "'";
 
             try
             {
@@ -69,7 +69,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesTelefone '" + tel + "'";
+            sql = "Exec usp_PesquisarClientesTelefone '" + tel + "'";
 
             try
             {
@@ -86,7 +86,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarClientesCPF " + cpf + "'";
+            sql = "Exec usp_PesquisarClientesCPF '" + cpf + "'";
 
             try
             {
@@ -118,7 +118,7 @@ namespace DAL
         {
             cc = new ClasseConexao();
 
-            String sql = "Exec usp_alterarCliente '" + nome + "','" + tel + "','" + email + "','" + cpf + "','" + cod + "'";
+            String sql = "Exec usp_AlterarCliente '" + nome + "','" + tel + "','" + email + "','" + cpf + "','" + cod + "'";
 
             try
             {
@@ -135,7 +135,7 @@ namespace DAL
         {
             cc = new ClasseConexao();
 
-            String sql = "Exec usp_deletarCliente '" + cod + "'";
+            String sql = "Exec usp_DeletarCliente '" + cod + "'";
 
             try
             {

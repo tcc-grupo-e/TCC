@@ -56,6 +56,7 @@
             this.bbtnCadastroCliJ = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnCadastroCliF = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnContinuar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -162,6 +163,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.panel3.Controls.Add(this.lblUsu);
             this.panel3.Controls.Add(this.bbtnClienteJu);
             this.panel3.Controls.Add(this.bbtnHome);
             this.panel3.Controls.Add(this.bbtnLogoff);
@@ -662,6 +664,17 @@
             this.bbtnContinuar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnContinuar.Click += new System.EventHandler(this.bbtnContinuar_Click);
             // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 19;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,5 +729,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCadastroCliJ;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCadastroCliF;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnContinuar;
+        private System.Windows.Forms.Label lblUsu;
     }
 }

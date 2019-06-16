@@ -74,9 +74,9 @@ namespace AutoSocorro
                 if (log != 0)
                 {
                     if (log == 1)
-                        loBLL.setNivelAcesso("1");
-                    else if (log == 2)
-                        loBLL.setNivelAcesso("2");
+                        loBLL.setNivelAcesso(1);
+                    else if (log == 2) 
+                        loBLL.setNivelAcesso(2);
                     else
                     {
                         MensagemBLL ms = new MensagemBLL();
@@ -142,7 +142,9 @@ namespace AutoSocorro
 
             loBLL.setUsuario("");
             loBLL.setSenha("");
-            loBLL.setNivelAcesso("");
+            loBLL.setNivelAcesso(0);
+            loBLL.setId(0);
+            loBLL.setPrimCad("S");
         }
         //
         //Enter ativa o Botão Entrar

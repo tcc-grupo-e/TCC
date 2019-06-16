@@ -15,11 +15,11 @@ namespace DAL
         {
             cc = new ClasseConexao();
 
-            String sql = "Exec usp_inserirfunc '" + nome + "','" + cargo + "','" + salario + "','" + email + "','" + rg + "','" + cnh + "','" + carteira + "','" + endereco + "','" + cidade + "','" + cep + "','" + estado + "','" + tel + "','" + datanasc + "','" + estcivil + "','" + nomeconj + "','" + telconj + "','" + login + "','" + senha + "', 'N'";
+            String sql = "Exec usp_InserirFuncionario '" + nome + "','" + cargo + "','" + salario + "','" + email + "','" + rg + "','" + cnh + "','" + carteira + "','" + endereco + "','" + cidade + "','" + cep + "','" + estado + "','" + tel + "','" + datanasc + "','" + estcivil + "','" + nomeconj + "','" + telconj + "','" + login + "','" + senha + "', 'N'";
 
             try
             {
-                int a = cc.manutencao(sql);
+                cc.executa_sql(sql, true);
                 return true;
             }
             catch
@@ -53,9 +53,9 @@ namespace DAL
             String sql = "";
 
             if (p.Equals("*"))
-                sql = "Exec uspProcurarTodosFunc";
+                sql = "Exec usp_PesquisarTodosFuncionarios";
             else
-                sql = "Exec usp_procurarFunc '" + p + "'";
+                sql = "Exec usp_PesquisarFuncionariosNome '" + p + "'";
 
             try
             {
@@ -73,7 +73,7 @@ namespace DAL
 
             String sql = "";
 
-            sql = "Exec usp_procurarTodosFunc";
+            sql = "Exec usp_PesquisarTodosFuncionariosB";
 
             try
             {

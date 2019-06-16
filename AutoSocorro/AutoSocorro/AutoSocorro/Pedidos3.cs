@@ -136,23 +136,33 @@ namespace AutoSocorro
         private void GridMotorista_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int Linha = Convert.ToInt32(GridCaminhao.CurrentCell.RowIndex);
-            String Nome = GridCaminhao.Rows[Linha].Cells["Nome"].Value.ToString();
+            String Placa = GridCaminhao.Rows[Linha].Cells["Placa"].Value.ToString();
             Mensagem ms = new Mensagem();
             MensagemBLL msBLL = new MensagemBLL();
-            msBLL.setMensagem("Motorista: \n" + Nome);
+            msBLL.setMensagem("Caminhão: \n" + Placa);
             msBLL.setTitulo("Aviso");
             ms.ShowDialog();
             PedidosBLL peBLL = new PedidosBLL();
-            int ID = peBLL.pesquisar_Id_Motoristas_Nome(Nome);
+            int ID = peBLL.pesquisar_Id_Caminhoes_Placa(Placa);
             peBLL.setIdMotorista(ID);
         }
 
         private void Pedidos3_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             PedidosBLL peBLL = new PedidosBLL();
             try
             {
-                GridCaminhao.DataSource = peBLL.pesquisar_Todos_Motoristas();
+                GridCaminhao.DataSource = peBLL.pesquisar_Todos_Caminhoes();
             }
             catch { }
         }

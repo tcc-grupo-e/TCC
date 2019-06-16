@@ -88,6 +88,16 @@ namespace AutoSocorro
 
         private void Cliente_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             bdropAtrib.selectedIndex = 0;
             ClienteBLL cliBLL = new ClienteBLL();
             try
@@ -100,7 +110,6 @@ namespace AutoSocorro
             {
                 peBLL.setNovoCadastro("");
                 bbtnAlterar.Visible = false;
-                bbtnDeletar.Visible = false;
                 bbtnLimpar.Location = new Point(385, 330);
                 bbtnCancelar.Visible = true;
                 bbtnCancelar.Enabled = true;
@@ -133,13 +142,13 @@ namespace AutoSocorro
                     if (bdropAtrib.selectedIndex == 0)
                         GridCliente.DataSource = cliBLL.pesquisarCli();
                     else if (bdropAtrib.selectedIndex == 1)
-                        GridCliente.DataSource = cliBLL.pesquisarCliNome(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarCliNome(btxtConsultar.text);
                     else if (bdropAtrib.selectedIndex == 2)
-                        GridCliente.DataSource = cliBLL.pesquisarCliEmail(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarCliEmail(btxtConsultar.text);
                     else if (bdropAtrib.selectedIndex == 3)
-                        GridCliente.DataSource = cliBLL.pesquisarCliTelefone(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarCliTelefone(btxtConsultar.text);
                     else
-                        GridCliente.DataSource = cliBLL.pesquisarCliCPF(btxtConsultar.Text);
+                        GridCliente.DataSource = cliBLL.pesquisarCliCPF(btxtConsultar.text);
                 }
                 catch { }
             }
@@ -257,8 +266,8 @@ namespace AutoSocorro
             btxtNome.ForeColor = btxtEmail.ForeColor = btxtCPF.ForeColor = btxtTelefone.ForeColor = Color.FromArgb(64, 64, 64);
             int Linha = Convert.ToInt32(GridCliente.CurrentCell.RowIndex);
             btxtNome.Text = GridCliente.Rows[Linha].Cells[0].Value.ToString();
-            btxtEmail.Text = GridCliente.Rows[Linha].Cells[2].Value.ToString();
-            btxtTelefone.Text = GridCliente.Rows[Linha].Cells[1].Value.ToString();
+            btxtEmail.Text = GridCliente.Rows[Linha].Cells[1].Value.ToString();
+            btxtTelefone.Text = GridCliente.Rows[Linha].Cells[2].Value.ToString();
             btxtCPF.Text = GridCliente.Rows[Linha].Cells[3].Value.ToString();
             codCpf = btxtCPF.Text;
             if (btxtCPF.Text.Equals("-"))
@@ -370,7 +379,9 @@ namespace AutoSocorro
 
         private void bbtnServiço_Click(object sender, EventArgs e)
         {
-
+            Adicionais add = new Adicionais();
+            add.Show();
+            this.Hide();
         }
 
         private void btxtNome_KeyPress(object sender, KeyPressEventArgs e)

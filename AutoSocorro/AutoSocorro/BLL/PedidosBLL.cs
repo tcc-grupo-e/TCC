@@ -16,6 +16,7 @@ namespace BLL
         public static DataTable NomeMotoristas;
         public static DataTable TodosCaminhoes;
         public static DataTable PlacaCaminhoes;
+        public static DataTable TodasChamadas;
         public static int IdCliente = 0;
         public static int IdMotorista = 0;
         public static int IdCaminhao = 0;
@@ -47,6 +48,15 @@ namespace BLL
         public DataTable getNomeClientes()
         {
             return NomeClientes;
+        }
+
+        public void setTodasChamadas(DataTable val)
+        {
+            TodasChamadas = val;
+        }
+        public DataTable getTodasChamadas()
+        {
+            return TodasChamadas;
         }
 
         public void setNovoCadastro(String val)
@@ -146,6 +156,8 @@ namespace BLL
         {
             PedidosDAL peDAL = new PedidosDAL();
             TodosMotoristas = peDAL.pesquisar_Todos_Motoristas();
+            String NomeMot = TodosMotoristas.Rows[0]["Nome"] + "";
+            String a = NomeMot;
             return TodosMotoristas;
         }
 
@@ -182,6 +194,43 @@ namespace BLL
             PedidosDAL peDAL = new PedidosDAL();
             IdCaminhao = peDAL.pesquisar_Id_Caminhoes_Placa(placa);
             return IdCaminhao;
+        }
+
+        public DataTable pesquisar_TodasChamadas()
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            TodasChamadas = peDAL.pesquisar_TodasChamadas();
+            return TodasChamadas;
+        }
+
+        public DataTable pesquisar_TodasChamadasData(String data)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            return peDAL.pesquisar_TodasChamadasData(data);
+        }
+
+        public DataTable pesquisar_TodasChamadasPlacaCarro(String placa)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            return peDAL.pesquisar_TodasChamadasPlacaCarro(placa);
+        }
+
+        public DataTable pesquisarModeloCarro(String modelo)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            return peDAL.pesquisarModeloCarro(modelo);
+        }
+
+        public DataTable pesquisarMotorista(String mot)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            return peDAL.pesquisarMotorista(mot);
+        }
+
+        public DataTable pesquisarDestino(String dest)
+        {
+            PedidosDAL peDAL = new PedidosDAL();
+            return peDAL.pesquisarDestino(dest);
         }
     }
 }

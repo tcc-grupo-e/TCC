@@ -12,13 +12,116 @@ namespace DAL
         ClasseConexao cc;
         DataSet ds;
 
+
+        public DataTable pesquisar_TodasChamadas()
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+            sql = "Exec usp_PesquisarTodasAsChamadas";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
+        public DataTable pesquisar_TodasChamadasData(String data)
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+            sql = "Exec usp_PesquisarTodasAsChamadasData '" + data + "'";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
+        public DataTable pesquisar_TodasChamadasPlacaCarro(String placa)
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+            sql = "Exec usp_PesquisarTodasAsChamadasPlacaCarro '" + placa + "'";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
+        public DataTable pesquisarModeloCarro(String modelo)
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+            sql = "Exec usp_PesquisarTodasAsChamadasModelo '" + modelo + "'";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
+        public DataTable pesquisarMotorista(String mot)
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+            sql = "Exec usp_PesquisarTodasAsChamadasMotorista '" + mot + "'";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
+        public DataTable pesquisarDestino(String dest)
+        {
+            cc = new ClasseConexao();
+            ds = new DataSet();
+
+            String sql = "";
+            sql = "Exec usp_PesquisarTodasAsChamadasDestino '" + dest + "'";
+
+            try
+            {
+                ds = cc.executa_sql(sql, false);
+            }
+            catch { }
+
+            return ds.Tables[0];
+        }
+
         public DataTable pesquisar_Todos_Clientes()
         {
             cc = new ClasseConexao();
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_procurarTodosClientes";
+            sql = "Exec usp_PesquisarClientesEmpresas";
 
             try
             {
@@ -35,7 +138,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodos_Clientes '" + nome + "'";
+            sql = "Exec usp_PesquisarClientesEmpresasNome '" + nome + "'";
 
             try
             {
@@ -52,7 +155,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarId_Cliente_Nome '" + nome + "'";
+            sql = "Exec usp_PesquisarIdClientesNomeChamada '" + nome + "'";
 
             try
             {
@@ -70,7 +173,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_procurarTodosMotoristas";
+            sql = "Exec usp_PesquisarFuncionariosMotoristas";
 
             try
             {
@@ -122,7 +225,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_procurarTodosCaminhoes";
+            sql = "Exec usp_PesquisarTodosCaminhoesChamada";
 
             try
             {
@@ -139,7 +242,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarTodosCaminhoesPlaca '" + Placa + "'";
+            sql = "Exec usp_PesquisarTodosCaminhoesChamadaPlaca '" + Placa + "'";
 
             try
             {
@@ -156,7 +259,7 @@ namespace DAL
             ds = new DataSet();
 
             String sql = "";
-            sql = "Exec usp_ProcurarId_Caminhoes_Placa '" + Placa + "'";
+            sql = "Exec usp_PesquisarIdCaminhoesChamadaPlaca '" + Placa + "'";
 
             try
             {

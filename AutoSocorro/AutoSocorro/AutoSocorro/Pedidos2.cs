@@ -135,7 +135,11 @@ namespace AutoSocorro
 
         private void GridMotorista_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int Linha = Convert.ToInt32(GridMotorista.CurrentCell.RowIndex);
+            int Linha = 0;
+            try
+            {
+                Linha = Convert.ToInt32(GridMotorista.CurrentCell.RowIndex);
+            }catch {}
             String Nome = GridMotorista.Rows[Linha].Cells["Nome"].Value.ToString();
             Mensagem ms = new Mensagem();
             MensagemBLL msBLL = new MensagemBLL();
@@ -146,9 +150,18 @@ namespace AutoSocorro
             int ID = peBLL.pesquisar_Id_Motoristas_Nome(Nome);
             peBLL.setIdMotorista(ID);
         }
-
         private void Pedidos2_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             PedidosBLL peBLL = new PedidosBLL();
             try
             {

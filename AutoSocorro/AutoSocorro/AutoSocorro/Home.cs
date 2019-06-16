@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace AutoSocorro
 {
@@ -18,6 +19,9 @@ namespace AutoSocorro
         {
             InitializeComponent();
         }
+        DataTable ChamadosAbertos = new DataTable();
+        DataTable ChamadosFechados = new DataTable();
+
         String ano = "";
         String mes = "";
         Label lblDayz;
@@ -486,6 +490,7 @@ namespace AutoSocorro
             panel9.Visible = false;
             panel9.Enabled = false;
             lblDiaEsc.Text = lblData.Text;
+            atualizarHistorico();
             Home_Load(sender, e);
         }
 
@@ -499,11 +504,341 @@ namespace AutoSocorro
 
         }
 
+        int cont = 0;
+
+        public void Criar_Panel_Abertos(int y, Color c, Color e, int id)
+        {
+            var pnlBorda = new Panel();
+
+            pnlBorda = new Panel
+            {
+                Location = new Point(4, y),
+                Size = new Size(434, 103),
+                BackColor = e,
+                Name = "pnl" + id,
+            };
+
+            pnlChamadas.Controls.Add(pnlBorda);
+
+            var pnl = new Panel();
+
+            pnl = new Panel
+            {
+                Location = new System.Drawing.Point(3, 3),
+                Size = new System.Drawing.Size(427, 97),
+                BackColor = c,
+                Name = "pnl" + id,
+            };
+
+            pnlBorda.Controls.Add(pnl);
+
+            var lblNome = new Label();
+
+            lblNome = new Label
+            {
+                Location = new Point(40, 37),
+                Size = new Size(68, 23),
+                Text = ChamadosAbertos.Rows[numAb]["Cliente"] + "",
+                Font = new Font("Century Gothic", 11, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblNome);
+
+            var lblPlaca = new Label();
+
+            lblPlaca = new Label
+            {
+                Location = new Point(172, 8),
+                Size = new Size(68, 23),
+                Text = "Placa:",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblPlaca);
+
+            var lblModelo = new Label();
+
+            lblModelo = new Label
+            {
+                Location = new Point(172, 41),
+                Size = new Size(68, 23),
+                Text = "Modelo:",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblModelo);
+
+            var lblMarca = new Label();
+
+            lblMarca = new Label
+            {
+                Location = new Point(172, 73),
+                Size = new Size(68, 23),
+                Text = "Marca:",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblMarca);
+
+            var lblPlacaChamada = new Label();
+
+            lblPlacaChamada = new Label
+            {
+                Location = new Point(251, 7),
+                Size = new Size(90, 23),
+                Text = ChamadosAbertos.Rows[numAb]["Placa"] + "",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblPlacaChamada);
+
+            var lblModeloChamada = new Label();
+
+            lblModeloChamada = new Label
+            {
+                Location = new Point(251, 41),
+                Size = new Size(90, 23),
+                Text = ChamadosAbertos.Rows[numAb]["Modelo"] + "",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblModeloChamada);
+
+            var lblMarcaChamada = new Label();
+
+            lblMarcaChamada = new Label
+            {
+                Location = new Point(251, 73),
+                Size = new Size(90, 23),
+                Text = ChamadosAbertos.Rows[numAb]["Marca"] + "",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblMarcaChamada);
+
+            var lblStatus = new Label();
+
+            lblStatus = new Label
+            {
+                Location = new Point(350, 79),
+                Size = new Size(89, 23),
+                Text = "Aberto",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = Color.FromArgb(114, 28, 36)
+            };
+
+            pnl.Controls.Add(lblStatus);
+
+            cont++;
+
+            pnlChamadas.Cursor = Cursors.Hand;
+
+            pnl.Click += new EventHandler(this.pnlChamadas_Click);
+        }
+
+        private void pnlChamadas_Click(object sender, EventArgs e)
+        {
+            Panel pnl = sender as Panel;
+           
+            int Id_Pedido = Convert.ToInt16(ChamadosAbertos.Rows[Convert.ToInt16(pnl.Name.Substring(3))]["id"]+"");
+
+            Pedidos4BLL pe = new Pedidos4BLL();
+            pe.setCodAb(Id_Pedido);
+
+            Fechamento fe = new Fechamento();
+            fe.Show();
+            this.Hide();
+        }
+
+        public void Criar_Panel_Fechados(int y, Color c, Color e, int id)
+        {
+            var pnlBorda = new Panel();
+
+            pnlBorda = new Panel
+            {
+                Location = new System.Drawing.Point(4, y),
+                Size = new System.Drawing.Size(434, 103),
+                BackColor = e,
+                Name = "pnl" + id,
+            };
+
+            pnlChamadas.Controls.Add(pnlBorda);
+
+            var pnl = new Panel();
+
+            pnl = new Panel
+            {
+                Location = new System.Drawing.Point(3, 3),
+                Size = new System.Drawing.Size(427, 97),
+                BackColor = c,
+                Name = "pnl" + id,
+            };
+
+            pnlBorda.Controls.Add(pnl);
+
+            var lblNome = new Label();
+
+            lblNome = new Label
+            {
+                Location = new Point(40, 37),
+                Size = new Size(68, 23),
+                Text = ChamadosFechados.Rows[numFe]["Cliente"] + "",
+                Font = new Font("Century Gothic", 11, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblNome);
+
+            var lblPlaca = new Label();
+
+            lblPlaca = new Label
+            {
+                Location = new Point(172, 8),
+                Size = new Size(73, 23),
+                Text = "Placa:",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblPlaca);
+
+            var lblModelo = new Label();
+
+            lblModelo = new Label
+            {
+                Location = new Point(172, 41),
+                Size = new Size(73, 23),
+                Text = "Modelo:",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblModelo);
+
+            var lblMarca = new Label();
+
+            lblMarca = new Label
+            {
+                Location = new Point(172, 73),
+                Size = new Size(73, 23),
+                Text = "Marca:",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblMarca);
+
+            var lblPlacaChamada = new Label();
+
+            lblPlacaChamada = new Label
+            {
+                Location = new Point(251, 7),
+                Size = new Size(90, 23),
+                Text = ChamadosFechados.Rows[numFe]["Placa"] + "",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblPlacaChamada);
+
+            var lblModeloChamada = new Label();
+
+            lblModeloChamada = new Label
+            {
+                Location = new Point(251, 41),
+                Size = new Size(90, 23),
+                Text = ChamadosFechados.Rows[numFe]["Modelo"] + "",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblModeloChamada);
+
+            var lblMarcaChamada = new Label();
+
+            lblMarcaChamada = new Label
+            {
+                Location = new Point(251, 73),
+                Size = new Size(90, 23),
+                Text = ChamadosFechados.Rows[numFe]["Marca"] + "",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblMarcaChamada);
+
+            var lblStatus = new Label();
+
+            lblStatus = new Label
+            {
+                Location = new Point(350, 79),
+                Size = new Size(89, 23),
+                Text = "Fechado",
+                Font = new Font("Century Gothic", 10, FontStyle.Regular),
+                ForeColor = e
+            };
+
+            pnl.Controls.Add(lblStatus);
+
+            cont++;
+        }
+
+        int numAb = 0;
+        int numFe = 0;
+
+        public void atualizarHistorico()
+        {
+            pnlChamadas.Controls.Clear();
+
+            ChamadosAbertos = new DataTable();
+            ChamadosFechados = new DataTable();
+
+            HomeBLL homeBLL = new HomeBLL();
+            ChamadosAbertos = homeBLL.pesquisar_Abertos(lblDiaEsc.Text);
+            ChamadosFechados = homeBLL.pesquisar_Fechados(lblDiaEsc.Text);
+
+            numAb = 0;
+            numFe = 0;
+
+            for (int i = 0; i < ChamadosAbertos.Rows.Count; i++)
+            {
+                Criar_Panel_Abertos(i * (103 + 4) + 4, Color.FromArgb(255, 215, 218), Color.FromArgb(114, 28, 36), cont);
+                numAb++;
+            }
+            cont = 0;
+            for (int i = 0; i < ChamadosFechados.Rows.Count; i++)
+            {
+                Criar_Panel_Fechados(numAb * (103 + 4) + 4, Color.FromArgb(212, 237, 218), Color.FromArgb(21, 87, 36), cont);
+                numAb++;
+                numFe++;
+            }
+        }
+
         private void Home_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             lblData.Text = DateTime.Now.Date.ToString();
             lblData.Text = lblData.Text.Substring(0, 10);
             lblDiaEsc.Text = lblData.Text;
+
+            atualizarHistorico();
+
             panel4.Controls.Clear();
             if (btnMeses.Equals(""))
             {
@@ -583,7 +918,9 @@ namespace AutoSocorro
 
         private void bbtnServiço_Click(object sender, EventArgs e)
         {
-
+            Adicionais add = new Adicionais();
+            add.Show();
+            this.Hide();
         }
 
         private void bbtnChamadas_Click(object sender, EventArgs e)
@@ -603,6 +940,7 @@ namespace AutoSocorro
             if (m.Length == 1)
                 m = "0" + m;
             lblDiaEsc.Text = DiaEscolhido + "/" + m + "/" + ano;
+            atualizarHistorico();
         }
     }
 }

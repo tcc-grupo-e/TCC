@@ -72,6 +72,16 @@ namespace AutoSocorro
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
             PedidosBLL peBLL = new PedidosBLL();
             try
             {
@@ -135,11 +145,19 @@ namespace AutoSocorro
         private void btxtConsultar_OnTextChange(object sender, EventArgs e)
         {
             PedidosBLL peBLL = new PedidosBLL();
-            if (!btxtConsultar.text.Equals("") && !btxtConsultar.text.Equals("Nome Cliente"))
+            if (!btxtConsultar.text.Equals("Nome Cliente"))
             {
                 try
                 {
-                    GridCliente.DataSource = peBLL.pesquisar_Clientes_Nome(btxtConsultar.Text);
+                    GridCliente.DataSource = peBLL.pesquisar_Clientes_Nome(btxtConsultar.text);
+                }
+                catch { }
+            }
+            if (btxtConsultar.text.Equals(""))
+            {
+                try
+                {
+                    GridCliente.DataSource = peBLL.getTodosClientes();
                 }
                 catch { }
             }
@@ -174,8 +192,7 @@ namespace AutoSocorro
             else
                 peBLL.setClienteFJ("F");
 
-            int ID = peBLL.pesquisar_Id_Clientes_Nome(Nome);
-            peBLL.setIdCliente(ID);
+            peBLL.setIdCliente(peBLL.pesquisar_Id_Clientes_Nome(Nome));
         }
     }
 }
