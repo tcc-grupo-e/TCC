@@ -104,10 +104,10 @@ namespace BLL
             }
         } 
 
-        public bool alterar_semha(String senha, int id)
+        public bool alterar_senha(String senha, int id)
         {
             LoginDAL loDAL = new LoginDAL();
-            return loDAL.alterar_semha(senha, id);
+            return loDAL.alterar_senha(senha, id);
         }
     }
 }

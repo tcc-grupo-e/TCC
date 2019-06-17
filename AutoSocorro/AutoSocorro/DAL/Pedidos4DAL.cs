@@ -11,6 +11,19 @@ namespace DAL
     {
         ClasseConexao cc = new ClasseConexao();
         DataSet ds = new DataSet();
+        public void InserirAdicAber(int idAb, String Adicional)
+        {
+            cc = new ClasseConexao();
+
+            String sql = "Exec usp_InserirAdicionalAbertura " + idAb + ",'" + Adicional + "'";
+            try
+            {
+                cc.executa_sql(sql, true);
+            }
+            catch
+            {}
+        }
+
         public bool inserirFechamento(String kmche, String hrche, String hrpar, String hrtrab, String contato, String estado, String acom, int id)
         {
             cc = new ClasseConexao();
@@ -44,7 +57,7 @@ namespace DAL
                 return false;
             }
         }
-        
+
         //
         //Inserir Tabela Abertura
         //

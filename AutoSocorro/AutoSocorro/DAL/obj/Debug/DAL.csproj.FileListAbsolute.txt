@@ -57,3 +57,14 @@ F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.pdb
 F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
 F:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb
+I:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.dll
+I:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.pdb
+I:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+I:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
+I:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb
+H:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.dll
+H:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\bin\Debug\DAL.pdb
+H:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+H:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+H:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.dll
+H:\Importante\TCC\AutoSocorro\AutoSocorro\DAL\obj\Debug\DAL.pdb

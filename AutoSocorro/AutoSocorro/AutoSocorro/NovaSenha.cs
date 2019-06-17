@@ -78,7 +78,7 @@ namespace AutoSocorro
                 if (btxtSenha1.Text.Length > 6)
                 {
                     LoginBLL loBLL = new LoginBLL();
-                    if(loBLL.alterar_semha(criptografarSenha(btxtSenha1.Text), loBLL.getId()))
+                    if(loBLL.alterar_senha(criptografarSenha(btxtSenha1.Text), loBLL.getId()))
                     {
                         MensagemBLL mBLL = new MensagemBLL();
                         mBLL.setMensagem("Senha ALterada Com Sucesso!");

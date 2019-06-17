@@ -258,6 +258,12 @@ namespace BLL
         //
         //Inserir
         //
+        public void InserirAdicAber(int idAb, String Adicional)
+        {
+            Pedidos4DAL pe = new Pedidos4DAL();
+            pe.InserirAdicAber(idAb, Adicional);
+        }
+
         public bool inserirAbertura(String retirada, String ano, String hrs, String kmsaida, String modelo, String marca, String placa, String obs, String data, String cor, String apolice)
         {
             Pedidos4DAL pe = new Pedidos4DAL();

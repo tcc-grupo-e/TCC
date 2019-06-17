@@ -99,7 +99,7 @@ namespace AutoSocorro
             if (btxt.Text.Equals(txt[btxt.TabIndex - 1]))
             {
                 btxt.Text = "";
-                btxt.ForeColor = Color.DarkGray;
+                btxt.ForeColor = Color.FromArgb(64,64,64);
             }
         }
         private void PlaceHolder_Leave(object sender, EventArgs e)
@@ -112,6 +112,8 @@ namespace AutoSocorro
             }
         }
 
+        DataTable Ad = new DataTable();
+
         private void Fechamento_Load(object sender, EventArgs e)
         {
             LoginBLL lo = new LoginBLL();
@@ -123,6 +125,14 @@ namespace AutoSocorro
                 bbtnServiço.Visible = false;
                 bbtnFuncionario.Visible = false;
             }
+
+            AdicionaisBLL ad = new AdicionaisBLL();
+            GridAdicional.DataSource = ad.pesquisarAdicionais();
+            GridAdicional.Columns.Remove(GridAdicional.Columns[1]);
+
+            Ad.Columns.Add("Nome", typeof(string));
+
+            GridCadastrados.DataSource = Ad;
 
             DataTable dt = new DataTable();
             PedidosBLL pe = new PedidosBLL();
@@ -210,8 +220,12 @@ namespace AutoSocorro
                 Pedidos4BLL pe4BLL = new Pedidos4BLL();
                 if (pe4BLL.inserirFechamento(btxtKmChegada.Text, btxtHrChegada.Text, btxtHrParada.Text, btxtHrTrab.Text, btxtContato.Text, btxtEstado.Text, Acom, l))
                 {
-                    
                     pe4BLL.inserirFuncAber();
+
+                    for (int i = 0; i < adicionais.Count; i++)
+                    {
+                        pe4BLL.InserirAdicAber(l, adicionais[i]);
+                    }
 
                     PedidosBLL peBLL = new PedidosBLL();
 
@@ -241,6 +255,54 @@ namespace AutoSocorro
                 Mensagem ms = new Mensagem();
                 ms.ShowDialog();
             }
+        }
+
+        private void GridAdicional_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int Linha = Convert.ToInt32(GridAdicional.CurrentCell.RowIndex);
+            adicionais.Add(GridAdicional.Rows[Linha].Cells[0].Value.ToString());
+            
+            Ad.Rows.Add(adicionais[adicionais.Count-1]);
+            GridCadastrados.DataSource = Ad;
+        }
+
+        List<String> adicionais = new List<String>();
+
+        bool deletar = false;
+        int l;
+        private void GridCadastrados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deletar = true;
+            l = Convert.ToInt32(GridCadastrados.CurrentCell.RowIndex);
+        }
+
+        private void bbtnExcluirDestino_Click(object sender, EventArgs e)
+        {
+            if (deletar)
+            {
+                adicionais.Remove(GridCadastrados.Rows[l].Cells[0].Value + "");
+
+                Ad = new DataTable();
+                Ad.Columns.Add("Nome", typeof(string));
+
+                for (int i = 0; i < adicionais.Count; i++) {
+                    Ad.Rows.Add(adicionais[i]);
+                }
+                GridCadastrados.DataSource = Ad;
+                deletar = false;
+            }
+        }
+
+        private void bbtnAutoCadastro_Click(object sender, EventArgs e)
+        {
+            btxtContato.ForeColor = btxtEstado.ForeColor = btxtHrChegada.ForeColor = btxtHrParada.ForeColor = btxtHrTrab.ForeColor = btxtKmChegada.ForeColor = Color.FromArgb(64, 64, 64);
+
+            btxtContato.Text = "Lara";
+            btxtEstado.Text = "Amassado";
+            btxtHrChegada.Text = "16:48";
+            btxtHrParada.Text = "2";
+            btxtHrTrab.Text = "1";
+            btxtKmChegada.Text = "10710 Km";
         }
     }
 }

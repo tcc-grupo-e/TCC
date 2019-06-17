@@ -92,3 +92,10 @@ F:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.pdb
 F:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 F:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.dll
 F:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.pdb
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.dll
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\obj\Debug\BLL.pdb
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\BLL.dll
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\BLL.pdb
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.dll
+I:\Importante\TCC\AutoSocorro\AutoSocorro\BLL\bin\Debug\DAL.pdb

@@ -16,7 +16,7 @@ namespace AutoSocorro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NovaSenha());
+            Application.Run(new Login());
         }
     }
 }
