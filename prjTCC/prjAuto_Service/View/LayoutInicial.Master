@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link href="css/ipage1.0.css" rel="stylesheet" />
+    <link href="css/materialize.min.css" rel="stylesheet" />
     <title>Auto Socorro </title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/materialize.min.js" type="text/javascript"></script>
     <script src="js/barba.min.js" type="text/javascript"></script>
     <script src="js/bannerRotativo.js" type="text/javascript"></script>
     <script src="js/ativaMenu.js" type="text/javascript"></script>
@@ -31,42 +33,25 @@
 
 
             if (session != "1") {
-                //$('#loginfacil').html("<button class=\"btn btn-primary navbar-btn border border-link\">Login</button>");
-                //$('#loginfacil').removeAttr('onclick');
-                //$('#loginfacil').attr('data-toggle', 'modal');
+              
                 $('#loginfacil').css('display', 'block');
                 $('#btnLogoff').css('display', 'none');
                 $('#loginfacil').click();
 
             }
             else {
-                //$('#loginfacil').html("<button class=\"btn btn-primary navbar-btn border border-link\">Logoff</button>");
+                
                 $('#loginfacil').css('display', 'none');
                 $('#btnLogoff').css('display', 'block');
-                //$('#loginfacil').attr('onclick', 'sair()');
-                //$('#loginfacil').removeAttr('data-toggle');
+               
 
             }
-            //alert(session);
+            
 
         });
 
     </script>
-    <%--<script>
-        function sair() {
 
-            $('#loginfacil').html("<button class=\"btn btn-primary navbar-btn border border-link\">Login</button>");
-            $('#loginfacil').removeAttr('onclick');
-            $('#loginfacil').attr('data-toggle', 'modal');
-            
-
-           <%Session["logado"] = "0";%>;
-
-
-           location.reload();
-        }
-    </script>--%>
-    <!--Nunca mais uso internet para icones do google-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -77,13 +62,26 @@
         <div id="barba-wrapper">
             <div class="barba-container">
                 <div>
-                    <!-- <img src="img/biback.png" alt="fundo experimental" id="body"> -->
+                    
                 </div>
                 <div id="scroller">
 
+                    <div class="navbar-fixed blue darken-3">
+                        <nav>
+                            <div class="nav-wrapper blue darken-3 col s12">
+                                <a href="Home.aspx" class="brand-logo">Auto Socorro</a>
+                                <ul class="right hide-on-med-and-down">
+                                    <li class="active"><a href="Home.aspx">Home</a></li>
+                                    <li><a href="Servicos.aspx">Serviços</a></li>
+                                    <li><a href="SobreNos.aspx">Sobre</a></li>
+                                    <li><a href="FaleConosco.aspx">Contate - nos</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
 
 
-                    <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
+                    <%--<nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
                         <div class="container">
                             <a class="navbar-brand" href="Home.aspx">Auto Socorro</a>
                             <ul class="navbar-nav">
@@ -113,11 +111,11 @@
                             </ul>
                             <a id="loginfacil" href="#myModal" data-toggle="modal">
                                 <button class="btn btn-primary navbar-btn border border-link">Login</button></a>
-                            
-                                <asp:Button runat="server" class="btn btn-primary navbar-btn border border-link" Text="Logoff" ID="btnLogoff" OnClick="btnLogoff_Click" Style="display: none" />
-                            
+
+                            <asp:Button runat="server" class="btn btn-primary navbar-btn border border-link" Text="Logoff" ID="btnLogoff" OnClick="btnLogoff_Click" Style="display: none" />
+
                         </div>
-                    </nav>
+                    </nav>--%>
 
 
                     <h1 class="centertext"><i>Bem Vindo a Auto-Socorro</i></h1>
