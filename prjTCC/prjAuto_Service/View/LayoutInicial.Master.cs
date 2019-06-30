@@ -18,28 +18,7 @@ namespace prjAuto_Service
         DataSet ds = new DataSet();
         protected void btnValidar_Click(object sender, EventArgs e)
         {
-            xx = new ClasseConexao();
-            ds = new DataSet();
-           
-            ds = xx.executa_sql("select * from Cliente WHERE Usuario = '"+txtLogin.Text+ "' and Senha = '" + txtSenha.Text + "'");
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                Session["logado"] = "1";
-                Session["Email"] = ds.Tables[0].Rows[0]["Email"].ToString(); 
-                txtSenha.BorderColor = System.Drawing.Color.Green;
-                txtLogin.BorderColor = System.Drawing.Color.Green;
-              
-                
-            }
-            else
-            {
-                Session["logado"] = "0";
-                txtSenha.BorderColor = System.Drawing.Color.Red;
-                txtLogin.BorderColor = System.Drawing.Color.Red;
-                
-
-            }
-
+            
         }
 
         public Home Home_master
