@@ -57,19 +57,26 @@
                 </div>
                 <div id="scroller">
 
-                    <div class="navbar-fixed blue darken-3">
-                        <nav>
-                            <div class="nav-wrapper col s12 blue darken-3">
-                                <a href="Home.aspx" class="brand-logo" style="margin-left: 4vw !important">Auto Socorro</a>
+                    
+                    <nav class="blue darken-3" role="navigation">
+                        <div class="nav-wrapper container">
+                             <a href="Home.aspx" class="brand-logo" <%--style="margin-left: 4vw !important"--%>>Auto Socorro</a>
                                 <ul class="right hide-on-med-and-down">
                                     <li class="active"><a href="Home.aspx">Home</a></li>
                                     <li><a href="Servicos.aspx">Serviços</a></li>
                                     <li><a href="SobreNos.aspx">Sobre</a></li>
                                     <li><a href="FaleConosco.aspx">Contate - nos</a></li>
                                 </ul>
-                            </div>
-                        </nav>
-                    </div>
+
+                            <ul id="nav-mobile" class="sidenav">
+                                 <li class="active"><a href="Home.aspx">Home</a></li>
+                                    <li><a href="Servicos.aspx">Serviços</a></li>
+                                    <li><a href="SobreNos.aspx">Sobre</a></li>
+                                    <li><a href="FaleConosco.aspx">Contate - nos</a></li>
+                            </ul>
+                            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        </div>
+                    </nav>
 
 
 
@@ -86,7 +93,7 @@
                     <br />
 
 
-                   
+
 
 
                     <footer class="page-footer blue darken-3">
@@ -94,27 +101,35 @@
                             <div class="row">
                                 <div class="col l6 s12">
                                     <h5 class="white-text">Grupo E</h5>
-                                    <p class="grey-text text-lighten-4">Seis fudidos na vida no último ano do ensino médio tomando no cu bonito com as 
-                                        obrigações de fim de ano.</p>
+                                    <p class="grey-text text-lighten-4">
+                                        Seis fudidos na vida no último ano do ensino médio tomando no cu bonito com as 
+                                        obrigações de fim de ano.
+                                    </p>
 
 
                                 </div>
                                 <div class="col l3 s12">
-                                    <h5 class="white-text">Settings</h5>
+                                    <h5 class="white-text">Integrantes</h5>
                                     <ul>
-                                        <li><a class="white-text" href="#!">Link 1</a></li>
-                                        <li><a class="white-text" href="#!">Link 2</a></li>
-                                        <li><a class="white-text" href="#!">Link 3</a></li>
-                                        <li><a class="white-text" href="#!">Link 4</a></li>
+                                        <li><a class="white-text" href="#!">Ederson</a></li>
+                                        <li><a class="white-text" href="#!">Jean-Luc</a></li>
+                                        <li><a class="white-text" href="#!">Gabriel G</a></li>
+                                        <li><a class="white-text" href="#!">Gustavo Honda</a></li>
+                                        <li><a class="white-text" href="#!">Nicolas</a></li>
+                                        <li><a class="white-text" href="#!">Leonardo</a></li>
+                                        <li><a class="white-text" href="#!">Rafael Hadzic</a></li>
                                     </ul>
                                 </div>
                                 <div class="col l3 s12">
-                                    <h5 class="white-text">Connect</h5>
+                                    <h5 class="white-text">Cargos</h5>
                                     <ul>
-                                        <li><a class="white-text" href="#!">Link 1</a></li>
-                                        <li><a class="white-text" href="#!">Link 2</a></li>
-                                        <li><a class="white-text" href="#!">Link 3</a></li>
-                                        <li><a class="white-text" href="#!">Link 4</a></li>
+                                        <li><a class="white-text" href="#!">Gerente</a></li>
+                                        <li><a class="white-text" href="#!">C#</a></li>
+                                        <li><a class="white-text" href="#!">ANDROID</a></li>
+                                        <li><a class="white-text" href="#!">JAVA</a></li>
+                                        <li><a class="white-text" href="#!">ASPX</a></li>
+                                        <li><a class="white-text" href="#!">JAVA</a></li>
+                                        <li><a class="white-text" href="#!">Aqua DBA</a></li>
                                     </ul>
                                 </div>
                             </div>

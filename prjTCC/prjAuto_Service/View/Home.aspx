@@ -1,7 +1,61 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/View/LayoutInicial.Master" CodeBehind="Home.aspx.cs" Inherits="prjAuto_Service.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="oimota" runat="server">
-    <div id="index-banner" class="parallax-container">
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="img/Slide0.jpg" />
+                <!-- random image -->
+                <div class="caption center-align">
+                    <h3>Bem Vindo à Auto-Socorro</h3>
+                    <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
+                    <br />
+                    <br />
+                     <div class="buttons-wrapper">
+                        <div class="row center">
+                            <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="img/Slide1.jpg" />
+                <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Bem Vindo à Auto-Socorro</h3>
+                    <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
+                     <br />
+                    <br />
+                     <div class="buttons-wrapper">
+                        <div class="row left">
+                            <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="img/Slide2.jpg" />
+                <div class="caption right-align">
+                    <h3>Bem Vindo à Auto-Socorro</h3>
+                    <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
+                     <br />
+                    <br />
+                     <div class="buttons-wrapper">
+                        <div class="row right">
+                            <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <%--<div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
                 <br />
@@ -20,7 +74,7 @@
         <div class="parallax">
             <img src="img/parallaxexperiment1.jpg" alt="Unsplashed background img 1" />
         </div>
-    </div>
+    </div>--%>
     <main>
         <div class="container">
             <div class="section">
@@ -40,6 +94,7 @@
                             </p>
                         </div>
                     </div>
+                   
 
 
 
@@ -56,7 +111,7 @@
                     <div class="row center">
                         <h3 class="header col s12 light">24 Horas por dia, 7 dias por semana</h3>
                     </div>
-                  
+
                 </div>
             </div>
             <div class="parallax">
@@ -72,6 +127,45 @@
                     <div>
                         <div class="icon-block">
                             <h2 class="center blue-text text-darken-2"><i class="material-icons md-48">flash_on</i></h2>
+                            <h4 class="center">O que Visamos</h4>
+
+                            <p class="flow-text">
+                                Buscamos inovar de várias formas possíveis dentro do mercado de trabalho e sabemos que para alcançar isso temos que dar o nosso melhor. Dessa forma, sempre buscamos melhorar e aprender com as nossas experiências. O comprometimendo de cada funcionário da nossa empresa sempre reflete nos nosso principais valores que buscamos mostrar para nossos clientes que seriam: Trabalho em equipe, melhora contínua e principalmente a inovação no mercado de trabalho.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+         <div class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row center">
+                        <h3 class="header col s12 light">24 Horas por dia, 7 dias por semana</h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="img/parallaxexperiment1.jpg" alt="Unsplashed background img 1" />
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <div class="row">
+
+
+                    <div>
+                        <div class="icon-block">
+                            <h2 class="center blue-text text-darken-2"><i class="material-icons md-48">book</i></h2>
                             <h4 class="center">O que Visamos</h4>
 
                             <p class="flow-text">
@@ -175,6 +269,12 @@
 
                     $('.sidenav').sidenav();
                     $('.parallax').parallax();
+                    $('.slider').slider({
+                        full_width: true,
+                        height: 480, // default - height : 400
+                        interval: 12000,
+                        indicators: false// default - interval: 6000
+                    });
 
                 }); // end of document ready
             })(jQuery); // end of jQuery name space
