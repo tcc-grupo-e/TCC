@@ -40,6 +40,10 @@
         .material-icons.md-48 {
             font-size: 8vw;
         }
+
+        .slider .indicators .indicator-item.active {
+            background-color: #007bff;
+        }
     </style>
 
 
@@ -57,22 +61,22 @@
                 </div>
                 <div id="scroller">
 
-                    
+
                     <nav class="blue darken-3" role="navigation">
                         <div class="nav-wrapper container">
-                             <a href="Home.aspx" class="brand-logo" <%--style="margin-left: 4vw !important"--%>>Auto Socorro</a>
-                                <ul class="right hide-on-med-and-down">
-                                    <li class="active"><a href="Home.aspx">Home</a></li>
-                                    <li><a href="Servicos.aspx">Serviços</a></li>
-                                    <li><a href="SobreNos.aspx">Sobre</a></li>
-                                    <li><a href="FaleConosco.aspx">Contate - nos</a></li>
-                                </ul>
+                            <a href="Home.aspx" class="brand-logo" <%--style="margin-left: 4vw !important"--%>>Auto Socorro</a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="Home.aspx">Home</a></li>
+                                <li><a href="Servicos.aspx">Serviços</a></li>
+                                <li><a href="SobreNos.aspx">Sobre</a></li>
+                                <li><a href="FaleConosco.aspx">Contate - nos</a></li>
+                            </ul>
 
                             <ul id="nav-mobile" class="sidenav">
-                                 <li class="active"><a href="Home.aspx">Home</a></li>
-                                    <li><a href="Servicos.aspx">Serviços</a></li>
-                                    <li><a href="SobreNos.aspx">Sobre</a></li>
-                                    <li><a href="FaleConosco.aspx">Contate - nos</a></li>
+                                <li class="active"><a href="Home.aspx">Home</a></li>
+                                <li><a href="Servicos.aspx">Serviços</a></li>
+                                <li><a href="SobreNos.aspx">Sobre</a></li>
+                                <li><a href="FaleConosco.aspx">Contate - nos</a></li>
                             </ul>
                             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         </div>
