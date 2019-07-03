@@ -91,10 +91,14 @@
                     <div class="card-image">
                         <img src="img/teste2.jpg" />
                         <span class="card-title">Guincho Agora</span>
-                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-3"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-content">
-                        <p class="white-text">Precisa de um reboque ou transporte agora mesmo? Esta é a opção.</p>
+                        <p class="white-text">
+                            Precisa de um reboque ou transporte agora mesmo? Esta é a opção. 
+                            <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                               <i class="material-icons blue-text">add</i>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -103,10 +107,14 @@
                     <div class="card-image">
                         <img src="img/pngteste.png" />
                         <span class="card-title">Agendar</span>
-                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-3"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-content">
-                        <p class="white-text">Precisando de um serviço para daqui a alguns dias? clique em adicionar.</p>
+                        <p class="white-text">
+                            Precisando de um serviço para daqui a alguns dias? clique em adicionar. 
+                            <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                                <i class="material-icons blue-text">add</i>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
