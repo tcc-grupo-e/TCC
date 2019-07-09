@@ -74,12 +74,12 @@
                 <main id="c_pricipal_quiz">
                      <h1 class="ht">Contato:</h1>
                 <div class="arts1 " >
-                        <img src="img/WhatsApp.png" alt="png de guincho" class="foto">
+                        <img src="img/WhatsApp.png" alt="png de guincho" class="foto"/>
                        <div style="float:left"> <p>956715982</p></div>
                  </div>
                   
                   <div class="arts1"  >
-                        <img src="img/fixo.png" alt="png de guincho" class="foto">
+                        <img src="img/fixo.png" alt="png de guincho" class="foto"/>
                       <p style="float:left">55621495</p>
                  </div>
                    <br /><br /><br />  <br /><br /><br /><br /><br />

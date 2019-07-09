@@ -133,6 +133,7 @@
                         interval: 24000,
                         indicators: true// default - interval: 6000
                     });
+                    $('.modal').modal();
 
                 }); // end of document ready
             })(jQuery); // end of jQuery name space

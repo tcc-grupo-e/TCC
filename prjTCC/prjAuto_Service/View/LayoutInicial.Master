@@ -44,6 +44,11 @@
         .slider .indicators .indicator-item.active {
             background-color: #007bff;
         }
+
+        .modal {
+           
+            height: 56% !important;
+        }
     </style>
 
 
@@ -54,113 +59,145 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
-        <div id="barba-wrapper">
-            <div class="barba-container">
-                <div>
-                </div>
-                <div id="scroller">
+
+    <div id="barba-wrapper">
+        <div class="barba-container">
+            <div>
+            </div>
+            <div id="scroller">
 
 
-                    <nav class="blue darken-3" role="navigation">
-                        <div class="nav-wrapper container">
-                            <a href="Home.aspx" class="brand-logo" <%--style="margin-left: 4vw !important"--%>>Auto Socorro</a>
-                            <ul class="right hide-on-med-and-down">
-                                <li><a href="Home.aspx">Home</a></li>
-                                <li><a href="Servicos.aspx">Serviços</a></li>
-                                <li><a href="SobreNos.aspx">Sobre</a></li>
-                                <li><a href="FaleConosco.aspx">Contate - nos</a></li>
-                            </ul>
+                <nav class="blue darken-3" role="navigation">
+                    <div class="nav-wrapper container">
+                        <a href="Home.aspx" class="brand-logo">Auto Socorro</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="Home.aspx">Home</a></li>
+                            <li><a href="Servicos.aspx">Serviços</a></li>
+                            <li><a href="SobreNos.aspx">Sobre</a></li>
+                            <li><a href="#fale" class="modal-trigger">Contate - nos</a></li>
+                        </ul>
 
-                            <ul id="nav-mobile" class="sidenav">
-                                <li class="active"><a href="Home.aspx">Home</a></li>
-                                <li><a href="Servicos.aspx">Serviços</a></li>
-                                <li><a href="SobreNos.aspx">Sobre</a></li>
-                                <li><a href="FaleConosco.aspx">Contate - nos</a></li>
-                            </ul>
-                            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                        </div>
-                    </nav>
-
-
-
-
-
-
-
-                    <!--PUT THE FUCKING MAIN IN THE ASPX PAGE-->
-
-                    <asp:ContentPlaceHolder ID="oimota" runat="server">
-                    </asp:ContentPlaceHolder>
-
-
-                    <br />
+                        <ul id="nav-mobile" class="sidenav">
+                            <li><a href="Home.aspx">Home</a></li>
+                            <li><a href="Servicos.aspx">Serviços</a></li>
+                            <li><a href="SobreNos.aspx">Sobre</a></li>
+                            <li><a href="#fale" class="modal-trigger">Contate - nos</a></li>
+                        </ul>
+                        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    </div>
+                </nav>
 
 
 
 
 
-                    <footer class="page-footer blue darken-3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col l6 s12">
-                                    <h5 class="white-text">Grupo E</h5>
-                                    <p class="grey-text text-lighten-4">
-                                        Seis fudidos na vida no último ano do ensino médio tomando no cu bonito com as 
+
+
+                <!--PUT THE FUCKING MAIN IN THE ASPX PAGE-->
+
+                <asp:ContentPlaceHolder ID="oimota" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+                <br />
+
+
+
+
+
+                <footer class="page-footer blue darken-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col l6 s12">
+                                <h5 class="white-text">Grupo E</h5>
+                                <p class="grey-text text-lighten-4">
+                                    Seis fudidos na vida no último ano do ensino médio tomando no cu bonito com as 
                                         obrigações de fim de ano.
-                                    </p>
+                                </p>
 
 
-                                </div>
-                                <div class="col l3 s12">
-                                    <h5 class="white-text">Integrantes</h5>
-                                    <ul>
-                                        <li><a class="white-text" href="#!">Ederson</a></li>
-                                        <li><a class="white-text" href="#!">Jean-Luc</a></li>
-                                        <li><a class="white-text" href="#!">Gabriel G</a></li>
-                                        <li><a class="white-text" href="#!">Gustavo Honda</a></li>
-                                        <li><a class="white-text" href="#!">Nicolas</a></li>
-                                        <li><a class="white-text" href="#!">Leonardo</a></li>
-                                        <li><a class="white-text" href="#!">Rafael Hadzic</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col l3 s12">
-                                    <h5 class="white-text">Cargos</h5>
-                                    <ul>
-                                        <li><a class="white-text" href="#!">Gerente</a></li>
-                                        <li><a class="white-text" href="#!">C#</a></li>
-                                        <li><a class="white-text" href="#!">ANDROID</a></li>
-                                        <li><a class="white-text" href="#!">JAVA</a></li>
-                                        <li><a class="white-text" href="#!">ASPX</a></li>
-                                        <li><a class="white-text" href="#!">JAVA</a></li>
-                                        <li><a class="white-text" href="#!">Aqua DBA</a></li>
-                                    </ul>
-                                </div>
+                            </div>
+                            <div class="col l3 s12">
+                                <h5 class="white-text">Integrantes</h5>
+                                <ul>
+                                    <li><a class="white-text" href="#!">Ederson</a></li>
+                                    <li><a class="white-text" href="#!">Jean-Luc</a></li>
+                                    <li><a class="white-text" href="#!">Gabriel G</a></li>
+                                    <li><a class="white-text" href="#!">Gustavo Honda</a></li>
+                                    <li><a class="white-text" href="#!">Nicolas</a></li>
+                                    <li><a class="white-text" href="#!">Leonardo</a></li>
+                                    <li><a class="white-text" href="#!">Rafael Hadzic</a></li>
+                                </ul>
+                            </div>
+                            <div class="col l3 s12">
+                                <h5 class="white-text">Cargos</h5>
+                                <ul>
+                                    <li><a class="white-text" href="#!">Gerente</a></li>
+                                    <li><a class="white-text" href="#!">C#</a></li>
+                                    <li><a class="white-text" href="#!">ANDROID</a></li>
+                                    <li><a class="white-text" href="#!">JAVA</a></li>
+                                    <li><a class="white-text" href="#!">ASPX</a></li>
+                                    <li><a class="white-text" href="#!">JAVA</a></li>
+                                    <li><a class="white-text" href="#!">Aqua DBA</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="footer-copyright">
-                            <div class="container">
-                                Copyright © 2018 - GRUPO E
-                            </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="container">
+                            Copyright © 2018 - GRUPO E
                         </div>
-                    </footer>
+                    </div>
+                </footer>
+                <!-- Modal Structure -->
+                <div id="fale" class="modal">
+                    <div class="modal-content">
+                        <h4 class="text-darken-3 blue-text">Fale Conosco</h4>
+                        <form id="form1" runat="server" class="col s12">
+                            <div class="row">
 
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">account_circle</i>
+                                    <asp:TextBox runat="server" ID="Nome" class="validade"></asp:TextBox>
+                                    <label for="Nome">Nome</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">email</i>
+                                    <asp:TextBox runat="server" ID="Email" class="validade"></asp:TextBox>
+                                    <label for="Email">Email</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix blue-text text-darken-3">comment</i>
+                                    <asp:TextBox runat="server" ID="Mensagem" class="materialize-textarea" Rows="5" Columns="5" TextMode="MultiLine"></asp:TextBox>
+                                    <label for="Mensagem">Mensagem</label>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <p class="light center-align col s9">WhatsApp 956715982 / Fixo 55621495</p>
+                            <a href="#!" class="modal-close btn-flat waves-effect waves-light blue darken-3 white-text center-align col s2">Enviar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-            <script>
-                (function ($) {
-                    $(function () {
+        </div>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script>
+            (function ($) {
+                $(function () {
 
-                        $('.sidenav').sidenav();
-                        $('.parallax').parallax();
+                    $('.sidenav').sidenav();
+                    $('.parallax').parallax();
+                    $('.modal').modal();
 
-                    }); // end of document ready
-                })(jQuery); // end of jQuery name space
+                }); // end of document ready
+            })(jQuery); // end of jQuery name space
 
-            </script>
-    </form>
+        </script>
 </body>
 
 </html>

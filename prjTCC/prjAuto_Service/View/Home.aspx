@@ -12,7 +12,7 @@
                     <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
                     <br />
                     <br />
-                     <div class="buttons-wrapper">
+                    <div class="buttons-wrapper">
                         <div class="row center">
                             <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
                         </div>
@@ -25,23 +25,24 @@
                 <div class="caption left-align">
                     <h3>Bem Vindo à Auto-Socorro</h3>
                     <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
-                     <br />
                     <br />
-                     <div class="buttons-wrapper">
+                    <br />
+                    <div class="buttons-wrapper">
                         <div class="row left">
                             <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
                         </div>
                     </div>
                 </div>
             </li>
+            
             <li>
                 <img src="img/Slide2.jpg" />
                 <div class="caption right-align">
                     <h3>Bem Vindo à Auto-Socorro</h3>
                     <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
-                     <br />
                     <br />
-                     <div class="buttons-wrapper">
+                    <br />
+                    <div class="buttons-wrapper">
                         <div class="row right">
                             <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
                         </div>
@@ -94,7 +95,7 @@
                             </p>
                         </div>
                     </div>
-                   
+
 
 
 
@@ -140,7 +141,7 @@
                 </div>
             </div>
         </div>
-         <div class="parallax-container">
+        <div class="parallax-container">
             <div class="section no-pad-bot">
                 <div class="container">
                     <br />
@@ -179,9 +180,10 @@
                 </div>
             </div>
         </div>
+        
 
-       
-       
+
+
         <script>
             (function ($) {
                 $(function () {
@@ -194,6 +196,7 @@
                         interval: 24000,
                         indicators: true// default - interval: 6000
                     });
+                    $('.modal').modal();
 
                 }); // end of document ready
             })(jQuery); // end of jQuery name space
