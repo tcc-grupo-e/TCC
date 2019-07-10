@@ -14,6 +14,9 @@ namespace prjAuto_Service
         {
            
         }
+
+        Model.Email email = new Model.Email();
+        Controller.ControladorEmail cemail = new Controller.ControladorEmail();
         ClasseConexao xx = new ClasseConexao();
         DataSet ds = new DataSet();
         protected void btnValidar_Click(object sender, EventArgs e)
@@ -39,6 +42,24 @@ namespace prjAuto_Service
         {
             Session["logado"] = "0";
             Session["Email"] = "deslogado";
+        }
+
+        protected void Enviar_Click(object sender, EventArgs e)
+        {
+            /* dentro do método de click*/
+            email.setEmail(txtEmail.Text);
+            email.setNome(txtNome.Text);
+            email.setMens(txtMensagem.Text);
+
+            txtEmail.Text = "";
+            txtMensagem.Text = "";
+            txtNome.Text = "";
+
+           
+
+
+
+            cemail.enviarEmail(email);
         }
     }
 }

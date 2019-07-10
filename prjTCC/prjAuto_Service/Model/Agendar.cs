@@ -70,7 +70,6 @@ namespace prjAuto_Service.Model
 
         #endregion MODELO CLIENTE
 
-
         #region MODELO ABERTURA
 
         private static string marca, modelo, cor, ano, placa;

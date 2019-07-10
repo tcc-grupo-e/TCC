@@ -102,8 +102,10 @@
   <ItemGroup>
     <Compile Include="Controller\ControladorCadastro.cs" />
     <Compile Include="Controller\ControladorAgendar.cs" />
+    <Compile Include="Controller\ControladorEmail.cs" />
     <Compile Include="Model\Cadastrar.cs" />
     <Compile Include="Model\Agendar.cs" />
+    <Compile Include="Model\Email.cs" />
     <Compile Include="View\AgendarCorrida.aspx.cs">
       <DependentUpon>AgendarCorrida.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,13 +171,6 @@
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\LayoutConteudo.Master.cs">
-      <DependentUpon>LayoutConteudo.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\LayoutConteudo.Master.designer.cs">
-      <DependentUpon>LayoutConteudo.Master</DependentUpon>
-    </Compile>
     <Compile Include="View\LayoutInicial.Master.cs">
       <DependentUpon>LayoutInicial.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,7 +181,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="View\LayoutInicial.Master" />
-    <Content Include="View\LayoutConteudo.Master" />
     <Content Include="View\img\TERMOS_TCM.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

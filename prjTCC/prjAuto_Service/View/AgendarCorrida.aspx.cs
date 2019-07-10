@@ -13,7 +13,7 @@ namespace prjAuto_Service
         #region exemplo mvc
         //Model.Exemplo exe = new Model.Exemplo();
         //Controler.ControladorExemplo cexe = new Controler.ControladorExemplo();
-        /* dentro do método de click*/
+        ///* dentro do método de click*/
         //exe.setLogin(txtLogin.Text);
         //exe.setSenha(txtSenha.Text);
         //cexe.inserir(exe);

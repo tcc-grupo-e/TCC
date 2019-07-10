@@ -46,8 +46,8 @@
         }
 
         .modal {
-           
-            height: 56% !important;
+            height: 60% !important;
+            width: 75% !important;
         }
     </style>
 
@@ -150,40 +150,41 @@
                     </div>
                 </footer>
                 <!-- Modal Structure -->
-                <div id="fale" class="modal">
-                    <div class="modal-content">
-                        <h4 class="text-darken-3 blue-text">Fale Conosco</h4>
-                        <form id="form1" runat="server" class="col s12">
+                <form id="form1" runat="server" class="col s12">
+                    <div id="fale" class="modal">
+                        <div class="modal-content">
+                            <h4 class="text-darken-3 blue-text">Fale Conosco</h4>
+
                             <div class="row">
 
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix blue-text text-darken-3">account_circle</i>
-                                    <asp:TextBox runat="server" ID="Nome" class="validade"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtNome" class="validade"></asp:TextBox>
                                     <label for="Nome">Nome</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix blue-text text-darken-3">email</i>
-                                    <asp:TextBox runat="server" ID="Email" class="validade"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtEmail" class="validade"></asp:TextBox>
                                     <label for="Email">Email</label>
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix blue-text text-darken-3">comment</i>
-                                    <asp:TextBox runat="server" ID="Mensagem" class="materialize-textarea" Rows="5" Columns="5" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtMensagem" class="materialize-textarea" Rows="5" Columns="5" TextMode="MultiLine"></asp:TextBox>
                                     <label for="Mensagem">Mensagem</label>
                                 </div>
 
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <p class="light center-align col s9">WhatsApp 956715982 / Fixo 55621495</p>
-                            <a href="#!" class="modal-close btn-flat waves-effect waves-light blue darken-3 white-text center-align col s2">Enviar</a>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <p class="light center-align col s9">WhatsApp 956715982 / Fixo 55621495</p>
+                                <asp:Button ID="btnEnviar" runat="server" class="modal-close btn-flat waves-effect waves-light blue white-text center-align col s2" Text="Enviar" OnClick="Enviar_Click" />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-        </div>
+    </div>
         <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script>
