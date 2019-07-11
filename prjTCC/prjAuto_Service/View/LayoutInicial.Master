@@ -177,8 +177,8 @@
                         </div>
                         <div class="modal-footer">
                             <div class="row">
-                                <p class="light center-align col s9">WhatsApp 956715982 / Fixo 55621495</p>
-                                <asp:Button ID="btnEnviar" runat="server" class="modal-close btn-flat waves-effect waves-light blue white-text center-align col s2" Text="Enviar" OnClick="Enviar_Click" />
+                                <p class="light center-align col s8">WhatsApp 956715982 / Fixo 55621495</p>
+                                <asp:Button ID="btnEnviar" runat="server" class="modal-close btn-flat waves-effect waves-light blue darken-3 center-align flow-text col s2" Text="Enviar" style="color:#fff" OnClick="Enviar_Click" />
                             </div>
                         </div>
                     </div>

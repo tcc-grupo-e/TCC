@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -50,16 +51,38 @@ namespace prjAuto_Service
             email.setEmail(txtEmail.Text);
             email.setNome(txtNome.Text);
             email.setMens(txtMensagem.Text);
+            try
+            {
+                //cemail.enviarEmail(email);
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential("facilmtofacil@gmail.com", "faafaaf123@");
+                MailMessage mail = new MailMessage();
+                mail.To.Add("facilmtofacil@gmail.com");
+                mail.From = new MailAddress("facilmtofacil@gmail.com");
+                mail.Subject = "Fale Conosco de: " + email.getNome();
+                mail.Body = email.getMens() + "\n Mensagem de " + email.getEmail();
+                smtpClient.Send(mail);
 
-            txtEmail.Text = "";
-            txtMensagem.Text = "";
-            txtNome.Text = "";
+                txtEmail.Text = "";
+                txtMensagem.Text = "";
+                txtNome.Text = "";
+            }
+            catch(Exception er)
+            {
+                txtEmail.Text = "error";
+                txtMensagem.Text = er.Message;
+                txtNome.Text = "error";
+            }
+            
 
            
 
 
 
-            cemail.enviarEmail(email);
+            
         }
     }
 }
