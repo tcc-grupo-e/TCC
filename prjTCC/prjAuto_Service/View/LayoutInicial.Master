@@ -46,7 +46,7 @@
         }
 
         .modal {
-            height: 60% !important;
+            
             width: 75% !important;
         }
     </style>
@@ -62,8 +62,7 @@
 
     <div id="barba-wrapper">
         <div class="barba-container">
-            <div>
-            </div>
+           
             <div id="scroller">
 
 
@@ -178,13 +177,14 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <p class="light center-align col s8">WhatsApp 956715982 / Fixo 55621495</p>
-                                <asp:Button ID="btnEnviar" runat="server" class="modal-close btn-flat waves-effect waves-light blue darken-3 center-align flow-text col s2" Text="Enviar" style="color:#fff" OnClick="Enviar_Click" />
+                                <asp:Button ID="btnEnviar" runat="server" class="modal-close btn-flat waves-effect waves-light blue darken-3 center-align flow-text col s2" Text="Enviar" Style="color: #fff" OnClick="Enviar_Click" />
                             </div>
                         </div>
                     </div>
                 </form>
+               
             </div>
-    </div>
+        </div>
         <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script>

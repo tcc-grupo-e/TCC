@@ -14,7 +14,7 @@
                     <br />
                     <div class="buttons-wrapper">
                         <div class="row center">
-                            <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
+                            <a href="#peca" class="modal-trigger btn-large waves-effect waves-light blue">Pedir guincho</a>
                         </div>
                     </div>
                 </div>
@@ -29,12 +29,12 @@
                     <br />
                     <div class="buttons-wrapper">
                         <div class="row left">
-                            <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
+                            <a href="#peca" class="modal-trigger btn-large waves-effect waves-light blue">Pedir guincho</a>
                         </div>
                     </div>
                 </div>
             </li>
-            
+
             <li>
                 <img src="img/Slide2.jpg" />
                 <div class="caption right-align">
@@ -44,7 +44,7 @@
                     <br />
                     <div class="buttons-wrapper">
                         <div class="row right">
-                            <a href="#" class="btn-large waves-effect waves-light blue">Pedir guincho</a>
+                            <a href="#peca" class="modal-trigger btn-large waves-effect waves-light blue">Pedir guincho</a>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,63 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Modal Structure -->
+
+        <div id="peca" class="modal">
+            <div class="modal-content">
+                <h4 class="text-darken-3 blue-text">Escolha uma opção</h4>
+
+                <div class="row">
+
+                    <div class="col s12 m6">
+                        <div class="card blue darken-2">
+                            <div class="card-image">
+                                <img src="img/teste2.jpg" />
+                                <span class="card-title">Guincho Agora</span>
+                                <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                                    <i class="material-icons blue-text">add</i>
+                                </a>
+                            </div>
+
+                            <div class="card-content">
+                                <p class="white-text">
+                                    Precisa de um reboque ou transporte agora mesmo? Esta é a opção. 
+                           
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="card blue darken-2">
+                            <div class="card-image">
+                                <img src="img/pngteste.png" />
+                                <span class="card-title">Agendar</span>
+                                <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                                    <i class="material-icons blue-text">add</i>
+                                </a>
+                                
+                            </div>
+
+                            <div class="card-content">
+                                <p class="white-text">
+                                    Precisando de um serviço para daqui a alguns dias? clique em adicionar. 
+                            
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <p class="light center-align col s12">WhatsApp 956715982 / Fixo 55621495</p>
+
+                </div>
+            </div>
+        </div>
+
+
 
 
 
