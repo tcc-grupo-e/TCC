@@ -212,7 +212,7 @@
                             <div class="card-image">
                                 <img src="img/pngteste.png" />
                                 <span class="card-title">Agendar</span>
-                                <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                                <a href="AgendarCorrida.aspx" class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
                                     <i class="material-icons blue-text">add</i>
                                 </a>
                                 

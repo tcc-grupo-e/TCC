@@ -150,6 +150,13 @@
       <DependentUpon>FaleConosco.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\LayoutNoForm.Master.cs">
+      <DependentUpon>LayoutNoForm.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LayoutNoForm.Master.designer.cs">
+      <DependentUpon>LayoutNoForm.Master</DependentUpon>
+    </Compile>
     <Compile Include="View\Servicos.aspx.cs">
       <DependentUpon>Servicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,6 +189,7 @@
   <ItemGroup>
     <Content Include="View\LayoutInicial.Master" />
     <Content Include="View\img\TERMOS_TCM.pdf" />
+    <Content Include="View\LayoutNoForm.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
