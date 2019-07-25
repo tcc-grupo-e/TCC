@@ -9,12 +9,21 @@ using System.Web.UI.WebControls;
 
 namespace prjAuto_Service
 {
+
     public partial class LayoutInicial : System.Web.UI.MasterPage
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            string falec = (Request.QueryString["c"]);
+            if (falec == "T")
+            {
+                //this.Controls.Add(new LiteralControl("<script>document.getElementById('fale1').click();</ script>"));
+                this.Controls.Add(new LiteralControl("<script>$(document).ready(function(){$(\"#fale1\").trigger(\"click\");});</script>"));
+            }
         }
+        
 
         Model.Email email = new Model.Email();
         Controller.ControladorEmail cemail = new Controller.ControladorEmail();

@@ -13,8 +13,13 @@ namespace prjAuto_Service
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            
+
+            string falec = (Request.QueryString["c"]);
+            if(falec == "T")
+            {
+                //this.Controls.Add(new LiteralControl("<script>document.getElementById('fale1').click();</ script>"));
+                this.Controls.Add(new LiteralControl("<script>alert('JOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOJOOU');</script>"));
+            }
         }
 
 

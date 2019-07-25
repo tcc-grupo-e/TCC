@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="View\css\materialize.min.css" />
     <Content Include="View\img\wotakoi.png" />
+    <Content Include="View\js\Utilidades.js" />
     <Content Include="View\js\materialize.min.js" />
     <Content Include="View\AgendarCorrida.aspx" />
     <Content Include="View\AgendarEmer.aspx" />

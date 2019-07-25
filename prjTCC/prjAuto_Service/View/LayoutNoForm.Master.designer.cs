@@ -10,7 +10,7 @@
 namespace prjAuto_Service {
     
     
-    public partial class LayoutInicial {
+    public partial class LayoutNoForm {
         
         /// <summary>
         /// Controle head.

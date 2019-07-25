@@ -21,6 +21,7 @@
     <script src="js/bannerRotativo.js" type="text/javascript"></script>
     <script src="js/ativaMenu.js" type="text/javascript"></script>
     <script src="js/loading.js" type="text/javascript"></script>
+    <script src="js/Utilidades.js" type="text/javascript"></script>
 
 
     <style type="text/css">
@@ -73,14 +74,14 @@
                             <li><a href="Home.aspx">Home</a></li>
                             <li><a href="Servicos.aspx">Serviços</a></li>
                             <li><a href="SobreNos.aspx">Sobre</a></li>
-                            <li><a href="#fale" class="modal-trigger">Contate - nos</a></li>
+                            <li id="fale1"><a href="#fale" class="modal-trigger">Contate - nos</a></li>
                         </ul>
 
                         <ul id="nav-mobile" class="sidenav">
                             <li><a href="Home.aspx">Home</a></li>
                             <li><a href="Servicos.aspx">Serviços</a></li>
                             <li><a href="SobreNos.aspx">Sobre</a></li>
-                            <li><a href="#fale" class="modal-trigger">Contate - nos</a></li>
+                            <li><a href="#fale" class="modal-trigger" id="fale2">Contate - nos</a></li>
                         </ul>
                         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     </div>

@@ -21,6 +21,8 @@
     <script src="js/bannerRotativo.js" type="text/javascript"></script>
     <script src="js/ativaMenu.js" type="text/javascript"></script>
     <script src="js/loading.js" type="text/javascript"></script>
+    <script src="js/Utilidades.js" type="text/javascript"></script>
+    
 
 
     <style type="text/css">
@@ -73,7 +75,7 @@
                             <li><a href="Home.aspx">Home</a></li>
                             <li><a href="Servicos.aspx">Serviços</a></li>
                             <li><a href="SobreNos.aspx">Sobre</a></li>
-                            <li><a href="Home.aspx" class="modal-trigger">Contate - nos</a></li>
+                            <li><a href="Home.aspx?c=T" class="modal-trigger">Contate - nos</a></li>
                         </ul>
 
                         <ul id="nav-mobile" class="sidenav">
