@@ -215,7 +215,7 @@
                                 <a href="AgendarCorrida.aspx" class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
                                     <i class="material-icons blue-text">add</i>
                                 </a>
-                                
+
                             </div>
 
                             <div class="card-content">
@@ -253,6 +253,13 @@
                         indicators: true// default - interval: 6000
                     });
                     $('.modal').modal();
+                    var url_string = window.location.href;
+                    var url = new URL(url_string);
+                    var c = url.searchParams.get("c");
+                    if (c == "T") {
+
+                        $('#fale').modal('open');
+                    }
 
                 }); // end of document ready
             })(jQuery); // end of jQuery name space

@@ -20,7 +20,7 @@ namespace prjAuto_Service
             if (falec == "T")
             {
                 //this.Controls.Add(new LiteralControl("<script>document.getElementById('fale1').click();</ script>"));
-                this.Controls.Add(new LiteralControl("<script>$(document).ready(function(){$(\"#fale1\").trigger(\"click\");});</script>"));
+                //this.Controls.Add(new LiteralControl("<script>$(document).ready(function(){$('#fale').modal('open');});</ script > "));
             }
         }
         
