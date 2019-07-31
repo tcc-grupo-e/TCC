@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ import java.util.Date;
 public class ChecklistParte2 extends AppCompatActivity {
     final int CAPTURE_IMAGE_REQUEST = 1;
     public ImageButton btnTirafoto;
+    Button btnAssinaMotorista;
+
     File photoFile = null;
     private String mCurrentPhotoPath = "";
     Uri photoURI;
@@ -37,12 +40,18 @@ public class ChecklistParte2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checklist_parte2);
         btnTirafoto = findViewById(R.id.btnTiraFot);
+        btnAssinaMotorista = findViewById(R.id.btnAssinaMotorista);
     }
 
     public void botao(View v) {
         switch (v.getId()) {
             case R.id.btnTiraFot:
                 capturaImage();
+                break;
+            case R.id.btnAssinaMotorista:
+                Intent intent = new Intent(this,AssinaMotorista.class);
+
+                startActivity(intent);
                 break;
         }
     }
@@ -101,15 +110,16 @@ public class ChecklistParte2 extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == 0) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
-                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+
+            if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED
+                    && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                 capturaImage();
-                ;
+
             } else {
-                Toast.makeText(getBaseContext(), "aaaaaaaaa", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Deu ruim ai", Toast.LENGTH_LONG).show();
+
             }
-        }
+
 
     }
 

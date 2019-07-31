@@ -645,16 +645,19 @@
                     android:layout_weight="1"
                     android:text="Não" />
             </RadioGroup>
+
             <ImageButton
                 android:id="@+id/btnTiraFot"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:onClick="botao"
                 app:srcCompat="@drawable/tirarfoto" />
+
             <Button
-                android:id="@+id/btnFinalizar"
+                android:id="@+id/btnAssinaMotorista"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="botao" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -45,6 +45,7 @@ public class CheckListParte1 extends AppCompatActivity {
                 startActivity(new Intent(this,ChecklistParte2.class));
                 break;
         }
+
     }
 
 
