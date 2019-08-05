@@ -22,7 +22,7 @@
     <script src="js/ativaMenu.js" type="text/javascript"></script>
     <script src="js/loading.js" type="text/javascript"></script>
     <script src="js/Utilidades.js" type="text/javascript"></script>
-    
+
 
 
     <style type="text/css">
@@ -48,7 +48,6 @@
         }
 
         .modal {
-            
             width: 75% !important;
         }
     </style>
@@ -64,7 +63,7 @@
 
     <div id="barba-wrapper">
         <div class="barba-container">
-           
+
             <div id="scroller">
 
 
@@ -151,24 +150,30 @@
                     </div>
                 </footer>
                 <!-- Modal Structure -->
-                
-               
+
+
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script>
-            (function ($) {
-                $(function () {
+        (function ($) {
+            $(function () {
 
-                    $('.sidenav').sidenav();
-                    $('.parallax').parallax();
-                    $('.modal').modal();
+                $('.sidenav').sidenav();
+                $('.parallax').parallax();
+                $('.slider').slider({
+                    full_width: true,
+                    height: 9000, // default - height : 400
+                    interval: 6000,
+                    indicators: false// default - interval: 6000
+                });
+                $('.modal').modal();
 
-                }); // end of document ready
-            })(jQuery); // end of jQuery name space
+            }); // end of document ready
+        })(jQuery); // end of jQuery name space
 
-        </script>
+    </script>
 </body>
 
 </html>
