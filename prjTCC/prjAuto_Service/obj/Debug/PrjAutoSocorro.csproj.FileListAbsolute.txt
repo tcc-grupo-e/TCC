@@ -84,3 +84,4 @@ C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSoco
 C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSocorro.csproj.CoreCompileInputs.cache
 C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.dll
 C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\prjAuto_Service.pdb
+C:\Users\Goned\Documents\GitHub\TCC\prjTCC\prjAuto_Service\obj\Debug\PrjAutoSocorro.csprojAssemblyReference.cache

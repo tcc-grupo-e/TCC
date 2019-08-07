@@ -38,10 +38,10 @@
     <main>
         <h4 class="text-darken-3 blue-text center-align">Insira os dados do seu pedido</h4>
         <form id="formF" class="col s12" runat="server">
-            <div class="slider fullscreen" style="overflow:auto;background-color:#fff">
-                <ul class="slides" style="overflow:auto;background-color:#fff">
+            <div class="slider fullscreen" style="background-color:#fff">
+                <ul class="slides" style="background-color:#fff">
                     <li>
-                       
+                       <img />
                         <div class="caption center-align">
                             <div class="row">
                                 <div class="input-field col s6">
@@ -110,13 +110,13 @@
 
                                 </p>
                                 <p class="campo">
-                                    <label for="u_nome"><%--Local de origem <span>*</span>:--%></label>
+                                    <label for="u_nome"></label>
                                     <asp:TextBox ID="txtOrigem" class="controls1" placeholder="Origem" runat="server" required></asp:TextBox>
 
                                 </p>
 
                                 <p class="campo">
-                                    <label for="s_nome"><%--Local de destino <span>*</span>:--%></label>
+                                    <label for="s_nome"></label>
                                     <asp:TextBox ID="txtDestino" class="controls1" placeholder="Destino" runat="server" required></asp:TextBox>
 
                                 </p>
@@ -165,6 +165,8 @@
 
             </div>
         </form>
+
+        
 
        
 

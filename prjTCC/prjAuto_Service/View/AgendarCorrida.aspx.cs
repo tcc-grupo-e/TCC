@@ -26,14 +26,7 @@ namespace prjAuto_Service
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtVeiculo.Text = "Celta";
-            txtCor.Text = "Preto";
-            txtData.Text = "12/12/2018";
-            txtDestino.Text = "Lugar Nenhum";
-            txtOrigem.Text = "Outro lugar";
-            txtHora.Text = "12:00";
-            txtPlaca.Text = "NHW-0012";
-            txtPonto.Text = "Praça próxima";
+           
 
         }
         //ClasseConexao xx = new ClasseConexao();
@@ -140,14 +133,7 @@ namespace prjAuto_Service
 
         protected void txtVeiculo_Load(object sender, EventArgs e)
         {
-            txtVeiculo.Text = "Celta";
-            txtCor.Text = "Preto";
-            txtData.Text = "12/12/2018";
-            txtDestino.Text = "Lugar Nenhum - Rua Mosela - Mosela, Petrópolis - RJ, Brasil";
-            txtOrigem.Text = "Outro Lugar Da Mente - Rua Jaguar - Vila Jundiai, Mogi das Cruzes - SP, Brasil";
-            txtHora.Text = "12:00";
-            txtPlaca.Text = "NHW-0012";
-            txtPonto.Text = "Praça próxima";
+           
         }
 
         
