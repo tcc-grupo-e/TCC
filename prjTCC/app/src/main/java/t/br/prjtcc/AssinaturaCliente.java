@@ -23,7 +23,7 @@ import java.io.ByteArrayOutputStream;
 public class AssinaturaCliente extends AppCompatActivity {
     TextView txtmoto;
     ImageView imgCliente;
-    Button btnSalvar,btnConfirmar;
+    Button btnSalvar,btnConfirmar,btnLimpar;
     float dX, dY, oldX, oldY, nX, nY, dw, dh;
     private Paint paint;
     private Path path;
@@ -43,7 +43,9 @@ public class AssinaturaCliente extends AppCompatActivity {
 
         txtmoto = findViewById(R.id.textViewMotorista);
         imgCliente = this.findViewById(R.id.imgDesenhaCliente);
+        btnLimpar = this.findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
+        btnConfirmar = findViewById(R.id.btnConfirmar);
 
 
         Display dp = getWindowManager().getDefaultDisplay();
@@ -96,6 +98,8 @@ public class AssinaturaCliente extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(getApplicationContext(), AssinaturaMotorista.class));
+                        finish();
+
                     }
                 });
                 a.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
@@ -108,24 +112,28 @@ public class AssinaturaCliente extends AppCompatActivity {
                         byteCliente = baos.toByteArray();
 
                     if(byteCliente != null){
-                        Toast.makeText(getApplicationContext(),"Dados Salvos!",Toast.LENGTH_LONG).show();
-                        imgCliente.setImageResource(0);
+                        Toast.makeText(getApplicationContext(),"Sua assinatura  foi salva!",Toast.LENGTH_LONG).show();
+                        btnSalvar.setVisibility(View.INVISIBLE);
+                        btnLimpar.setVisibility(View.INVISIBLE);
                         btnConfirmar.setVisibility(View.VISIBLE);
+                        imgCliente.setImageResource(0);
 
                     }
                      else
-                        Toast.makeText(getApplicationContext(),"Não foram salvos",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Sua assinatura não foi salva",Toast.LENGTH_LONG).show();
                     }
                 });
                 a.show();
                 break;
             case R.id.btnLimpar:
-        imgCliente.setImageResource(0);
                 startActivity(new Intent(getApplicationContext(), AssinaturaCliente.class));
+                finish();
+
                 break;
             case R.id.btnConfirmar:
-                imgCliente.setImageResource(0);
+
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
                 break;
 
 

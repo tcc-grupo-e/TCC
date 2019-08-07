@@ -24,9 +24,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
 
+            <TextView
+                android:id="@+id/textViewCPF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="CPF" />
+
+            <EditText
+                android:id="@+id/txtCPF"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -47,7 +67,7 @@
                 android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Segurado(tira jean)(apenas identificaçaõ)" />
+                android:text="" />
 
 
             <TextView
@@ -58,7 +78,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Seguradora"/>
+                android:text="Seguradora" />
 
             <EditText
                 android:id="@+id/txtSeguradora"
@@ -69,7 +89,7 @@
                 android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Seguradora"/>
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -79,8 +99,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Apólice"
-                />
+                android:text="Apólice" />
 
             <EditText
                 android:id="@+id/txtApolice"
@@ -91,7 +110,7 @@
                 android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Apólice(tira jean)(apenas identificaçaõ)" />
+                android:text="" />
 
 
             <TextView
@@ -102,8 +121,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Tipo de serviço"
-                />
+                android:text="Tipo de serviço" />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -116,6 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="botao"
                     android:text="Colisão" />
 
                 <RadioButton
@@ -123,13 +142,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="botao"
                     android:text="Incêndio" />
 
                 <RadioButton
-                    android:id="@+id/radiLocalização"
+                    android:id="@+id/radioLocalizacao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="botao"
                     android:text="Localização" />
 
 
@@ -138,6 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="botao"
                     android:text="DAF" />
 
                 <RadioButton
@@ -145,6 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="botao"
                     android:text="RPT" />
 
                 <RadioButton
@@ -152,8 +175,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Socorro" />
+                    android:onClick="botao"
+                    android:text="Socorro"
+                    />
             </RadioGroup>
+
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
@@ -162,10 +188,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Data"
-                />
-
-
+                android:text="Data" />
 
 
             <EditText
@@ -174,9 +197,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="date"
-                android:text="Data(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
+
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
@@ -185,8 +209,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Hora"
-                />
+                android:text="Hora" />
 
 
             <EditText
@@ -195,9 +218,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="time|number"
-                android:text="Hora(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
+
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
@@ -206,14 +230,13 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Veiculo Marca"
-                />
+                android:text="Veiculo Marca" />
 
             <AutoCompleteTextView
                 android:id="@+id/txtMarca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="VeiculoMarca(tira jean)(apenas identificaçaõ)" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -223,14 +246,13 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Tipo"
-                />
+                android:text="Tipo" />
 
             <AutoCompleteTextView
                 android:id="@+id/txtTipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Marca(tira jean)(apenas identificaçaõ)" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -240,8 +262,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text=""
-                />
+                android:text="Modelo" />
 
 
             <EditText
@@ -250,9 +271,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Modelo(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
+
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
@@ -261,19 +283,19 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Hora"
-                />
+                android:text="Placas" />
 
 
             <EditText
-                android:id="@+id/txtPlacas"
+                android:id="@+id/txtPlaca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="time|number"
-                android:text="Placas(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
+
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
@@ -282,8 +304,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Cor"
-                />
+                android:text="Cor" />
 
 
             <EditText
@@ -292,7 +313,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text|number"
-                android:text="Cor(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
 
@@ -304,8 +325,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Autorizado por:"
-                />
+                android:text="Autorizado por:" />
 
 
             <EditText
@@ -314,7 +334,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Autorizacao(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
 
@@ -326,8 +346,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Contato no Local"
-                />
+                android:text="Contato no Local" />
 
 
             <EditText
@@ -336,7 +355,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Contato(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
 
@@ -349,8 +368,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Telefone"
-                />
+                android:text="Telefone" />
 
 
             <EditText
@@ -359,7 +377,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="phone"
-                android:text="Telefone(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
 
@@ -371,8 +389,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Localizacao do veiculo"
-                />
+                android:text="Localizacao do veiculo" />
 
 
             <EditText
@@ -381,7 +398,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text|number"
-                android:text="Localizacao(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
 
@@ -393,19 +410,19 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Destino 1"
-                />
+                android:text="Destino 1" />
 
 
             <EditText
-                android:id="@+id/Destino1"
+                android:id="@+id/txtDestino1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text|number"
-                android:text="Destino(tira jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
+
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
@@ -414,19 +431,19 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Destino 2"
-                />
+                android:text="Destino 2" />
 
 
             <EditText
-                android:id="@+id/Destino2"
+                android:id="@+id/txtDestino2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text|number"
-                android:text="Destino (tira o que escrevi jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
+
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
@@ -435,29 +452,26 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Destino final"
-                />
+                android:text="Destino final" />
 
 
             <EditText
-                android:id="@+id/DestinoFinal"
+                android:id="@+id/txtDestinoFinal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text|number"
-                android:text="Destino final (tira o que escrevi jean)(apenas identificaçaõ)"
+                android:text=""
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="532dp" />
-
-
 
 
             <Button
                 android:id="@+id/btnAvancar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Avançar"
-                android:onClick="botao"/>
+                android:onClick="botao"
+                android:text="Avançar" />
         </LinearLayout>
     </ScrollView>
 

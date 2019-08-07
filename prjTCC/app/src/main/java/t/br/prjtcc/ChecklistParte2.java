@@ -53,6 +53,9 @@ public class ChecklistParte2 extends AppCompatActivity {
 
                 startActivity(intent);
                 break;
+            case R.id.radioBagageiroSim:
+
+                break;
         }
     }
 
