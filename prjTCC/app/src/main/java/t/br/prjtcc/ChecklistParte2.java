@@ -49,7 +49,7 @@ public class ChecklistParte2 extends AppCompatActivity {
                 capturaImage();
                 break;
             case R.id.btnAssinaMotorista:
-                Intent intent = new Intent(this,AssinaMotorista.class);
+                Intent intent = new Intent(this, AssinaturaMotorista.class);
 
                 startActivity(intent);
                 break;
@@ -111,8 +111,8 @@ public class ChecklistParte2 extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
-            if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED
-                    && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 capturaImage();
 
             } else {
@@ -129,12 +129,10 @@ public class ChecklistParte2 extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-//        Bundle extras = data.getExtras();
-//        Bitmap imageBitmap = (Bitmap) extras.get("data");
-//        btnTirafoto.setImageBitmap(imageBitmap);
+
         if (requestCode == CAPTURE_IMAGE_REQUEST && resultCode == RESULT_OK) {
-            Bitmap myBitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
-            btnTirafoto.setImageBitmap(myBitmap);
+            Bitmap myBitmap =   BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             myBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);

@@ -649,11 +649,12 @@
             <ImageButton
                 android:id="@+id/btnTiraFot"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:onClick="botao"
                 app:srcCompat="@drawable/tirarfoto" />
 
             <Button
+                android:text="assinatura do Motorista"
                 android:id="@+id/btnAssinaMotorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
