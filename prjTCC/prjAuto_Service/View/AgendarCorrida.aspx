@@ -37,55 +37,49 @@
     </style>
     <main>
         <h4 class="text-darken-3 blue-text center-align">Insira os dados do seu pedido</h4>
-        <form id="formF" class="col s12" runat="server">
-            <div class="slider fullscreen" style="background-color:#fff">
-                <ul class="slides" style="background-color:#fff">
+        <form id="formF" runat="server">
+            <div class="slider fullscreen" style="background-color: #fff">
+                <ul class="slides" style="background-color: #fff">
                     <li>
-                       <img />
+                        <img />
+
                         <div class="caption center-align">
+                            <h4 class="text-darken-3 blue-text center-align">Insira seus dados</h4>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                                    <label for="first_name">First Name</label>
+                                    <i class="material-icons prefix blue-text text-darken-3">account_circle</i>
+                                    <label>Nome <span>*</span>:</label>
+                                    <asp:TextBox ID="TxtNome" class="validate" runat="server" required></asp:TextBox>
+
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="last_name" type="text" class="validate">
-                                    <label for="last_name">Last Name</label>
+                                    <label>Telefone celular<span>*</span>:</label>
+                                    <asp:TextBox ID="TxtTel" class="validate" runat="server" required></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
-                                    <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                                    <label for="disabled">Disabled</label>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">email</i>
+                                    <label>Email <span>*</span>:</label>
+                                    <asp:TextBox ID="TxtEmail" class="validate" runat="server" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required></asp:TextBox>
+
+                                </div>
+                                <div class="input-field col s6">
+                                    <label>CPF<span>*</span>:</label>
+                                    <asp:TextBox ID="TxtCpf" class="validate" runat="server" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="password" type="password" class="validate">
-                                    <label for="password">Password</label>
+                            <div class="buttons-wrapper">
+                                <div class="row right">
+                                    <a class="btn-large waves-effect waves-light blue" >Próximo</a>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s12">
-                                    This is an inline input field:
-                                  <div class="input-field inline">
-                                      <input id="email_inline" type="email" class="validate">
-                                      <label for="email_inline">Email</label>
-                                      <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                                  </div>
-                                </div>
-                            </div>
+
                         </div>
 
                     </li>
                     <li>
-                        
+                        <img />
                         <div class="caption center-align">
                             <div class="form-group">
 
@@ -125,7 +119,7 @@
                     </li>
 
                     <li>
-                       
+                        <img />
                         <div class="caption center-align">
                             <p class="campo">
                                 <label for="sr_nome">Data do serviço <span>*</span>:</label>
@@ -160,15 +154,14 @@
 
 
                     </li>
-
                 </ul>
 
             </div>
         </form>
 
-        
 
-       
+
+
 
 
 
@@ -190,10 +183,10 @@
     </main>
 
 
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
     <%--<script>
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
