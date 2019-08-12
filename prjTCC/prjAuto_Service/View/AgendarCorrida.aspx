@@ -4,12 +4,12 @@
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-        /*#map {
+        #map {
             height: 100%;
-        }*/
+        }
         /* Optional: Makes the sample page fill the window. */
 
-        /*.controls {
+        .controls {
             margin-top: 10px;
             border: 1px solid transparent;
             border-radius: 2px 0 0 2px;
@@ -21,7 +21,7 @@
         }
 
         .controls1 {
-             margin-top: 10px;
+            margin-top: 10px;
             border: 1px solid transparent;
             border-radius: 2px 0 0 2px;
             box-sizing: border-box;
@@ -33,7 +33,7 @@
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
             width: 200px;
-        }*/
+        }
     </style>
     <main>
         <h4 class="text-darken-3 blue-text center-align">Insira os dados do seu pedido</h4>
@@ -53,9 +53,10 @@
 
                                 </div>
                                 <div class="input-field col s6">
-                                    <label>Telefone celular<span>*</span>:</label>
-                                    <asp:TextBox ID="TxtTel" class="validate" runat="server" required></asp:TextBox>
+                                    <label>CPF<span>*</span>:</label>
+                                    <asp:TextBox ID="TxtCpf" class="validate" runat="server" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required></asp:TextBox>
                                 </div>
+                                
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
@@ -65,13 +66,14 @@
 
                                 </div>
                                 <div class="input-field col s6">
-                                    <label>CPF<span>*</span>:</label>
-                                    <asp:TextBox ID="TxtCpf" class="validate" runat="server" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required></asp:TextBox>
+                                    <label>Telefone celular<span>*</span>:</label>
+                                    <asp:TextBox ID="TxtTel" class="validate" runat="server" required></asp:TextBox>
                                 </div>
+                                
                             </div>
                             <div class="buttons-wrapper">
                                 <div class="row right">
-                                    <a class="btn-large waves-effect waves-light blue" >Próximo</a>
+                                    <a class="btn-large waves-effect waves-light blue">Próximo</a>
                                 </div>
                             </div>
 
@@ -80,8 +82,23 @@
                     </li>
                     <li>
                         <img />
-                        <div class="caption center-align">
-                            <div class="form-group">
+                        <div class="caption center-align" style="top:0;left:0;width:100%">
+                            <h4 class="text-darken-3 blue-text center-align">Trace sua rota</h4>
+                            <div class="row">
+                                <div id="mode-selector" class="controls" style="display: none">
+                                    <input type="radio" name="type" id="changemode-walking" checked="checked">
+                                    <label for="changemode-walking">Walking</label>
+
+                                    <input type="radio" name="type" id="changemode-transit">
+                                    <label for="changemode-transit">Transit</label>
+
+                                    <input type="radio" name="type" id="changemode-driving">
+                                    <label for="changemode-driving">Driving</label>
+                                </div>
+
+                                <div id="map" style="height: 55vh"></div>
+                            </div>
+                            <%--<div class="form-group">
 
                                 <p class="campo">
                                     <label>Modelo do veículo <span>*</span>:</label>
@@ -114,7 +131,7 @@
                                     <asp:TextBox ID="txtDestino" class="controls1" placeholder="Destino" runat="server" required></asp:TextBox>
 
                                 </p>
-                            </div>
+                            </div>--%>
                         </div>
                     </li>
 
@@ -168,26 +185,15 @@
 
 
 
-        <%-- <div id="mode-selector" class="controls" style="display:none">
-                                <input type="radio" name="type" id="changemode-walking" checked="checked">
-                                <label for="changemode-walking">Walking</label>
 
-                                <input type="radio" name="type" id="changemode-transit">
-                                <label for="changemode-transit">Transit</label>
-
-                                <input type="radio" name="type" id="changemode-driving">
-                                <label for="changemode-driving">Driving</label>
-                            </div>
-
-                            <div id="map" style="height: 75vh"></div>--%>
     </main>
 
 
-    
-    
+
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-    <%--<script>
+    <script>
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
@@ -285,5 +291,5 @@
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE&libraries=places&callback=initMap"
-        async defer></script>--%>
+        async defer></script>
 </asp:Content>
