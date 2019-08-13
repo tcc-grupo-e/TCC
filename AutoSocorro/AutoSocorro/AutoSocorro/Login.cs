@@ -27,23 +27,23 @@ namespace AutoSocorro
         //
         public String criptografarSenha(String senha)
         {
-            try
-            {
-                //Criptografa a senha
-                System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-                byte[] inputbytes = System.Text.Encoding.ASCII.GetBytes(senha);
-                byte[] hash = md5.ComputeHash(inputbytes);
-                StringBuilder senhaCriptografada = new StringBuilder();
-                for (int i = 0; i < hash.Length; i++)
-                {
-                    senhaCriptografada.Append(hash[i].ToString("X2"));
-                }
-                return senhaCriptografada.ToString();
-            }
-            catch
-            {
-                return null;
-            }
+            //try
+            //{
+            //    //Criptografa a senha
+            //    System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
+            //    byte[] inputbytes = System.Text.Encoding.ASCII.GetBytes(senha);
+            //    byte[] hash = md5.ComputeHash(inputbytes);
+            //    StringBuilder senhaCriptografada = new StringBuilder();
+            //    for (int i = 0; i < hash.Length; i++)
+            //    {
+            //        senhaCriptografada.Append(hash[i].ToString("X2"));
+            //    }
+            //    return senhaCriptografada.ToString();
+            //}
+            //catch
+            //{
+                return senha;
+            //}
         }
         //
         //Botão Entrar
@@ -83,9 +83,18 @@ namespace AutoSocorro
                         ms.setTitulo("Mensagem");
                         ms.setMensagem("Você não tem permissão !!");
                     }
-                    Loading load = new Loading();
-                    load.Show();
-                    this.Hide();
+                    if (loBLL.getPrimCad().Equals("N"))
+                    {
+                        NovaSenha ns = new NovaSenha();
+                        ns.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Loading load = new Loading();
+                        load.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {

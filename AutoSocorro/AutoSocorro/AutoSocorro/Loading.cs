@@ -30,16 +30,10 @@ namespace AutoSocorro
             {
                 timer.Enabled = false;
                 LoginBLL loBLL = new LoginBLL();
-                if (loBLL.getPrimCad().Equals("S"))
-                {
 
-                }
-                else
-                {
-                    Home ho = new Home();
-                    ho.Show();
-                    this.Hide();
-                }
+                Home ho = new Home();
+                ho.Show();
+                this.Hide();
             }
         }
 

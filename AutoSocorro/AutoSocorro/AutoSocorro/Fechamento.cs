@@ -302,7 +302,14 @@ namespace AutoSocorro
             btxtHrChegada.Text = "16:48";
             btxtHrParada.Text = "2";
             btxtHrTrab.Text = "1";
-            btxtKmChegada.Text = "10710 Km";
+            btxtKmChegada.Text = "10710";
+        }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
+            this.Hide();
         }
     }
 }

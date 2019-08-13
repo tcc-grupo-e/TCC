@@ -194,5 +194,12 @@ namespace AutoSocorro
 
             peBLL.setIdCliente(peBLL.pesquisar_Id_Clientes_Nome(Nome));
         }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
+            this.Hide();
+        }
     }
 }

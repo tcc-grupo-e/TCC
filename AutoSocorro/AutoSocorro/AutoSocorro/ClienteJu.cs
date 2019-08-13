@@ -397,5 +397,12 @@ namespace AutoSocorro
         {
             bbtnPedido_Click(sender, e);
         }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
+            this.Hide();
+        }
     }
 }

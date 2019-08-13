@@ -144,7 +144,7 @@ namespace AutoSocorro
             ms.ShowDialog();
             PedidosBLL peBLL = new PedidosBLL();
             int ID = peBLL.pesquisar_Id_Caminhoes_Placa(Placa);
-            peBLL.setIdMotorista(ID);
+            peBLL.setIdCaminhao(ID);
         }
 
         private void Pedidos3_Load(object sender, EventArgs e)
@@ -165,6 +165,13 @@ namespace AutoSocorro
                 GridCaminhao.DataSource = peBLL.pesquisar_Todos_Caminhoes();
             }
             catch { }
+        }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
+            this.Hide();
         }
     }
 }

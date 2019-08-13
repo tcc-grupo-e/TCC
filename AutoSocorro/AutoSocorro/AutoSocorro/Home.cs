@@ -328,7 +328,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnFev_Click(object sender, EventArgs e)
@@ -338,7 +338,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnMar_Click(object sender, EventArgs e)
@@ -348,7 +348,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnAbril_Click(object sender, EventArgs e)
@@ -358,7 +358,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnMai_Click(object sender, EventArgs e)
@@ -368,7 +368,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnJun_Click(object sender, EventArgs e)
@@ -378,7 +378,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnJul_Click(object sender, EventArgs e)
@@ -388,7 +388,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnAgo_Click(object sender, EventArgs e)
@@ -398,7 +398,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnSet_Click(object sender, EventArgs e)
@@ -408,7 +408,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnOut_Click(object sender, EventArgs e)
@@ -418,7 +418,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnNov_Click(object sender, EventArgs e)
@@ -428,7 +428,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnDez_Click(object sender, EventArgs e)
@@ -438,7 +438,7 @@ namespace AutoSocorro
             panel8.Enabled = false;
             panel9.Visible = false;
             panel9.Enabled = false;
-            Home_Load(sender, e);
+            AtualizaCalendario();
         }
 
         private void bbtnHome_Click(object sender, EventArgs e)
@@ -904,6 +904,88 @@ namespace AutoSocorro
             y = 0;
         }
 
+        public void AtualizaCalendario()
+        {
+            LoginBLL lo = new LoginBLL();
+
+            lblUsu.Text = lo.getNome();
+
+            if (lo.getNivelAcesso() == 1)
+            {
+                bbtnServiço.Visible = false;
+                bbtnFuncionario.Visible = false;
+            }
+
+            lblData.Text = DateTime.Now.Date.ToString();
+            lblData.Text = lblData.Text.Substring(0, 10);
+            lblDiaEsc.Text = lblData.Text;
+
+            atualizarHistorico();
+
+            panel4.Controls.Clear();
+            if (btnMeses.Equals(""))
+            {
+                mes = DateTime.Now.Month.ToString();
+            }
+            else
+            {
+                mes = btnMeses;
+                btnMeses = "";
+            }
+            String nomMes = Application.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(mes));
+            labelMes.ButtonText = (nomMes[0].ToString()).ToUpper();
+            for (int i = 1; i < nomMes.Length; i++)
+            {
+                labelMes.ButtonText = labelMes.ButtonText + nomMes[i];
+            }
+            ano = lblAno.Text;
+            CurrentCulture = Application.CurrentCulture.Name;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            //obtem o numero de dias do mes e ano selecionado
+            Int32 Dayz = DateTime.DaysInMonth(DateTime.Now.Year, Convert.ToInt32(mes));
+            VerificaDia();
+            for (Int32 i = 1; i < Dayz + 1; i++)
+            {
+                ndayz += 1;
+                lblDayz = new Label();
+                lblDayz.Name = "lbl" + i;
+                lblDayz.Text = i.ToString();
+                lblDayz.BorderStyle = BorderStyle.Fixed3D;
+                if (i == DateTime.Now.Day && mes.Equals(DateTime.Now.Month.ToString()))
+                {
+                    lblDayz.BackColor = Color.FromArgb(2, 119, 189);
+                    lblDayz.ForeColor = Color.White;
+                }
+                else if (ndayz == 01)
+                {
+                    lblDayz.ForeColor = Color.Red;
+                    lblDayz.BackColor = Color.Gainsboro;
+                }
+                else
+                {
+                    lblDayz.BackColor = Color.Gainsboro;
+                }
+                lblDayz.Font = label31.Font;
+                lblDayz.Cursor = Cursors.Hand;
+                lblDayz.Click += new System.EventHandler(this.lblDayz_Click);
+                lblDayz.SetBounds(x, y, 57, 30);
+                x += 63;
+                if (ndayz == 7)
+                {
+                    x = 0;
+                    ndayz = 0;
+                    y += 32;
+                }
+                if (!panel8.Visible)
+                {
+                    panel4.Controls.Add(lblDayz);
+                }
+            }
+            x = 0;
+            ndayz = 0;
+            y = 0;
+        }
+
         private void bbtnNovoPed_Click(object sender, EventArgs e)
         {
             bbtnPedido_Click(sender, e);
@@ -928,6 +1010,25 @@ namespace AutoSocorro
             PedidosGrid pegrid = new PedidosGrid();
             pegrid.Show();
             this.Hide();
+        }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
+            this.Hide();
+        }
+
+        private void bbtnAntAno_Click(object sender, EventArgs e)
+        {
+            lblAno.Text = (Convert.ToInt32(lblAno.Text) - 1)+ "";
+            AtualizaCalendario();
+        }
+
+        private void bbtnProxAno_Click(object sender, EventArgs e)
+        {
+            lblAno.Text = (Convert.ToInt32(lblAno.Text) + 1) + "";
+            AtualizaCalendario();
         }
 
         private void lblDayz_Click(object sender, EventArgs e)

@@ -21,9 +21,13 @@ namespace AutoSocorro
         private void btxtSenha1_Leave(object sender, EventArgs e)
         {
             if (btxtSenha1.Text.Equals(""))
+            {
                 btxtSenha1.Text = "Nova Senha";
-            btxtSenha1.ForeColor = Color.DarkGray;
-            btxtSenha1.isPassword = false;
+                btxtSenha1.isPassword = false;
+                btxtSenha1.ForeColor = Color.DarkGray;
+            }
+            else
+                btxtSenha1.isPassword = true;
         }
 
         private void btxtSenha1_Enter(object sender, EventArgs e)
@@ -37,9 +41,13 @@ namespace AutoSocorro
         private void btxtSenha2_Leave(object sender, EventArgs e)
         {
             if (btxtSenha2.Text.Equals(""))
+            {
                 btxtSenha2.Text = "Repita A Nova Senha";
-            btxtSenha2.ForeColor = Color.DarkGray;
-            btxtSenha2.isPassword = false;
+                btxtSenha2.isPassword = false;
+                btxtSenha2.ForeColor = Color.DarkGray;
+            }
+            else
+                btxtSenha2.isPassword = true;
         }
 
         private void btxtSenha2_Enter(object sender, EventArgs e)
@@ -52,62 +60,175 @@ namespace AutoSocorro
 
         public String criptografarSenha(String senha)
         {
-            try
-            {
-                //Criptografa a senha
-                System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-                byte[] inputbytes = System.Text.Encoding.ASCII.GetBytes(senha);
-                byte[] hash = md5.ComputeHash(inputbytes);
-                StringBuilder senhaCriptografada = new StringBuilder();
-                for (int i = 0; i < hash.Length; i++)
-                {
-                    senhaCriptografada.Append(hash[i].ToString("X2"));
-                }
-                return senhaCriptografada.ToString();
-            }
-            catch
-            {
-                return null;
-            }
+            //try
+            //{
+            //    //Criptografa a senha
+            //    System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
+            //    byte[] inputbytes = System.Text.Encoding.ASCII.GetBytes(senha);
+            //    byte[] hash = md5.ComputeHash(inputbytes);
+            //    StringBuilder senhaCriptografada = new StringBuilder();
+            //    for (int i = 0; i < hash.Length; i++)
+            //    {
+            //        senhaCriptografada.Append(hash[i].ToString("X2"));
+            //    }
+            //    return senhaCriptografada.ToString();
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
+
+            return senha;
         }
 
         private void bbtnCadastrar_Click(object sender, EventArgs e)
         {
             if (btxtSenha1.Text.Equals(btxtSenha2.Text))
             {
-                if (btxtSenha1.Text.Length > 6)
+                if (btxtSenha1.Text.Length >= 8)
                 {
-                    LoginBLL loBLL = new LoginBLL();
-                    if(loBLL.alterar_senha(criptografarSenha(btxtSenha1.Text), loBLL.getId()))
+                    if (Mai || Num)
                     {
-                        MensagemBLL mBLL = new MensagemBLL();
-                        mBLL.setMensagem("Senha ALterada Com Sucesso!");
-                        mBLL.setTitulo("Mensagem");
-                        Mensagem ms = new Mensagem();
-                        ms.ShowDialog();
+                        LoginBLL loBLL = new LoginBLL();
+                        if (loBLL.alterar_senha(criptografarSenha(btxtSenha1.Text), loBLL.getId()))
+                        {
+                            MensagemBLL mBLL = new MensagemBLL();
+                            mBLL.setMensagem("Senha Alterada Com Sucesso!");
+                            mBLL.setTitulo("Mensagem");
+                            Mensagem ms = new Mensagem();
+                            ms.ShowDialog();
 
-                        Home ho = new Home();
-                        ho.Show();
-                        this.Hide();
+                            Home ho = new Home();
+                            ho.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MensagemBLL mBLL = new MensagemBLL();
+                            mBLL.setMensagem("Senha Não Alterada!");
+                            mBLL.setTitulo("Mensagem");
+                            Mensagem ms = new Mensagem();
+                            ms.ShowDialog();
+                        }
                     }
                     else
                     {
-                        MensagemBLL mBLL = new MensagemBLL();
-                        mBLL.setMensagem("Senha Não Alterada!");
-                        mBLL.setTitulo("Mensagem");
-                        Mensagem ms = new Mensagem();
-                        ms.ShowDialog();
+                        if (!Mai)
+                            lblIgualdade.Text = "Insira ao menos uma letra maiúscula na sua senha.";
+                        else if (!Num)
+                            lblIgualdade.Text = "Insira ao menos um número na sua senha.";
                     }
                 }
                 else
-                {
-                    lblMensagem.Text = "Escolha uma senha com mais de 6 caracteres.";
-                }
+                    lblIgualdade.Text = "Escolha uma senha com mais de 8 caracteres.";
             }
             else
+                lblIgualdade.Text = "As senhas são diferentes.";
+        }
+
+        bool Num = false;
+        bool Mai = false;
+        bool Oito = false;
+        int val = 0;
+        int tam = 0;
+        List<bool> valid = new List<bool>();
+
+        private void btxtSenha1_OnValueChanged(object sender, EventArgs e)
+        {
+            if (!btxtSenha1.Text.Equals(""))
             {
-                lblMensagem.Text = "As senhas são diferentes.";
+                if (btxtSenha1.Text.Length <= tam)
+                {
+                    Num = false;
+                    Mai = false;
+                    Oito = false;
+                    tam = btxtSenha1.Text.Length - 1;
+                    valid.Clear();
+                }
+                else
+                    tam++;
+
+                for (int i = 0; i < btxtSenha1.Text.Length; i++)
+                {
+                    if (!Num)
+                    {
+                        if (Char.IsNumber(btxtSenha1.Text[i]))
+                        {
+                            Num = true;
+                            valid.Add(true);
+                        }
+                        else
+                            Num = false;
+                    }
+                    if (!Mai)
+                    {
+                        if (Char.IsUpper(btxtSenha1.Text[i]))
+                        {
+                            Mai = true;
+                            valid.Add(true);
+                        }
+                        else
+                            Mai = false;
+                    }
+                    if (!Oito)
+                    {
+                        if (btxtSenha1.Text.Length >= 8)
+                        {
+                            Oito = true;
+                            valid.Add(true);
+                        }
+                        else
+                            Oito = false;
+                    }
+                }
+
+                if (valid.Count <= 1 || btxtSenha1.Text.Length == 0)
+                {
+                    lblNS.Text = "Nível da senha: Fraca!";
+                    lblNS.ForeColor = Color.FromArgb(235, 70, 52);
+                }
+                else if (valid.Count == 2)
+                {
+                    lblNS.Text = "Nível da senha: Média!";
+                    lblNS.ForeColor = Color.DarkOrange;
+                }
+                else if (valid.Count >= 3)
+                {
+                    lblNS.Text = "Nível da senha: Forte!";
+                    lblNS.ForeColor = Color.FromArgb(0, 192, 0);
+                }
+                else
+                {
+                    lblNS.Text = "Nível da senha:";
+                    lblNS.ForeColor = Color.Black;
+                }
+
+                if (btxtSenha1.Text.Equals("Nova Senha"))
+                {
+                    lblNS.Text = "Nível da senha:";
+                    lblNS.ForeColor = Color.Black;
+                }
             }
+        }
+
+        private void NovaSenha_Load(object sender, EventArgs e)
+        {
+            LoginBLL loBll = new LoginBLL();
+
+            if (loBll.getNoLo())
+            {
+                bbtnCadastrar.Location = new Point(28,224);
+                bbtnMSenha.Visible = true;
+                bbtnMSenha.Enabled = true;
+                loBll.setNoLo(false);
+            }
+        }
+
+        private void bbtnMSenha_Click(object sender, EventArgs e)
+        {
+            Home ho = new Home();
+            ho.Show();
+            this.Hide();
         }
     }
 }

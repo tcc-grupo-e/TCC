@@ -435,6 +435,7 @@
             this.lblUsu.TabIndex = 19;
             this.lblUsu.Text = "Nome Usuário";
             this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsu.Click += new System.EventHandler(this.lblUsu_Click);
             // 
             // label1
             // 

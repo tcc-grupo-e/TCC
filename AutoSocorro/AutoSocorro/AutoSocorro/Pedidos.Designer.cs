@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_tit = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.bbtnClienteJu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -56,7 +57,6 @@
             this.bbtnCadastroCliJ = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnCadastroCliF = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnContinuar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lblUsu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +175,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 121;
+            // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 19;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsu.Click += new System.EventHandler(this.lblUsu_Click);
             // 
             // bbtnClienteJu
             // 
@@ -663,17 +675,6 @@
             this.bbtnContinuar.Textcolor = System.Drawing.Color.White;
             this.bbtnContinuar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnContinuar.Click += new System.EventHandler(this.bbtnContinuar_Click);
-            // 
-            // lblUsu
-            // 
-            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsu.ForeColor = System.Drawing.Color.White;
-            this.lblUsu.Location = new System.Drawing.Point(3, 376);
-            this.lblUsu.Name = "lblUsu";
-            this.lblUsu.Size = new System.Drawing.Size(207, 78);
-            this.lblUsu.TabIndex = 19;
-            this.lblUsu.Text = "Nome Usuário";
-            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Pedidos
             // 

@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_tit = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.bbtnClienteJuridico = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnServiço = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -53,7 +54,6 @@
             this.bunifuCustomTextbox1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.GridFunc = new System.Windows.Forms.DataGridView();
-            this.lblUsu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -172,6 +172,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 125;
+            // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 19;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsu.Click += new System.EventHandler(this.lblUsu_Click);
             // 
             // bbtnClienteJuridico
             // 
@@ -528,17 +540,6 @@
             this.GridFunc.Size = new System.Drawing.Size(935, 317);
             this.GridFunc.TabIndex = 214;
             this.GridFunc.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridFunc_CellMouseClick);
-            // 
-            // lblUsu
-            // 
-            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsu.ForeColor = System.Drawing.Color.White;
-            this.lblUsu.Location = new System.Drawing.Point(3, 376);
-            this.lblUsu.Name = "lblUsu";
-            this.lblUsu.Size = new System.Drawing.Size(207, 78);
-            this.lblUsu.TabIndex = 19;
-            this.lblUsu.Text = "Nome Usuário";
-            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FuncionarioGrid
             // 

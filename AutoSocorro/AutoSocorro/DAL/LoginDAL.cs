@@ -39,5 +39,20 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool alterar_login(String login, int id)
+        {
+            cc = new ClasseConexao();
+            String sql = "Exec usp_AlterarLoginPC '" + login + "', " + id;
+            try
+            {
+                cc.executa_sql(sql, false);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

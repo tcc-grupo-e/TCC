@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.bbtnClienteJu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnLogoff = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -54,7 +55,6 @@
             this.bbtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btxtConsultar = new Bunifu.Framework.UI.BunifuTextbox();
             this.GridMotorista = new System.Windows.Forms.DataGridView();
-            this.lblUsu = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,6 +101,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 505);
             this.panel3.TabIndex = 163;
+            // 
+            // lblUsu
+            // 
+            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsu.ForeColor = System.Drawing.Color.White;
+            this.lblUsu.Location = new System.Drawing.Point(3, 376);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(207, 78);
+            this.lblUsu.TabIndex = 19;
+            this.lblUsu.Text = "Nome Usuário";
+            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsu.Click += new System.EventHandler(this.lblUsu_Click);
             // 
             // bbtnClienteJu
             // 
@@ -555,6 +567,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridMotorista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridMotorista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridMotorista.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -590,17 +603,6 @@
             this.GridMotorista.Size = new System.Drawing.Size(702, 286);
             this.GridMotorista.TabIndex = 171;
             this.GridMotorista.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridMotorista_CellMouseClick);
-            // 
-            // lblUsu
-            // 
-            this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsu.ForeColor = System.Drawing.Color.White;
-            this.lblUsu.Location = new System.Drawing.Point(3, 376);
-            this.lblUsu.Name = "lblUsu";
-            this.lblUsu.Size = new System.Drawing.Size(207, 78);
-            this.lblUsu.TabIndex = 19;
-            this.lblUsu.Text = "Nome Usuário";
-            this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Pedidos2
             // 

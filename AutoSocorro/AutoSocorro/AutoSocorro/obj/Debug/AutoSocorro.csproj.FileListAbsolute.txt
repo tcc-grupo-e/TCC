@@ -371,3 +371,12 @@ H:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Adic
 H:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Fechamento.resources
 H:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.NovaSenha.resources
 H:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.PedidosGrid.resources
+F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Adicionais.resources
+F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Fechamento.resources
+F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.NovaSenha.resources
+F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.PedidosGrid.resources
+G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Adicionais.resources
+G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.Fechamento.resources
+G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.NovaSenha.resources
+G:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.PedidosGrid.resources
+F:\Importante\TCC\AutoSocorro\AutoSocorro\AutoSocorro\obj\Debug\AutoSocorro.NovoLogin.resources

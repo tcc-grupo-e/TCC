@@ -14,9 +14,19 @@ namespace BLL
         private static String Senha;
         private static int NivelAcesso = 0;
         private static int Id = 1;
-        public static String PrimCad = "S";
+        public static String PrimCad = "N";
         public static String Nome = "Error!";
         public static DataTable Funcionario;
+        private static bool NL;
+
+        public void setNoLo(bool val)
+        {
+            NL = val;
+        }
+        public bool getNoLo()
+        {
+            return NL;
+        }
 
         public void setPrimCad(String val)
         {
@@ -78,8 +88,7 @@ namespace BLL
             LoginDAL loDAL = new LoginDAL();
             Usu = usuario;
             Senha = senha;
-            PrimCad = dt.Rows[0]["Primeiro_Cadastro"] + "";
-            Id = Convert.ToInt32(dt.Rows[0]["ID_Funcionario"]);
+
             dt = loDAL.buscarUsuarios(Usu, Senha);
 
             if (dt.Rows[0]["T/F"].ToString().Equals("F"))
@@ -88,6 +97,8 @@ namespace BLL
             {
                 Funcionario = dt;
                 Nome = dt.Rows[0]["Nome"] + "";
+                PrimCad = dt.Rows[0]["Primeiro_Cadastro"] + "";
+                Id = Convert.ToInt32(dt.Rows[0]["ID_Funcionario"]);
 
                 if (dt.Rows[0]["Cargo"].ToString().Equals("Gerente"))
                 {
@@ -108,6 +119,12 @@ namespace BLL
         {
             LoginDAL loDAL = new LoginDAL();
             return loDAL.alterar_senha(senha, id);
+        }
+
+        public bool alterar_login(String login, int id)
+        {
+            LoginDAL loDAL = new LoginDAL();
+            return loDAL.alterar_login(login, id);
         }
     }
 }

@@ -78,6 +78,8 @@
             this.lblDiaEsc = new System.Windows.Forms.Label();
             this.bbtnNovoPed = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bbtnChamadas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bbtnAntAno = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bbtnProxAno = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -203,6 +205,7 @@
             // 
             // lblUsu
             // 
+            this.lblUsu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsu.ForeColor = System.Drawing.Color.White;
             this.lblUsu.Location = new System.Drawing.Point(3, 376);
@@ -211,6 +214,7 @@
             this.lblUsu.TabIndex = 17;
             this.lblUsu.Text = "Nome Usuário";
             this.lblUsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsu.Click += new System.EventHandler(this.lblUsu_Click);
             // 
             // bbtnClienteJuridico
             // 
@@ -460,6 +464,8 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.bbtnProxAno);
+            this.panel7.Controls.Add(this.bbtnAntAno);
             this.panel7.Controls.Add(this.lblAno);
             this.panel7.Location = new System.Drawing.Point(243, 110);
             this.panel7.Name = "panel7";
@@ -1244,6 +1250,58 @@
             this.bbtnChamadas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbtnChamadas.Click += new System.EventHandler(this.bbtnChamadas_Click);
             // 
+            // bbtnAntAno
+            // 
+            this.bbtnAntAno.ActiveBorderThickness = 1;
+            this.bbtnAntAno.ActiveCornerRadius = 1;
+            this.bbtnAntAno.ActiveFillColor = System.Drawing.Color.Transparent;
+            this.bbtnAntAno.ActiveForecolor = System.Drawing.Color.White;
+            this.bbtnAntAno.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.bbtnAntAno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnAntAno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bbtnAntAno.BackgroundImage")));
+            this.bbtnAntAno.ButtonText = "<";
+            this.bbtnAntAno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnAntAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnAntAno.ForeColor = System.Drawing.Color.Black;
+            this.bbtnAntAno.IdleBorderThickness = 1;
+            this.bbtnAntAno.IdleCornerRadius = 1;
+            this.bbtnAntAno.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnAntAno.IdleForecolor = System.Drawing.Color.White;
+            this.bbtnAntAno.IdleLineColor = System.Drawing.Color.Transparent;
+            this.bbtnAntAno.Location = new System.Drawing.Point(17, 3);
+            this.bbtnAntAno.Margin = new System.Windows.Forms.Padding(8);
+            this.bbtnAntAno.Name = "bbtnAntAno";
+            this.bbtnAntAno.Size = new System.Drawing.Size(40, 37);
+            this.bbtnAntAno.TabIndex = 72;
+            this.bbtnAntAno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnAntAno.Click += new System.EventHandler(this.bbtnAntAno_Click);
+            // 
+            // bbtnProxAno
+            // 
+            this.bbtnProxAno.ActiveBorderThickness = 1;
+            this.bbtnProxAno.ActiveCornerRadius = 1;
+            this.bbtnProxAno.ActiveFillColor = System.Drawing.Color.Transparent;
+            this.bbtnProxAno.ActiveForecolor = System.Drawing.Color.White;
+            this.bbtnProxAno.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.bbtnProxAno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnProxAno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bbtnProxAno.BackgroundImage")));
+            this.bbtnProxAno.ButtonText = ">";
+            this.bbtnProxAno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bbtnProxAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bbtnProxAno.ForeColor = System.Drawing.Color.White;
+            this.bbtnProxAno.IdleBorderThickness = 1;
+            this.bbtnProxAno.IdleCornerRadius = 1;
+            this.bbtnProxAno.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.bbtnProxAno.IdleForecolor = System.Drawing.Color.White;
+            this.bbtnProxAno.IdleLineColor = System.Drawing.Color.Transparent;
+            this.bbtnProxAno.Location = new System.Drawing.Point(376, 3);
+            this.bbtnProxAno.Margin = new System.Windows.Forms.Padding(8);
+            this.bbtnProxAno.Name = "bbtnProxAno";
+            this.bbtnProxAno.Size = new System.Drawing.Size(40, 37);
+            this.bbtnProxAno.TabIndex = 72;
+            this.bbtnProxAno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bbtnProxAno.Click += new System.EventHandler(this.bbtnProxAno_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1327,5 +1385,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bbtnCliente;
         private Bunifu.Framework.UI.BunifuFlatButton bbtnChamadas;
         private System.Windows.Forms.Label lblUsu;
+        private Bunifu.Framework.UI.BunifuThinButton2 bbtnProxAno;
+        private Bunifu.Framework.UI.BunifuThinButton2 bbtnAntAno;
     }
 }

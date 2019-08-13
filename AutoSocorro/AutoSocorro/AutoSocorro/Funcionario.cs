@@ -272,6 +272,10 @@ namespace AutoSocorro
                 FuncionarioBLL funcBLL = new FuncionarioBLL();
                 if (funcBLL.inserirFunc(btxtNome.Text, btxtEmail.Text, btxtRG.Text, btxtCEP.Text, btxtEnd.Text, btxtCidade.Text, bdropUF.selectedValue, bDataNasc.Value.ToString().Substring(0, 10), btxtTel.Text, btxtCNH.Text, btxtEstadoCivil.Text, nomec, btxtSalario.Text, bDropCargo.selectedValue, telc, btxtCarteira.Text, btxtNome.Text, senha))
                 {
+                    Cursor = Cursors.WaitCursor;
+                    EnviarEmail();
+                    Cursor = Cursors.Default;
+
                     MensagemBLL mBLL = new MensagemBLL();
                     mBLL.setMensagem("Funcionário Cadastrado Com Sucesso!");
                     mBLL.setTitulo("Mensagem");
@@ -726,6 +730,13 @@ namespace AutoSocorro
         {
             Adicionais add = new Adicionais();
             add.Show();
+            this.Hide();
+        }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
             this.Hide();
         }
     }

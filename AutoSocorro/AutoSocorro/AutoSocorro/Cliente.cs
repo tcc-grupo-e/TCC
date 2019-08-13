@@ -106,6 +106,7 @@ namespace AutoSocorro
             }
             catch { }
             PedidosBLL peBLL = new PedidosBLL();
+
             if (peBLL.getNovoCadastro().Equals("S"))
             {
                 peBLL.setNovoCadastro("");
@@ -114,6 +115,12 @@ namespace AutoSocorro
                 bbtnCancelar.Visible = true;
                 bbtnCancelar.Enabled = true;
             }
+
+            try
+            {
+                GridCliente.DataSource = peBLL.pesquisar_Todos_Clientes().DefaultView;
+            }
+            catch { }
         }
 
         private void btxtConsultar_Leave(object sender, EventArgs e)
@@ -437,6 +444,18 @@ namespace AutoSocorro
         private void bbtnCancelar_Click(object sender, EventArgs e)
         {
             bbtnPedido_Click(sender, e);
+        }
+
+        private void lblUsu_Click(object sender, EventArgs e)
+        {
+            NovoLogin nl = new NovoLogin();
+            nl.Show();
+            this.Hide();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
