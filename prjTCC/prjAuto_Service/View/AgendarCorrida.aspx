@@ -35,6 +35,143 @@
             width: 200px;
         }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE&libraries=places&callback=initMap"
+        async defer></script>
+    <script>
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+        function initMap() {
+            
+            var map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeControl: false,
+                center: { lat: -23.5489, lng: -46.6388 },
+                zoom: 13
+            });
+            //initAutocomplete();
+            
+
+            new AutocompleteDirectionsHandler(map);
+        }
+        var autocompleteDestination, autocomplete;
+
+
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            autocomplete = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */
+                (document.getElementById('oimota_txtOrig')), {
+                    types: ['geocode']
+                });
+            autocompleteDesination = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */
+                (document.getElementById('oimota_txtDestino')), {
+                    types: ['geocode']
+                });
+
+
+        }
+
+        
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var geolocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                        center: geolocation,
+                        radius: position.coords.accuracy
+                    });
+                    autocomplete.setBounds(circle.getBounds());
+                });
+            }
+        }
+
+
+        /**
+         * @constructor
+        */
+        function AutocompleteDirectionsHandler(map) {
+            this.map = map;
+            this.originPlaceId = null;
+            this.destinationPlaceId = null;
+            this.travelMode = 'DRIVING';
+            var originInput = document.getElementById('oimota_txtOrig');
+            var destinationInput = document.getElementById('oimota_txtDestino');
+            var modeSelector = document.getElementById('oimota_mode-selector');
+            this.directionsService = new google.maps.DirectionsService;
+            this.directionsDisplay = new google.maps.DirectionsRenderer;
+            this.directionsDisplay.setMap(map);
+
+            var originAutocomplete = new google.maps.places.Autocomplete(
+                originInput, { placeIdOnly: true });
+            var destinationAutocomplete = new google.maps.places.Autocomplete(
+                destinationInput, { placeIdOnly: true });
+
+            this.setupClickListener('changemode-walking', 'WALKING');
+            this.setupClickListener('changemode-transit', 'TRANSIT');
+            this.setupClickListener('changemode-driving', 'DRIVING');
+
+            this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+            this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+
+            
+        }
+
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        AutocompleteDirectionsHandler.prototype.setupClickListener = function (id, mode) {
+            var radioButton = document.getElementById(id);
+            var me = this;
+            radioButton.addEventListener('click', function () {
+                me.travelMode = mode;
+                me.route();
+            });
+        };
+
+        AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (autocomplete, mode) {
+            var me = this;
+            autocomplete.bindTo('bounds', this.map);
+            autocomplete.addListener('place_changed', function () {
+                var place = autocomplete.getPlace();
+                if (!place.place_id) {
+                    window.alert("Please select an option from the dropdown list.");
+                    return;
+                }
+                if (mode === 'ORIG') {
+                    me.originPlaceId = place.place_id;
+                } else {
+                    me.destinationPlaceId = place.place_id;
+                }
+                me.route();
+            });
+
+        };
+
+        AutocompleteDirectionsHandler.prototype.route = function () {
+            if (!this.originPlaceId || !this.destinationPlaceId) {
+                return;
+            }
+            var me = this;
+
+            this.directionsService.route({
+                origin: { 'placeId': this.originPlaceId },
+                destination: { 'placeId': this.destinationPlaceId },
+                travelMode: this.travelMode
+            }, function (response, status) {
+                if (status === 'OK') {
+                    me.directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        };
+
+    </script>
     <main>
         <h4 class="text-darken-3 blue-text center-align">Insira os dados do seu pedido</h4>
         <form id="formF" runat="server">
@@ -56,7 +193,7 @@
                                     <label>CPF<span>*</span>:</label>
                                     <asp:TextBox ID="TxtCpf" class="validate" runat="server" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required></asp:TextBox>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
@@ -69,7 +206,7 @@
                                     <label>Telefone celular<span>*</span>:</label>
                                     <asp:TextBox ID="TxtTel" class="validate" runat="server" required></asp:TextBox>
                                 </div>
-                                
+
                             </div>
                             <div class="buttons-wrapper">
                                 <div class="row right">
@@ -82,7 +219,7 @@
                     </li>
                     <li>
                         <img />
-                        <div class="caption center-align" style="top:0;left:0;width:100%">
+                        <div class="caption center-align" style="top: 0; left: 0; width: 100%">
                             <h4 class="text-darken-3 blue-text center-align">Trace sua rota</h4>
                             <div class="row">
                                 <div id="mode-selector" class="controls" style="display: none">
@@ -97,6 +234,21 @@
                                 </div>
 
                                 <div id="map" style="height: 55vh"></div>
+
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label>Origem:</label>
+                                        <asp:TextBox ID="txtOrig" onFocus="geolocate()" onchange="calcRoute();" class="validate" runat="server" required></asp:TextBox>
+
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <label>Destino</label>
+                                        <asp:TextBox ID="txtDestino" class="validate" onchange="calcRoute();" runat="server" required></asp:TextBox>
+
+                                    </div>
+
+                                </div>
+
                             </div>
                             <%--<div class="form-group">
 
@@ -120,17 +272,7 @@
                                     <asp:TextBox ID="txtCor" class="form-control" runat="server" required></asp:TextBox>
 
                                 </p>
-                                <p class="campo">
-                                    <label for="u_nome"></label>
-                                    <asp:TextBox ID="txtOrigem" class="controls1" placeholder="Origem" runat="server" required></asp:TextBox>
-
-                                </p>
-
-                                <p class="campo">
-                                    <label for="s_nome"></label>
-                                    <asp:TextBox ID="txtDestino" class="controls1" placeholder="Destino" runat="server" required></asp:TextBox>
-
-                                </p>
+                                
                             </div>--%>
                         </div>
                     </li>
@@ -193,103 +335,5 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-    <script>
-        // This example requires the Places library. Include the libraries=places
-        // parameter when you first load the API. For example:
-        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                mapTypeControl: false,
-                center: { lat: -23.5489, lng: -46.6388 },
-                zoom: 13
-            });
-
-            new AutocompleteDirectionsHandler(map);
-        }
-
-        /**
-         * @constructor
-        */
-        function AutocompleteDirectionsHandler(map) {
-            this.map = map;
-            this.originPlaceId = null;
-            this.destinationPlaceId = null;
-            this.travelMode = 'DRIVING';
-            var originInput = document.getElementById('txtOrigem');
-            var destinationInput = document.getElementById('txtDestino');
-            var modeSelector = document.getElementById('mode-selector');
-            this.directionsService = new google.maps.DirectionsService;
-            this.directionsDisplay = new google.maps.DirectionsRenderer;
-            this.directionsDisplay.setMap(map);
-
-            var originAutocomplete = new google.maps.places.Autocomplete(
-                originInput, { placeIdOnly: true });
-            var destinationAutocomplete = new google.maps.places.Autocomplete(
-                destinationInput, { placeIdOnly: true });
-
-            this.setupClickListener('changemode-walking', 'WALKING');
-            this.setupClickListener('changemode-transit', 'TRANSIT');
-            this.setupClickListener('changemode-driving', 'DRIVING');
-
-            this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-            this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
-
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
-        }
-
-        // Sets a listener on a radio button to change the filter type on Places
-        // Autocomplete.
-        AutocompleteDirectionsHandler.prototype.setupClickListener = function (id, mode) {
-            var radioButton = document.getElementById(id);
-            var me = this;
-            radioButton.addEventListener('click', function () {
-                me.travelMode = mode;
-                me.route();
-            });
-        };
-
-        AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (autocomplete, mode) {
-            var me = this;
-            autocomplete.bindTo('bounds', this.map);
-            autocomplete.addListener('place_changed', function () {
-                var place = autocomplete.getPlace();
-                if (!place.place_id) {
-                    window.alert("Please select an option from the dropdown list.");
-                    return;
-                }
-                if (mode === 'ORIG') {
-                    me.originPlaceId = place.place_id;
-                } else {
-                    me.destinationPlaceId = place.place_id;
-                }
-                me.route();
-            });
-
-        };
-
-        AutocompleteDirectionsHandler.prototype.route = function () {
-            if (!this.originPlaceId || !this.destinationPlaceId) {
-                return;
-            }
-            var me = this;
-
-            this.directionsService.route({
-                origin: { 'placeId': this.originPlaceId },
-                destination: { 'placeId': this.destinationPlaceId },
-                travelMode: this.travelMode
-            }, function (response, status) {
-                if (status === 'OK') {
-                    me.directionsDisplay.setDirections(response);
-                } else {
-                    window.alert('Directions request failed due to ' + status);
-                }
-            });
-        };
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE&libraries=places&callback=initMap"
-        async defer></script>
 </asp:Content>
