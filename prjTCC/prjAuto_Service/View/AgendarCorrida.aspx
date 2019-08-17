@@ -43,14 +43,14 @@
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
         function initMap() {
-            
+
             var map = new google.maps.Map(document.getElementById('map'), {
                 mapTypeControl: false,
                 center: { lat: -23.5489, lng: -46.6388 },
                 zoom: 13
             });
             //initAutocomplete();
-            
+
 
             new AutocompleteDirectionsHandler(map);
         }
@@ -74,7 +74,7 @@
 
         }
 
-        
+
         function geolocate() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
@@ -119,7 +119,7 @@
             this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
             this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-            
+
         }
 
         // Sets a listener on a radio button to change the filter type on Places
@@ -151,6 +151,20 @@
             });
 
         };
+        var items = ["Beco do Batman - Rua Medeiros de Albuquerque - Jardim das Bandeiras, São Paulo - SP", "Rua José Dias Paes - Jardim Edi, São Paulo - SP"];
+        items.push("Rua 25 de Março, São Paulo - SP")
+        var waypoints = [];
+        for (var i = 0; i < items.length; i++) {
+            var address = items[i];
+            if (address !== "") {
+                waypoints.push({
+                    location: address,
+                    stopover: true
+                });
+            }
+        }
+
+
 
         AutocompleteDirectionsHandler.prototype.route = function () {
             if (!this.originPlaceId || !this.destinationPlaceId) {
@@ -161,6 +175,7 @@
             this.directionsService.route({
                 origin: { 'placeId': this.originPlaceId },
                 destination: { 'placeId': this.destinationPlaceId },
+                waypoints: waypoints,
                 travelMode: this.travelMode
             }, function (response, status) {
                 if (status === 'OK') {
@@ -210,7 +225,7 @@
                             </div>
                             <div class="buttons-wrapper">
                                 <div class="row right">
-                                    <a class="btn-large waves-effect waves-light blue">Próximo</a>
+                                    <a class="btn waves-effect waves-light blue">Próximo</a>
                                 </div>
                             </div>
 
@@ -220,7 +235,7 @@
                     <li>
                         <img />
                         <div class="caption center-align" style="top: 0; left: 0; width: 100%">
-                            <h4 class="text-darken-3 blue-text center-align">Trace sua rota</h4>
+                            
                             <div class="row">
                                 <div id="mode-selector" class="controls" style="display: none">
                                     <input type="radio" name="type" id="changemode-walking" checked="checked">
@@ -233,22 +248,49 @@
                                     <label for="changemode-driving">Driving</label>
                                 </div>
 
-                                <div id="map" style="height: 55vh"></div>
+                                <div id="map" style="height: 55vh">
+                                    <h4 style="position:absolute" class="text-darken-3 blue-text center-align">Trace sua rota</h4>
+                                </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <label>Origem:</label>
-                                        <asp:TextBox ID="txtOrig" onFocus="geolocate()" onchange="calcRoute();" class="validate" runat="server" required></asp:TextBox>
+                                        <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                        <label>Origem</label>
+                                        <asp:TextBox ID="txtOrig" onFocus="geolocate()" class="validate" runat="server" required></asp:TextBox>
 
                                     </div>
                                     <div class="input-field col s6">
+                                        <i class="material-icons prefix blue-text text-darken-3">place</i>
                                         <label>Destino</label>
-                                        <asp:TextBox ID="txtDestino" class="validate" onchange="calcRoute();" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtDestino" class="validate" runat="server" required></asp:TextBox>
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix blue-text text-darken-3">date_range</i>
+                                        <label>Data</label>
+                                        <asp:TextBox ID="txtData" class="datepicker" runat="server" required></asp:TextBox>
+
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix blue-text text-darken-3">access_time</i>
+                                        <label>Hora</label>
+                                        <asp:TextBox ID="txtHora" class="timepicker" runat="server" required></asp:TextBox>
 
                                     </div>
 
                                 </div>
 
+                            </div>
+                            <div class="buttons-wrapper">
+                                <div class="row right" style="margin-right: 2vw">
+                                    <a class="btn waves-effect waves-light blue">Próximo</a>
+                                </div>
+                                <div class="row left" style="margin-left: 2vw">
+                                    <a class="btn waves-effect waves-light blue">Anterior</a>
+                                </div>
                             </div>
                             <%--<div class="form-group">
 
@@ -276,22 +318,64 @@
                             </div>--%>
                         </div>
                     </li>
+                    <li>
+                        <img />
+
+                        <div class="caption center-align">
+                            <h4 class="text-darken-3 blue-text center-align">Insira os dados do veículo</h4>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">directions_car</i>
+                                    <label>Modelo do veículo <span>*</span>:</label>
+                                    <asp:TextBox ID="txtVeiculo" class="validate" runat="server" required></asp:TextBox>
+
+                                </div>
+                                <div class="input-field col s6">
+                                    <label>Marca<span>*</span>:</label>
+                                    <asp:TextBox ID="txtMarca" class="validate" runat="server" required></asp:TextBox>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">color_lens</i>
+                                    <label>Cor<span>*</span>:</label>
+                                    <asp:TextBox ID="txtCor" class="validate" runat="server" required></asp:TextBox>
+
+
+                                </div>
+                                <div class="input-field col s6">
+                                    <label>Ano <span>*</span>:</label>
+                                    <asp:TextBox ID="txtAno" class="validate" runat="server" required></asp:TextBox>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix blue-text text-darken-3">fiber_pin</i>
+                                    <label>Placa<span>*</span>:</label>
+                                    <asp:TextBox ID="txtPlaca" class="validate" runat="server" pattern="[A-Z]{3}-\d{4}" required></asp:TextBox>
+
+                                </div>
+
+
+                            </div>
+                            <div class="buttons-wrapper">
+                                <div class="row right">
+                                    <a class="btn waves-effect waves-light blue">Próximo</a>
+                                </div>
+                                <div class="row left">
+                                    <a class="btn waves-effect waves-light blue">Anterior</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
 
                     <li>
                         <img />
                         <div class="caption center-align">
-                            <p class="campo">
-                                <label for="sr_nome">Data do serviço <span>*</span>:</label>
-                                <asp:TextBox ID="txtData" placeholder="dd/mm/aaaa" class="form-control" runat="server" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" required></asp:TextBox>
-                            </p>
-                            <p class="campo">
-                                <label for="re_nome">Hora do serviço<span>*</span>:</label>
-                                <asp:TextBox class="form-control" placeholder="hh:mm" ID="txtHora" runat="server" required></asp:TextBox>
-                            </p>
 
-
-                            <br />
-                            <br />
                             <p class="campo"><b>Declaração de confidencialidade de dados</b></p>
                             <p class="campo">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
                             <p class="campo">
@@ -310,7 +394,12 @@
                                 <asp:Button ID="btnAgendar" class="btn btn-primary" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="btnAgendar_Click" />
                             </p>
                         </div>
-
+                        <div class="buttons-wrapper">
+                            
+                            <div class="row left">
+                                <a class="btn waves-effect waves-light blue">Anterior</a>
+                            </div>
+                        </div>
 
                     </li>
                 </ul>

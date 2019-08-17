@@ -40,24 +40,7 @@ namespace prjAuto_Service.Controller
         }
         #endregion Insere Abertura
 
-        #region Insere Acessorio
-        public void inserirAcessorio(Model.Agendar agen)
-        {
-            String sql = "Exec usp_InserirAce '" + agen.getNomeAcessorio() + "','" + agen.getEstado() + "','" + agen.getComentario() + "'";
-            con = new ClasseConexao();
-            con.executa_sql(sql);
-        }
-        #endregion Insere Acessorio
-
-        #region Insere Retirada
-        public void inserirRetirada(Model.Agendar agen)
-        {
-            String sql = "Exec usp_InserirRet '" + agen.getReferencia() + "','" + agen.getEndereco() + "'";
-            con = new ClasseConexao();
-            con.executa_sql(sql);
-        }
-        #endregion Insere Retirada
-
+      
 
         #region Insere Destino
         public void inserirDestino(Model.Agendar agen)

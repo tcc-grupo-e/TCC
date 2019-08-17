@@ -72,7 +72,25 @@ namespace prjAuto_Service.Model
 
         #region MODELO ABERTURA
 
-        private static string marca, modelo, cor, ano, placa;
+        private static string marca, modelo, cor, ano, placa, data, hora;
+
+        public string getData()
+        {
+            return data;
+        }
+        public void setData(string val)
+        {
+            data = val;
+        }
+
+        public string getHora()
+        {
+            return hora;
+        }
+        public void setHora(string val)
+        {
+            hora = val;
+        }
 
         public string getMarca()
         {
@@ -123,62 +141,7 @@ namespace prjAuto_Service.Model
 
         #endregion MODELO ABERTURA
 
-        #region MODELO ACESSORIOS
-
-        private static string nome_acessorio, estado, comentario;
-
-        public string getNomeAcessorio()
-        {
-            return nome_acessorio;
-        }
-        public void setNomeAcessorio(string val)
-        {
-            nome_acessorio = val;
-        }
-
-        public string getEstado()
-        {
-            return estado;
-        }
-        public void setEstado(string val)
-        {
-            estado = val;
-        }
-
-        public string getComentario()
-        {
-            return comentario;
-        }
-        public void setComentario(string val)
-        {
-            comentario = val;
-        }
-        #endregion MODELO ACESSORIOS
-
-        #region MODELO RETIRADA
-
-        private static string endereco, referencia;
-
-        public string getEndereco()
-        {
-            return endereco;
-        }
-        public void setEndereco(string val)
-        {
-            endereco = val;
-        }
-
-        public string getReferencia()
-        {
-            return referencia;
-        }
-        public void setReferencia(string val)
-        {
-            referencia = val;
-        }
-
-        #endregion MODELO RETIRADA
-
+       
         #region MODELO DESTINO
 
         private static string endereco_destino, referencia_destino, ordem;
