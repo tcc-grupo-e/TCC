@@ -49,7 +49,7 @@
                 center: { lat: -23.5489, lng: -46.6388 },
                 zoom: 13
             });
-            //initAutocomplete();
+            initAutocomplete();
 
 
             new AutocompleteDirectionsHandler(map);
@@ -62,12 +62,7 @@
             // location types.
             autocomplete = new google.maps.places.Autocomplete(
                 /** @type {!HTMLInputElement} */
-                (document.getElementById('oimota_txtOrig')), {
-                    types: ['geocode']
-                });
-            autocompleteDesination = new google.maps.places.Autocomplete(
-                /** @type {!HTMLInputElement} */
-                (document.getElementById('oimota_txtDestino')), {
+                (document.getElementById('txtEnd')), {
                     types: ['geocode']
                 });
 
@@ -151,18 +146,45 @@
             });
 
         };
-        var items = ["Beco do Batman - Rua Medeiros de Albuquerque - Jardim das Bandeiras, São Paulo - SP", "Rua José Dias Paes - Jardim Edi, São Paulo - SP"];
-        items.push("Rua 25 de Março, São Paulo - SP")
+        var items = [];
+        var references = [];
         var waypoints = [];
-        for (var i = 0; i < items.length; i++) {
-            var address = items[i];
+        function add() {
+            var end = $('#txtEnd').val();
+            items.push(end);
+            var ref = $('#txtReference').val()
+            references.push(ref);
+            $('#txtEnd').val("");
+            $('#txtReference').val("");
+
+
+            var address = items[items.length - 1];
             if (address !== "") {
                 waypoints.push({
                     location: address,
                     stopover: true
                 });
             }
+            if (!this.originPlaceId || !this.destinationPlaceId) {
+                return;
+            }
+            var me = this;
+
+            this.directionsService.route({
+                origin: { 'placeId': this.originPlaceId },
+                destination: { 'placeId': this.destinationPlaceId },
+                waypoints: waypoints,
+                travelMode: this.travelMode
+            }, function (response, status) {
+                if (status === 'OK') {
+                    me.directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
         }
+
+
 
 
 
@@ -234,54 +256,85 @@
                     </li>
                     <li>
                         <img />
-                        <div class="caption center-align" style="top: 0; left: 0; width: 100%">
-                            
+                        <div class="caption center-align" style="top: 1vh; left: 0; width: 100%">
+
                             <div class="row">
-                                <div id="mode-selector" class="controls" style="display: none">
-                                    <input type="radio" name="type" id="changemode-walking" checked="checked">
-                                    <label for="changemode-walking">Walking</label>
-
-                                    <input type="radio" name="type" id="changemode-transit">
-                                    <label for="changemode-transit">Transit</label>
-
-                                    <input type="radio" name="type" id="changemode-driving">
-                                    <label for="changemode-driving">Driving</label>
-                                </div>
-
-                                <div id="map" style="height: 55vh">
-                                    <h4 style="position:absolute" class="text-darken-3 blue-text center-align">Trace sua rota</h4>
-                                </div>
-
                                 <div class="row">
-                                    <div class="input-field col s6">
-                                        <i class="material-icons prefix blue-text text-darken-3">place</i>
-                                        <label>Origem</label>
-                                        <asp:TextBox ID="txtOrig" onFocus="geolocate()" class="validate" runat="server" required></asp:TextBox>
+                                    <div class="col s4">
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">date_range</i>
+                                                <label>Data</label>
+                                                <asp:TextBox ID="txtData" class="datepicker" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">access_time</i>
+                                                <label>Hora</label>
+                                                <asp:TextBox ID="txtHora" class="timepicker" runat="server" required></asp:TextBox>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <label class="active" for="oimota_txtOrig">Origem</label>
+                                                <asp:TextBox ID="txtOrig" placeholder="Escolha uma origem" onFocus="geolocate()" class="validate" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <input id="txtEnd" placeholder="Escolha um local" type="text" class="validate" />
+                                                <label for="txtEnd">Endereço da parada</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="txtReference" type="text" class="validate" />
+                                                <label for="txtReference">Referencia</label>
+                                            </div>
+                                            <a class="btn waves-effect waves-light blue" onclick="add()">Adicionar paradas +</a>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <label class="active" for="oimota_txtDestino">Destino</label>
+                                                <asp:TextBox ID="txtDestino" placeholder="Escolha o destino final" class="validate" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                        </div>
+
+
 
                                     </div>
-                                    <div class="input-field col s6">
-                                        <i class="material-icons prefix blue-text text-darken-3">place</i>
-                                        <label>Destino</label>
-                                        <asp:TextBox ID="txtDestino" class="validate" runat="server" required></asp:TextBox>
 
+
+                                    <div class="col s8">
+                                        <div id="mode-selector" class="controls" style="display: none">
+                                            <input type="radio" name="type" id="changemode-walking" checked="checked">
+                                            <label for="changemode-walking">Walking</label>
+
+                                            <input type="radio" name="type" id="changemode-transit">
+                                            <label for="changemode-transit">Transit</label>
+
+                                            <input type="radio" name="type" id="changemode-driving">
+                                            <label for="changemode-driving">Driving</label>
+                                        </div>
+
+                                        <div id="map" style="height: 80vh">
+                                        </div>
                                     </div>
+
+
+
 
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <i class="material-icons prefix blue-text text-darken-3">date_range</i>
-                                        <label>Data</label>
-                                        <asp:TextBox ID="txtData" class="datepicker" runat="server" required></asp:TextBox>
 
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <i class="material-icons prefix blue-text text-darken-3">access_time</i>
-                                        <label>Hora</label>
-                                        <asp:TextBox ID="txtHora" class="timepicker" runat="server" required></asp:TextBox>
 
-                                    </div>
-
-                                </div>
 
                             </div>
                             <div class="buttons-wrapper">
@@ -292,30 +345,7 @@
                                     <a class="btn waves-effect waves-light blue">Anterior</a>
                                 </div>
                             </div>
-                            <%--<div class="form-group">
 
-                                <p class="campo">
-                                    <label>Modelo do veículo <span>*</span>:</label>
-                                    <asp:TextBox ID="txtVeiculo" class="form-control" runat="server" required OnLoad="txtVeiculo_Load"></asp:TextBox>
-
-                                </p>
-                                <p class="campo">
-                                    <label for="u_nome">Ponto de Referência <span>*</span>:</label>
-                                    <asp:TextBox ID="txtPonto" class="form-control" runat="server" required></asp:TextBox>
-
-                                </p>
-                                <p class="campo">
-                                    <label for="u_nome">Placa <span>*</span>:</label>
-                                    <asp:TextBox ID="txtPlaca" class="form-control" runat="server" placeholder="AAA-0000" pattern="[A-Z]{3}-\d{4}" required></asp:TextBox>
-
-                                </p>
-                                <p class="campo">
-                                    <label>Cor <span>*</span>:</label>
-                                    <asp:TextBox ID="txtCor" class="form-control" runat="server" required></asp:TextBox>
-
-                                </p>
-                                
-                            </div>--%>
                         </div>
                     </li>
                     <li>
@@ -376,26 +406,26 @@
                         <img />
                         <div class="caption center-align">
 
-                            <p class="campo"><b>Declaração de confidencialidade de dados</b></p>
-                            <p class="campo">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
-                            <p class="campo">
+                            <p class="light"><b>Declaração de confidencialidade de dados</b></p>
+                            <p class="light">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
+                            <p class="light">
                                 A exibição é efetuada em uma nova janela. Caso seja suprimida a exibição de campos adicionais em um bloqueador de popups, este deve ser primeiro desativado.
                             </p>
-                            <p class="campo">
+                            <p class="light">
                                 <a href="img/TERMOS_TCM.pdf" class="ltd" target="_blank"><b>Declaração de confidencialidade de dados</b></a>
                             </p>
                             <p>Asseguramos que os dados que nos foram transmitidos serão tratados confidencialmente e só serão utilizados para fins apresentados na declaração de confidencialidade de dados.</p>
-                            <p class="campo1">
+                            <p class="light">
                                 <input type="checkbox" name="concordo" class="chec" required>Sim, li e aceito a declaração de confidencialidade de dados.
                             </p>
 
                             <br />
-                            <p class="campo">
+                            <p>
                                 <asp:Button ID="btnAgendar" class="btn btn-primary" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="btnAgendar_Click" />
                             </p>
                         </div>
                         <div class="buttons-wrapper">
-                            
+
                             <div class="row left">
                                 <a class="btn waves-effect waves-light blue">Anterior</a>
                             </div>
