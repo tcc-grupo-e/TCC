@@ -26,7 +26,25 @@ namespace prjAuto_Service
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            string auto = (Request.QueryString["auto"]);
+            if (auto == "jojo")
+            {
+                TxtCpf.Text = "213.456.789-09";
+                TxtNome.Text = "Jonny Joestar";
+                TxtTel.Text = "40028922";
+                TxtEmail.Text = "jojo.part7@gmail.com";
+                txtData.Text = "12/12/2019";
+                txtDestino.Text = "Destino Alegria Buffet - Rua Arnaldo de Oliveira e Sousa - Interlagos, São Paulo - SP";
+                txtHora.Text = "12:00";
+                txtOrig.Text = "Origem Tatuapé - Avenida Celso Garcia - Tatuapé, São Paulo - SP";
+                txtPlaca.Text = "JBA-0001";
+                txtVeiculo.Text = "Isekai";
+                txtMarca.Text = "Subaru";
+                txtCor.Text = "Preto";
+                txtAno.Text = "2016";
+                
+            }
+
 
         }
         //ClasseConexao xx = new ClasseConexao();
@@ -97,35 +115,43 @@ namespace prjAuto_Service
             //xx.executa_sql("insert into Servicos_Pedido values ('" + Session["Servicos"] + "'," + Session["Pedido"] + ")");
 
             //Response.Redirect("Home.aspx");
+            #region UTIL
 
-            agendar.setCpf("477.278.588-46");
-            agendar.setEmail("mer.mer@gmauil.com");
-            agendar.setNome("Alcimar Monteiro");
-            agendar.setTelefone("40028922");
-            
-            agendar.setAno("");
-            agendar.setCor("");
-            agendar.setModelo("");
-            agendar.setMarca("");
-            agendar.setPlaca("");
-            agendar.setData("");
-            agendar.setHora("");
+            //                  UTIL
 
-
-
-
-
-
-            agendar.setEnderecoDestino("");
-            agendar.setReferenciaDestino("");
-            agendar.setOrdem("");
-
+            agendar.setCpf(TxtCpf.Text);
+            agendar.setEmail(TxtEmail.Text);
+            agendar.setNome(TxtNome.Text);
+            agendar.setTelefone(TxtTel.Text);
             control.inserirCliente(agendar);
+
+            agendar.setAno(txtAno.Text);
+            agendar.setCor(txtCor.Text);
+            agendar.setModelo(txtVeiculo.Text);
+            agendar.setMarca(txtMarca.Text);
+            agendar.setPlaca(txtPlaca.Text);
+            agendar.setData(txtData.Text);
+            agendar.setHora(txtHora.Text);
+            agendar.setOrigem(txtOrig.Text);
             control.inserirAbertura(agendar);
-            
-            
+
+            string[] destinos = Hidden1.Text.Split("/".ToCharArray());
+            string[] referencias = Hidden2.Text.Split("/".ToCharArray());
+            for(int i = 0; i < destinos.Length; i++)
+            {
+                agendar.setEnderecoDestino(destinos[i]);
+                agendar.setReferenciaDestino(referencias[i]);
+                agendar.setOrdem(i++.ToString());
+                control.inserirDestino(agendar);
+            }
+            agendar.setEnderecoDestino(txtDestino.Text);
+            agendar.setReferenciaDestino("Destino Final");
+            agendar.setOrdem("999");
             control.inserirDestino(agendar);
 
+
+            Response.Redirect("Home.aspx?var=confirmado");
+            #endregion UTIL 
 
         }
 

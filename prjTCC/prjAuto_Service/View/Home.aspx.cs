@@ -14,11 +14,12 @@ namespace prjAuto_Service
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            string falec = (Request.QueryString["c"]);
-            if(falec == "T")
+            string falec = (Request.QueryString["var"]);
+            if(falec == "muda")
             {
                 //this.Controls.Add(new LiteralControl("<script>document.getElementById('fale1').click();</ script>"));
-               // this.Controls.Add(new LiteralControl("<script>alert('JOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOJOOU');</script>"));
+                this.Controls.Add(new LiteralControl("<script>alert('JOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOJOOU');</script>"));
+                
             }
         }
 

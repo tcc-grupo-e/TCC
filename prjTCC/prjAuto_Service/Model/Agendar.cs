@@ -72,7 +72,16 @@ namespace prjAuto_Service.Model
 
         #region MODELO ABERTURA
 
-        private static string marca, modelo, cor, ano, placa, data, hora;
+        private static string marca, modelo, cor, ano, placa, data, hora, origem;
+
+        public string getOrigem()
+        {
+            return origem;
+        }
+        public void setOrigem(string val)
+        {
+            origem = val;
+        }
 
         public string getData()
         {

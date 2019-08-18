@@ -151,9 +151,15 @@
         var waypoints = [];
         function add() {
             var end = $('#txtEnd').val();
+
             items.push(end);
+
+
             var ref = $('#txtReference').val()
+
             references.push(ref);
+
+
             $('#txtEnd').val("");
             $('#txtReference').val("");
 
@@ -165,23 +171,10 @@
                     stopover: true
                 });
             }
-            if (!this.originPlaceId || !this.destinationPlaceId) {
-                return;
-            }
-            var me = this;
 
-            this.directionsService.route({
-                origin: { 'placeId': this.originPlaceId },
-                destination: { 'placeId': this.destinationPlaceId },
-                waypoints: waypoints,
-                travelMode: this.travelMode
-            }, function (response, status) {
-                if (status === 'OK') {
-                    me.directionsDisplay.setDirections(response);
-                } else {
-                    window.alert('Directions request failed due to ' + status);
-                }
-            });
+            $('#oimota_Hidden1').val(items.join('/'));
+            $('#oimota_Hidden2').val(references.join('/'));
+
         }
 
 
@@ -247,7 +240,7 @@
                             </div>
                             <div class="buttons-wrapper">
                                 <div class="row right">
-                                    <a class="btn waves-effect waves-light blue">Próximo</a>
+                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
                                 </div>
                             </div>
 
@@ -291,11 +284,13 @@
                                                 <i class="material-icons prefix blue-text text-darken-3">place</i>
                                                 <input id="txtEnd" placeholder="Escolha um local" type="text" class="validate" />
                                                 <label for="txtEnd">Endereço da parada</label>
+                                                <span class="helper-text">As paradas aparecem quando a rota for traçada</span>
                                             </div>
                                             <div class="input-field col s6">
                                                 <input id="txtReference" type="text" class="validate" />
                                                 <label for="txtReference">Referencia</label>
                                             </div>
+
                                             <a class="btn waves-effect waves-light blue" onclick="add()">Adicionar paradas +</a>
 
                                         </div>
@@ -339,10 +334,10 @@
                             </div>
                             <div class="buttons-wrapper">
                                 <div class="row right" style="margin-right: 2vw">
-                                    <a class="btn waves-effect waves-light blue">Próximo</a>
+                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
                                 </div>
                                 <div class="row left" style="margin-left: 2vw">
-                                    <a class="btn waves-effect waves-light blue">Anterior</a>
+                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
                                 </div>
                             </div>
 
@@ -375,8 +370,9 @@
 
                                 </div>
                                 <div class="input-field col s6">
+                                    <asp:TextBox ID="txtAno" class="validate" type="number" min="1900" max="2021" runat="server" required></asp:TextBox>
                                     <label>Ano <span>*</span>:</label>
-                                    <asp:TextBox ID="txtAno" class="validate" runat="server" required></asp:TextBox>
+                                    <span class="helper-text" data-error="Selecione um ano entre o intervalo 1900 - 2021" data-success="">De 1900 a 2021</span>
                                 </div>
 
                             </div>
@@ -392,10 +388,10 @@
                             </div>
                             <div class="buttons-wrapper">
                                 <div class="row right">
-                                    <a class="btn waves-effect waves-light blue">Próximo</a>
+                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
                                 </div>
                                 <div class="row left">
-                                    <a class="btn waves-effect waves-light blue">Anterior</a>
+                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
                                 </div>
                             </div>
 
@@ -404,37 +400,48 @@
 
                     <li>
                         <img />
-                        <div class="caption center-align">
+                        <div class="caption center-align" style="top: 1vh">
 
-                            <p class="light"><b>Declaração de confidencialidade de dados</b></p>
-                            <p class="light">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
-                            <p class="light">
+                            <p class="flow-text black-text"><b>Declaração de confidencialidade de dados</b></p>
+                            <p class="flow-text black-text">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
+                            <p class="flow-text black-text">
                                 A exibição é efetuada em uma nova janela. Caso seja suprimida a exibição de campos adicionais em um bloqueador de popups, este deve ser primeiro desativado.
                             </p>
-                            <p class="light">
-                                <a href="img/TERMOS_TCM.pdf" class="ltd" target="_blank"><b>Declaração de confidencialidade de dados</b></a>
+                            <p class="flow-text">
+                                <a href="img/TERMOS_TCM.pdf" target="_blank"><b>Clique aqui</b></a>
                             </p>
                             <p>Asseguramos que os dados que nos foram transmitidos serão tratados confidencialmente e só serão utilizados para fins apresentados na declaração de confidencialidade de dados.</p>
-                            <p class="light">
-                                <input type="checkbox" name="concordo" class="chec" required>Sim, li e aceito a declaração de confidencialidade de dados.
+                            <p class="flow-text black-text">
+                                <label>
+                                    <input type="checkbox" class="filled-in" required />
+                                    <span class="black-text">Li e aceito a declaração de confidencialidade de dados.</span>
+                                </label>
+
                             </p>
 
-                            <br />
+
                             <p>
-                                <asp:Button ID="btnAgendar" class="btn btn-primary" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="btnAgendar_Click" />
+                                <asp:Button ID="btnAgendar" class="btn waves-effect waves-light blue" runat="server" Text="Enviar" CssClass="btn waves-effect waves-light blue" OnClick="btnAgendar_Click" />
                             </p>
-                        </div>
-                        <div class="buttons-wrapper">
+                            <div class="buttons-wrapper">
 
-                            <div class="row left">
-                                <a class="btn waves-effect waves-light blue">Anterior</a>
+                                <div class="row left">
+                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
+                                </div>
                             </div>
+
                         </div>
+
+
 
                     </li>
                 </ul>
 
             </div>
+            <asp:TextBox ID="Hidden1" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="Hidden2" runat="server" type="hidden"></asp:TextBox>
+
+
         </form>
 
 

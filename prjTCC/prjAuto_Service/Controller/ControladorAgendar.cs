@@ -12,6 +12,9 @@ namespace prjAuto_Service.Controller
         ClasseConexao con = new ClasseConexao();
         DataSet ds = new DataSet();
 
+
+        
+
         #region exemplo
         //public void inserir(Model.Exemplo exe)
         //{
@@ -25,7 +28,8 @@ namespace prjAuto_Service.Controller
         #region Insere Cliente
         public void inserirCliente(Model.Agendar agen)
         {
-            String sql = "Exec usp_InserirCli '" + agen.getCpf() + "','" + agen.getEmail() + "','" + agen.getNome() + "','" + agen.getTelefone() + "'";
+            
+            String sql = "Exec usp_InserirCliente '" + agen.getNome() + "','" + agen.getTelefone() + "','" + agen.getEmail() + "','" + agen.getCpf() + "'";
             con = new ClasseConexao();
             con.executa_sql(sql);
         }
@@ -34,7 +38,11 @@ namespace prjAuto_Service.Controller
         #region Insere Abertura
         public void inserirAbertura(Model.Agendar agen)
         {
-            String sql = "Exec usp_InserirAber '" + agen.getAno() + "','" + agen.getCor() + "','" + agen.getModelo() + "','" + agen.getMarca() + "','" + agen.getPlaca() + "'";
+            ds = new DataSet();
+            con = new ClasseConexao();
+            ds = con.executa_sql("select ID_Cliente from Cliente where Nome like '"+agen.getNome()+"' and CPF like '"+agen.getCpf()+"'");
+            string idCliente = ds.Tables[0].Rows[0]["ID_Cliente"].ToString();
+            String sql = "Exec usp_InserirAbertura "+idCliente+",1,'-','-','" + agen.getData() + "','" + agen.getMarca() + "','" + agen.getModelo() + "','" + agen.getCor() + "','" + agen.getAno() + "','" + agen.getPlaca() + "','" + agen.getOrigem() + "','-','" + agen.getHora() + "','-'";
             con = new ClasseConexao();
             con.executa_sql(sql);
         }
@@ -45,7 +53,15 @@ namespace prjAuto_Service.Controller
         #region Insere Destino
         public void inserirDestino(Model.Agendar agen)
         {
-            String sql = "Exec usp_InserirDes '" + agen.getReferenciaDestino() + "','" + agen.getEnderecoDestino() + "','" + agen.getOrdem() + "'";
+            ds = new DataSet();
+            con = new ClasseConexao();
+            ds = con.executa_sql("select ID_Cliente from Cliente where Nome like '" + agen.getNome() + "' and CPF like '" + agen.getCpf() + "'");
+            string idCliente = ds.Tables[0].Rows[0]["ID_Cliente"].ToString();
+            ds = new DataSet();
+            con = new ClasseConexao();
+            ds = con.executa_sql("select top 1 ID_Chamado from Abertura where ID_Cliente = "+idCliente+" order by ID_Chamado desc");
+            string idAbertura = ds.Tables[0].Rows[0]["ID_Chamado"].ToString();
+            String sql = "Exec usp_InserirDestino '" + agen.getEnderecoDestino() + "','" + agen.getReferenciaDestino() + "','" + idAbertura + "','" + agen.getOrdem() + "'";
             con = new ClasseConexao();
             con.executa_sql(sql);
         }

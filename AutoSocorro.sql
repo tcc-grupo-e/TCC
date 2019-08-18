@@ -246,7 +246,11 @@ select * from Destino
 select * from Fechamento
 select * from Funcionario
 select * from Funcionario_Abertura
+select top 1 ID_Chamado from Abertura where ID_Cliente = 12 order by ID_Chamado desc
+select ID_Cliente from Cliente where Nome like 'Jonathan Joestar' and CPF like '213.456.789-09'
+Exec usp_InserirCliente 'Jonathan Joestar','40028922','jojo.part1@gmail.com','213.456.789-09'
 
+Exec usp_InserirAbertura 5,1,'-','-','" + agen.getData() + "','" + agen.getMarca() + "','" + agen.getModelo() + "','" + agen.getCor() + "','" + agen.getAno() + "','" + agen.getPlaca() + "','" + agen.getOrigem() + "','-','" + agen.getHora() + "','-'
             
 -----------------------PROCEDURES------------------------------
 
@@ -419,6 +423,8 @@ as
 		set @id = @ultimo_id + 1
 	end
 	insert into Destino values (@id, @id_Chamado, @destino, @referencia, @Ordem)
+go
+
 create procedure usp_InserirAbertura
 	@ID_Cliente int,
 	@ID_Caminhao int,

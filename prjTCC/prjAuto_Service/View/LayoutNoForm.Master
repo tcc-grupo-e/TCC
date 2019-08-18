@@ -198,13 +198,19 @@
                     $('.timepicker').timepicker({
                         twelveHour: false,
                     });
-                    $(document).on('keypress', function (e) {
-                        if (e.which == 13)
-                            $('.slider').slider('next');
-                    })
+                    //$(document).on('keypress', function (e) {
+                    //    if (e.which == 13)
+                    //        $('.slider').slider('next');
+                    //})
                 }); // end of document ready
             })(jQuery); // end of jQuery name space
-
+            function next() {
+                $('.slider').slider('next');
+            }
+            function prev() {
+                $('.slider').slider('prev');
+            }
+           
         </script>
 </body>
 
