@@ -181,7 +181,6 @@ create table Funcionario (
 )
 
 
-
 go
 insert into Funcionario values
 	(1, 'Ederson Gonzaga de Melo', 'Gerente', 'R$10.000', 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua José Dias Paes', 'São Paulo', '04851-003',
@@ -246,15 +245,11 @@ select * from Destino
 select * from Fechamento
 select * from Funcionario
 select * from Funcionario_Abertura
-select top 1 ID_Chamado from Abertura where ID_Cliente = 12 order by ID_Chamado desc
-select ID_Cliente from Cliente where Nome like 'Jonathan Joestar' and CPF like '213.456.789-09'
-Exec usp_InserirCliente 'Jonathan Joestar','40028922','jojo.part1@gmail.com','213.456.789-09'
 
-Exec usp_InserirAbertura 5,1,'-','-','" + agen.getData() + "','" + agen.getMarca() + "','" + agen.getModelo() + "','" + agen.getCor() + "','" + agen.getAno() + "','" + agen.getPlaca() + "','" + agen.getOrigem() + "','-','" + agen.getHora() + "','-'
-            
+
 -----------------------PROCEDURES------------------------------
 
--------------------------Inserir--------------------------------
+-------------------------Iserir--------------------------------
 create procedure usp_InserirAdicionalAbertura
 @idAbertura int,
 @NomeAdicional varchar(50)
@@ -269,8 +264,7 @@ as
 			set @id = @ultimo_id + 1
 		end
 	insert into Adicional_Abertura select @id, ID_Adicionais, @idAbertura from Adicionais where Nome like @NomeAdicional
-	go
---------------------------------------------------------------------------------
+go
 create procedure usp_InserirFuncAber
 @id_Motorista int
 as
@@ -285,8 +279,7 @@ as
 		set @id = @ultimo_id + 1
 	end
 	insert into Funcionario_Abertura values (@id, @ultimo_idAbertura, @id_Motorista)
-	go
---------------------------------------------------------------------------------
+go
 create procedure usp_InserirFuncionario 
 	@nome varchar(50),
 	@cargo varchar(30),
@@ -324,11 +317,7 @@ As
 		@endereco, @cidade, @cep, @estado, @telefone, @data_nascimento, @estado_civil,
 		@nome_conjuge, @telefone_conjuge, @login, @senha, @primeiro_cadastro)
 go
-
-drop procedure usp_InserirFuncionario
-
 --------------------------------------------------------------------------------
-
 create procedure usp_InserirCliente
 	@Nome varchar(50),
 	@Telefone varchar(14),
@@ -347,8 +336,6 @@ as
 	insert into Cliente values
 		(@id, @Nome, @Telefone, @Email, @CPF)
 go
-
-exec usp_InserirCliente
 --------------------------------------------------------------------------------
 create procedure usp_InserirEmpresa
 	@Nome varchar(50),
@@ -391,22 +378,18 @@ as
 go
 
 ------------------------------------------------------------------------------
-Exec usp_InserirFechamento '','','','','','','', 5
 create procedure usp_InserirFechamento
-@kmChegada varchar(100),
-@hrChegada varchar(50),
-@hrParada varchar(50),
-@hrTrabalhada varchar(50),
-@contato varchar(255),
-@estado varchar(255),
-@acompanhante varchar(30),
+@kmChegada varchar(10),
+@hrChegada varchar(5),
+@hrParada varchar(5),
+@hrTrabalhada varchar(5),
+@contato varchar(50),
+@estado varchar(50),
+@acompanhante varchar(4),
 @id int
 as
 	insert into Fechamento select *, @kmChegada, @hrChegada, @hrParada, @hrTrabalhada, @contato, @estado, @acompanhante from Abertura where ID_Chamado = @id 
-go
 
-insert into Fechamento select *, '', '', '', '', '', '', '' from Abertura where ID_Chamado = 4
---------------------------------------------------------------------------------
 create procedure usp_InserirDestino
 @destino varchar(255),
 @referencia varchar(255),
@@ -424,7 +407,6 @@ as
 	end
 	insert into Destino values (@id, @id_Chamado, @destino, @referencia, @Ordem)
 go
-
 create procedure usp_InserirAbertura
 	@ID_Cliente int,
 	@ID_Caminhao int,
@@ -453,6 +435,7 @@ as
 	insert into Abertura values
 		(@id, @ID_Cliente, @ID_Caminhao, @LocalRet, @Atendente, @Apolice, @Data_Servico, @Marca, @Modelo, @Cor, @Ano, @Placa, @KM_Saida, @Hora_Saida, @Observacao)
 go
+------------------------------------------------------------------------------
 -------------------------Consultar--------------------------------
 
 
@@ -469,32 +452,31 @@ Declare @contagem int,@mensagem char(1)
 		else
   			Select Cargo, Nome, ID_Funcionario, Primeiro_Cadastro, 'T' as 'T/F' from Funcionario where Usuario = @usu and Senha = @senha
 go
-
 --------------------------Cliente---------------------------------
 
 create procedure usp_PesquisarTodosClientes
 as
 	select Nome, Email as 'E-Mail', Telefone, CPF from Cliente where CPF != '-'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarClientesNome
 @nome varchar(50)
 as
 	select Nome, Email as 'E-Mail', Telefone, CPF from Cliente where CPF != '-' and Nome like '%' + @nome + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarClientesEmail
 @email varchar(100)
 as
 	select Nome, Email as 'E-Mail', Telefone, CPF from Cliente where CPF != '-' and Email like '%' + @email + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarClientesTelefone
 @tel varchar(14)
 as
 	select Nome, Email as 'E-Mail', Telefone, CPF from Cliente where CPF != '-' and Telefone like '%' + @tel + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarClientesCPF
 @cpf varchar(14)
 as
@@ -507,31 +489,31 @@ create procedure usp_PesquisarTodasEmpresas
 as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' 
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarEmpresasNome
 @nome varchar(50)
 as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' and c.Nome like '%' + @nome + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarEmpresasEmail
 @email varchar(100)
 as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' and c.Email like '%' + @email + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarEmpresasTelefone
 @tel varchar(14)
 as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' and c.Telefone like '%' + @tel + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarEmpresasCNPJ
 @cnpj varchar(18)
 as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' and e.CNPJ like '%' + @cnpj + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarEmpresasIE
 @ie varchar(255)
 as
@@ -544,12 +526,12 @@ create procedure usp_PesquisarTodosFuncionarios
 as
 	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario 
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodosFuncionariosB
 as
 	select * from Funcionario 
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarFuncionariosNome
 @nome varchar(50)
 as
@@ -562,13 +544,13 @@ create procedure usp_PesquisarTodosAdicionais
 as
 	select Nome, Preco from Adicionais 
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarAdicionaisNome
 @nome varchar(50)
 as
 	select Nome, Preco from Adicionais where Nome like '%' + @nome + '%' 
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarAdicionaisPreco
 @preco varchar(50)
 as
@@ -581,97 +563,94 @@ create procedure usp_PesquisarClientesEmpresas
 as
 	select Nome, Email as 'E-Mail', Telefone, CPF from Cliente 
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarClientesEmpresasNome
 @nome varchar(50)
 as
 	select Nome, Email as 'E-Mail', Telefone, CPF from Cliente where Nome like '%' + @nome + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarIdClientesNomeChamada
 @nome varchar(50)
 as
 	select * from Cliente where Nome like @nome 
 go
---------------------------------------------------------------------------------
-Exec usp_PesquisarFuncionariosMotoristas
-select * from Funcionario
+
 create procedure usp_PesquisarFuncionariosMotoristas
 as
 	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario where Cargo like 'Motorista'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarFuncionariosMotoristasNome
 @nome varchar(50)
 as
 	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario where Cargo like 'Motorista' and Nome like '%' + @nome + '%'
 go
 
---------------------------------------------------------------------------------
+
 create procedure usp_ProcurarId_Motoristas_Nome
 @nome varchar(50)
 as
 	select ID_Funcionario from Funcionario where Cargo like 'Motorista' and Nome like '%' + @nome + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodosCaminhoesChamada
 as
 	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodosCaminhoesChamadaPlaca
 @placa varchar(8)
 as
 	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao where Placa like '%' + @placa + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarIdCaminhoesChamadaPlaca
 @placa varchar(8)
 as
 	select * from Caminhao where Placa like '%' + @placa + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodasAsChamadas
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodasAsChamadasData
 @data varchar(10)
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Data_Servico like '%' + @data + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodasAsChamadasPlacaCarro
 @placa varchar(10)
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Placa like '%' + @placa + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodasAsChamadasModelo
 @modelo varchar(50)
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Modelo like '%' + @modelo + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodasAsChamadasMotorista
 @nome varchar(50)
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado where (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) like '%' + @nome + '%'
 go
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 create procedure usp_PesquisarTodasAsChamadasDestino
 @destino varchar(255)
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado where (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) like '%' + @destino + '%'
 go
---------------------------------------------------------------------------------
+
 create procedure usp_UltimoIdChamadas
 as
 declare @ultimo_id int = (select top 1 ID_Chamado from Abertura order by ID_Chamado desc), @id int
 	select @ultimo_id as ID
-drop procedure usp_UltimoIdChamadas
-	select * from Destino
+go
 ----------------------Home-----------------------
 
 create procedure usp_PesquisarChamadasDataFechados
@@ -679,7 +658,7 @@ create procedure usp_PesquisarChamadasDataFechados
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, a.Placa, a.Modelo, a.Marca from Abertura as a right join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Data_Servico like @data
 go
---------------------------------------------------------------------------------
+
 create procedure usp_PesquisarChamadasDataAbertos
 @data varchar(10)
 as
@@ -693,7 +672,14 @@ create procedure usp_AlterarSenhaPC
 as
 update Funcionario set Senha = @senha, Primeiro_Cadastro = 'N' where ID_Funcionario = @id
 go
---------------------------------------------------------------------------------
+
+create procedure usp_AlterarLoginPC
+@login varchar(200),
+@id int
+as
+update Funcionario set Usuario = @login where ID_Funcionario = @id
+go
+
 create procedure usp_AlterarCliente
 	@Nome varchar(50),
 	@Telefone varchar(14),
@@ -703,7 +689,7 @@ create procedure usp_AlterarCliente
 as
 	update Cliente set Nome = @nome, Telefone = @Telefone, Email = @Email, CPF = @CPF where CPF LIKE @cod
 go
---------------------------------------------------------------------------------
+
 create procedure usp_AlterarEmpresa
 	@Nome varchar(50),
 	@Telefone varchar(14),
@@ -724,7 +710,7 @@ as
 	update Cliente set Nome = @nome, Telefone = @Telefone, Email = @Email where  ID_Cliente in (select ID_Cliente from Empresa where CNPJ = @cod)
 	update Empresa set CNPJ = @cnpj, IE = @ie where CNPJ = @cod
 go
---------------------------------------------------------------------------------
+
 create procedure usp_AlterarFuncionario
 	@nome varchar(50),
 	@cargo varchar(30),
@@ -755,7 +741,7 @@ as
 	end
 	update Funcionario set Nome = @nome, Cargo = @cargo, Salario = @salario, Email = @email, Numero_Documento = @rg, CNH = @cnh, Carteira_de_Trabalho = @carteira_de_trabalho, Endereco = @endereco, Cidade = @cidade, CEP = @cep, Estado = @estado, Telefone = @telefone, Data_de_Nascimento = @data_nascimento, Estado_Civil = @estado_civil, Conjuge = @nome_conjuge, Telefone_Conjuge = @telefone_conjuge where Numero_Documento like @rg
 go
---------------------------------------------------------------------------------
+
 create procedure usp_AlterarAdicionais
 @nome varchar(50),
 @preco varchar(10),
@@ -764,4 +750,3 @@ create procedure usp_AlterarAdicionais
 as
 	update Adicionais set Nome = @nome, Preco = @preco where Nome like @nomeOld and Preco like @precoOld
 go
---------------------------------------------------------------------------------

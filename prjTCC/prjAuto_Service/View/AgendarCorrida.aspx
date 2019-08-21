@@ -195,10 +195,12 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     me.directionsDisplay.setDirections(response);
+                    alert((response.routes[0].legs[0].distance.value / 1000)+" KM"); // the distance in metres
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
             });
+            
         };
 
     </script>
