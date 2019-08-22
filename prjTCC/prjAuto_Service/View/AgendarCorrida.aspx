@@ -195,7 +195,13 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     me.directionsDisplay.setDirections(response);
-                    alert((response.routes[0].legs[0].distance.value / 1000)+" KM"); // the distance in metres
+                    var km = (response.routes[0].legs[0].distance.value / 1000);
+                    alert( km + " KM"); // the distance in metres
+                    var hrs = parseInt((response.routes[0].legs[0].duration.value / 3600), 10);
+                    var mim = parseInt(((response.routes[0].legs[0].duration.value - (3600 * hrs)) / 60));
+                    alert(hrs + " h " + mim + " mim");
+                    var preco = 100 + (1.5 * parseInt(km));
+                    alert("R$" + parseFloat(preco.toFixed(2)));
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
