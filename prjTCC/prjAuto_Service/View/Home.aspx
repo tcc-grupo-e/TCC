@@ -236,6 +236,52 @@
             </div>
         </div>
 
+        <div id="confirmada" class="modal">
+            <div class="modal-content">
+                <h4 class="text-darken-3 blue-text">Corrida Confirmada</h4>
+
+                <div class="row">
+
+                    <div class="input-field col s6">
+                         <p id="origem" class="center-align"></p>
+                    </div>
+                    <div class="input-field col s6">
+                        <p id="destiny" class="center-align"></p>
+                    </div>
+
+               
+                    <div class="input-field col s6">
+                        <p id="data" class="center-align"></p>
+                    </div>
+                    <div class="input-field col s6">
+                        <p id="hora" class="center-align"></p>
+                    </div>
+
+               
+                    <div class="input-field col s6">
+                        <p id="km" class="center-align"></p>
+                    </div>
+                    <div class="input-field col s6">
+                        <p id="time" class="center-align"></p>
+                    </div>
+
+                
+                    <div class="input-field col s12">
+                        <p id="preco" class="center-align"></p>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgba(0, 0, 0, 0.1);">
+                <div class="row">
+                    <p class="light center-align col s4">WhatsApp 956715982 / Fixo 55621495</p>
+                    <p class="light center-align col s6">* Serviços extra, Ex: Chaveiro, Patins, etc</p>
+                    <a href="#!" class="modal-close center-align waves-effect waves-light blue btn-flat white-text col s2">OK</a>
+                </div>
+            </div>
+        </div>
+
 
 
 
@@ -259,6 +305,16 @@
                     if (c == "T") {
 
                         $('#fale').modal('open');
+                    }
+                    if (c == "C") {
+                        $('#origem').html("<spam class=\"blue-text text-darken-3\">Origem: </spam>" +  url.searchParams.get("origem"));
+                        $('#destiny').html("<spam class=\"blue-text text-darken-3\">Destino: </spam>" +  url.searchParams.get("destino"));
+                        $('#hora').html("<spam class=\"blue-text text-darken-3\">Hora: </spam>" +  url.searchParams.get("hora"));
+                        $('#data').html("<spam class=\"blue-text text-darken-3\">Data: </spam>" +  url.searchParams.get("data"));
+                        $('#km').html("<spam class=\"blue-text text-darken-3\">Distância: </spam>" +  url.searchParams.get("km"));
+                        $('#time').html("<spam class=\"blue-text text-darken-3\">Tempo estimado: </spam>" +  url.searchParams.get("time"));
+                        $('#preco').html("<spam class=\"blue-text text-darken-3\">Preço estimado: </spam>" +  url.searchParams.get("preco") + " + Adicionais*");
+                        $('#confirmada').modal('open');
                     }
 
                 }); // end of document ready

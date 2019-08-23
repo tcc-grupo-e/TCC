@@ -195,13 +195,17 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     me.directionsDisplay.setDirections(response);
-                    var km = (response.routes[0].legs[0].distance.value / 1000);
-                    alert( km + " KM"); // the distance in metres
+                    var km = (response.routes[0].legs[0].distance.value / 1000) + " KM";
+                    alert(km); // the distance in metres
+                    $('#oimota_txtKm').val(km);
                     var hrs = parseInt((response.routes[0].legs[0].duration.value / 3600), 10);
                     var mim = parseInt(((response.routes[0].legs[0].duration.value - (3600 * hrs)) / 60));
-                    alert(hrs + " h " + mim + " mim");
-                    var preco = 100 + (1.5 * parseInt(km));
-                    alert("R$" + parseFloat(preco.toFixed(2)));
+                    var time = hrs + " h " + mim + " mim";
+                    alert(time);
+                    $('#oimota_txtTime').val(time);
+                    var preco = (100 + (1.5 * parseInt(km))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    alert(preco);
+                    $('#oimota_txtPreco').val(preco);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
@@ -448,7 +452,9 @@
             </div>
             <asp:TextBox ID="Hidden1" runat="server" type="hidden"></asp:TextBox>
             <asp:TextBox ID="Hidden2" runat="server" type="hidden"></asp:TextBox>
-
+            <asp:TextBox ID="txtKm" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="txtTime" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="txtPreco" runat="server" type="hidden"></asp:TextBox>
 
         </form>
 

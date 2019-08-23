@@ -150,7 +150,8 @@ namespace prjAuto_Service
             control.inserirDestino(agendar);
 
 
-            Response.Redirect("Home.aspx?var=confirmado");
+            Response.Redirect("Home.aspx?c=C&time="+txtTime.Text+"&km="+txtKm.Text+"&preco="+txtPreco.Text + "&data=" + txtData.Text
+                + "&hora=" + txtHora.Text + "&origem=" + txtOrig.Text + "&destino=" + txtDestino.Text);
             #endregion UTIL 
 
         }
