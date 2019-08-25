@@ -1,9 +1,9 @@
 ﻿//------------------------------------------------------------------------------
 // <gerado automaticamente>
-//     O código foi gerado por uma ferramenta.
+//     Este código foi gerado por uma ferramenta.
 //
 //     As alterações ao arquivo poderão causar comportamento incorreto e serão perdidas se
-//     o código é regenerado. 
+//     o código for recriado
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
@@ -11,15 +11,6 @@ namespace prjAuto_Service {
     
     
     public partial class AgendarEmer {
-        
-        /// <summary>
-        /// Controle Head1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
         /// Controle formF.
@@ -31,40 +22,49 @@ namespace prjAuto_Service {
         protected global::System.Web.UI.HtmlControls.HtmlForm formF;
         
         /// <summary>
-        /// Controle txtNome.
+        /// Controle TxtNome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.TextBox TxtNome;
         
         /// <summary>
-        /// Controle txtTelefone.
+        /// Controle TxtTel.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefone;
+        protected global::System.Web.UI.WebControls.TextBox TxtTel;
         
         /// <summary>
-        /// Controle txtEmail.
+        /// Controle txtPlaca.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtPlaca;
         
         /// <summary>
-        /// Controle txtOrigem.
+        /// Controle txtVeiculo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrigem;
+        protected global::System.Web.UI.WebControls.TextBox txtVeiculo;
+        
+        /// <summary>
+        /// Controle txtOrig.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOrig;
         
         /// <summary>
         /// Controle txtDestino.
@@ -76,12 +76,57 @@ namespace prjAuto_Service {
         protected global::System.Web.UI.WebControls.TextBox txtDestino;
         
         /// <summary>
-        /// Controle btnAgendarEmer.
+        /// Controle btnAgendar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgendarEmer;
+        protected global::System.Web.UI.WebControls.Button btnAgendar;
+        
+        /// <summary>
+        /// Controle Hidden1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Hidden1;
+        
+        /// <summary>
+        /// Controle Hidden2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Hidden2;
+        
+        /// <summary>
+        /// Controle txtKm.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKm;
+        
+        /// <summary>
+        /// Controle txtTime.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTime;
+        
+        /// <summary>
+        /// Controle txtPreco.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPreco;
     }
 }

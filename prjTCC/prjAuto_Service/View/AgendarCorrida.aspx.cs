@@ -141,7 +141,7 @@ namespace prjAuto_Service
             {
                 agendar.setEnderecoDestino(destinos[i]);
                 agendar.setReferenciaDestino(referencias[i]);
-                agendar.setOrdem(i++.ToString());
+                agendar.setOrdem(i+"");
                 control.inserirDestino(agendar);
             }
             agendar.setEnderecoDestino(txtDestino.Text);

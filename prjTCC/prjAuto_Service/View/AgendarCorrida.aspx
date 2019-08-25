@@ -195,22 +195,34 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     me.directionsDisplay.setDirections(response);
-                    var km = (response.routes[0].legs[0].distance.value / 1000) + " KM";
-                    alert(km); // the distance in metres
+
+                    var Skm = 0;
+                    for (var x = 0; x < response.routes[0].legs.length; x++) {
+                        Skm = Skm + response.routes[0].legs[x].distance.value;
+                        //alert(Skm);
+                    }
+                    var km = (Skm / 1000) + " KM";
+                    //alert(km);
+
                     $('#oimota_txtKm').val(km);
-                    var hrs = parseInt((response.routes[0].legs[0].duration.value / 3600), 10);
-                    var mim = parseInt(((response.routes[0].legs[0].duration.value - (3600 * hrs)) / 60));
+                    var Stime = 0;
+                    for (var y = 0; y < response.routes[0].legs.length; y++) {
+                        Stime = Stime + response.routes[0].legs[y].duration.value;
+                        // alert(Stime);
+                    }
+                    var hrs = parseInt((Stime / 3600), 10);
+                    var mim = parseInt(((Stime - (3600 * hrs)) / 60));
                     var time = hrs + " h " + mim + " mim";
-                    alert(time);
+                    // alert(time);
                     $('#oimota_txtTime').val(time);
                     var preco = (100 + (1.5 * parseInt(km))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                    alert(preco);
+                    //alert(preco);
                     $('#oimota_txtPreco').val(preco);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
             });
-            
+
         };
 
     </script>
@@ -258,102 +270,6 @@
 
                         </div>
 
-                    </li>
-                    <li>
-                        <img />
-                        <div class="caption center-align" style="top: 1vh; left: 0; width: 100%">
-
-                            <div class="row">
-                                <div class="row">
-                                    <div class="col s4">
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix blue-text text-darken-3">date_range</i>
-                                                <label>Data</label>
-                                                <asp:TextBox ID="txtData" class="datepicker" runat="server" required></asp:TextBox>
-
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix blue-text text-darken-3">access_time</i>
-                                                <label>Hora</label>
-                                                <asp:TextBox ID="txtHora" class="timepicker" runat="server" required></asp:TextBox>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
-                                                <label class="active" for="oimota_txtOrig">Origem</label>
-                                                <asp:TextBox ID="txtOrig" placeholder="Escolha uma origem" onFocus="geolocate()" class="validate" runat="server" required></asp:TextBox>
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
-                                                <input id="txtEnd" placeholder="Escolha um local" type="text" class="validate" />
-                                                <label for="txtEnd">Endereço da parada</label>
-                                                <span class="helper-text">As paradas aparecem quando a rota for traçada</span>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="txtReference" type="text" class="validate" />
-                                                <label for="txtReference">Referencia</label>
-                                            </div>
-
-                                            <a class="btn waves-effect waves-light blue" onclick="add()">Adicionar paradas +</a>
-
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
-                                                <label class="active" for="oimota_txtDestino">Destino</label>
-                                                <asp:TextBox ID="txtDestino" placeholder="Escolha o destino final" class="validate" runat="server" required></asp:TextBox>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-
-
-                                    <div class="col s8">
-                                        <div id="mode-selector" class="controls" style="display: none">
-                                            <input type="radio" name="type" id="changemode-walking" checked="checked">
-                                            <label for="changemode-walking">Walking</label>
-
-                                            <input type="radio" name="type" id="changemode-transit">
-                                            <label for="changemode-transit">Transit</label>
-
-                                            <input type="radio" name="type" id="changemode-driving">
-                                            <label for="changemode-driving">Driving</label>
-                                        </div>
-
-                                        <div id="map" style="height: 80vh">
-                                        </div>
-                                    </div>
-
-
-
-
-                                </div>
-
-
-
-                            </div>
-                            <div class="buttons-wrapper">
-                                <div class="row right" style="margin-right: 2vw">
-                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
-                                </div>
-                                <div class="row left" style="margin-left: 2vw">
-                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
-                                </div>
-                            </div>
-
-                        </div>
                     </li>
                     <li>
                         <img />
@@ -409,6 +325,103 @@
 
                         </div>
                     </li>
+                    <li>
+                        <img />
+                        <div class="caption center-align" style="top: 1vh; left: 0; width: 100%">
+
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col s4">
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">date_range</i>
+                                                <label>Data</label>
+                                                <asp:TextBox ID="txtData" class="datepicker" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">access_time</i>
+                                                <label>Hora</label>
+                                                <asp:TextBox ID="txtHora" class="timepicker" runat="server" required></asp:TextBox>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <label class="active" for="oimota_txtOrig">Origem</label>
+                                                <asp:TextBox ID="txtOrig" placeholder="Escolha uma origem" onFocus="geolocate()" class="validate" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <input id="txtEnd" placeholder="Escolha um local" type="text" class="validate" />
+                                                <label for="txtEnd">Endereço da parada</label>
+                                                <span class="helper-text">As paradas aparecem quando a rota for traçada</span>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="txtReference" type="text" class="validate" />
+                                                <label for="txtReference">Referência</label>
+                                            </div>
+
+                                            <a class="btn waves-effect waves-light blue" onclick="add()">Adicionar paradas +</a>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <label class="active" for="oimota_txtDestino">Destino</label>
+                                                <asp:TextBox ID="txtDestino" placeholder="Escolha o destino final" class="validate" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                    <div class="col s8">
+                                        <div id="mode-selector" class="controls" style="display: none">
+                                            <input type="radio" name="type" id="changemode-walking" checked="checked">
+                                            <label for="changemode-walking">Walking</label>
+
+                                            <input type="radio" name="type" id="changemode-transit">
+                                            <label for="changemode-transit">Transit</label>
+
+                                            <input type="radio" name="type" id="changemode-driving">
+                                            <label for="changemode-driving">Driving</label>
+                                        </div>
+
+                                        <div id="map" style="height: 80vh">
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="buttons-wrapper">
+                                <div class="row right" style="margin-right: 2vw">
+                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
+                                </div>
+                                <div class="row left" style="margin-left: 2vw">
+                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
 
                     <li>
                         <img />

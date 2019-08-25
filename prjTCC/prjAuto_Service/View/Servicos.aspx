@@ -95,7 +95,7 @@
                     <div class="card-content">
                         <p class="white-text">
                             Precisa de um reboque ou transporte agora mesmo? Esta é a opção. 
-                            <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                            <a href="AgendarEmer.aspx" class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
                                <i class="material-icons blue-text">add</i>
                             </a>
                         </p>
@@ -111,7 +111,7 @@
                     <div class="card-content">
                         <p class="white-text">
                             Precisando de um serviço para daqui a alguns dias? clique em adicionar. 
-                            <a class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
+                            <a href="AgendarCorrida.aspx" class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
                                 <i class="material-icons blue-text">add</i>
                             </a>
                         </p>

@@ -1,28 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgendarEmer.aspx.cs" Inherits="prjAuto_Service.AgendarEmer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgendarEmer.aspx.cs" MasterPageFile="~/View/LayoutNoForm.Master" Inherits="prjAuto_Service.AgendarEmer" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
-    <link rel="icon" type="image/ico" href="img/favicon.ico" />
-    <link rel="apple-touch-icon" type="image/ico" href="img/favicon.ico" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
-    <link href="css/ipage1.0.css" rel="stylesheet" />
-    <title>Auto Socorro </title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/barba.min.js" type="text/javascript"></script>
-    <script src="js/bannerRotativo.js" type="text/javascript"></script>
-    <script src="js/ativaMenu.js" type="text/javascript"></script>
-    <script src="js/loading.js" type="text/javascript"></script>
+<asp:Content ID="Content1" ContentPlaceHolderID="oimota" runat="server">
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -43,7 +21,7 @@
         }
 
         .controls1 {
-             margin-top: 10px;
+            margin-top: 10px;
             border: 1px solid transparent;
             border-radius: 2px 0 0 2px;
             box-sizing: border-box;
@@ -57,179 +35,57 @@
             width: 200px;
         }
     </style>
-
-</head>
-<body>
-    <div id="barba-wrapper">
-        <div class="barba-container">
-            <div>
-                <!-- <img src="img/biback.png" alt="fundo experimental" id="body"> -->
-            </div>
-            <div id="scroller">
-
-
-
-                <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
-                    <div class="container">
-                        <a class="navbar-brand" href="Home.aspx">Auto Socorro</a>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="Home.aspx">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="SobreNos.aspx">Sobre</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Servicos.aspx">Serviços</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="FaleConosco.aspx">Fale Conosco</a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cadastro</a>
-                                <div class="dropdown-menu">
-                                    <a href="CadastroF.aspx" class="dropdown-item">Pessoa Física</a>
-                                    <a href="CadastroJ.aspx" class="dropdown-item">Pessoa Jurídica</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
-
-                <%-- <h1 class="centertext"><i>Bem Vindo a Auto-Socorro</i></h1>
-              <div id="mainslider">
-            <!-- <img src="img/slide0.jpg" alt="imagem da empresa" class="foto1"> -->
-                 
-                  
-                  
-             </div>--%>
-
-                <main id="c_pricipal_quiz" style="width: 80%; padding: 1.5vw">
-
-                    <h1 class="ht">Insira os dados do seu pedido</h1>
-
-                    <form id="formF" runat="server">
-                        <div class="form-group">
-
-                            <p class="campo">
-                                <label>Nome <span>*</span>:</label>
-                                <asp:TextBox ID="txtNome" class="form-control" runat="server" required></asp:TextBox>
-
-                            </p>
-                            <br />
-                          <p class="campo">
-                                <label for="sr_nome">Telefone <span>*</span>:</label>
-                                <asp:TextBox ID="txtTelefone" placeholder="" class="form-control" runat="server" required></asp:TextBox>
-                            </p>
-                             
-                            <p class="campo">
-                                <label for="re_nome">Email<span>*</span>:</label>
-                                <asp:TextBox class="form-control" placeholder="" ID="txtEmail" runat="server" required></asp:TextBox>
-                            </p>
-
-                            <p class="campo">
-                                <label for="u_nome"><%--Local de origem <span>*</span>:--%></label>
-                                <asp:TextBox ID="txtOrigem" class="controls1" placeholder="Origem" runat="server" required></asp:TextBox>
-
-                            </p>
-
-                            <p class="campo">
-                                <label for="s_nome"><%--Local de destino <span>*</span>:--%></label>
-                                <asp:TextBox ID="txtDestino" class="controls1" placeholder="Destino" runat="server" required></asp:TextBox>
-
-                            </p>
-
-                            <br />
-
-
-                            <div id="mode-selector" class="controls" style="display:none">
-                                <input type="radio" name="type" id="changemode-walking" checked="checked">
-                                <label for="changemode-walking">Walking</label>
-
-                                <input type="radio" name="type" id="changemode-transit">
-                                <label for="changemode-transit">Transit</label>
-
-                                <input type="radio" name="type" id="changemode-driving">
-                                <label for="changemode-driving">Driving</label>
-                            </div>
-
-                            <div id="map" style="height: 75vh"></div>
-
-
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-
-
-
-
-
-                           
-
-                            <br />
-                            <br />
-                            <p class="campo"><b>Declaração de confidencialidade de dados</b></p>
-                            <p class="campo">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
-                            <p class="campo">
-                                A exibição é efetuada em uma nova janela. Caso seja suprimida a exibição de campos adicionais em um bloqueador de popups, este deve ser primeiro desativado.<p>
-                                    <p class="campo">
-                                        <a href="img/TERMOS_TCM.pdf" class="ltd" target="_blank"><b>Declaração de confidencialidade de dados</b><a>
-                                    </p>
-                                    <p>Asseguramos que os dados que nos foram transmitidos serão tratados confidencialmente e só serão utilizados para fins apresentados na declaração de confidencialidade de dados.</p>
-                                    <p class="campo1">
-                                        <input type="checkbox" name="concordo" class="chec" required>Sim, li e aceito a declaração de confidencialidade de dados.
-                                    </p>
-
-                      
-                        <br />
-                        <p class="campo">
-                        </div><asp:Button ID="btnAgendarEmer" runat="server" Text="Enviar" class="btn btn-primary" CssClass="btn btn-primary" OnClick="btnAgendarEme_Click" ></asp:Button>
-                        </p>
-                    </form>
-
-
-
-                </main>
-
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <footer id="copy">
-                    <br />
-
-                    <p>
-                  Copyright © 2018 - GRUPO E 
-                       <div id="janelaModal" class="modalVisual">
-                    <span class="fechar">x</span>
-                    <img class="modalConteudo" id="imgModal">
-                    <div id="txtImg"></div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE&libraries=places&callback=initMap"
+        async defer></script>
     <script>
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
         function initMap() {
+
             var map = new google.maps.Map(document.getElementById('map'), {
                 mapTypeControl: false,
                 center: { lat: -23.5489, lng: -46.6388 },
                 zoom: 13
             });
+            initAutocomplete();
+
 
             new AutocompleteDirectionsHandler(map);
         }
+        var autocompleteDestination, autocomplete;
+
+
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            autocomplete = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */
+                (document.getElementById('txtEnd')), {
+                    types: ['geocode']
+                });
+
+
+        }
+
+
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var geolocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                        center: geolocation,
+                        radius: position.coords.accuracy
+                    });
+                    autocomplete.setBounds(circle.getBounds());
+                });
+            }
+        }
+
 
         /**
          * @constructor
@@ -239,9 +95,9 @@
             this.originPlaceId = null;
             this.destinationPlaceId = null;
             this.travelMode = 'DRIVING';
-            var originInput = document.getElementById('txtOrigem');
-            var destinationInput = document.getElementById('txtDestino');
-            var modeSelector = document.getElementById('mode-selector');
+            var originInput = document.getElementById('oimota_txtOrig');
+            var destinationInput = document.getElementById('oimota_txtDestino');
+            var modeSelector = document.getElementById('oimota_mode-selector');
             this.directionsService = new google.maps.DirectionsService;
             this.directionsDisplay = new google.maps.DirectionsRenderer;
             this.directionsDisplay.setMap(map);
@@ -258,9 +114,7 @@
             this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
             this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+
         }
 
         // Sets a listener on a radio button to change the filter type on Places
@@ -292,6 +146,41 @@
             });
 
         };
+        var items = [];
+        var references = [];
+        var waypoints = [];
+        function add() {
+            var end = $('#txtEnd').val();
+
+            items.push(end);
+
+
+            var ref = $('#txtReference').val()
+
+            references.push(ref);
+
+
+            $('#txtEnd').val("");
+            $('#txtReference').val("");
+
+
+            var address = items[items.length - 1];
+            if (address !== "") {
+                waypoints.push({
+                    location: address,
+                    stopover: true
+                });
+            }
+
+            $('#oimota_Hidden1').val(items.join('/'));
+            alert($('#oimota_Hidden1').val());
+            $('#oimota_Hidden2').val(references.join('/'));
+            alert($('#oimota_Hidden2').val());
+        }
+
+
+
+
 
         AutocompleteDirectionsHandler.prototype.route = function () {
             if (!this.originPlaceId || !this.destinationPlaceId) {
@@ -302,21 +191,298 @@
             this.directionsService.route({
                 origin: { 'placeId': this.originPlaceId },
                 destination: { 'placeId': this.destinationPlaceId },
+                waypoints: waypoints,
                 travelMode: this.travelMode
             }, function (response, status) {
                 if (status === 'OK') {
                     me.directionsDisplay.setDirections(response);
+                    
+                    var Skm = 0;
+                    for (var x = 0; x < response.routes[0].legs.length; x++) {
+                        Skm = Skm + response.routes[0].legs[x].distance.value;
+                        //alert(Skm);
+                    }
+                    var km = (Skm / 1000) + " KM";
+                    //alert(km);
+
+                    $('#oimota_txtKm').val(km);
+                    var Stime = 0;
+                    for (var y = 0; y < response.routes[0].legs.length; y++) {
+                        Stime = Stime + response.routes[0].legs[y].duration.value;
+                       // alert(Stime);
+                    }
+                    var hrs = parseInt((Stime / 3600), 10);
+                    var mim = parseInt(((Stime - (3600 * hrs)) / 60));
+                    var time = hrs + " h " + mim + " mim";
+                   // alert(time);
+                    $('#oimota_txtTime').val(time);
+                    var preco = (100 + (1.5 * parseInt(km))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    //alert(preco);
+                    $('#oimota_txtPreco').val(preco);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
             });
+
         };
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE&libraries=places&callback=initMap"
-        async defer></script>
+    <main>
+        <h4 class="text-darken-3 blue-text center-align">Insira os dados do seu pedido</h4>
+        <form id="formF" runat="server">
+            <div class="slider fullscreen" style="background-color: #fff">
+                <ul class="slides" style="background-color: #fff">
+                    <%--<li>
+                        <img />
+
+                        <div class="caption center-align">
+                            <h4 class="text-darken-3 blue-text center-align">Insira seus dados</h4>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                   
+                                </div>
+                                <div class="input-field col s6">
+                                    <label>CPF<span>*</span>:</label>
+                                    <asp:TextBox ID="TxtCpf" class="validate" runat="server" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required></asp:TextBox>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">email</i>
+                                    <label>Email <span>*</span>:</label>
+                                    <asp:TextBox ID="TxtEmail" class="validate" runat="server" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required></asp:TextBox>
+
+                                </div>
+                                <div class="input-field col s6">
+                                    
+                                </div>
+
+                            </div>
+                            <div class="buttons-wrapper">
+                                <div class="row right">
+                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </li>--%>
+                    <%--<li>
+                        <img />
+
+                        <div class="caption center-align">
+                            <h4 class="text-darken-3 blue-text center-align">Insira os dados do veículo</h4>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">directions_car</i>
+                                    <label>Modelo do veículo <span>*</span>:</label>
+                                    <asp:TextBox ID="txtVeiculo" class="validate" runat="server" required></asp:TextBox>
+
+                                </div>
+                                <div class="input-field col s6">
+                                    <label>Marca<span>*</span>:</label>
+                                    <asp:TextBox ID="txtMarca" class="validate" runat="server" required></asp:TextBox>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix blue-text text-darken-3">color_lens</i>
+                                    <label>Cor<span>*</span>:</label>
+                                    <asp:TextBox ID="txtCor" class="validate" runat="server" required></asp:TextBox>
+
+
+                                </div>
+                                <div class="input-field col s6">
+                                    <asp:TextBox ID="txtAno" class="validate" type="number" min="1900" max="2021" runat="server" required></asp:TextBox>
+                                    <label>Ano <span>*</span>:</label>
+                                    <span class="helper-text" data-error="Selecione um ano entre o intervalo 1900 - 2021" data-success="">De 1900 a 2021</span>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix blue-text text-darken-3">fiber_pin</i>
+                                    <label>Placa<span>*</span>:</label>
+                                    <asp:TextBox ID="txtPlaca" class="validate" runat="server" pattern="[A-Z]{3}-\d{4}" required></asp:TextBox>
+
+                                </div>
+
+
+                            </div>
+                            <div class="buttons-wrapper">
+                                <div class="row right">
+                                    <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
+                                </div>
+                                <div class="row left">
+                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>--%>
+                    <li>
+                        <img />
+                        <div class="caption center-align" style="top: 1vh; left: 0; width: 100%">
+
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col s4">
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">account_circle</i>
+                                                <label>Nome <span>*</span>:</label>
+                                                <asp:TextBox ID="TxtNome" class="validate" runat="server" required></asp:TextBox>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">phone</i>
+                                                <label>Telefone para contato<span>*</span>:</label>
+                                                <asp:TextBox ID="TxtTel" class="validate" runat="server" required></asp:TextBox>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix blue-text text-darken-3">directions_car</i>
+                                                <label>Placa<span>*</span>:</label>
+                                                <asp:TextBox ID="txtPlaca" class="validate" runat="server" pattern="[A-Z]{3}-\d{4}" required></asp:TextBox>
+
+                                            </div>
+                                            <div class="input-field col s6">
+
+                                                <label>Modelo do veículo <span>*</span>:</label>
+                                                <asp:TextBox ID="txtVeiculo" class="validate" runat="server" required></asp:TextBox>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <label class="active" for="oimota_txtOrig">Origem</label>
+                                                <asp:TextBox ID="txtOrig" placeholder="Escolha uma origem" onFocus="geolocate()" class="validate" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <input id="txtEnd" placeholder="Escolha um local" type="text" class="validate" />
+                                                <label for="txtEnd">Endereço da parada</label>
+                                                <span class="helper-text">As paradas aparecem quando a rota for traçada</span>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="txtReference" type="text" class="validate" />
+                                                <label for="txtReference">Referência</label>
+                                            </div>
+
+                                            <a class="btn waves-effect waves-light blue" onclick="add()">Adicionar paradas +</a>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix blue-text text-darken-3">place</i>
+                                                <label class="active" for="oimota_txtDestino">Destino</label>
+                                                <asp:TextBox ID="txtDestino" placeholder="Escolha o destino final" class="validate" runat="server" required></asp:TextBox>
+
+                                            </div>
+                                        </div>
 
 
 
-</body>
-</html>
+                                    </div>
+
+
+                                    <div class="col s8">
+                                        <div id="mode-selector" class="controls" style="display: none">
+                                            <input type="radio" name="type" id="changemode-walking" checked="checked">
+                                            <label for="changemode-walking">Walking</label>
+
+                                            <input type="radio" name="type" id="changemode-transit">
+                                            <label for="changemode-transit">Transit</label>
+
+                                            <input type="radio" name="type" id="changemode-driving">
+                                            <label for="changemode-driving">Driving</label>
+                                        </div>
+
+                                        <div id="map" style="height: 80vh">
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <img />
+                        <div class="caption center-align" style="top: 1vh">
+
+                            <p class="flow-text black-text"><b>Declaração de confidencialidade de dados</b></p>
+                            <p class="flow-text black-text">Confirmar a aceitação da nossa declaração de confidencialidade de dados</p>
+                            <p class="flow-text black-text">
+                                A exibição é efetuada em uma nova janela. Caso seja suprimida a exibição de campos adicionais em um bloqueador de popups, este deve ser primeiro desativado.
+                            </p>
+                            <p class="flow-text">
+                                <a href="img/TERMOS_TCM.pdf" target="_blank"><b>Clique aqui</b></a>
+                            </p>
+                            <p>Asseguramos que os dados que nos foram transmitidos serão tratados confidencialmente e só serão utilizados para fins apresentados na declaração de confidencialidade de dados.</p>
+                            <p class="flow-text black-text">
+                                <label>
+                                    <input type="checkbox" class="filled-in" required />
+                                    <span class="black-text">Li e aceito a declaração de confidencialidade de dados.</span>
+                                </label>
+
+                            </p>
+
+
+                            <p>
+                                <asp:Button ID="btnAgendar" class="btn waves-effect waves-light blue" runat="server" Text="Enviar" CssClass="btn waves-effect waves-light blue" OnClick="btnAgendar_Click" />
+                            </p>
+
+
+                        </div>
+
+
+
+                    </li>
+                </ul>
+
+            </div>
+            <asp:TextBox ID="Hidden1" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="Hidden2" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="txtKm" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="txtTime" runat="server" type="hidden"></asp:TextBox>
+            <asp:TextBox ID="txtPreco" runat="server" type="hidden"></asp:TextBox>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+</asp:Content>
