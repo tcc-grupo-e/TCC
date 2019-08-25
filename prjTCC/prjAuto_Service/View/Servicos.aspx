@@ -35,13 +35,13 @@
                     <br />
                     <br />
                     <div class="row center">
-                        <h3 class="header col s12 light">Serviço rápido prático e de confiança</h3>
+                        <h3 class="header col s12 light blue-text text-darken-2">Um bom serviço de guincho é apenas com a Autossocorro</h3>
                     </div>
 
                 </div>
             </div>
             <div class="parallax">
-                <img src="img/Servico.png" alt="Unsplashed background img 1" />
+                <img src="img/services.jpg" alt="Unsplashed background img 1" />
             </div>
         </div>
         <div class="container">
@@ -74,13 +74,13 @@
                     <br />
                     <br />
                     <div class="row center">
-                        <h3 class="header col s12 light">Serviço rápido prático e de confiança</h3>
+                        <h3 class="header col s12 light blue-text text-darken-2">A qualidade dos nossos servços melhoram com a gratidão de nossos clientes.</h3>
                     </div>
 
                 </div>
             </div>
             <div class="parallax">
-                <img src="img/Servico2.jpg" alt="Unsplashed background img 1" />
+                <img src="img/services2.jpg" alt="Unsplashed background img 1" />
             </div>
         </div>
         <br />
@@ -89,8 +89,8 @@
             <div class="col s12 m6">
                 <div class="card blue darken-2">
                     <div class="card-image">
-                        <img src="img/teste2.jpg" />
-                        <span class="card-title">Guincho Agora</span>
+                        <img src="img/guinchoagr.jpg" />
+                        <span class="card-title blue-text text-darken-2">Guincho Agora</span>
                     </div>
                     <div class="card-content">
                         <p class="white-text">
@@ -105,8 +105,8 @@
             <div class="col s12 m6">
                 <div class="card blue darken-2">
                     <div class="card-image">
-                        <img src="img/pngteste.png" />
-                        <span class="card-title">Agendar</span>
+                        <img src="img/calendar 2.jpg" />
+                        <span class="card-title blue-text text-darken-2">Agendar</span>
                     </div>
                     <div class="card-content">
                         <p class="white-text">

@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="parallax">
-                <img src="img/trabalho.png" alt="Unsplashed background img 1" />
+                <img src="img/historia 2.jpg" alt="Unsplashed background img 1" />
             </div>
         </div>
         <div class="container">
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="parallax">
-                <img src="img/wotakoi.png" alt="kairi kairi mekuri kekuru history story" />
+                <img src="img/historia 3.jpg" alt="kairi kairi mekuri kekuru history story" />
             </div>
         </div>
          <div class="container">

@@ -5,7 +5,7 @@
     <div class="slider">
         <ul class="slides">
             <li>
-                <img src="img/Slide0.jpg" />
+                <img src="img/Slide2.jpg" />
                 <!-- random image -->
                 <div class="caption center-align">
                     <h3>Bem Vindo à Auto-Socorro</h3>
@@ -20,7 +20,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/Slide1.jpg" />
+                <img src="img/Slide0.jpg" />
                 <!-- random image -->
                 <div class="caption left-align">
                     <h3>Bem Vindo à Auto-Socorro</h3>
@@ -36,7 +36,7 @@
             </li>
 
             <li>
-                <img src="img/Slide2.jpg" />
+                <img src="img/Slide1.jpg" />
                 <div class="caption right-align">
                     <h3>Bem Vindo à Auto-Socorro</h3>
                     <h5 class="light grey-text text-lighten-3">Serviço de confiança, rápido e prático</h5>
@@ -110,7 +110,7 @@
                     <br />
                     <br />
                     <div class="row center">
-                        <h3 class="header col s12 light">24 Horas por dia, 7 dias por semana</h3>
+                        <h3 class="header col s12 light blue-text text-darken-3">24 Horas por dia, 7 dias por semana</h3>
                     </div>
 
                 </div>
@@ -149,7 +149,7 @@
                     <br />
                     <br />
                     <div class="row center">
-                        <h3 class="header col s12 light">24 Horas por dia, 7 dias por semana</h3>
+                        <h3 class="header col s12 light blue-text text-darken-3">Autossocorro. Sempre que precisar</h3>
                     </div>
 
                 </div>
@@ -192,8 +192,8 @@
                     <div class="col s12 m6">
                         <div class="card blue darken-2">
                             <div class="card-image">
-                                <img src="img/teste2.jpg" />
-                                <span class="card-title">Guincho Agora</span>
+                                <img src="img/guinchoagr.jpg" />
+                                <span class="card-title blue-text text-darken-2">Guincho Agora</span>
                                 <a href="AgendarEmer.aspx" class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
                                     <i class="material-icons blue-text">add</i>
                                 </a>
@@ -210,8 +210,8 @@
                     <div class="col s12 m6">
                         <div class="card blue darken-2">
                             <div class="card-image">
-                                <img src="img/pngteste.png" />
-                                <span class="card-title">Agendar</span>
+                                <img src="img/calendar 2.jpg" />
+                                <span class="card-title blue-text text-darken-2">Agendar</span>
                                 <a href="AgendarCorrida.aspx" class="btn-floating btn-large halfway-fab waves-effect waves-teal white">
                                     <i class="material-icons blue-text">add</i>
                                 </a>

@@ -60,6 +60,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="View\css\materialize.min.css" />
+    <Content Include="View\img\calendar 2.jpg" />
+    <Content Include="View\img\guinchoagr.jpg" />
+    <Content Include="View\img\historia 2.jpg" />
+    <Content Include="View\img\historia 3.jpg" />
+    <Content Include="View\img\historia 4.jpg" />
+    <Content Include="View\img\services 3.jpg" />
+    <Content Include="View\img\services.jpg" />
+    <Content Include="View\img\services2.jpg" />
     <Content Include="View\img\wotakoi.png" />
     <Content Include="View\js\Utilidades.js" />
     <Content Include="View\js\materialize.min.js" />
