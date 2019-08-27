@@ -173,9 +173,9 @@
             }
 
             $('#oimota_Hidden1').val(items.join('/'));
-            alert($('#oimota_Hidden1').val());
+            // alert($('#oimota_Hidden1').val());
             $('#oimota_Hidden2').val(references.join('/'));
-            alert($('#oimota_Hidden2').val());
+            //alert($('#oimota_Hidden2').val());
         }
 
 
@@ -196,7 +196,7 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     me.directionsDisplay.setDirections(response);
-                    
+
                     var Skm = 0;
                     for (var x = 0; x < response.routes[0].legs.length; x++) {
                         Skm = Skm + response.routes[0].legs[x].distance.value;
@@ -209,12 +209,12 @@
                     var Stime = 0;
                     for (var y = 0; y < response.routes[0].legs.length; y++) {
                         Stime = Stime + response.routes[0].legs[y].duration.value;
-                       // alert(Stime);
+                        // alert(Stime);
                     }
                     var hrs = parseInt((Stime / 3600), 10);
                     var mim = parseInt(((Stime - (3600 * hrs)) / 60));
                     var time = hrs + " h " + mim + " mim";
-                   // alert(time);
+                    // alert(time);
                     $('#oimota_txtTime').val(time);
                     var preco = (100 + (1.5 * parseInt(km))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                     //alert(preco);
@@ -408,6 +408,11 @@
 
                                         <div id="map" style="height: 80vh">
                                         </div>
+                                        <div class="buttons-wrapper">
+                                            <div class="row right">
+                                                <a class="btn waves-effect waves-light blue" onclick="next()">Próximo</a>
+                                            </div>
+                                        </div>
                                     </div>
 
 
@@ -449,7 +454,12 @@
                             <p>
                                 <asp:Button ID="btnAgendar" class="btn waves-effect waves-light blue" runat="server" Text="Enviar" CssClass="btn waves-effect waves-light blue" OnClick="btnAgendar_Click" />
                             </p>
+                            <div class="buttons-wrapper">
 
+                                <div class="row left">
+                                    <a class="btn waves-effect waves-light blue" onclick="prev()">Anterior</a>
+                                </div>
+                            </div>
 
                         </div>
 
