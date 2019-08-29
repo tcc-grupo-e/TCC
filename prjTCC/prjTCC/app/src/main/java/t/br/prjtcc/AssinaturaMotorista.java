@@ -20,21 +20,22 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
-public class AssinaturaCliente extends AppCompatActivity {
+public class AssinaturaMotorista extends AppCompatActivity {
     TextView txtmoto;
-    ImageView imgCliente;
-    Button btnSalvar,btnConfirmar,btnLimpar;
+    ImageView imgMotorista;
+    Button btnSalvar, btnCliente, btnLimpar;
     float dX, dY, oldX, oldY, nX, nY, dw, dh;
     private Paint paint;
     private Path path;
     Canvas canvas;
     Bitmap bitmap;
-    byte[] byteCliente;
+    byte[] byteMotorista;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assinatura_cliente);
+        setContentView(R.layout.activity_assinatura_motorista);
         path = new Path();
         paint = new Paint();
         paint = new Paint(0);
@@ -42,10 +43,10 @@ public class AssinaturaCliente extends AppCompatActivity {
         paint.setStrokeWidth(4);
 
         txtmoto = findViewById(R.id.textViewMotorista);
-        imgCliente = this.findViewById(R.id.imgDesenhaCliente);
-        btnLimpar = this.findViewById(R.id.btnLimpar);
+        imgMotorista = this.findViewById(R.id.imgDesenhaMotorista);
         btnSalvar = findViewById(R.id.btnSalvar);
-        btnConfirmar = findViewById(R.id.btnConfirmar);
+        btnCliente = findViewById(R.id.btnCliente);
+        btnLimpar = findViewById(R.id.btnLimpar);
 
 
         Display dp = getWindowManager().getDefaultDisplay();
@@ -57,8 +58,8 @@ public class AssinaturaCliente extends AppCompatActivity {
         canvas = new Canvas(bitmap);
 
 
-        imgCliente.setImageBitmap(bitmap);
-        imgCliente.setOnTouchListener(new View.OnTouchListener() {
+        imgMotorista.setImageBitmap(bitmap);
+        imgMotorista.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int action = event.getAction();
@@ -74,7 +75,7 @@ public class AssinaturaCliente extends AppCompatActivity {
                         nY = event.getY();
                         nX = event.getX();
                         canvas.drawLine(oldX, oldY, nX, nY, paint);
-                        imgCliente.invalidate();
+                        imgMotorista.invalidate();
                         oldY = nY;
                         oldX = nX;
 
@@ -84,10 +85,11 @@ public class AssinaturaCliente extends AppCompatActivity {
             }
         });
 
-
     }
 
-    public void botaoAssinaCliente(View v) {
+    ClasseCompartilha cp = new ClasseCompartilha();
+
+    public void botaoAssinaMotorista(View v) {
         switch (v.getId()) {
             case R.id.btnSalvar:
                 AlertDialog.Builder a = new AlertDialog.Builder(v.getContext());
@@ -98,47 +100,49 @@ public class AssinaturaCliente extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(getApplicationContext(), AssinaturaMotorista.class));
-                        finish();
-
                     }
                 });
                 a.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        imgCliente.setDrawingCacheEnabled(true);
-                        Bitmap bitmaps = imgCliente.getDrawingCache();
+                        imgMotorista.setDrawingCacheEnabled(true);
+                        Bitmap bitmaps = imgMotorista.getDrawingCache();
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmaps.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                        byteCliente = baos.toByteArray();
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
 
-                    if(byteCliente != null){
-                        Toast.makeText(getApplicationContext(),"Sua assinatura  foi salva!",Toast.LENGTH_LONG).show();
-                        btnSalvar.setVisibility(View.INVISIBLE);
-                        btnLimpar.setVisibility(View.INVISIBLE);
-                        btnConfirmar.setVisibility(View.VISIBLE);
-                        imgCliente.setImageResource(0);
+                        byteMotorista = baos.toByteArray();
+                        if (byteMotorista != null) {
+                            Toast.makeText(getApplicationContext(), "Dados Salvos!", Toast.LENGTH_LONG).show();
+                            imgMotorista.setImageResource(0);
+                            btnCliente.setVisibility(View.VISIBLE);
 
-                    }
-                     else
-                        Toast.makeText(getApplicationContext(),"Sua assinatura não foi salva",Toast.LENGTH_LONG).show();
+                            btnSalvar.setVisibility(View.INVISIBLE);
+                            btnLimpar.setVisibility(View.INVISIBLE);
+                            ClasseCompartilha cp = new ClasseCompartilha();
+                            String assinaturaM = new String(byteMotorista);
+                            cp.setAssinaturaM(assinaturaM);
+
+                        } else
+                            Toast.makeText(getApplicationContext(), "Não foram salvos", Toast.LENGTH_LONG).show();
                     }
                 });
                 a.show();
                 break;
             case R.id.btnLimpar:
+
+                startActivity(new Intent(getApplicationContext(), AssinaturaMotorista.class));
+                finish();
+                break;
+            case R.id.btnCliente:
+                imgMotorista.setImageResource(0);
                 startActivity(new Intent(getApplicationContext(), AssinaturaCliente.class));
                 finish();
-
                 break;
-            case R.id.btnConfirmar:
-
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
-                break;
-
 
 
         }
 
     }
+
+
 }

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckListParte1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="564dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Placa do caminhão" />
+
+
+        <EditText
+            android:id="@+id/txtPlacaCaminhao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="532dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Hora" />
+
+
+        <EditText
+            android:id="@+id/txtHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time|number"
+            android:text=""
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="532dp" />
+
+
+        <TextView
+            android:id="@+id/textViewKmS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Km_Saida" />
+
+
+        <EditText
+            android:id="@+id/txtKmS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time|number"
+            android:text=""
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="532dp" />
+
+        <TextView
+            android:id="@+id/textViewObservacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Observacao" />
+
+
+        <EditText
+            android:id="@+id/txtObeservacao"
+            android:layout_width="295dp"
+            android:layout_height="182dp"
+            android:ems="10"
+            android:inputType="time|number"
+            android:text=""
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="532dp" />
+
+
+        <Button
+            android:id="@+id/btnAvancar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="botao"
+            android:text="Avançar" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Km_Saida"
+        tools:layout_editor_absoluteX="437dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+</android.support.constraint.ConstraintLayout>

@@ -20,22 +20,21 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
-public class AssinaturaMotorista extends AppCompatActivity {
+public class AssinaturaCliente extends AppCompatActivity {
     TextView txtmoto;
-    ImageView imgMotorista;
-    Button btnSalvar, btnCliente, btnLimpar;
+    ImageView imgCliente;
+    Button btnSalvar, btnConfirmar, btnLimpar;
     float dX, dY, oldX, oldY, nX, nY, dw, dh;
     private Paint paint;
     private Path path;
     Canvas canvas;
     Bitmap bitmap;
-    byte[] byteMotorista;
-
+    byte[] byteCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assinatura_motorista);
+        setContentView(R.layout.activity_assinatura_cliente);
         path = new Path();
         paint = new Paint();
         paint = new Paint(0);
@@ -43,10 +42,10 @@ public class AssinaturaMotorista extends AppCompatActivity {
         paint.setStrokeWidth(4);
 
         txtmoto = findViewById(R.id.textViewMotorista);
-        imgMotorista = this.findViewById(R.id.imgDesenhaMotorista);
+        imgCliente = this.findViewById(R.id.imgDesenhaCliente);
+        btnLimpar = this.findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
-        btnCliente = findViewById(R.id.btnCliente);
-        btnLimpar = findViewById(R.id.btnLimpar);
+        btnConfirmar = findViewById(R.id.btnConfirmar);
 
 
         Display dp = getWindowManager().getDefaultDisplay();
@@ -58,8 +57,8 @@ public class AssinaturaMotorista extends AppCompatActivity {
         canvas = new Canvas(bitmap);
 
 
-        imgMotorista.setImageBitmap(bitmap);
-        imgMotorista.setOnTouchListener(new View.OnTouchListener() {
+        imgCliente.setImageBitmap(bitmap);
+        imgCliente.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int action = event.getAction();
@@ -75,7 +74,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
                         nY = event.getY();
                         nX = event.getX();
                         canvas.drawLine(oldX, oldY, nX, nY, paint);
-                        imgMotorista.invalidate();
+                        imgCliente.invalidate();
                         oldY = nY;
                         oldX = nX;
 
@@ -85,9 +84,12 @@ public class AssinaturaMotorista extends AppCompatActivity {
             }
         });
 
+
     }
 
-    public void botaoAssinaMotorista(View v) {
+    ClasseCompartilha cp = new ClasseCompartilha();
+
+    public void botaoAssinaCliente(View v) {
         switch (v.getId()) {
             case R.id.btnSalvar:
                 AlertDialog.Builder a = new AlertDialog.Builder(v.getContext());
@@ -98,39 +100,42 @@ public class AssinaturaMotorista extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(getApplicationContext(), AssinaturaMotorista.class));
-                        finish();
                     }
                 });
                 a.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        imgMotorista.setDrawingCacheEnabled(true);
-                        Bitmap bitmaps = imgMotorista.getDrawingCache();
+                        imgCliente.setDrawingCacheEnabled(true);
+                        Bitmap bitmaps = imgCliente.getDrawingCache();
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        bitmaps.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        byteCliente = baos.toByteArray();
 
-                        byteMotorista = baos.toByteArray();
-                        if (byteMotorista != null) {
+
+                        if (byteCliente != null) {
                             Toast.makeText(getApplicationContext(), "Dados Salvos!", Toast.LENGTH_LONG).show();
-                            btnCliente.setVisibility(View.VISIBLE);
-                            imgMotorista.setImageResource(0);
+                            imgCliente.setImageResource(0);
                             btnSalvar.setVisibility(View.INVISIBLE);
                             btnLimpar.setVisibility(View.INVISIBLE);
+                            btnConfirmar.setVisibility(View.VISIBLE);
+                            ClasseCompartilha cp = new ClasseCompartilha();
+                          String assinaturaCli = new String(byteCliente);
+                            cp.setAssinaturaC(assinaturaCli);
 
                         } else
-                            Toast.makeText(getApplicationContext(), "Não foram salvos", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Usado foram salvos", Toast.LENGTH_LONG).show();
                     }
                 });
                 a.show();
                 break;
             case R.id.btnLimpar:
-
-                startActivity(new Intent(getApplicationContext(), AssinaturaMotorista.class));
-                finish();
-                break;
-            case R.id.btnCliente:
-
                 startActivity(new Intent(getApplicationContext(), AssinaturaCliente.class));
+                finish();
+
+                break;
+            case R.id.btnConfirmar:
+
+                startActivity(new Intent(getApplicationContext(), ChecklistParte2.class));
                 finish();
                 break;
 
@@ -138,6 +143,4 @@ public class AssinaturaMotorista extends AppCompatActivity {
         }
 
     }
-
-
 }
