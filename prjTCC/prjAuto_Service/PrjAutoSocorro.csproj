@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="View\css\materialize.min.css" />
+    <Content Include="View\getImage.aspx" />
     <Content Include="View\img\calendar 2.jpg" />
     <Content Include="View\img\guinchoagr.jpg" />
     <Content Include="View\img\historia 2.jpg" />
@@ -106,7 +107,9 @@
     <Content Include="View\Servicos.aspx" />
     <Content Include="View\SobreNos.aspx" />
     <Content Include="View\Home.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ControladorCadastro.cs" />
@@ -225,9 +228,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1383/</IISUrl>
+          <IISUrl>http://localhost:3000/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:1383/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:3000/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
