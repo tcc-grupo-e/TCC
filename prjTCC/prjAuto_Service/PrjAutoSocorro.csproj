@@ -202,6 +202,7 @@
     <Content Include="View\LayoutInicial.Master" />
     <Content Include="View\img\TERMOS_TCM.pdf" />
     <Content Include="View\LayoutNoForm.Master" />
+    <Content Include="View\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -20,19 +20,30 @@
 <html xmlns="http://www.w3.org/1999.xhtml">
 <head id = "Head1" runat = "server">
     <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
     <script>
         function readURL(input) {
+            var arquivo_certo = $('#<%=Label1.ClientID%>').html();
+            arquivo_certo = arquivo_certo.substr(arquivo_certo.lastIndexOf('\\')+1, arquivo_certo.length)
+            alert(arquivo_certo);
+            
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-            console.log(e.target.result);
-                $('#blah')
-                    .attr('src', e.target.result)
-                    .width(200)
-                    .height(200);
+                //console.log(e.target.result);
+                if (input.files[0].name == arquivo_certo) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(200)
+                        .height(200);
+                }
+                else {
+                    alert("arquivo errado");
+                }
+               
             };
 
             reader.readAsDataURL(input.files[0]);
