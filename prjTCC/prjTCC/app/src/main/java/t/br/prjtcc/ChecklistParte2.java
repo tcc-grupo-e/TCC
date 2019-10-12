@@ -1,6 +1,7 @@
 package t.br.prjtcc;
 
 import android.Manifest;
+import android.bluetooth.BluetoothClass;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -26,21 +27,21 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class ChecklistParte2 extends AppCompatActivity {
-    String id_Chamado = "";
 
     final int CAPTURE_IMAGE_REQUEST = 1;
-    List<String> mDados;
+
     public ImageButton btnTirafoto;
     Button btnContratoFeito;
     EditText objetosPortaLuva, objetosPortaMala, txtCPF;
-    String bancoTraseiro, bancoDianteiro, bagageiro, chave, extintor, console, tapete,
-            rodaespecial, farol, farolMilha, lanterna, radioDVD, estepe, triangulo, macaco, ferramentasCH;
+    String bancoTraseiro = "", bancoDianteiro="", bagageiro="", chave="", extintor="", console="", tapete="",
+            rodaespecial="", farol="", farolMilha="", lanterna="", radioDVD="", estepe="", triangulo="", macaco="", ferramentasCH="";
     File photoFile = null;
-    private String mCurrentPhotoPath = "";
     Uri photoURI;
     ClasseCompartilha cp = new ClasseCompartilha();
 
@@ -54,8 +55,10 @@ public class ChecklistParte2 extends AppCompatActivity {
         objetosPortaMala = findViewById(R.id.txtPortaMala);
         objetosPortaLuva = findViewById(R.id.txtPortaLuva);
         txtCPF = findViewById(R.id.txtCPFF);
-        ClasseCompartilha.fotos = null;
+
+        txtCPF.addTextChangedListener(Mask.insert(Mask.MaskType.CPF,  txtCPF));
     }
+
 
     public void botaoRadio(View v) {
         switch (v.getId()) {
@@ -63,9 +66,6 @@ public class ChecklistParte2 extends AppCompatActivity {
                 capturaImage();
                 break;
             case R.id.btnContrato:
-                new SincronismoConsultaHTTP().execute();
-
-                new SincronismoUpdateHTTP().execute();
 
                 cp.setBancoDianteiro(bancoDianteiro);
                 cp.setBancoTraseiro(bancoTraseiro);
@@ -85,9 +85,15 @@ public class ChecklistParte2 extends AppCompatActivity {
                 cp.setTriangulo(triangulo);
                 cp.setFerramentasCH(ferramentasCH);
                 cp.setBagageiro(bagageiro);
+                cp.setCPF(txtCPF.getText().toString());
 
-                new SincronismoInsertHTTP().execute();
-                Intent intent = new Intent(this, MainActivity.class);
+                Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR);
+        hour = hour - 4;
+        int min = c.get(Calendar.MINUTE);
+        min = min - 4;
+                cp.setHora(hour + ":" + min);
+                Intent intent = new Intent(this, Adicionais.class);
                 startActivity(intent);
 
                 break;
@@ -227,12 +233,12 @@ public class ChecklistParte2 extends AppCompatActivity {
                 break;
             case R.id.radioEstepeSim:
 
-                estepe = "Sim";
+                estepe = "Estepe";
                 break;
 
             case R.id.radioMacacoNao:
 
-                macaco = "Não";
+                macaco = "";
                 break;
             case R.id.radioMacacoSim:
 
@@ -260,18 +266,18 @@ public class ChecklistParte2 extends AppCompatActivity {
     }
 
     private File createImageFile() throws IOException {
-        // Create an image file name
+   
 
-        String imageFileName = txtCPF.getText().toString() + "_";
+        String imageFileName = "aaaaaaaaaaaaaaaaaa";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
+                imageFileName,
+                ".jpg",        
+                storageDir      
         );
 
-        // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = image.getAbsolutePath();
+
+        String mCurrentPhotoPath = image.getAbsolutePath();
         return image;
     }
 
@@ -283,7 +289,7 @@ public class ChecklistParte2 extends AppCompatActivity {
 
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                // Create the File where the photo should go
+
                 try {
 
                     photoFile = createImageFile();
@@ -311,33 +317,7 @@ public class ChecklistParte2 extends AppCompatActivity {
         }
     }
 
-    private class SincronismoUpdateHTTP extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
 
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-
-            try {
-
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_update.aspx?hora=" + cp.getHora() + "&kms=" + cp.getKmSaida() + "&id_Caminhao=" + cp.getId_caminhao() + "&obs=" + cp.getObservacao() + "&chamado=" + id_Chamado);
-            } catch (Exception e) {
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void vd) {
-            super.onPostExecute(vd);
-            Toast.makeText(getBaseContext(), "Alterado!", Toast.LENGTH_LONG).show();
-            finish();
-            startActivity(getIntent());
-        }
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -373,68 +353,6 @@ public class ChecklistParte2 extends AppCompatActivity {
 
         } else {
             displayMessage(getBaseContext(), "Request cancelled or something went wrong.");
-        }
-    }
-
-    private class SincronismoConsultaHTTP extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-            try {
-
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_consulta.aspx?identificador=2&dominio=" + txtCPF.getText().toString());
-                mDados = ConexaoHTTP.getDados();
-                id_Chamado = mDados.get(0);
-            } catch (Exception e) {
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void vd) {
-            super.onPostExecute(vd);
-            mDados = ConexaoHTTP.getDados();
-            if (mDados.size() > 0) {
-                String[] dados = mDados.toString().split(",");
-
-            } else {
-                Toast.makeText(getBaseContext(), "Registro(s) não localizado", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    private class SincronismoInsertHTTP extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_inserirAcessorio.aspx?id=" + id_Chamado + "&bancoD=" + cp.getBancoDianteiro() +
-                        "&bancoT=" + cp.getBancoTraseiro() + "&chave=" + cp.getChave() + "&extintor=" + cp.getExtintor() + "&console=" + cp.getConsole() +
-                        "&tapete=" + cp.getTapete() + "&rodaE=" + cp.getRodaespecial() + "&objPl=" + cp.getObjetosPortaLuva() + "&farolM=" + cp.getFarolMilha() + "&farol=" +
-                        cp.getFarol() +"&lanterna=" + cp.getLanterna() + "&radioDVD=" + cp.getRadioDVD() + "&objPm=" + cp.getObjetosPortaMala() + "&estepe=" + cp.getEstepe() +
-                        "&macaco=" + cp.getMacaco() +"&triangulo=" + cp.getTriangulo() + "&chaveR=" + cp.getFerramentasCH() + "&bagageiro=" + cp.getBagageiro()+
-                        "&assinaturaC="+cp.getAssinaturaC()+"&assinaturaM="+cp.getAssinaturaM()+"&hora" + cp.getHora());
-            } catch (Exception e) {
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void vd) {
-            super.onPostExecute(vd);
-
-            Toast.makeText(getBaseContext(), "Foi", Toast.LENGTH_LONG).show();
-
         }
     }
 

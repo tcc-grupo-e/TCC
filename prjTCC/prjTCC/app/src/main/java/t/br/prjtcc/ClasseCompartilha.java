@@ -25,6 +25,26 @@ public class ClasseCompartilha {
     static String assinaturaM;
     static String assinaturaC;
 
+    public static String getChamado() {
+        return chamado;
+    }
+
+    public static void setChamado(String chamado) {
+        ClasseCompartilha.chamado = chamado;
+    }
+
+    static String chamado;
+
+    public static String getCPF() {
+        return CPF;
+    }
+
+    public static void setCPF(String CPF) {
+        ClasseCompartilha.CPF = CPF;
+    }
+
+    static String CPF;
+
     public static ArrayList getFotos() {
         return foto;
     }
@@ -78,8 +98,9 @@ public class ClasseCompartilha {
     public static String getId_caminhao() {
         return id_caminhao;
     }
+
     public static void setId_caminhao(String id_caminhao) {
-        ClasseCompartilha.id_caminhao= id_caminhao;
+        ClasseCompartilha.id_caminhao = id_caminhao;
     }
 
     public static String getAssinaturaC() {
@@ -89,7 +110,6 @@ public class ClasseCompartilha {
     public static void setAssinaturaC(String assinaturaC) {
         ClasseCompartilha.assinaturaC = assinaturaC;
     }
-
 
 
     public static String getBancoTraseiro() {

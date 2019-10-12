@@ -29,9 +29,9 @@ public class SplashScreen extends AppCompatActivity {
                     @Override
                     public void run() {
                         // Esse método será executado sempre que o timer acabar
-                        // E inicia a activity principal
+                        // E inicia a activity de login
 
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new Intent(getApplicationContext(), Login.class);
                         startActivity(i);
 
 

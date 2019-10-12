@@ -1,9 +1,22 @@
 package t.br.prjtcc;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +42,7 @@ public class ConexaoHTTP {
             con.setConnectTimeout(15 * SEGUNDOS);
             con.setRequestMethod("GET");
             con.setDoInput(true);
-            con.setDoOutput(false); //SEM PARÂMETROS, MODO OCULTO
+            con.setDoOutput(true); //SEM PARÂMETROS, MODO OCULTO
             con.connect();
             int resposta = con.getResponseCode();
             if (resposta == HttpURLConnection.HTTP_OK) {
@@ -69,4 +82,3 @@ public class ConexaoHTTP {
         return null;
     }
 }
-

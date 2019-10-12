@@ -8,6 +8,7 @@
 	public void Page_Load()
 	{
 	string dominio = (Request.QueryString["dominio"]);
+	string dominio2 = (Request.QueryString["dominio2"]);
 		
 		string indentificador = (Request.QueryString["identificador"]);
 		
@@ -24,6 +25,10 @@
 		
 		} else if(id=="2"){
 	strSQL = "exec usp_ConsultaUltimaAberturaporCPF '"+dominio+"'";
+		}else if(id=="3"){
+	strSQL = "exec usp_ProcurarLoginFunc '"+dominio+"', '"+dominio2+"'";
+		}else if(id=="4"){
+	strSQL = "select Nome from Adicionais";
 		}
 		
 		SqlCommand objCommand = new SqlCommand(strSQL, objConexao);

@@ -7,13 +7,14 @@
 
 	public void Page_Load()
 	{
+		string id = (Request.QueryString["id"]);
 		string nome = (Request.QueryString["nome"]);
-		string fone = (Request.QueryString["fone"]);
-		//Label1.Text = id;
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=receita; Data Source=" + Environment.MachineName;
+		
+		//Label1.Text = id; 
+		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autosocorro; Data Source=" + Environment.MachineName;
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;
-		String strSQL = "INSERT INTO Acessorios VALUES ('" + nome + "','" + fone + "')";
+		String strSQL = "exec usp_InserirAdicionalAbertura " +id+ ", '"+nome+"'";
 		SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
 		objConexao.Open();
 		objCommand.ExecuteNonQuery();

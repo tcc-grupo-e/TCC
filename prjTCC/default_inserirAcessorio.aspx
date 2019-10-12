@@ -26,9 +26,6 @@
 		string chaveR = (Request.QueryString["chaveR"]);
 		string bagageiro = (Request.QueryString["bagageiro"]);
 		string identificador = (Request.QueryString["id"]); 
-		string assinaturaC =(Request.QueryString["assinaturaC"]); 
-		string assinaturaM =(Request.QueryString["assinaturaM"]); 
-		string hora =(Request.QueryString["hora"]); 
 			String[] nome = new String[21];
 			nome[0] = "'Banco Dianteiro','" + bancoD+"'";
 			nome[1] = "'Banco Traseiro','" + bancoT+"'";
@@ -48,29 +45,18 @@
 			nome[15] = "'Triangulo','" + triangulo+"'";
 			nome[16] = "'Chave de roda','" + chaveR+"'";
 			nome[17] = "'Bagageiro','" + bagageiro+"'";
-			nome[18] = assinaturaC ;
-			nome[19] = assinaturaM ;
-			nome[20] = hora ;	
-			
-			
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autosocorro; Data Source=" + Environment.MachineName;
+		//Label1.Text = id;
+String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autosocorro; Data Source=" + Environment.MachineName;
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;
 		objConexao.Open();
 		String strSQL="";
-		for(int i = 0; i<21;i++){
-		if(i<18){
+		for(int i = 0; i<18;i++){
+		
 		 strSQL = "exec usp_InserirAcessorios " +  nome[i] + " ,"+identificador;
-		}else{
-		//exec usp_InserirDeclaracao 1,0x000,'12:00'
-		 strSQL = "exec usp_InserirDeclaracao "+identificador+","+nome[i]+",'"+ hora+"'";
-		
-		}
-		
-		SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
+				SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
 		objCommand.ExecuteNonQuery();
 		}
-		
 		
 		
 		Label1.Text = "Dados inserídos com sucesso!";

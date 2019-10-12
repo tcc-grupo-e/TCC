@@ -7,9 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
 
 public class AssinaturaMotorista extends AppCompatActivity {
     TextView txtmoto;
@@ -29,8 +32,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
     private Path path;
     Canvas canvas;
     Bitmap bitmap;
-    byte[] byteMotorista;
-
+    Bitmap bitmap2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,8 @@ public class AssinaturaMotorista extends AppCompatActivity {
     public void botaoAssinaMotorista(View v) {
         switch (v.getId()) {
             case R.id.btnSalvar:
+                 bitmap2= ((BitmapDrawable) imgMotorista.getDrawable()).getBitmap();
+
                 AlertDialog.Builder a = new AlertDialog.Builder(v.getContext());
                 a.setTitle("Tem certeza?");
                 a.setMessage("Tem certeza que quer salvar essa assinatura?");
@@ -106,20 +110,22 @@ public class AssinaturaMotorista extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         imgMotorista.setDrawingCacheEnabled(true);
-                        Bitmap bitmaps = imgMotorista.getDrawingCache();
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        Bitmap bitmapObtained = bitmap;
+                                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        bitmapObtained.compress(Bitmap.CompressFormat.PNG, 1, stream);
 
-                        byteMotorista = baos.toByteArray();
-                        if (byteMotorista != null) {
+
+                        String assinaturaM = new String(stream.toByteArray());
+
+                        if (assinaturaM != null) {
                             Toast.makeText(getApplicationContext(), "Dados Salvos!", Toast.LENGTH_LONG).show();
                             imgMotorista.setImageResource(0);
                             btnCliente.setVisibility(View.VISIBLE);
-
                             btnSalvar.setVisibility(View.INVISIBLE);
                             btnLimpar.setVisibility(View.INVISIBLE);
                             ClasseCompartilha cp = new ClasseCompartilha();
-                            String assinaturaM = new String(byteMotorista);
+
+
                             cp.setAssinaturaM(assinaturaM);
 
                         } else

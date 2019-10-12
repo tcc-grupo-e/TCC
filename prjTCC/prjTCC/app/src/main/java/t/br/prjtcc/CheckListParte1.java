@@ -14,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 public class CheckListParte1 extends AppCompatActivity
@@ -28,7 +30,7 @@ ClasseCompartilha cp = new ClasseCompartilha();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_list_parte1);
         txtPlacaCaminhao = findViewById(R.id.txtPlacaCaminhao);
-        txtHora = findViewById(R.id.txtHora);
+
         txtKmS = findViewById(R.id.txtKmS);
         txtObs = findViewById(R.id.txtObeservacao);
 
@@ -42,10 +44,10 @@ ClasseCompartilha cp = new ClasseCompartilha();
 
 
                 new SincronismoHTTPConsulta().execute();
-                cp.setHora(txtHora.getText().toString());
+
                 cp.setKmSaida(txtKmS.getText().toString());
                 cp.setObservacao(txtObs.getText().toString());
-                startActivity(new Intent(this,AssinaturaMotorista.class));
+                startActivity(new Intent(this,ChecklistParte2.class));
                 break;
 
 
