@@ -132,7 +132,7 @@ create table Declaracao (
 	ID_Chamado int foreign key references Abertura(ID_Chamado),
 	Assinatura varbinary(max),
 	Tipo varchar(30),
-	Horario time,
+	Horario varchar(5),
 )
 go
 insert into Declaracao values
@@ -184,13 +184,13 @@ insert into Funcionario values
 	'SP', '(11)5528-5550', '28/11/2002', 'Solteiro', 'Rem Gonzaga', '(11)95142-9829', 'ederzed', 'eder281102', 'n'),
 	(2, 'Rafael Hadzic Rico de Sousa', 'Gerenciador de Banco de Dados', 'R$9.000', 'rafael.hadzic@gmail.com', '54.352.151-5', '30979961802', '190.21697.31-1', 
 	'Rua Zélia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'RafaelHadzic', 'rafa130101', 'n'),
-	(3, 'Gabriel Gomes Gameiro', 'Programador Android', 'R$9.000', 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua Atuaí, 140', 'São Paulo', '03646-000',
-	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Raquel Lopes Barbosa', '(11)96784-7184', 'ggameiro', 'gabr180902', 'n'),
+	(3, 'Gabriel Gomes Gameiro', 'Motorista', 'R$9.000', 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua Atuaí, 140', 'São Paulo', '03646-000',
+	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Raquel Lopes Barbosa', '(11)96784-7184', 'ggg', '1324', 'n'),
 	(4, 'Jean-Luc Bonnet', 'Gerente', 'R$99.999', 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'São Paulo', '08744-000',
 	'SP', '(11)29958-7064', '00/00/0000', 'Solteiro', '-', '-', 'Luc', '1234', 's')
 
 	select * from Funcionario
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 
 go
 create table Adicionais (
@@ -262,6 +262,7 @@ as
 		end
 	insert into Adicional_Abertura select @id, ID_Adicionais, @idAbertura from Adicionais where Nome like @NomeAdicional
 go
+exec usp_InserirAdicionalAbertura 1, 'patins'
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_InserirFuncAber
