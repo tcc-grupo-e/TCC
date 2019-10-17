@@ -180,7 +180,7 @@ create table Funcionario (
 )
 go
 insert into Funcionario values
-	(1, 'Ederson Gonzaga de Melo', 'Gerente', 'R$10.000', 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua José Dias Paes', 'São Paulo', '04851-003',
+	(, 'Ederson Gonzaga de Melo', 'Gerente', 'R$10.000', 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua José Dias Paes', 'São Paulo', '04851-003',
 	'SP', '(11)5528-5550', '28/11/2002', 'Solteiro', 'Rem Gonzaga', '(11)95142-9829', 'ederzed', 'eder281102', 'n'),
 	(2, 'Rafael Hadzic Rico de Sousa', 'Gerenciador de Banco de Dados', 'R$9.000', 'rafael.hadzic@gmail.com', '54.352.151-5', '30979961802', '190.21697.31-1', 
 	'Rua Zélia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'RafaelHadzic', 'rafa130101', 'n'),
@@ -453,6 +453,19 @@ create Proc usp_ProcurarLoginFunc
 AS
 Declare @contagem int,@mensagem char(1) 
 	select @contagem = count(*) from Funcionario where Usuario = @usu and Senha = @senha 
+	If @contagem = 0 
+		Begin
+			Select 'F' as 'T/F'
+		End
+		else
+  			Select Cargo, Nome, ID_Funcionario, Primeiro_Cadastro, 'T' as 'T/F' from Funcionario where Usuario = @usu and Senha = @senha
+go
+create Proc usp_ProcurarLoginMot
+@usu varchar(50),
+@senha varchar(50)
+AS
+Declare @contagem int,@mensagem char(1) 
+	select @contagem = count(*) from Funcionario where Usuario = @usu and Senha = @senha and Cargo like 'Motorista'
 	If @contagem = 0 
 		Begin
 			Select 'F' as 'T/F'
