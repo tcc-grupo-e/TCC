@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
@@ -18,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -88,10 +91,10 @@ public class ChecklistParte2 extends AppCompatActivity {
                 cp.setCPF(txtCPF.getText().toString());
 
                 Calendar c = Calendar.getInstance();
-        int hour = c.get(Calendar.HOUR);
-        hour = hour - 4;
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        hour = hour - 3;
         int min = c.get(Calendar.MINUTE);
-        min = min - 4;
+
                 cp.setHora(hour + ":" + min);
                 Intent intent = new Intent(this, Adicionais.class);
                 startActivity(intent);

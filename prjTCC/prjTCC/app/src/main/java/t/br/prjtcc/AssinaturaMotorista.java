@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.util.Base64;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +28,7 @@ import java.nio.ByteBuffer;
 public class AssinaturaMotorista extends AppCompatActivity {
     TextView txtmoto;
     ImageView imgMotorista;
-    Button btnSalvar, btnCliente, btnLimpar;
+    Button btnSalvar, btnContinuar, btnLimpar;
     float dX, dY, oldX, oldY, nX, nY, dw, dh;
     private Paint paint;
     private Path path;
@@ -47,7 +49,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
         txtmoto = findViewById(R.id.textViewMotorista);
         imgMotorista = this.findViewById(R.id.imgDesenhaMotorista);
         btnSalvar = findViewById(R.id.btnSalvar);
-        btnCliente = findViewById(R.id.btnCliente);
+        btnContinuar = findViewById(R.id.btnContinuar);
         btnLimpar = findViewById(R.id.btnLimpar);
 
 
@@ -94,7 +96,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
     public void botaoAssinaMotorista(View v) {
         switch (v.getId()) {
             case R.id.btnSalvar:
-                 bitmap2= ((BitmapDrawable) imgMotorista.getDrawable()).getBitmap();
+                bitmap2 = ((BitmapDrawable) imgMotorista.getDrawable()).getBitmap();
 
                 AlertDialog.Builder a = new AlertDialog.Builder(v.getContext());
                 a.setTitle("Tem certeza?");
@@ -111,7 +113,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         imgMotorista.setDrawingCacheEnabled(true);
                         Bitmap bitmapObtained = bitmap;
-                                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
                         bitmapObtained.compress(Bitmap.CompressFormat.PNG, 1, stream);
 
 
@@ -120,7 +122,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
                         if (assinaturaM != null) {
                             Toast.makeText(getApplicationContext(), "Dados Salvos!", Toast.LENGTH_LONG).show();
                             imgMotorista.setImageResource(0);
-                            btnCliente.setVisibility(View.VISIBLE);
+                            btnContinuar.setVisibility(View.VISIBLE);
                             btnSalvar.setVisibility(View.INVISIBLE);
                             btnLimpar.setVisibility(View.INVISIBLE);
                             ClasseCompartilha cp = new ClasseCompartilha();
@@ -139,7 +141,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), AssinaturaMotorista.class));
                 finish();
                 break;
-            case R.id.btnCliente:
+            case R.id.btnContinuar:
                 imgMotorista.setImageResource(0);
                 startActivity(new Intent(getApplicationContext(), AssinaturaCliente.class));
                 finish();

@@ -2,12 +2,15 @@ package t.br.prjtcc;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -22,7 +25,7 @@ public class CheckListParte1 extends AppCompatActivity
 {
     String id_Caminhao;
     List<String> mDados;
-EditText txtPlacaCaminhao,txtHora,txtKmS,txtObs;
+EditText txtPlacaCaminhao,txtKmS,txtObs;
 ClasseCompartilha cp = new ClasseCompartilha();
 
     @Override
@@ -33,7 +36,6 @@ ClasseCompartilha cp = new ClasseCompartilha();
 
         txtKmS = findViewById(R.id.txtKmS);
         txtObs = findViewById(R.id.txtObeservacao);
-
 
     }
 

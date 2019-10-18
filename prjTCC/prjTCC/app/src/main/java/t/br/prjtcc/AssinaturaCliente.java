@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.util.Base64;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -56,7 +58,7 @@ public class AssinaturaCliente extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
         btnConfirmar = findViewById(R.id.btnConfirmar);
 
-
+id_Chamado = cp.getChamado();
         Display dp = getWindowManager().getDefaultDisplay();
         dw = dp.getWidth();
         dh = dp.getHeight();
@@ -141,7 +143,8 @@ public class AssinaturaCliente extends AppCompatActivity {
 
                 break;
             case R.id.btnConfirmar:
-
+                new SincronismoUpdateHTTP().execute();
+                new SincronismoInsertAcessoriosHTTP().execute();
                 new SincronismoInsertDeclaracaoMotoristaHTTP().execute();
                 new SincronismoInsertDeclaracaoClienteHTTP().execute();
 

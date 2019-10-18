@@ -13,12 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyASb58tiGGvS3qYHruZuWfYHn0zQF_eMrw" />
         <activity
             android:name=".AssinaturaCliente"
-            android:screenOrientation="landscape" />
+            /><activity
+        android:name=".MapsActivity"
+        />
         <activity
-            android:name=".AssinaturaMotorista"
-            android:screenOrientation="landscape" />
+            android:name=".AssinaturaMotorista" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

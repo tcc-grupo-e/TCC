@@ -3,74 +3,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ChecklistParte2">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="10dp"
+        android:layout_height="50dp"
+        android:background="@drawable/gradient"
+        android:text="Check List"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        tools:ignore="MissingConstraints"></TextView>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView454"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="CPF" />
-
             <EditText
                 android:id="@+id/txtCPFF"
-                android:layout_width="179dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Acessorios e ferramentas"
-                android:textSize="30sp"/>
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/textview_layout"
+                android:hint="CPF"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
 
-            <TextView
-                android:id="@+id/textView21"
+            <EditText
+                android:id="@+id/txtPortaMala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/textview_layout"
+                android:hint="Objetos Porta Malas"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+            <ImageButton
+                android:id="@+id/btnTiraFot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Bancos dianteiros" />
+                android:layout_gravity="center"
+                android:onClick="botaoRadio"
+                app:srcCompat="@drawable/tirarfoto" />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Bancos Dianteiros"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioBancoDianteiroNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Novos" />
@@ -79,42 +104,45 @@
                     android:id="@+id/radioBancoDianteiroUsado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Usados" />
+
                 <RadioButton
-                android:id="@+id/radioBancoDianteiroVelho"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="botaoRadio"
-                android:text="Velhos" />
+                    android:id="@+id/radioBancoDianteiroVelho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:onClick="botaoRadio"
+                    android:text="Velhos" />
 
             </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:onClick="botaoRadio"
-                android:text="Bancos traseiros" />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Bancos Traseiros"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioBancoTraseiroNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Novos" />
@@ -123,41 +151,45 @@
                     android:id="@+id/radioBancoTraseiroUsado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Usados" />
+
                 <RadioButton
                     android:id="@+id/radioBancoTraseiroVelho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Velhos" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Chave do veiculo" />
-
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Chave do Veículo"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioChaveSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Sim" />
@@ -166,34 +198,36 @@
                     android:id="@+id/radioChaveNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Não" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Extintor" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Extintor"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioExtintorNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Sim, novo" />
@@ -202,41 +236,45 @@
                     android:id="@+id/radioExtintorUsado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
-                    android:text="Sim, usado" />     <RadioButton
+                    android:text="Sim, usado" />
+
+                <RadioButton
                     android:id="@+id/radioExtintorNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Não" />
 
             </RadioGroup>
 
-
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Tapete" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Tapete"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioTapeteNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Sim, novo" />
@@ -245,41 +283,47 @@
                     android:id="@+id/radioTapeteUsado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="sim, usado" />
+
                 <RadioButton
                     android:id="@+id/radioTapeteNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Não " />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Console" />
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Console"
+                    android:textColor="#fff" />
+
                 <RadioButton
                     android:id="@+id/radioConsoleNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Novo" />
@@ -288,421 +332,452 @@
                     android:id="@+id/radioConsoleUsado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
                     android:onClick="botaoRadio"
                     android:text="Usado" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Objetos Porta Luvas" />
-
             <EditText
                 android:id="@+id/txtPortaLuva"
-                android:layout_width="179dp"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Rodas Especiais" />
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/textview_layout"
+                android:hint="Objetos Porta Luvas"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp" />
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Rodas Especiais"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioRodasEspeciaisSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim, novas"
-                    android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim, novas" />
 
                 <RadioButton
                     android:id="@+id/radioRodasEspeciaisUsadas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim, usadas"
-                    android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim, usadas" />
+
                 <RadioButton
-                android:id="@+id/radioRodasEspeciaisNao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Não tem"
-                android:onClick="botaoRadio"/>
+                    android:id="@+id/radioRodasEspeciaisNao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:onClick="botaoRadio"
+                    android:text="Não tem" />
 
             </RadioGroup>
 
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Faróis" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Faróis"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioFarolSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Tem"
-                    android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Tem" />
 
                 <RadioButton
                     android:id="@+id/radioFarolNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Quebrado"
-                    android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Quebrado" />
 
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Faróis de milha" />
             </RadioGroup>
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Faróis de Milha"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioFarolMilhaNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Tem"
-                    android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Tem" />
 
                 <RadioButton
                     android:id="@+id/radioFarolMilhaNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Quebrado" android:onClick="botaoRadio" />
+                    android:onClick="botaoRadio"
+                    android:text="Quebrado" />
 
             </RadioGroup>
 
-
-            <TextView
-                android:id="@+id/textView31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Lanternas" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Lanternas"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioLanternaNovo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Novas" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Novas" />
 
                 <RadioButton
                     android:id="@+id/radioLanternaUsada"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Usadas" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Usadas" />
 
                 <RadioButton
                     android:id="@+id/radioLanternaNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Quebradas"
-                    android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Quebradas" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Radio,DVD(Disketeria)" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Radio, DVD (Disketeria)"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioRadioSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim" />
 
                 <RadioButton
                     android:id="@+id/radioRadioNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Não" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Não" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Bagageiro" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Bagageiro"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioBagageiroSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim, novo" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim, novo" />
 
                 <RadioButton
                     android:id="@+id/radioBagageiroUsado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim, usado" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim, usado" />
 
                 <RadioButton
                     android:id="@+id/radioBagageiroNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Não" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Não" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Obejtos no Porta Malas" />
-
-            <EditText
-                android:id="@+id/txtPortaMala"
-                android:layout_width="179dp"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Estepe"  />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Estepe"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioEstepeSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim" />
 
                 <RadioButton
                     android:id="@+id/radioEstepeNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Não" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Não" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Macaco" />
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Macaco"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioMacacoSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim" />
 
                 <RadioButton
                     android:id="@+id/radioMacacoNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Não" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Não" />
 
             </RadioGroup>
 
-
-            <TextView
-                android:id="@+id/textView37"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Triângulo" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Triângulo"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioTrianguloSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim" />
 
                 <RadioButton
                     android:id="@+id/radioTrianguloNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Não" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Não" />
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Ferramentas/  CH rodas" />
-
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="wrap_content"
                 tools:layout_editor_absoluteY="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="Ferramentas / Ch. Rodas"
+                    android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/radioFerramentaSim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Sim" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Sim" />
 
                 <RadioButton
                     android:id="@+id/radioFerramentaNao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:layout_weight="1"
-                    android:text="Não" android:onClick="botaoRadio"/>
+                    android:onClick="botaoRadio"
+                    android:text="Não" />
             </RadioGroup>
 
-            <ImageButton
-                android:id="@+id/btnTiraFot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="botaoRadio"
-                app:srcCompat="@drawable/tirarfoto" />
-
-            <Button
-                android:id="@+id/btnContrato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="botaoRadio"
-                android:text="Confirmado" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btnContrato"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="botaoRadio"
+        android:text="Confirmado"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:background="@drawable/button_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
 </android.support.constraint.ConstraintLayout>

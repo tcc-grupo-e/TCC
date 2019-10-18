@@ -3,13 +3,17 @@ package t.br.prjtcc;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,6 +25,7 @@ public class Adicionais extends AppCompatActivity {
     ListView listAdicionais;
     String id;
     int posicao;
+    Button btnavancar;
 
     ClasseCompartilha cp = new ClasseCompartilha();
     @Override
@@ -28,6 +33,14 @@ public class Adicionais extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionais);
         listAdicionais = findViewById(R.id.listAdicionais);
+        btnavancar = findViewById(R.id.btnAvancar);
+
+        btnavancar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AssinaturaMotorista.class));
+            }
+        });
         new  SincronismoConsulta2HTTP().execute();
         new SincronismoConsultaHTTP().execute();
 
@@ -132,7 +145,7 @@ public class Adicionais extends AppCompatActivity {
                 dados[dados.length - 1] =  dados[dados.length - 1].replace("]","");
 
 //                ArrayAdapter<String> adpL = new ArrayAdapter<String>(getBaseContext(),R.layout.listview,dados);
-                ArrayAdapter<String> adpL = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,dados);
+                ArrayAdapter<String> adpL = new ArrayAdapter<String>(getBaseContext(),R.layout.listview,dados);
                 listAdicionais.setAdapter(adpL);
             }else {
                 Toast.makeText(getBaseContext(), "Registro(s) não localizado", Toast.LENGTH_LONG).show();
