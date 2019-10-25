@@ -10,7 +10,6 @@
 		string id = (Request.QueryString["id"]);
 		string nome = (Request.QueryString["nome"]);
 		
-		//Label1.Text = id; 
 		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autosocorro; Data Source=" + Environment.MachineName;
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;

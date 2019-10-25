@@ -95,11 +95,11 @@ public class Adicionais extends AppCompatActivity {
 
             try {
 
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_consulta.aspx?identificador=2&dominio=" + cp.getCPF());
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_consulta.aspx?identificador=2&dominio=" + cp.getCPF());
                 mDados = ConexaoHTTP.getDados();
 
 
-                cp.setChamado( mDados.get(0));
+                cp.setChamado(mDados.get(0));
             } catch (Exception e) {
             }
             return null;
@@ -110,7 +110,7 @@ public class Adicionais extends AppCompatActivity {
             super.onPostExecute(vd);
             mDados = ConexaoHTTP.getDados();
             if (mDados.size() > 0) {
-                String[] dados = mDados.toString().split(",");
+                String[] dados = mDados.toString().split(";");
 
 
             } else {
@@ -128,7 +128,7 @@ public class Adicionais extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params){
             try{
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_consulta.aspx?identificador=4&dominio=0" );
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_consulta.aspx?identificador=4&dominio=0" );
             }
             catch (Exception e){}
             return null;
@@ -144,7 +144,6 @@ public class Adicionais extends AppCompatActivity {
 
                 dados[dados.length - 1] =  dados[dados.length - 1].replace("]","");
 
-//                ArrayAdapter<String> adpL = new ArrayAdapter<String>(getBaseContext(),R.layout.listview,dados);
                 ArrayAdapter<String> adpL = new ArrayAdapter<String>(getBaseContext(),R.layout.listview,dados);
                 listAdicionais.setAdapter(adpL);
             }else {
@@ -164,7 +163,7 @@ public class Adicionais extends AppCompatActivity {
         protected Void doInBackground(Void... params){
             try{
 
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_inserirAdicional.aspx?nome="+ id.substring(1,id.length())+"&id="+cp.getChamado()+"");
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirAdicional.aspx?nome="+ id.substring(1,id.length())+"&id="+cp.getChamado()+"");
             }
             catch (Exception e){}
             return null;

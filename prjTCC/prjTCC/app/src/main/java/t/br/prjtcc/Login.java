@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+          //      startActivity(new Intent(getApplicationContext(),MapsActivity.class));
                 new SincronismoConsultaHTTP().execute();
             }
         });
@@ -51,6 +51,7 @@ public class Login extends AppCompatActivity {
             super.onPreExecute();
         }
 
+ClasseCompartilha cp = new ClasseCompartilha();
         @Override
         protected Void doInBackground(Void... params) {
 
@@ -58,7 +59,7 @@ public class Login extends AppCompatActivity {
                 login = txtLogin.getText().toString();
                 senha = txtSenha.getText().toString();
 
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_consulta.aspx?identificador=3&dominio=" + login + "&dominio2=" + senha);
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_consulta.aspx?identificador=3&dominio=" + login + "&dominio2=" + senha);
 
 
             } catch (Exception e) {

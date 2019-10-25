@@ -170,7 +170,7 @@ id_Chamado = cp.getChamado();
 
             try {
 
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_update.aspx?hora=" + cp.getHora() + "&kms=" + cp.getKmSaida() + "&id_Caminhao=" + cp.getId_caminhao() + "&obs=" + cp.getObservacao() + "&chamado=" + id_Chamado);
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_update.aspx?hora=" + cp.getHora() + "&kms=" + cp.getKmSaida() + "&id_Caminhao=" + cp.getId_caminhao() + "&obs=" + cp.getObservacao() + "&chamado=" + id_Chamado);
             } catch (Exception e) {
             }
             return null;
@@ -196,7 +196,7 @@ id_Chamado = cp.getChamado();
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_inserirAcessorio.aspx?id=" + id_Chamado + "&bancoD=" + cp.getBancoDianteiro() +
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirAcessorio.aspx?id=" + id_Chamado + "&bancoD=" + cp.getBancoDianteiro() +
                         "&bancoT=" + cp.getBancoTraseiro() + "&chave=" + cp.getChave() + "&extintor=" + cp.getExtintor() + "&console=" + cp.getConsole() +
                         "&tapete=" + cp.getTapete() + "&rodaE=" + cp.getRodaespecial() + "&objPl=" + cp.getObjetosPortaLuva() + "&farolM=" + cp.getFarolMilha() + "&farol=" +
                         cp.getFarol() + "&lanterna=" + cp.getLanterna() + "&radioDVD=" + cp.getRadioDVD() + "&objPm=" + cp.getObjetosPortaMala() + "&estepe=" + cp.getEstepe() +
@@ -227,7 +227,7 @@ id_Chamado = cp.getChamado();
             try {
 
 
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&hora=" + cp.getHora() + "&assinatura=" +cp.getAssinaturaM());
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&hora=" + cp.getHora() + "&assinatura=" +cp.getAssinaturaM());
 
             } catch (Exception e) {
 
@@ -257,7 +257,7 @@ id_Chamado = cp.getChamado();
             try {
 
 
-                ConexaoHTTP.conectarHttp("http://10.0.2.2/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&assinatura=" + cp.getAssinaturaC() + "&hora=" + cp.getHora());
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&assinatura=" + cp.getAssinaturaC() + "&hora=" + cp.getHora());
 
             } catch (Exception e) {
             }

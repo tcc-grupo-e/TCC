@@ -68,7 +68,7 @@ ClasseCompartilha cp = new ClasseCompartilha();
     protected Void doInBackground(Void... params){
         try{
          String placa = txtPlacaCaminhao.getText().toString();
-            ConexaoHTTP.conectarHttp("http://10.0.2.2/default_consulta.aspx?identificador=1&dominio=" +placa);
+            ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_consulta.aspx?identificador=1&dominio=" +placa);
             mDados = ConexaoHTTP.getDados();
              id_Caminhao = mDados.get(0);
             cp.setId_caminhao(id_Caminhao);

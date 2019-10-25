@@ -1,7 +1,10 @@
 package t.br.prjtcc;
 
 
+import com.google.maps.model.LatLng;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClasseCompartilha {
     static String bancoTraseiro;
@@ -24,6 +27,31 @@ public class ClasseCompartilha {
     static String ferramentasCH;
     static String assinaturaM;
     static String assinaturaC;
+    static String ipRede = "10.0.2.2";
+    public static String[] getEderecos() {
+        return ederecos;
+    }
+
+    public static void setEderecos(String[] ederecos) {
+        ClasseCompartilha.ederecos= new String[ederecos.length];
+        ClasseCompartilha.ederecos = ederecos;
+    }
+
+    static String[] ederecos;
+
+    public static List<LatLng> getEnderecos() {
+
+        return enderecos;
+    }
+
+    public static void setEnderecos(List<LatLng> enderecos) {
+        ClasseCompartilha.enderecos = new ArrayList<>(enderecos.size());
+        ClasseCompartilha.enderecos = enderecos;
+    }
+
+    static List<LatLng> enderecos;
+
+
 
     public static String getChamado() {
         return chamado;

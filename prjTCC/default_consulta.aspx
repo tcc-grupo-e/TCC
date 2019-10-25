@@ -11,13 +11,14 @@
 	string dominio2 = (Request.QueryString["dominio2"]);
 		
 		string indentificador = (Request.QueryString["identificador"]);
-		
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autoSocorro; Data Source=" + Environment.MachineName;
+	
+		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autoSocorro; Data Source=" + Environment.MachineName + "/SQLEXPRESS";
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		
 		String strSQL = "";
 		String contato = ""; 
 		String id = indentificador;
+		
 		
 		if(id == "1"){
 		
@@ -26,9 +27,13 @@
 		} else if(id=="2"){
 	strSQL = "exec usp_ConsultaUltimaAberturaporCPF '"+dominio+"'";
 		}else if(id=="3"){
-	strSQL = "exec usp_ProcurarLoginFunc '"+dominio+"', '"+dominio2+"'";
+	strSQL = "exec usp_ProcurarLoginMot '"+dominio+"', '"+dominio2+"'";
 		}else if(id=="4"){
 	strSQL = "select Nome from Adicionais";
+		}else if(id=="5"){
+		  strSQL = "Select a.ID_Chamado,c.Nome, a.Placa,a.Modelo,a.Cor from Cliente as c inner join Abertura as a on a.ID_Cliente = c.ID_Cliente where a.ID_Chamado not in (Select ID_Chamado FROM Funcionario_Abertura) order by a.ID_Chamado";
+		}else if(id=="6"){
+		  strSQL = "select endereco from Destino where ID_Chamado =" +dominio ;
 		}
 		
 		SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
@@ -36,11 +41,16 @@
 		objConexao.Open();
 		dr = objCommand.ExecuteReader();
 		contato = "#"; 
-		while (dr.Read())
-		{
-			contato += (dr[0].ToString()) + ";";
-		
-		}
+		    while (dr.Read())
+        {
+            for (int i = 0; i < dr.FieldCount; i++)
+            {
+                if (i == dr.FieldCount - 1)
+                    contato += (dr[i].ToString()) + ";";
+                else
+                    contato += (dr[i].ToString()) + ",";
+            }
+        }
 		contato+="^";
 		Label1.Text = contato;
 	}
