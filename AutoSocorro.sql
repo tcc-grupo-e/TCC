@@ -42,7 +42,7 @@ create table Caminhao (
 	Cor varchar(10),
 	Placa varchar(8),
 	Ano varchar(4),
-	KM_Rodados varchar(7),
+	KM_Rodados int,
 )
 go
 insert into Caminhao values
@@ -62,18 +62,18 @@ create table Abertura (
 	Cor varchar(10),
 	Ano varchar(4),
 	Placa varchar(8),
-	KM_Saida varchar(7),
+	KM_Saida int,
 	Hora_Saida varchar(5),
 	Observacao text 
 )
 go
 insert into Abertura values
 	(1, 1, 1,'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
-	'78000', '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor'),
+	78000, '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor'),
 	(2, 2, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
-	'24500', '14:37', 'O veículo se encontra com uma batida na porta lateral esquerda'),
+	24500, '14:37', 'O veículo se encontra com uma batida na porta lateral esquerda'),
 	(3, 3, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
-	'8500', '09:30', 'O veículo está em perfeito estado, e o servoço foi solicitado apenas para transporte de garagens')
+	8500, '09:30', 'O veículo está em perfeito estado, e o servoço foi solicitado apenas para transporte de garagens')
 --------------------------------------------------------------------------------
 go
 create table Fechamento (
@@ -89,10 +89,10 @@ create table Fechamento (
 	Cor varchar(10),
 	Ano varchar(4),
 	Placa varchar(8),
-	KM_Saida varchar(7),
+	KM_Saida int,
 	Hora_Saida varchar(5),
 	Observacao text,
-	KM_Chegada varchar(7),
+	KM_Chegada int,
 	Hora_Chegada varchar(5),
 	Hora_Parada varchar(5),
 	Hora_Trabalhada varchar(5),
@@ -103,13 +103,13 @@ create table Fechamento (
 go
 insert into Fechamento values
 	(1, 1, 1, 'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
-	'78000', '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor', '78040', '20:30', '0:20',
+	78000, '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor', 78040, '20:30', '0:20',
 	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'Não'),
 	(2, 1, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
-	'24500', '14:00', 'O veículo se encontra com uma batida na porta lateral esquerda', '24550', '17:00', '1:30', '1:30', 'Localiza',
+	24500, '14:00', 'O veículo se encontra com uma batida na porta lateral esquerda', 24550, '17:00', '1:30', '1:30', 'Localiza',
 	'Danificado estéticamente', 'Sim'),
 	(3, 1, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
-	'8500', '09:30', 'O veículo está em perfeito estado, e o servoço foi solicitado apenas para transporte de garagens', '8520',
+	8500, '09:30', 'O veículo está em perfeito estado, e o servoço foi solicitado apenas para transporte de garagens', 8520,
 	'10:30', '0:00', '1:00', 'Maria Lúcia Mustang', 'Não danificado', 'Não')
 --------------------------------------------------------------------------------
 go
@@ -132,7 +132,7 @@ create table Declaracao (
 	ID_Chamado int foreign key references Abertura(ID_Chamado),
 	Assinatura varbinary(max),
 	Tipo varchar(30),
-	Horario varchar(5),
+	Horario time,
 )
 go
 insert into Declaracao values
@@ -159,7 +159,7 @@ create table Funcionario (
 	ID_Funcionario int primary key,
 	Nome varchar(50),
 	Cargo varchar(30),
-	Salario varchar(9),
+	Salario money,
 	Email varchar(50),
 	Numero_Documento varchar(50),
 	CNH varchar(50),
@@ -180,29 +180,29 @@ create table Funcionario (
 )
 go
 insert into Funcionario values
-	(, 'Ederson Gonzaga de Melo', 'Gerente', 'R$10.000', 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua José Dias Paes', 'São Paulo', '04851-003',
+	(1, 'Ederson Gonzaga de Melo', 'Gerente', 33500, 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua José Dias Paes', 'São Paulo', '04851-003',
 	'SP', '(11)5528-5550', '28/11/2002', 'Solteiro', 'Rem Gonzaga', '(11)95142-9829', 'ederzed', 'eder281102', 'n'),
-	(2, 'Rafael Hadzic Rico de Sousa', 'Gerenciador de Banco de Dados', 'R$9.000', 'rafael.hadzic@gmail.com', '54.352.151-5', '30979961802', '190.21697.31-1', 
+	(2, 'Rafael Hadzic Rico de Sousa', 'Gerente', 18700, 'rafael.hadzic@gmail.com', '54.352.151-5', '30979961802', '190.21697.31-1', 
 	'Rua Zélia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'RafaelHadzic', 'rafa130101', 'n'),
-	(3, 'Gabriel Gomes Gameiro', 'Motorista', 'R$9.000', 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua Atuaí, 140', 'São Paulo', '03646-000',
-	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Raquel Lopes Barbosa', '(11)96784-7184', 'ggg', '1324', 'n'),
-	(4, 'Jean-Luc Bonnet', 'Gerente', 'R$99.999', 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'São Paulo', '08744-000',
+	(3, 'Gabriel Gomes Gameiro', 'Motorista', 11300, 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua Atuaí, 140', 'São Paulo', '03646-000',
+	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Raquel Lopes Barbosa', '(11)96784-7184', 'ggameiro', 'gabr180902', 'n'),
+	(4, 'Jean-Luc Bonnet', 'Gerente', 12850, 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'São Paulo', '08744-000',
 	'SP', '(11)29958-7064', '00/00/0000', 'Solteiro', '-', '-', 'Luc', '1234', 's')
 
 	select * from Funcionario
------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 go
 create table Adicionais (
 	ID_Adicionais int primary key,
 	Nome varchar(50),
-	Preco varchar(10)
+	Preco money
 )
 go
 insert into Adicionais values
-	(1, 'Chaveiro', 'R$50,00'),
-	(2, 'Patins', 'R$250,00'), 
-	(3, 'Subsolo', 'R$35,00')
+	(1, 'Chaveiro', 50),
+	(2, 'Patins', 250), 
+	(3, 'Subsolo', 35)
 --------------------------------------------------------------------------------
 go
 create table Funcionario_Abertura (
@@ -262,7 +262,6 @@ as
 		end
 	insert into Adicional_Abertura select @id, ID_Adicionais, @idAbertura from Adicionais where Nome like @NomeAdicional
 go
-exec usp_InserirAdicionalAbertura 1, 'patins'
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_InserirFuncAber
@@ -285,7 +284,7 @@ go
 create procedure usp_InserirFuncionario 
 	@nome varchar(50),
 	@cargo varchar(30),
-	@salario varchar(9),
+	@salario money,
 	@email varchar(50),
 	@rg varchar(50),
 	@cnh varchar(50),
@@ -367,7 +366,7 @@ go
 go
 create procedure usp_InserirAdicionais
 	@Nome varchar(50),
-	@Preco varchar(10)
+	@Preco money
 as
 	declare @ultimo_id int = (select top 1 ID_Adicionais from Adicionais order by ID_Adicionais desc), @id int
 	if @ultimo_id=0
@@ -384,7 +383,7 @@ go
 ------------------------------------------------------------------------------
 go
 create procedure usp_InserirFechamento
-@kmChegada varchar(10),
+@kmChegada int,
 @hrChegada varchar(5),
 @hrParada varchar(5),
 @hrTrabalhada varchar(5),
@@ -428,7 +427,7 @@ create procedure usp_InserirAbertura
 	@Ano varchar(4),
 	@Placa varchar(8),
 	@LocalRet varchar(255),
-	@KM_Saida varchar(7),
+	@KM_Saida int,
 	@Hora_Saida varchar(5),
 	@Observacao text	
 as
@@ -447,7 +446,7 @@ go
 ------------------------------------------------------------------------------
 -------------------------Consultar--------------------------------
 go
-create Proc usp_ProcurarLoginFunc
+create procedure usp_ProcurarLoginFunc
 @usu varchar(50),
 @senha varchar(50)
 AS
@@ -460,7 +459,9 @@ Declare @contagem int,@mensagem char(1)
 		else
   			Select Cargo, Nome, ID_Funcionario, Primeiro_Cadastro, 'T' as 'T/F' from Funcionario where Usuario = @usu and Senha = @senha
 go
-create Proc usp_ProcurarLoginMot
+--------------------------Cliente---------------------------------
+go
+create procedure usp_ProcurarLoginMot
 @usu varchar(50),
 @senha varchar(50)
 AS
@@ -473,7 +474,7 @@ Declare @contagem int,@mensagem char(1)
 		else
   			Select Cargo, Nome, ID_Funcionario, Primeiro_Cadastro, 'T' as 'T/F' from Funcionario where Usuario = @usu and Senha = @senha
 go
---------------------------Cliente---------------------------------
+-----------------------------------------------------------------------------------------------
 go
 create procedure usp_PesquisarTodosClientes
 as
@@ -586,7 +587,7 @@ go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PesquisarAdicionaisPreco
-@preco varchar(50)
+@preco money
 as
 	select Nome, Preco from Adicionais where Preco like '%' + @preco + '%' 
 go
@@ -704,7 +705,7 @@ go
 create procedure usp_PesquisarChamadasDataFechados
 @data varchar(10)
 as
-	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, a.Placa, a.Modelo, a.Marca from Abertura as a right join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Data_Servico like @data
+	select a.ID_Chamado, (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, a.Placa, a.Modelo, a.Marca from Abertura as a right join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Data_Servico like @data
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -777,7 +778,7 @@ go
 create procedure usp_AlterarFuncionario
 	@nome varchar(50),
 	@cargo varchar(30),
-	@salario varchar(9),
+	@salario money,
 	@email varchar(50),
 	@rg varchar(50),
 	@cnh varchar(50),
@@ -808,7 +809,7 @@ go
 go
 create procedure usp_AlterarAdicionais
 @nome varchar(50),
-@preco varchar(10),
+@preco money,
 @nomeOld varchar(50),
 @precoOld varchar(10)
 as
@@ -856,36 +857,108 @@ go
 go
 create procedure usp_PedidoEntre10he12h
 as
-	select count(*) from Abertura where Hora_Saida between '10:00' and '11:59'
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '10:00' and '11:59'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PedidoEntre12he14h
 as
-	select count(*) from Abertura where Hora_Saida between '12:00' and '13:59'
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '12:00' and '13:59'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PedidoEntre14he16h
 as
-	select count(*) from Abertura where Hora_Saida between '14:00' and '15:59'
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '14:00' and '15:59'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PedidoEntre16he18h
 as
-	select count(*) from Abertura where Hora_Saida between '16:00' and '17:59'
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '16:00' and '17:59'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PedidoEntre18he20h
 as
-	select count(*) from Abertura where Hora_Saida between '18:00' and '19:59'
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '18:00' and '19:59'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PedidoEntre20he22h
 as
-	select count(*) from Abertura where Hora_Saida between '20:00' and '22:00'
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '20:00' and '22:00'
 go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_QtdeDeServicosPorDeterminadoPeriodo
+	@data1 date,
+	@data2 date
+as
+	select count(ID_Chamado) as qtde from Fechamento where Data_Servico LIKE '%' 
+		and convert(date, Data_Servico, 103) BETWEEN 
+			convert(date, @data1, 103) and convert(date, @data2, 103)
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_QtdeEntregasMotorista
+	@ID_Funcionario int
+as
+	select count(ID_Funcionario_Abertura) as qtde from Funcionario_Abertura
+		where ID_Funcionario = @ID_Funcionario
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_AtendimentosPorAtendente
+	@NomeAtendente varchar(50)
+as
+	select count(ID_Chamado) as qtde from Abertura
+		where Atendente like @NomeAtendente
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_SalarioPorFaixaDePreco
+	@de int,
+	@ate int
+as
+	select Salario as valor from Funcionario where Salario between @de and @ate
+go
+-----------------------------------------------------------------------------------------------
+--go -- procedure com erro
+--create procedure usp_GastosDeCombustivelPorIntervaloDeTempo
+--	@data1 date,
+--	@data2 date
+--as
+--	declare @preco_combustivel int;
+--	declare @ultimo_km int;
+--	declare @primeiro_km int;
+--	declare @km_total int;
+--	declare @gasto_total int;
+--		set @preco_combustivel = 4
+--		set	@ultimo_KM = (select top 1 ID_Chamado as ID, KM_Chegada as 'KM de Chegada', Data_Servico as data 
+--							from Fechamento where Data_Servico between '12/05/2017' and '25/01/2018' 
+--								order by KM_Chegada desc)
+--		set	@primeiro_KM = (select top 1 ID_Chamado as ID, KM_Saida as 'KM de Saida', Data_Servico 
+--								as Data from Abertura where Data_Servico between '12/05/2017' and '25/01/2018'
+--									order by KM_Saida)
+--		set @gasto_total = (@ultimo_km - @primeiro_km) * @preco_combustivel
+--		print @gasto_total
+--go
+-----------------------------------------------------------------------------------------------
+--go -- procedure com erro
+--create procedure usp_AdicionaisEmCadaIntervaloDeTempo
+--	@data1 date,
+--	@data2 date
+--as
+--declare @data varchar(10) = (select top 1 Data_Servico from Abertura),
+--		@data1c varchar(10)= (convert(date, @data1, 103)),
+--		@data2c varchar(10)= convert(date, @data2, 103)
+
+--	select count(ID_Adicional_Abertura) as qtde from Adicional_Abertura as aa
+--		inner join Abertura as a on aa.ID_Adicional_Abertura = a.ID_Chamado
+--			where month((select Data_Servico from Abertura)) between
+--				month((convert(date, @data1, 103))) and month(convert(date, @data2, 103))
+--go
+
+--exec usp_AdicionaisEmCadaIntervaloDeTempo '12/01/2016', '13/01/2018'
 -----------------------------------------------------------------------------------------------

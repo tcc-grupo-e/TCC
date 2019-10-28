@@ -1,0 +1,14 @@
+-quantidade de adicionais por intervalo de tempo
+	há uma procedure pela metade, porque teve erro na execução
+
+-Moda, mediana e média da gasolina (10 km/l) de cada intervalo de tempo
+	tem que considerar o consumo do caminhão como 10km/L
+
+-Gastos de gasolina por intervalo de tempo
+	a logica da procedure está montada, mas também deu erro
+
+Soma dos gastos de cada tipo de gastos (salários e combustível)
+
+-Soma de todos os gastos por intervalo de tempo (salários e combustível)
+
+-(Ganhos - gastos) (lucro) ou vendas e despesas com subtração no java
