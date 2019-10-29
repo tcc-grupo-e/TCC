@@ -284,7 +284,7 @@ go
 create procedure usp_InserirFuncionario 
 	@nome varchar(50),
 	@cargo varchar(30),
-	@salario money,
+	@salario varchar(20),
 	@email varchar(50),
 	@rg varchar(50),
 	@cnh varchar(50),
@@ -303,6 +303,7 @@ create procedure usp_InserirFuncionario
 	@primeiro_cadastro varchar(1)
 As
 	declare @ultimo_id int = (select top 1 ID_Funcionario from Funcionario order by ID_Funcionario desc), @id int
+	set @salario = Replace(@salario, 'R$', '')
 	if @ultimo_id=0
 	begin
 		set @id = 1
@@ -314,7 +315,7 @@ As
 		print @id
 	end
 	insert into Funcionario values
-		(@id, @nome, @cargo, @salario, @email, @rg, @cnh, @carteira_de_trabalho, 
+		(@id, @nome, @cargo, Convert(money,@salario), @email, @rg, @cnh, @carteira_de_trabalho, 
 		@endereco, @cidade, @cep, @estado, @telefone, @data_nascimento, @estado_civil,
 		@nome_conjuge, @telefone_conjuge, @login, @senha, @primeiro_cadastro)
 go
@@ -712,8 +713,10 @@ go
 create procedure usp_PesquisarChamadasDataAbertos
 @data varchar(10)
 as
-	select a.ID_Chamado as id,(Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, a.Placa, a.Modelo, a.Marca from Abertura as a 
-	where ID_Chamado not in (select ID_Chamado from Fechamento) and a.Data_Servico like @data
+	select a.ID_Chamado as id,(Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, a.Placa, a.Modelo, a.Marca, 
+		(Select Count(*) from Cliente as c inner join Abertura as ab on ab.ID_Cliente = c.ID_Cliente where ab.ID_Chamado in 
+			(Select ID_Chamado FROM Funcionario_Abertura) and ab.ID_Chamado = a.ID_Chamado) as 'Mot' from Abertura as a 
+				where ID_Chamado not in (select ID_Chamado from Fechamento) and a.Data_Servico like @data
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -924,41 +927,71 @@ as
 	select Salario as valor from Funcionario where Salario between @de and @ate
 go
 -----------------------------------------------------------------------------------------------
---go -- procedure com erro
---create procedure usp_GastosDeCombustivelPorIntervaloDeTempo
---	@data1 date,
---	@data2 date
---as
---	declare @preco_combustivel int;
---	declare @ultimo_km int;
---	declare @primeiro_km int;
---	declare @km_total int;
---	declare @gasto_total int;
---		set @preco_combustivel = 4
---		set	@ultimo_KM = (select top 1 ID_Chamado as ID, KM_Chegada as 'KM de Chegada', Data_Servico as data 
---							from Fechamento where Data_Servico between '12/05/2017' and '25/01/2018' 
---								order by KM_Chegada desc)
---		set	@primeiro_KM = (select top 1 ID_Chamado as ID, KM_Saida as 'KM de Saida', Data_Servico 
---								as Data from Abertura where Data_Servico between '12/05/2017' and '25/01/2018'
---									order by KM_Saida)
---		set @gasto_total = (@ultimo_km - @primeiro_km) * @preco_combustivel
---		print @gasto_total
---go
------------------------------------------------------------------------------------------------
---go -- procedure com erro
---create procedure usp_AdicionaisEmCadaIntervaloDeTempo
---	@data1 date,
---	@data2 date
---as
---declare @data varchar(10) = (select top 1 Data_Servico from Abertura),
---		@data1c varchar(10)= (convert(date, @data1, 103)),
---		@data2c varchar(10)= convert(date, @data2, 103)
+go 
+create procedure usp_GastosDeCombustivelPorIntervaloDeTempo
+	@data1 date,
+	@data2 date
+as
+	declare @preco_combustivel int;
+	declare @ultimo_km int;
+	declare @primeiro_km int;
+	declare @km_total int;
+	declare @gasto_total int;
+		set @preco_combustivel = 4
+		set	@ultimo_KM = (select top 1 ID_Chamado as ID, KM_Chegada as 'KM de Chegada', Data_Servico as data 
+							from Fechamento where Data_Servico between '12/05/2017' and '25/01/2018' 
+								order by KM_Chegada desc)
+		set	@primeiro_KM = (select top 1 ID_Chamado as ID, KM_Saida as 'KM de Saida', Data_Servico 
+								as Data from Abertura where Data_Servico between '12/05/2017' and '25/01/2018'
+									order by KM_Saida)
+		set @gasto_total = (@ultimo_km - @primeiro_km) * @preco_combustivel
+		print @gasto_total
+go
 
---	select count(ID_Adicional_Abertura) as qtde from Adicional_Abertura as aa
---		inner join Abertura as a on aa.ID_Adicional_Abertura = a.ID_Chamado
---			where month((select Data_Servico from Abertura)) between
---				month((convert(date, @data1, 103))) and month(convert(date, @data2, 103))
---go
-
---exec usp_AdicionaisEmCadaIntervaloDeTempo '12/01/2016', '13/01/2018'
+drop procedure usp_AdicionaisEmCadaIntervaloDeTempo
 -----------------------------------------------------------------------------------------------
+go
+create procedure usp_AdicionaisEmCadaIntervaloDeTempo
+	@data1 date,
+	@data2 date
+as
+declare @data varchar(10) = (select top 1 Data_Servico from Abertura),
+		@data1c varchar(10)= (convert(varchar, @data1, 103)),
+		@data2c varchar(10)= convert(varchar, @data2, 103)
+
+	select count(ID_Adicional_Abertura) as qtde from Adicional_Abertura as aa
+		inner join Abertura as a on aa.ID_Abertura = a.ID_Chamado
+			where month((select Data_Servico from Abertura where ID_Chamado = a.ID_Chamado)) between
+				month((convert(date, @data1c, 103))) and month(convert(date, @data2c, 103))
+go
+
+exec usp_AdicionaisEmCadaIntervaloDeTempo '12/01/1900', '13/12/3000'
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_SomaGastosPrecoCombIntervaloDeTempo
+	@data1 date,
+	@data2 date,
+	@preco_comb decimal(5,2)
+as
+declare @data varchar(10) = (select top 1 Data_Servico from Abertura),
+		@data1c varchar(10)= (convert(varchar, @data1, 103)),
+		@data2c varchar(10)= convert(varchar, @data2, 103),
+		@ultimo_KM int,
+		@primeiro_KM int,
+		@gasto_total float,
+		@sal decimal(10,2)
+
+			set	@ultimo_KM = (select top 1 KM_Chegada as 'KM de Chegada'
+									from Fechamento where Data_Servico between '12/05/2017' and '25/01/2018')
+			set @primeiro_KM = (select top 1 KM_Saida as 'KM de Saida'
+									from Abertura where Data_Servico between '12/05/2017' and '25/01/2018' order by KM_Saida)
+
+			set @gasto_total = (@ultimo_km - @primeiro_km) * @preco_comb
+			
+			set @sal = (select Sum(salario) from Funcionario)
+
+			select distinct @sal + @gasto_total from Abertura as a where month((select Data_Servico from Abertura where ID_Chamado = a.ID_Chamado)) between
+				month((convert(date, @data1c, 103))) and month(convert(date, @data2c, 103))
+go
+
+exec usp_SomaGastosPrecoCombIntervaloDeTempo '12/01/1900', '13/12/3000', 10
