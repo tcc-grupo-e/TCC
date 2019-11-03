@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="t.br.prjtcc">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,17 +18,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:name=".MandaAssinatura"></activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE" />
-        <activity
-            android:name=".AssinaturaCliente"
-            /><activity
-        android:name=".MapsActivity"
-        />
-        <activity
-            android:name=".AssinaturaMotorista" />
+
+        <activity android:name=".AssinaturaCliente" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".AssinaturaMotorista" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -46,7 +53,7 @@
         <activity android:name=".CheckListParte1" />
         <activity android:name=".ChecklistParte2" />
         <activity android:name=".Login" />
-        <activity android:name=".Adicionais"></activity>
+        <activity android:name=".Adicionais" />
     </application>
 
 </manifest>

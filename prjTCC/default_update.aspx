@@ -13,7 +13,9 @@
 		string obs = (Request.QueryString["obs"]);
 		string id_chamado = (Request.QueryString["chamado"]);
 		//Label1.Text = id;
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autoSocorro; Data Source=" + Environment.MachineName;
+		//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=AutoSocorro; Data Source=" + Environment.MachineName;
+
+		String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;
 		

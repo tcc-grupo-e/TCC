@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
             try {
 
                 ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_consulta.aspx?identificador=6&dominio="+lisID[posicao]);
+
+
                 mDados = ConexaoHTTP.getDados();
 
 
@@ -117,12 +119,39 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(vd);
             mDados = ConexaoHTTP.getDados();
             if (mDados.size() > 0) {
-
+                cp.setChamado(lisID[posicao]);
                 cp.setEderecos(mDados.toArray(new String[mDados.size()]));
+                new SincronismoInsertMotoristaHTTP().execute();
                 startActivity(new Intent(getApplicationContext(),MapsActivity.class));
             } else {
                 Toast.makeText(getBaseContext(), "Registro(s) não localizado", Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    private class SincronismoInsertMotoristaHTTP extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirMotCha.aspx?id=" +cp.getId_Motorista()+"&idCh="+ cp.getChamado() );
+            } catch (Exception e) {
+
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void vd) {
+            super.onPostExecute(vd);
+
+            Toast.makeText(getBaseContext(), "Inserido", Toast.LENGTH_LONG).show();
+
         }
     }
 }

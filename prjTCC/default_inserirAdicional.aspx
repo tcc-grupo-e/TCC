@@ -10,7 +10,9 @@
 		string id = (Request.QueryString["id"]);
 		string nome = (Request.QueryString["nome"]);
 		
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autosocorro; Data Source=" + Environment.MachineName;
+		String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
+		//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=AutoSocorro; Data Source=" + Environment.MachineName;
+		
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;
 		String strSQL = "exec usp_InserirAdicionalAbertura " +id+ ", '"+nome+"'";

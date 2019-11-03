@@ -9,7 +9,9 @@
 	{
 		string nome = (Request.QueryString["nome"]);
 		string fone = (Request.QueryString["fone"]);
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=banco; Data Source=" + Environment.MachineName;
+		String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
+		//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=AutoSocorro; Data Source=" + Environment.MachineName;
+		
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato = "";
 		String strSQL = "SELECT nome,fone FROM contatos WHERE nome='"+nome+"' and fone='"+fone+"'";

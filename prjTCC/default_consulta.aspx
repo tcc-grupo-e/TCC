@@ -9,10 +9,14 @@
 	{
 	string dominio = (Request.QueryString["dominio"]);
 	string dominio2 = (Request.QueryString["dominio2"]);
-		
+		String contrabarra = "\\";
 		string indentificador = (Request.QueryString["identificador"]);
 	
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autoSocorro; Data Source=" + Environment.MachineName + "/SQLEXPRESS";
+		//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autoSocorro; Data Source="+contrabarra.Substring(0, 1) + "SQLEXPRESS";
+		//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=AutoSocorro; Data Source=" + Environment.MachineName;
+		 
+		String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
+		
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		
 		String strSQL = "";
@@ -37,9 +41,9 @@
 		}
 		
 		SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
-		SqlDataReader dr;
+		
 		objConexao.Open();
-		dr = objCommand.ExecuteReader();
+		SqlDataReader dr = objCommand.ExecuteReader();
 		contato = "#"; 
 		    while (dr.Read())
         {

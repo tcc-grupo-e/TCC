@@ -41,7 +41,6 @@ public class Adicionais extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),AssinaturaMotorista.class));
             }
         });
-        new  SincronismoConsulta2HTTP().execute();
         new SincronismoConsultaHTTP().execute();
 
         listAdicionais.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,7 +66,7 @@ public class Adicionais extends AppCompatActivity {
                             new SincronismoHTTPInsert().execute();
 
                         }catch (Exception e){
-                            Toast.makeText(getBaseContext(), "Desculpe, não deu certo", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getBaseContext(), "Desculpe, não foi possivel adicionar adicional, tente denovo mais tarde", Toast.LENGTH_LONG).show();
                         }
 
                     }
@@ -84,40 +83,7 @@ public class Adicionais extends AppCompatActivity {
 
 
 
-    private class SincronismoConsulta2HTTP extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
 
-        @Override
-        protected Void doInBackground(Void... params) {
-
-            try {
-
-                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_consulta.aspx?identificador=2&dominio=" + cp.getCPF());
-                mDados = ConexaoHTTP.getDados();
-
-
-                cp.setChamado(mDados.get(0));
-            } catch (Exception e) {
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void vd) {
-            super.onPostExecute(vd);
-            mDados = ConexaoHTTP.getDados();
-            if (mDados.size() > 0) {
-                String[] dados = mDados.toString().split(";");
-
-
-            } else {
-                Toast.makeText(getBaseContext(), "Registro(s) não localizado", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
     private class SincronismoConsultaHTTP extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute(){

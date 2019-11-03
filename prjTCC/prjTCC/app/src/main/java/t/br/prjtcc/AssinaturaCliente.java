@@ -1,34 +1,35 @@
 package t.br.prjtcc;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.net.Uri;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
-import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Base64;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.util.List;
-import java.util.function.BinaryOperator;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class AssinaturaCliente extends AppCompatActivity {
     TextView txtmoto;
@@ -58,7 +59,7 @@ public class AssinaturaCliente extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
         btnConfirmar = findViewById(R.id.btnConfirmar);
 
-id_Chamado = cp.getChamado();
+        id_Chamado = cp.getChamado();
         Display dp = getWindowManager().getDefaultDisplay();
         dw = dp.getWidth();
         dh = dp.getHeight();
@@ -98,6 +99,22 @@ id_Chamado = cp.getChamado();
 
     }
 
+    private File createImageFile() throws IOException {
+
+
+        String imageFileName = "aaaaaaaaaaaaaaaaaa";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,
+                ".jpg",
+                storageDir
+        );
+
+
+        String mCurrentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
 
     public void botaoAssinaCliente(View v) {
         switch (v.getId()) {
@@ -115,24 +132,66 @@ id_Chamado = cp.getChamado();
                 a.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        imgCliente.setDrawingCacheEnabled(true);
+                        if (ContextCompat.checkSelfPermission(AssinaturaCliente.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                            ActivityCompat.requestPermissions(AssinaturaCliente.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+                        } else {
+                            File folder = new File(Environment.getExternalStorageDirectory().toString());
+                            boolean success = false;
+                            if (!folder.exists()) {
+                                success = folder.mkdirs();
+                            }
 
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 10, stream);
-                        String assinaturaC = new String(stream.toByteArray());
+                            System.out.println(success + "folder");
 
-                        if (assinaturaC != null) {
-                            Toast.makeText(getApplicationContext(), "Dados Salvos!", Toast.LENGTH_LONG).show();
-                            imgCliente.setImageResource(0);
-                            btnConfirmar.setVisibility(View.VISIBLE);
-                            btnSalvar.setVisibility(View.INVISIBLE);
-                            btnLimpar.setVisibility(View.INVISIBLE);
-                            ClasseCompartilha cp = new ClasseCompartilha();
+                            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/AssinaturaC.png");
+
+                            if (!file.exists()) {
+                                try {
+                                    success = file.createNewFile();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            System.out.println(success + "file");
 
 
-                            cp.setAssinaturaC(assinaturaC);
-                                                   } else
-                            Toast.makeText(getApplicationContext(), "Usado foram salvos", Toast.LENGTH_LONG).show();
+                            FileOutputStream ostream = null;
+                            try {
+                                ostream = new FileOutputStream(file);
+
+                                System.out.println(ostream);
+                                View targetView = imgCliente;
+
+                                BitmapDrawable wel = (BitmapDrawable) (imgCliente.getDrawable());
+                                Bitmap well = wel.getBitmap();
+                                Bitmap save = Bitmap.createBitmap(320, 480, Bitmap.Config.ARGB_8888);
+                                Paint paint = new Paint();
+                                paint.setColor(Color.WHITE);
+                                Canvas now = new Canvas(save);
+                                now.drawRect(new Rect(0, 0, 320, 480), paint);
+                                now.drawBitmap(well, new Rect(0, 0, well.getWidth(), well.getHeight()), new Rect(0, 0, 320, 480), null);
+                                if (save == null) {
+                                    System.out.println("NULL bitmap save\n");
+                                }
+                                save.compress(Bitmap.CompressFormat.PNG, 100, ostream);
+                                //bitmap.compress(Bitmap.CompressFormat.PNG, 100, ostream);
+                                //ostream.flush();
+                                //ostream.close();
+                            } catch (NullPointerException e) {
+                                e.printStackTrace();
+                                Toast.makeText(getApplicationContext(), "Null error", Toast.LENGTH_SHORT).show();
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                                Toast.makeText(getApplicationContext(), "File error", Toast.LENGTH_SHORT).show();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                Toast.makeText(getApplicationContext(), "IO error", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        Intent intent = new Intent(AssinaturaCliente.this, MandaAssinatura.class);
+                        intent.putExtra("M/C","AssinaturaM.png");
+                        startActivity(intent);
                     }
                 });
                 a.show();
@@ -147,8 +206,9 @@ id_Chamado = cp.getChamado();
                 new SincronismoInsertAcessoriosHTTP().execute();
                 new SincronismoInsertDeclaracaoMotoristaHTTP().execute();
                 new SincronismoInsertDeclaracaoClienteHTTP().execute();
-
-                startActivity(new Intent(getApplicationContext(), ChecklistParte2.class));
+                Intent intent = new Intent(AssinaturaCliente.this, MandaAssinatura.class);
+                intent.putExtra("M/C",1);
+                startActivity(intent);
                 finish();
 
                 break;
@@ -157,6 +217,7 @@ id_Chamado = cp.getChamado();
         }
 
     }
+
     private class SincronismoUpdateHTTP extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
@@ -170,8 +231,9 @@ id_Chamado = cp.getChamado();
 
             try {
 
-                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_update.aspx?hora=" + cp.getHora() + "&kms=" + cp.getKmSaida() + "&id_Caminhao=" + cp.getId_caminhao() + "&obs=" + cp.getObservacao() + "&chamado=" + id_Chamado);
+                ConexaoHTTP.conectarHttp("http://" + cp.ipRede + "/default_update.aspx?hora=" + cp.getHora() + "&kms=" + cp.getKmSaida() + "&id_Caminhao=" + cp.getId_caminhao() + "&obs=" + cp.getObservacao() + "&chamado=" + id_Chamado);
             } catch (Exception e) {
+
             }
             return null;
         }
@@ -180,8 +242,10 @@ id_Chamado = cp.getChamado();
         protected void onPostExecute(Void vd) {
             super.onPostExecute(vd);
             Toast.makeText(getBaseContext(), "Alterado!", Toast.LENGTH_LONG).show();
-            finish();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            btnConfirmar.setVisibility(View.VISIBLE);
+            btnSalvar.setVisibility(View.INVISIBLE);
+            btnLimpar.setVisibility(View.INVISIBLE);
+
         }
     }
 
@@ -196,7 +260,7 @@ id_Chamado = cp.getChamado();
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirAcessorio.aspx?id=" + id_Chamado + "&bancoD=" + cp.getBancoDianteiro() +
+                ConexaoHTTP.conectarHttp("http://" + cp.ipRede + "/default_inserirAcessorio.aspx?id=" + id_Chamado + "&bancoD=" + cp.getBancoDianteiro() +
                         "&bancoT=" + cp.getBancoTraseiro() + "&chave=" + cp.getChave() + "&extintor=" + cp.getExtintor() + "&console=" + cp.getConsole() +
                         "&tapete=" + cp.getTapete() + "&rodaE=" + cp.getRodaespecial() + "&objPl=" + cp.getObjetosPortaLuva() + "&farolM=" + cp.getFarolMilha() + "&farol=" +
                         cp.getFarol() + "&lanterna=" + cp.getLanterna() + "&radioDVD=" + cp.getRadioDVD() + "&objPm=" + cp.getObjetosPortaMala() + "&estepe=" + cp.getEstepe() +
@@ -210,7 +274,7 @@ id_Chamado = cp.getChamado();
         protected void onPostExecute(Void vd) {
             super.onPostExecute(vd);
 
-            Toast.makeText(getBaseContext(), "Foi", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Inserido Com Sucesso", Toast.LENGTH_LONG).show();
 
         }
     }
@@ -227,7 +291,7 @@ id_Chamado = cp.getChamado();
             try {
 
 
-                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&hora=" + cp.getHora() + "&assinatura=" +cp.getAssinaturaM());
+                ConexaoHTTP.conectarHttp("http://" + cp.ipRede + "/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&hora=" + cp.getHora() + "&assinatura=" + cp.getAssinaturaM());
 
             } catch (Exception e) {
 
@@ -240,7 +304,7 @@ id_Chamado = cp.getChamado();
         protected void onPostExecute(Void vd) {
             super.onPostExecute(vd);
 
-            Toast.makeText(getBaseContext(), "Foi", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "inserido com sucesso", Toast.LENGTH_LONG).show();
 
         }
     }
@@ -257,7 +321,7 @@ id_Chamado = cp.getChamado();
             try {
 
 
-                ConexaoHTTP.conectarHttp("http://"+cp.ipRede+"/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&assinatura=" + cp.getAssinaturaC() + "&hora=" + cp.getHora());
+                ConexaoHTTP.conectarHttp("http://" + cp.ipRede + "/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&assinatura=" + cp.getAssinaturaC() + "&hora=" + cp.getHora());
 
             } catch (Exception e) {
             }
@@ -268,7 +332,7 @@ id_Chamado = cp.getChamado();
         protected void onPostExecute(Void vd) {
             super.onPostExecute(vd);
 
-            Toast.makeText(getBaseContext(), "Foi", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "inserido com sucesso", Toast.LENGTH_LONG).show();
 
         }
     }

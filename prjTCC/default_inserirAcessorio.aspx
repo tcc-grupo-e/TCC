@@ -46,8 +46,10 @@
 			nome[16] = "'Chave de roda','" + chaveR+"'";
 			nome[17] = "'Bagageiro','" + bagageiro+"'";
 		//Label1.Text = id;
-String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=autosocorro; Data Source=" + Environment.MachineName;
-		SqlConnection objConexao = new SqlConnection(strConexao);
+			String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
+			//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=AutoSocorro; Data Source=" + Environment.MachineName;
+		
+			SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;
 		objConexao.Open();
 		String strSQL="";

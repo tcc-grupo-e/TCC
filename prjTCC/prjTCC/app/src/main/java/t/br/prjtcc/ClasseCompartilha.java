@@ -27,7 +27,17 @@ public class ClasseCompartilha {
     static String ferramentasCH;
     static String assinaturaM;
     static String assinaturaC;
-    static String ipRede = "10.0.2.2";
+
+    public static String getId_Motorista() {
+        return id_Motorista;
+    }
+
+    public static void setId_Motorista(String id_Motorista) {
+        ClasseCompartilha.id_Motorista = id_Motorista;
+    }
+
+    static String id_Motorista;
+    static String ipRede = "192.168.1.8";
     public static String[] getEderecos() {
         return ederecos;
     }

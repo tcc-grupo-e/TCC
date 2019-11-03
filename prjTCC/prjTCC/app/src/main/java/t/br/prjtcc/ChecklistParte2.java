@@ -301,9 +301,9 @@ public class ChecklistParte2 extends AppCompatActivity {
 
                     // Continue only if the File was successfully created
                     if (photoFile != null) {
-                        photoURI = FileProvider.getUriForFile(this,
-                                "t.br.prjtcc.fileprovider",
-                                photoFile);
+                            photoURI = FileProvider.getUriForFile(this,
+                                    "t.br.prjtcc.fileprovider",
+                                    photoFile);
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                         startActivityForResult(takePictureIntent, CAPTURE_IMAGE_REQUEST);
                     }

@@ -8,14 +8,18 @@
 	public void Page_Load()
 	{
 		string id = (Request.QueryString["id"]);
-		String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=receita; Data Source=" + Environment.MachineName;
+		string idCh = (Request.QueryString["idCh"]);
+		
+		String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
+		//String strConexao = "Password=etesp; Persist Security Info=True; User ID=sa; Initial Catalog=AutoSocorro; Data Source=" + Environment.MachineName;
+		
 		SqlConnection objConexao = new SqlConnection(strConexao);
 		String contato;
-		String strSQL = "DELETE FROM tblReceita WHERE (ID_Receita = " + id + ")";
+		String strSQL = "exec usp_InserirFuncAberAndroid " +id+ ", "+idCh;
 		SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
 		objConexao.Open();
 		objCommand.ExecuteNonQuery();
-		Label1.Text = "Dados excluídos com sucesso!";
+		Label1.Text = "Dados inserídos com sucesso!";
 	}
 </script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://ww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.detd">

@@ -1,22 +1,17 @@
 package t.br.prjtcc;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 public class Login extends AppCompatActivity {
@@ -39,7 +34,6 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          //      startActivity(new Intent(getApplicationContext(),MapsActivity.class));
                 new SincronismoConsultaHTTP().execute();
             }
         });
@@ -76,6 +70,7 @@ ClasseCompartilha cp = new ClasseCompartilha();
                 if (dados[0].equals("[F]")) {
                     Toast.makeText(getApplicationContext(),"Login errado",Toast.LENGTH_LONG).show();
                 } else {
+                    cp.setId_Motorista(dados[2]);
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                 }
