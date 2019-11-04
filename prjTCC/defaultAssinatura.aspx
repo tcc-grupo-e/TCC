@@ -26,7 +26,7 @@
         String strConexao = @"Data Source=.\sqlexpress; Initial Catalog=AutoSocorro; Password=etesp; Persist Security Info=True; User ID=sa";
 		SqlConnection objConexao = new SqlConnection(strConexao);
         byte[] buffer = fupImage.FileBytes;
-        String strSQL = "INSERT INTO Declaracao VALUES ("+idDec+","+idCha+",@img,'"+tipo+"','"+horario+"')";
+        String strSQL = "exec usp_InserirDeclaracao "+idCha+",@img,'"+horario+"'";
         SqlCommand objCommand = new SqlCommand(strSQL, objConexao);
         objConexao.Open();
         objCommand.Parameters.AddWithValue("@img", buffer);
@@ -56,7 +56,7 @@
     <script>
         function readURL(input) {
             var arquivo_certo = $('#<%=Label1.ClientID%>').html();
-            arquivo_certo = arquivo_certo.substr(arquivo_certo.lastIndexOf('\\')+1, arquivo_certo.length)
+            arquivo_certo = arquivo_certo.substr(arquivo_certo.lastIndexOf('/'), arquivo_certo.length)
             
             
         if (input.files && input.files[0]) {

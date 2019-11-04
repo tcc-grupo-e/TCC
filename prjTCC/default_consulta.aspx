@@ -26,7 +26,7 @@
 		
 		if(id == "1"){
 		
-		 strSQL = "exec  usp_PesquisarIdCaminhoesChamadaPlaca '"+dominio+"'";
+		 strSQL ="select ID_Caminhao from Caminhao where Placa like '"+dominio+"'" ;
 		
 		} else if(id=="2"){
 	strSQL = "exec usp_ConsultaUltimaAberturaporCPF '"+dominio+"'";
