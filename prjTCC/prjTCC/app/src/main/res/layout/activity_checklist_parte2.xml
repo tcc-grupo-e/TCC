@@ -47,7 +47,7 @@
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/textview_layout"
                 android:hint="CPF"
-                android:inputType="text"
+                android:inputType="number"
                 android:paddingLeft="10dp"
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp" />

@@ -189,9 +189,10 @@ public class AssinaturaCliente extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "IO error", Toast.LENGTH_SHORT).show();
                             }
                         }
-                        Intent intent = new Intent(AssinaturaCliente.this, MandaAssinatura.class);
-                        intent.putExtra("M/C","AssinaturaM.png");
-                        startActivity(intent);
+                        btnConfirmar.setVisibility(View.VISIBLE);
+                        btnSalvar.setVisibility(View.INVISIBLE);
+                        btnLimpar.setVisibility(View.INVISIBLE);
+                        imgCliente.invalidate();
                     }
                 });
                 a.show();
@@ -202,12 +203,11 @@ public class AssinaturaCliente extends AppCompatActivity {
 
                 break;
             case R.id.btnConfirmar:
-                new SincronismoUpdateHTTP().execute();
+
                 new SincronismoInsertAcessoriosHTTP().execute();
-                new SincronismoInsertDeclaracaoMotoristaHTTP().execute();
-                new SincronismoInsertDeclaracaoClienteHTTP().execute();
+                new SincronismoUpdateHTTP().execute();
                 Intent intent = new Intent(AssinaturaCliente.this, MandaAssinatura.class);
-                intent.putExtra("M/C",1);
+                intent.putExtra("M/C","AssinaturaM.png");
                 startActivity(intent);
                 finish();
 
@@ -242,9 +242,6 @@ public class AssinaturaCliente extends AppCompatActivity {
         protected void onPostExecute(Void vd) {
             super.onPostExecute(vd);
             Toast.makeText(getBaseContext(), "Alterado!", Toast.LENGTH_LONG).show();
-            btnConfirmar.setVisibility(View.VISIBLE);
-            btnSalvar.setVisibility(View.INVISIBLE);
-            btnLimpar.setVisibility(View.INVISIBLE);
 
         }
     }
@@ -279,62 +276,5 @@ public class AssinaturaCliente extends AppCompatActivity {
         }
     }
 
-    private class SincronismoInsertDeclaracaoMotoristaHTTP extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-
-
-                ConexaoHTTP.conectarHttp("http://" + cp.ipRede + "/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&hora=" + cp.getHora() + "&assinatura=" + cp.getAssinaturaM());
-
-            } catch (Exception e) {
-
-
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void vd) {
-            super.onPostExecute(vd);
-
-            Toast.makeText(getBaseContext(), "inserido com sucesso", Toast.LENGTH_LONG).show();
-
-        }
-    }
-
-    private class SincronismoInsertDeclaracaoClienteHTTP extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-
-
-                ConexaoHTTP.conectarHttp("http://" + cp.ipRede + "/default_inserirDeclaracao.aspx?id=" + id_Chamado + "&assinatura=" + cp.getAssinaturaC() + "&hora=" + cp.getHora());
-
-            } catch (Exception e) {
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void vd) {
-            super.onPostExecute(vd);
-
-            Toast.makeText(getBaseContext(), "inserido com sucesso", Toast.LENGTH_LONG).show();
-
-        }
-    }
 
 }

@@ -67,7 +67,7 @@ public class MandaAssinatura extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (yourDataObject.equals("AssinatuaM.png")) {
+                if (yourDataObject.equals("AssinaturaM.png")) {
                     Intent intent = new Intent(MandaAssinatura.this, MandaAssinatura.class);
 
                     intent.putExtra(KEY_EXTRA, "AssinaturaC.png");

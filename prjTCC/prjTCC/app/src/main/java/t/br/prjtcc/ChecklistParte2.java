@@ -1,26 +1,21 @@
 package t.br.prjtcc;
 
 import android.Manifest;
-import android.bluetooth.BluetoothClass;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -29,11 +24,7 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
 
 public class ChecklistParte2 extends AppCompatActivity {
 
@@ -271,7 +262,7 @@ public class ChecklistParte2 extends AppCompatActivity {
     private File createImageFile() throws IOException {
    
 
-        String imageFileName = "aaaaaaaaaaaaaaaaaa";
+        String imageFileName = "Carro_do_" + cp.getCPF()+"_Chamada_" + cp.getChamado();
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
                 imageFileName,
@@ -280,7 +271,6 @@ public class ChecklistParte2 extends AppCompatActivity {
         );
 
 
-        String mCurrentPhotoPath = image.getAbsolutePath();
         return image;
     }
 
@@ -297,7 +287,7 @@ public class ChecklistParte2 extends AppCompatActivity {
 
                     photoFile = createImageFile();
                     displayMessage(getBaseContext(), photoFile.getAbsolutePath());
-                    Log.i("Mayank", photoFile.getAbsolutePath());
+                    Log.i("aa", photoFile.getAbsolutePath());
 
                     // Continue only if the File was successfully created
                     if (photoFile != null) {

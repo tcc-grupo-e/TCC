@@ -11,35 +11,24 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.DrawableContainer;
-import android.net.Uri;
-import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Base64;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.PasswordAuthentication;
-import java.nio.ByteBuffer;
-import java.util.Date;
-import java.util.UUID;
 
 public class AssinaturaMotorista extends AppCompatActivity {
     TextView txtmoto;
@@ -175,8 +164,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
                                     System.out.println("NULL bitmap save\n");
                                 }
                                 save.compress(Bitmap.CompressFormat.PNG, 100, ostream);
-                                startActivity(new Intent(AssinaturaMotorista.this,AssinaturaCliente.class));
-                            }catch (NullPointerException e)
+                                 }catch (NullPointerException e)
                             {
                                 e.printStackTrace();
                                 Toast.makeText(getApplicationContext(), "Null error", Toast.LENGTH_SHORT).show();
@@ -193,8 +181,13 @@ public class AssinaturaMotorista extends AppCompatActivity {
                                 e.printStackTrace();
                                 Toast.makeText(getApplicationContext(), "IO error", Toast.LENGTH_SHORT).show();
                             }
+                            btnContinuar.setVisibility(View.VISIBLE);
+                            btnSalvar.setVisibility(View.INVISIBLE);
+                            btnLimpar.setVisibility(View.INVISIBLE);
+
                         }}
                 });
+
                 a.show();
                 break;
             case R.id.btnLimpar:
@@ -204,7 +197,7 @@ public class AssinaturaMotorista extends AppCompatActivity {
                 break;
             case R.id.btnContinuar:
                 imgMotorista.setImageResource(0);
-                startActivity(new Intent(getApplicationContext(), AssinaturaCliente.class));
+                startActivity(new Intent(AssinaturaMotorista.this,AssinaturaCliente.class));
                 finish();
                 break;
 

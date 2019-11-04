@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="t.br.prjtcc">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -18,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MandaAssinatura"></activity>
+        <activity android:name=".MandaAssinatura"
+            android:screenOrientation="portrait"/>
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -26,11 +26,12 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE" />
+            android:value="AIzaSyDTPeKObsFAJ94iyjTLBdRGanV6VSj4AeE"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".AssinaturaCliente" />
-        <activity android:name=".MapsActivity" />
-        <activity android:name=".AssinaturaMotorista" />
+        <activity android:name=".AssinaturaCliente" android:screenOrientation="portrait" />
+        <activity android:name=".MapsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".AssinaturaMotorista" android:screenOrientation="portrait" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -42,18 +43,19 @@
                 android:resource="@xml/path_files" />
         </provider>
 
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".CheckListParte1" />
-        <activity android:name=".ChecklistParte2" />
-        <activity android:name=".Login" />
-        <activity android:name=".Adicionais" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".CheckListParte1" android:screenOrientation="portrait" />
+        <activity android:name=".ChecklistParte2"  android:screenOrientation="portrait"/>
+        <activity android:name=".Login"  android:screenOrientation="portrait"/>
+        <activity android:name=".Adicionais" android:screenOrientation="portrait" />
     </application>
 
 </manifest>
