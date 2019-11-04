@@ -103,6 +103,16 @@ create table Fechamento (
 go
 insert into Fechamento values
 	(1, 1, 1, 'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
+<<<<<<< HEAD
+	78000, '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor', 78040, '20:30', '0:20',
+	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'Não'),
+	(2, 2, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
+	24500, '14:00', 'O veículo se encontra com uma batida na porta lateral esquerda', 24550, '17:00', '1:30', '1:30', 'Localiza',
+	'Danificado estéticamente', 'Sim'),
+	(3, 3, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
+	8500, '09:30', 'O veículo está em perfeito estado, e o servoço foi solicitado apenas para transporte de garagens', 8520,
+	'10:30', '0:00', '1:00', 'Maria Lúcia Mustang', 'Não danificado', 'Não')
+=======
 	78000, '19:00', 'O veÃ­culo se encontra em perfeito estado, com problemas aparentemente no motor', 78040, '20:30', '0:20',
 	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'NÃ£o'),
 	(2, 1, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
@@ -111,6 +121,7 @@ insert into Fechamento values
 	(3, 1, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
 	8500, '09:30', 'O veÃ­culo estÃ¡ em perfeito estado, e o servoÃ§o foi solicitado apenas para transporte de garagens', 8520,
 	'10:30', '0:00', '1:00', 'Maria LÃºcia Mustang', 'NÃ£o danificado', 'NÃ£o')
+>>>>>>> 81f66a7ae47f143e1d78da5a87515f2781a7b256
 --------------------------------------------------------------------------------
 go
 create table Destino (
@@ -657,7 +668,7 @@ go
 go
 create procedure usp_PesquisarTodasAsChamadas
 as
-	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
+	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Abertura as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -700,6 +711,32 @@ create procedure usp_UltimoIdChamadas
 as
 declare @ultimo_id int = (select top 1 ID_Chamado from Abertura order by ID_Chamado desc), @id int
 	select @ultimo_id as ID
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PesquisarRelatorio
+as
+	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as 'Cliente', (Select Placa from Caminhao ca where ca.ID_Caminhao = a.ID_Caminhao) as 'Placa Caminhão', (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as 'Motorista', a.Placa as 'Placa', a.Modelo as 'Modelo', a.Cor 'Cor', a.Ano 'Ano', a.Apolice 'Apolice', a.Marca 'Marca', a.Contato 'Contato', a.Data_Servico 'Data' from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PesquisarDestinoId_Chamada
+@id int
+as
+	select d.Endereco from Destino as d where d.ID_Chamado = @id
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PesquisarAcessoriosId_Chamada
+@id int
+as
+	select * from Acessorios as a where a.ID_Chamado = @id
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PesquisarAberturas
+as
+	select (Select Nome from Cliente c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select top 1 Endereco from Destino d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Modelo as Modelo, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista,  a.Placa as Placa from Abertura as a 
 go
 ----------------------Home-----------------------
 go
