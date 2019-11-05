@@ -857,51 +857,7 @@ as
 		(@id, @id_Chamado, @assinatura,'' ,@horario)
 go
 -----------------------------------------------------------------------------------------------
-go
-create procedure usp_PedidoEntre10he12h
-as
-	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '10:00' and '11:59'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PedidoEntre12he14h
-as
-	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '12:00' and '13:59'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PedidoEntre14he16h
-as
-	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '14:00' and '15:59'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PedidoEntre16he18h
-as
-	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '16:00' and '17:59'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PedidoEntre18he20h
-as
-	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '18:00' and '19:59'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PedidoEntre20he22h
-as
-	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '20:00' and '22:00'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_QtdeDeServicosPorDeterminadoPeriodo
-	@data1 date,
-	@data2 date
-as
-	select count(ID_Chamado) as qtde from Fechamento where Data_Servico LIKE '%' 
-		and convert(date, Data_Servico, 103) BETWEEN 
-			convert(date, @data1, 103) and convert(date, @data2, 103)
-go
+
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_QtdeEntregasMotorista
@@ -938,17 +894,13 @@ as
 	declare @km_total int;
 	declare @gasto_total int;
 		set @preco_combustivel = 4
-		set	@ultimo_KM = (select top 1 ID_Chamado as ID, KM_Chegada as 'KM de Chegada', Data_Servico as data 
-							from Fechamento where Data_Servico between '12/05/2017' and '25/01/2018' 
+		set	@ultimo_KM = (select top 1 ID_Chamado as ID from Fechamento where Data_Servico between '12/05/2017' and '25/01/2018' 
 								order by KM_Chegada desc)
-		set	@primeiro_KM = (select top 1 ID_Chamado as ID, KM_Saida as 'KM de Saida', Data_Servico 
-								as Data from Abertura where Data_Servico between '12/05/2017' and '25/01/2018'
+		set	@primeiro_KM = (select top 1 ID_Chamado as ID from Abertura where Data_Servico between '12/05/2017' and '25/01/2018'
 									order by KM_Saida)
 		set @gasto_total = (@ultimo_km - @primeiro_km) * @preco_combustivel
 		print @gasto_total
 go
-
-drop procedure usp_AdicionaisEmCadaIntervaloDeTempo
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_AdicionaisEmCadaIntervaloDeTempo
@@ -996,6 +948,7 @@ go
 
 exec usp_SomaGastosPrecoCombIntervaloDeTempo '12/01/1900', '13/12/3000', 10
 
+go
 create procedure usp_InserirFuncAberAndroid
 @id_Motorista int,
 @ultimo_idAbertura int
@@ -1037,3 +990,202 @@ create procedure usp_PesquisarAberturas
 as
 	select (Select Nome from Cliente c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select top 1 Endereco from Destino d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Modelo as Modelo, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista,  a.Placa as Placa from Abertura as a 
 go
+
+-----------------------------------------		
+/*Procedures para java*/
+-----------------------------------------
+go
+
+/*Vendas*/
+go
+create procedure usp_PedidoEntre10he12h
+as
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '10:00' and '11:59'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PedidoEntre12he14h
+as
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '12:00' and '13:59'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PedidoEntre14he16h
+as
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '14:00' and '15:59'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PedidoEntre16he18h
+as
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '16:00' and '17:59'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PedidoEntre18he20h
+as
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '18:00' and '19:59'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PedidoEntre20he22h
+as
+	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '20:00' and '22:00'
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_QtdeServiços
+@tIn varchar(10),
+@tFim varchar(10)
+as 
+select count(*) as qtde from Abertura where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103)
+
+go
+create procedure usp_QtdeDeServicosPorDeterminadoPeriodo
+	@data1 varchar(10),
+	@data2 varchar(10)
+as
+	select count(ID_Chamado) as qtde from Fechamento where Data_Servico LIKE '%' 
+		and convert(date, Data_Servico, 103) BETWEEN 
+			convert(date, @data1, 103) and convert(date, @data2, 103);
+go
+
+create procedure usp_QtdeAdicionaisAbertura
+
+@tIn varchar(10),
+@tFim varchar(10)
+as
+select  a.Nome ,count(*)/3 as qtde from Adicional_Abertura as ad inner join Abertura as ab on ab.Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103) inner join Adicionais as a on a.ID_Adicionais = ad.ID_Abertura group by a.nome
+go
+create procedure usp_AdicionaisPeriodo
+@tIn varchar(10),
+@tFim varchar(10)
+as 
+select  a.Nome, REPLACE(REPLACE(a.Preco,'R$',''),',00','')*count(*)/3 as qtde from Adicional_Abertura as ad
+ inner join Abertura as ab on ab.ID_Chamado = ad.ID_Abertura and ab.Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103)
+  inner join Adicionais as a on a.ID_Adicionais = ad.ID_Abertura group by a.Nome, a.Preco
+go 
+create procedure usp_PrimeiroFechamentoData
+as 
+SELECT top 1  Data_Servico FROM Fechamento ORDER BY CONVERT(DATE, Data_Servico, 103) ASC
+go 
+create procedure usp_QtdeFechamento
+@tIn varchar(10),
+@tFim varchar(10)
+as
+select count(*) as qtde from Fechamento where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103)
+go 
+create procedure usp_KmPeriodo
+@tIn varchar(10),
+@tFim varchar(10)
+as 
+select sum(Convert(float,KM_Chegada))-sum (Convert (float,KM_Saida)) as qtde from Fechamento  where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103)
+/*Despesas*/
+go
+create procedure usp_QtdeSalario
+@preçoIn varchar(8),
+@preçoFim varchar(8)
+as
+	select count(*) as qtde from Funcionario 
+	where REPLACE(REPLACE(Salario,'R$',''),'.','') <= Convert (float,@preçoFim) and REPLACE(REPLACE(Salario,'R$',''),'.','') > Convert (float,@preçoIn)
+go
+create procedure usp_SalarioFuncionarios
+as
+    select nome, Salario as qtde from Funcionario
+go
+create procedure usp_GasolinaPeriodo
+@tIn varchar(10),
+@tFim varchar(10)
+as 
+	select sum(((Convert (float,KM_Chegada)-Convert (float,KM_Saida))/10)* 4.344) as qtde  from Fechamento where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103) 
+go 
+create procedure usp_GastoSalario
+@mes numeric
+as
+	select sum(Convert(numeric,REPLACE(REPLACE(Salario,'R$',''),'.','')))*@mes as qtde from Funcionario
+go
+
+
+/*Funcionarios*/
+go
+create procedure usp_QtdeAberturasMotoristas
+@tIn varchar(10),
+@tFim varchar(10)
+as
+select f.Nome,count(*) as qtde from Funcionario_Abertura as a  inner join Funcionario as f on CNH != '' and a.ID_Funcionario = f.ID_Funcionario inner join Abertura as ab on a.ID_Chamado = ab.ID_Chamado and  ab.Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103) group by f.Nome
+go
+create procedure usp_AtendimentosAtendente
+@tIn varchar(10),
+@tFim varchar(10)
+as
+	select Atendente as nome,count(*) as qtde from Fechamento where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103) group by Atendente order by qtde desc
+go
+
+/*Caminhão*/
+go 
+create procedure usp_InserirCaminhao
+
+@marca varchar(30),
+@modelo varchar(20),
+@cor varchar(10),
+@placa varchar(8),
+@ano varchar(4),
+@Km varchar(7)
+as 
+declare @ultimo_id int = (select top 1 ID_Caminhao from Caminhao order by ID_Caminhao desc),@id numeric
+	if @ultimo_id=0
+	begin
+		set @id = 1
+	end
+	else
+	begin
+		set @id = @ultimo_id + 1
+	end
+insert into Caminhao values(@id , @marca , @modelo, @cor, @placa,@ano,@Km)
+
+go
+create Procedure usp_DeleteCaminhao
+@id numeric
+as
+
+delete Destino from Destino as d inner join Abertura as a on d.ID_Chamado = a.ID_Chamado and a.ID_Caminhao = @id
+delete Declaracao from Declaracao as d inner join Abertura as a on d.ID_Chamado = a.ID_Chamado and ID_Caminhao = @id
+delete Acessorios from Acessorios as ses inner join Abertura as a on ses.ID_Chamado = a.ID_Chamado and a.ID_Caminhao = @id
+delete Funcionario_Abertura from Funcionario_Abertura as f inner join Abertura as a on f.ID_Chamado = a.ID_Chamado and a.ID_Caminhao = @id
+delete Adicional_Abertura from Adicional_Abertura as ad inner join Abertura as a on ad.ID_Abertura = a.ID_Chamado and a.ID_Caminhao = @id
+delete from Abertura where ID_Caminhao = @id
+delete from Fechamento where ID_Caminhao = @id
+delete from caminhao where ID_Caminhao = @id
+go
+create procedure usp_AlterarCaminhao
+@id numeric,
+@marca varchar(30),
+@modelo varchar(20),
+@cor varchar(10),
+@placa varchar(8),
+@ano varchar(4),
+@Km varchar(7)
+as
+	update Caminhao set Marca = @marca, Modelo= @modelo,Cor=@cor,Placa=@placa,Ano=@ano,KM_Rodados = @Km where ID_Caminhao = @id 
+/*Testes*/
+ go 
+ /*Vendas*/
+exec usp_PedidoEntre20he22h
+exec usp_QtdeServiços '01/12/2015','01/03/2016'
+select * from Abertura
+exec usp_QtdeAdicionaisAbertura '10/10/2014','10/10/2019'
+exec usp_AdicionaisPeriodo '10/12/2015','10/01/2016'
+exec usp_PrimeiroFechamentoData 
+exec usp_QtdeFechamento '01/12/2015','01/03/2019'
+exec usp_KmPeriodo '01/12/2015','01/03/2019'
+/*Despesas*/
+exec usp_QtdeSalario '16000','20000'
+exec usp_SalarioFuncionarios
+exec usp_GasolinaPeriodo '10/10/2014','10/10/2019'
+exec usp_GastoSalario '1'
+/*Funcionarios*/
+exec usp_QtdeAberturasMotoristas '10/10/2014','10/10/2019'
+exec usp_AtendimentosAtendente '10/10/2014','10/10/2019'
+/*Caminhao*/
+exec usp_InserirCaminhao  'Pejo' , '666', 'Azu', 'MQK-7060','2000','120000'
+exec usp_DeleteCaminhao '0'/*esse delete apaga geral que tiver esse numero ai CUIDADO!*/
+exec usp_AlterarCaminhao '4','Pejo' , '666', 'Azu', 'MQK-7060','2000','120000'
