@@ -641,6 +641,12 @@ as
 go
 -----------------------------------------------------------------------------------------------
 go
+create procedure usp_PesquisarIdTodosCaminhoesChamada
+as
+	select * from Caminhao
+go
+-----------------------------------------------------------------------------------------------
+go
 create procedure usp_PesquisarTodosCaminhoesChamadaPlaca
 @placa varchar(8)
 as
@@ -648,16 +654,17 @@ as
 go
 -----------------------------------------------------------------------------------------------
 go
-create procedure usp_PesquisarIdTodosCaminhoesChamada
-as
-	select * from Caminhao
-go
------------------------------------------------------------------------------------------------
-go
 create procedure usp_PesquisarIdCaminhoesChamadaPlaca
 @placa varchar(8)
 as
 	select * from Caminhao where Placa like '%' + @placa + '%'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PesquisarTodosCaminhoesChamadoId
+@codigo varchar(8)
+as
+	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao where ID_Caminhao like '%' + @codigo + '%'
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -671,13 +678,6 @@ create procedure usp_PesquisarTodasAsChamadasData
 @data varchar(10)
 as
 	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as Cliente, (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as Motorista, (Select top 1 Endereco from Destino as d where d.ID_Chamado = a.ID_Chamado order by d.ID_Destino desc) as 'Destino Final', a.Placa, a.Modelo, a.Data_Servico as Data from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado where a.Data_Servico like '%' + @data + '%'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PesquisarTodosCaminhoesChamadoId
-@codigo varchar(8)
-as
-	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao where ID_Caminhao like '%' + @codigo + '%'
 go
 -----------------------------------------------------------------------------------------------
 go
