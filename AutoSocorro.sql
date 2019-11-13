@@ -674,6 +674,13 @@ as
 go
 -----------------------------------------------------------------------------------------------
 go
+create procedure usp_PesquisarTodosCaminhoesChamadoId
+@codigo varchar(8)
+as
+	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao where ID_Caminhao like '%' + @codigo + '%'
+go
+-----------------------------------------------------------------------------------------------
+go
 create procedure usp_PesquisarTodasAsChamadasPlacaCarro
 @placa varchar(10)
 as
