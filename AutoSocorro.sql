@@ -22,7 +22,7 @@ go
 insert into Cliente values
 	(1, 'Robson Silva dos Santos', '(11)99897-5496', 'robson.silva@gmail.com', '114.858.794-18'),
 	(2, 'Localiza Aluguel de Carros', '(11) 3231-3055', 'localiza_aluguel@localiza.com', '-'),
-	(3, 'Maria L˙cia', '(11)97542-9492', 'm_lucia10@outlook.com', '258.651.722-89')
+	(3, 'Maria L√∫cia', '(11)97542-9492', 'm_lucia10@outlook.com', '258.651.722-89')
 --------------------------------------------------------------------------------
 go
 create table Empresa(
@@ -69,11 +69,11 @@ create table Abertura (
 go
 insert into Abertura values
 	(1, 1, 1,'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
-	78000, '19:00', 'O veÌculo se encontra em perfeito estado, com problemas aparentemente no motor'),
+	78000, '19:00', 'O ve√≠culo se encontra em perfeito estado, com problemas aparentemente no motor'),
 	(2, 2, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
-	24500, '14:37', 'O veÌculo se encontra com uma batida na porta lateral esquerda'),
+	24500, '14:37', 'O ve√≠culo se encontra com uma batida na porta lateral esquerda'),
 	(3, 3, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
-	8500, '09:30', 'O veÌculo est· em perfeito estado, e o servoÁo foi solicitado apenas para transporte de garagens')
+	8500, '09:30', 'O ve√≠culo est√° em perfeito estado, e o servo√ßo foi solicitado apenas para transporte de garagens')
 --------------------------------------------------------------------------------
 go
 create table Fechamento (
@@ -103,14 +103,14 @@ create table Fechamento (
 go
 insert into Fechamento values
 	(1, 1, 1, 'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
-	78000, '19:00', 'O veÌculo se encontra em perfeito estado, com problemas aparentemente no motor', 78040, '20:30', '0:20',
-	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'N„o'),
+	78000, '19:00', 'O ve√≠culo se encontra em perfeito estado, com problemas aparentemente no motor', 78040, '20:30', '0:20',
+	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'N√£o'),
 	(2, 1, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
-	24500, '14:00', 'O veÌculo se encontra com uma batida na porta lateral esquerda', 24550, '17:00', '1:30', '1:30', 'Localiza',
-	'Danificado estÈticamente', 'Sim'),
+	24500, '14:00', 'O ve√≠culo se encontra com uma batida na porta lateral esquerda', 24550, '17:00', '1:30', '1:30', 'Localiza',
+	'Danificado est√©ticamente', 'Sim'),
 	(3, 1, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
-	8500, '09:30', 'O veÌculo est· em perfeito estado, e o servoÁo foi solicitado apenas para transporte de garagens', 8520,
-	'10:30', '0:00', '1:00', 'Maria L˙cia Mustang', 'N„o danificado', 'N„o')
+	8500, '09:30', 'O ve√≠culo est√° em perfeito estado, e o servo√ßo foi solicitado apenas para transporte de garagens', 8520,
+	'10:30', '0:00', '1:00', 'Maria L√∫cia Mustang', 'N√£o danificado', 'N√£o')
 --------------------------------------------------------------------------------
 go
 create table Destino (
@@ -122,9 +122,9 @@ create table Destino (
 )
 go
 insert into Destino values
-	(1, 1, 'R. Lopes Chaves, 243 - Barra Funda, S„o Paulo', 'PrÛximo ao centro automotivo Porto Seguro', '1'),
-	(2, 2, 'R. Faustolo, 1855 - Lapa, S„o Paulo', 'PrÛximo a estaÁ„o Lapa', '1'), 
-	(3, 3, 'R. FranÁa Pinto, 1115 - Vila Mariana, S„o Paulo', 'PrÛximo ao Ibirapuera', '1')
+	(1, 1, 'R. Lopes Chaves, 243 - Barra Funda, S√£o Paulo', 'Pr√≥ximo ao centro automotivo Porto Seguro', '1'),
+	(2, 2, 'R. Faustolo, 1855 - Lapa, S√£o Paulo', 'Pr√≥ximo a esta√ß√£o Lapa', '1'), 
+	(3, 3, 'R. Fran√ßa Pinto, 1115 - Vila Mariana, S√£o Paulo', 'Pr√≥ximo ao Ibirapuera', '1')
 --------------------------------------------------------------------------------
 go
 create table Declaracao (
@@ -151,8 +151,8 @@ create table Acessorios (
 go
 insert into Acessorios values
 	(1, 1, 'Capa de banco traseiro', 'Usado', 'Encontra-se com uma mancha na parte inferior'), 
-	(2, 2, 'Extintor de incÍndio', 'Novo', 'Lacrado'),
-	(3, 3, 'Trava de direÁ„o', 'Seminovo', 'Tem poucos riscos') 
+	(2, 2, 'Extintor de inc√™ndio', 'Novo', 'Lacrado'),
+	(3, 3, 'Trava de dire√ß√£o', 'Seminovo', 'Tem poucos riscos') 
 --------------------------------------------------------------------------------
 go
 create table Funcionario (
@@ -180,13 +180,13 @@ create table Funcionario (
 )
 go
 insert into Funcionario values
-	(1, 'Ederson Gonzaga de Melo', 'Gerente', 33500, 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua JosÈ Dias Paes', 'S„o Paulo', '04851-003',
+	(1, 'Ederson Gonzaga de Melo', 'Gerente', 33500, 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua Jos√© Dias Paes', 'S√£o Paulo', '04851-003',
 	'SP', '(11)5528-5550', '28/11/2002', 'Solteiro', 'Rem Gonzaga', '(11)95142-9829', 'ederzed', 'eder281102', 'n'),
 	(2, 'Rafael Hadzic Rico de Sousa', 'Gerente', 18700, 'rafael.hadzic@gmail.com', '54.352.151-5', '30979961802', '190.21697.31-1', 
-	'Rua ZÈlia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'RafaelHadzic', 'rafa130101', 'n'),
-	(3, 'Gabriel Gomes Gameiro', 'Motorista', 11300, 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua AtuaÌ, 140', 'S„o Paulo', '03646-000',
+	'Rua Z√©lia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'RafaelHadzic', 'rafa130101', 'n'),
+	(3, 'Gabriel Gomes Gameiro', 'Motorista', 11300, 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua Atua√≠, 140', 'S√£o Paulo', '03646-000',
 	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Raquel Lopes Barbosa', '(11)96784-7184', 'ggameiro', 'gabr180902', 'n'),
-	(4, 'Jean-Luc Bonnet', 'Gerente', 12850, 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'S„o Paulo', '08744-000',
+	(4, 'Jean-Luc Bonnet', 'Gerente', 12850, 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'S√£o Paulo', '08744-000',
 	'SP', '(11)29958-7064', '00/00/0000', 'Solteiro', '-', '-', 'Luc', '1234', 's')
 
 	select * from Funcionario
@@ -552,11 +552,11 @@ as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' and e.IE like '%' + @ie + '%'
 go
 
-------------------Funcion·rio-----------------
+------------------Funcion√°rio-----------------
 go
 create procedure usp_PesquisarTodosFuncionarios
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal·rio' from Funcionario 
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal√°rio' from Funcionario 
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -569,7 +569,7 @@ go
 create procedure usp_PesquisarFuncionariosNome
 @nome varchar(50)
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal·rio' from Funcionario where Nome like '%' + @nome + '%' 
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal√°rio' from Funcionario where Nome like '%' + @nome + '%' 
 go
 
 -------------------Adicionais-----------------
@@ -617,14 +617,14 @@ go
 go
 create procedure usp_PesquisarFuncionariosMotoristas
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal·rio' from Funcionario where Cargo like 'Motorista'
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal√°rio' from Funcionario where Cargo like 'Motorista'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PesquisarFuncionariosMotoristasNome
 @nome varchar(50)
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal·rio' from Funcionario where Cargo like 'Motorista' and Nome like '%' + @nome + '%'
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Sal√°rio' from Funcionario where Cargo like 'Motorista' and Nome like '%' + @nome + '%'
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -645,6 +645,12 @@ create procedure usp_PesquisarTodosCaminhoesChamadaPlaca
 @placa varchar(8)
 as
 	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao where Placa like '%' + @placa + '%'
+go
+-----------------------------------------------------------------------------------------------
+go
+create procedure usp_PesquisarIdTodosCaminhoesChamada
+as
+	select * from Caminhao
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -968,7 +974,7 @@ go
 
 create procedure usp_PesquisarRelatorio
 as
-	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as 'Cliente', (Select Placa from Caminhao ca where ca.ID_Caminhao = a.ID_Caminhao) as 'Placa Caminh„o', (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as 'Motorista', a.Placa as 'Placa', a.Modelo as 'Modelo', a.Cor 'Cor', a.Ano 'Ano', a.Apolice 'Apolice', a.Marca 'Marca', a.Contato 'Contato', a.Data_Servico 'Data' from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
+	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as 'Cliente', (Select Placa from Caminhao ca where ca.ID_Caminhao = a.ID_Caminhao) as 'Placa Caminh√£o', (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as 'Motorista', a.Placa as 'Placa', a.Modelo as 'Modelo', a.Cor 'Cor', a.Ano 'Ano', a.Apolice 'Apolice', a.Marca 'Marca', a.Contato 'Contato', a.Data_Servico 'Data' from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -1033,7 +1039,7 @@ as
 	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '20:00' and '22:00'
 -----------------------------------------------------------------------------------------------
 go
-create procedure usp_QtdeServiÁos
+create procedure usp_QtdeServi√ßos
 @tIn varchar(10),
 @tFim varchar(10)
 as 
@@ -1082,11 +1088,11 @@ select sum(Convert(float,KM_Chegada))-sum (Convert (float,KM_Saida)) as qtde fro
 /*Despesas*/
 go
 create procedure usp_QtdeSalario
-@preÁoIn varchar(8),
-@preÁoFim varchar(8)
+@pre√ßoIn varchar(8),
+@pre√ßoFim varchar(8)
 as
 	select count(*) as qtde from Funcionario 
-	where REPLACE(REPLACE(Salario,'R$',''),'.','') <= Convert (float,@preÁoFim) and REPLACE(REPLACE(Salario,'R$',''),'.','') > Convert (float,@preÁoIn)
+	where REPLACE(REPLACE(Salario,'R$',''),'.','') <= Convert (float,@pre√ßoFim) and REPLACE(REPLACE(Salario,'R$',''),'.','') > Convert (float,@pre√ßoIn)
 go
 create procedure usp_SalarioFuncionarios
 as
@@ -1120,7 +1126,7 @@ as
 	select Atendente as nome,count(*) as qtde from Fechamento where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103) group by Atendente order by qtde desc
 go
 
-/*Caminh„o*/
+/*Caminh√£o*/
 go 
 create procedure usp_InserirCaminhao
 
@@ -1170,7 +1176,7 @@ as
  go 
  /*Vendas*/
 exec usp_PedidoEntre20he22h
-exec usp_QtdeServiÁos '01/12/2015','01/03/2016'
+exec usp_QtdeServi√ßos '01/12/2015','01/03/2016'
 select * from Abertura
 exec usp_QtdeAdicionaisAbertura '10/10/2014','10/10/2019'
 exec usp_AdicionaisPeriodo '10/12/2015','10/01/2016'
