@@ -22,7 +22,25 @@ go
 insert into Cliente values
 	(1, 'Robson Silva dos Santos', '(11)99897-5496', 'robson.silva@gmail.com', '114.858.794-18'),
 	(2, 'Localiza Aluguel de Carros', '(11) 3231-3055', 'localiza_aluguel@localiza.com', '-'),
-	(3, 'Maria LÃºcia', '(11)97542-9492', 'm_lucia10@outlook.com', '258.651.722-89')
+	(3, 'Maria Lacia Melo', '(11)97542-9492', 'm_lucia10@outlook.com', '258.651.722-89'),
+	(4, 'Nair e Analu Pizzaria Ltda', '(19) 3766-7731', 'estoque_nair@analupizzarialtda.com', '-'),
+	(5, 'Elisa e Rita Entregas Expressas ME', '(11) 3664-1939', 'comunicacoes_elisa@eritaentregasexpressasme.com', '-'),
+	(6, 'Allana Bruna Santos', '(65) 3611-5303', 'aallanabrunas_imoneoliveira@msaengenharia.com', '236.823.770-42'),
+	(7, 'Mariana Letícia Melo', '(21) 3685-7830', 'mmariana_leticiamelo@mega.com', '316.761.407-27'),
+	(8, 'Felipe e Martin Marketing Ltda', '(11) 3530-1997', 'fiscal_felipe@emartinmarketingltda.com', '-'),
+	(9, 'Betina e Cauê Ferragens Ltda', '(11) 3835-2558', 'manutencao_betina@ecaueferragensltda.com', '-'),
+	(10, 'Son Goku', '(81) 2702-9191', 'son_goku@gmail.com', '488.580.373-08'),
+	(11, 'Yago e Gabriela Alimentos ME', '(11) 3723-2492', 'administracao_yg@yagoegabrielaalimentosme.com', '-'),
+	(12, 'Sophia e Laura Filmagens Ltda', '(19) 3556-9025', 'estoque_sl@sophiaelaurafilmagensltda.com', '-'),
+	(13, 'Malu Mirella Pereira', '(69) 2699-5816', 'mmalumirella_sophiaaragao@tjsp.jus.br', '592.313.499-37'),
+	(14, 'Hugo Sebastião Ferreira', '(79) 3984-3264', 'hugosebastiaorenan_goncalves@pgpci.com', '279.045.471-04'),
+	(15, 'Laís e Kaique Entulhos ME', '(18) 2811-9205', 'suporte_lk@laisekaiqueentulhosme.com', '-'),
+	(16, 'Breno e Yuri Lavanderia ME', '(11) 2803-8347', 'fiscal_by@brenoeyurilavanderiame.com', '-'),
+	(17, 'César Manuel Braga', '(27) 3601-7282', 'cesarmanuel_tiagosilveira-88@iq.unesp.com', '283.604.608-25'),
+	(18, 'Thiago Alexandre Honda', '(51) 3736-1545', 'tthiagoalexandre_joaquimramos@sefaz.com', '862.182.704-24'),
+	(19, 'Augusto e Paulo Mudanças Ltda', '(11) 2690-5820', 'treinamento_ap@augustoepaulomudancasltda.com', '-'),
+	(20, 'Calebe e Laura Consultoria Financeira ME', '(18) 3934-9658', 'qualidade_cc@calebeelauraconsultoriafinanceirame.com', '-')
+
 --------------------------------------------------------------------------------
 go
 create table Empresa(
@@ -32,7 +50,17 @@ create table Empresa(
 )
 go
 insert into Empresa values
-	(2, '641.090.339.426', '70.957.494/0001-82')
+	(2, '641.090.339.426', '70.957.494/0001-82'),
+	(4, '662.333.009.960', '95.644.239/0001-00'),
+	(5, '362.198.571.832', '31.358.013/0001-60'),
+	(8, '513.594.594.148', '54.651.323/0001-74'),
+	(9, '261.902.682.253', '98.606.462/0001-51'),
+	(11, '443.997.818.214', '95.998.226/0001-30'),
+	(12, '195.684.260.262', '75.240.224/0001-70'),
+	(15, '701.680.224.401', '19.262.036/0001-71'),
+	(16, '378.764.233.043', '52.385.303/0001-73'),
+	(19, '801.256.210.069', '35.369.622/0001-76'),
+	(20, '374.165.691.022', '68.844.421/0001-32')
 --------------------------------------------------------------------------------
 go
 create table Caminhao (
@@ -46,7 +74,26 @@ create table Caminhao (
 )
 go
 insert into Caminhao values
-	(1, 'Volkswagen', '8160', 'Branco', 'BZD-4574', '2014', '120000')
+	(1, 'Volkswagen', '8160', 'Branco', 'BZD-4574', '2014', '120000'),
+	(2, 'Mercedes', 'Atron 6283', 'Azul', 'MRW-3636', '2008', '110000'),
+	(3, 'Mercedes', 'Axor 5479', 'Branco', 'HWV-7973', '2009', '100000'),
+	(4, 'Mercedes', 'Accelo 7852', 'Preto', 'MSN-9566', '2007', '120000'),
+	(5, 'Mercedes', 'Actros 4527', 'Verde', 'JKZ-0254', '2005', '110000'),
+	(6, 'Mercedes', 'Atego 9520', 'Amarelo', 'CRF-3073', '2015', '120000'),
+	(7, 'Volks', '8150', 'Bege', 'AHB-5651', '2016', '120000'),
+	(8, 'Mercedes', '710', 'Cinza', 'MVQ-5407', '2011', '120000'),
+	(9, 'Volvo', 'FH 460', 'Preto', 'MNN-0567', '2010', '110000'),
+	(10, 'Scania', 'R440', 'Vermelho', 'MUR-0446', '2012', '120000'),
+	(11, 'Maserati', '3200 GT Cup', 'Amarelo', 'NAW-7790', '1999', '130000'),
+	(12, 'Agrale', 'MARRU', 'Dourado', 'KWA-0541', '2004', '110000'),
+	(13, 'Rover', 'Mini Cooper 1.3', 'Preto', 'JEA-4553', '1992', '140000'),
+	(14, 'Hyundai', 'HB20S Copa do Mundo 1.0 Flex 12V Mec.', 'Azul', 'NES-5936', '2014', '150000'),
+	(15, 'JPX', 'Jipe Montez Std 4x4 Teto de Lona Diesel', 'Vermelho', 'HVQ-7645', '1994', '100000'),
+	(16, 'GM - Chevrolet', 'Astra Sedan 2.0/ CD 2.0 MPFI 8V 4p Aut.', 'Laranja', 'HQL-5800', '2002', '110000'),
+	(17, 'Seat', 'Ibiza 1.0i 8v', 'Cinza', 'KOG-1504', '1994', '100000'),
+	(18, 'Daewoo', 'Prince Ace 2.0', 'Bege', 'KJK-8391', '1994', '90000'),
+	(19, 'Land Rover', 'Range R.EVOQUE Prestige Tech 2.0 Aut 5p0', 'Vermelho', 'MYY-7916', '2012', '140000'),
+	(20, 'Audi', 'A4 2.8 30V  Tiptronic/ Aut.', 'Cinza', 'HTR-1005', '1997', '120000')
 --------------------------------------------------------------------------------
 go
 create table Abertura (
@@ -68,12 +115,46 @@ create table Abertura (
 )
 go
 insert into Abertura values
-	(1, 1, 1,'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
-	78000, '19:00', 'O veÃ­culo se encontra em perfeito estado, com problemas aparentemente no motor'),
-	(2, 2, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
-	24500, '14:37', 'O veÃ­culo se encontra com uma batida na porta lateral esquerda'),
-	(3, 3, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
-	8500, '09:30', 'O veÃ­culo estÃ¡ em perfeito estado, e o servoÃ§o foi solicitado apenas para transporte de garagens')
+	(1, 1, 1,'Rua Faceten', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
+	78000, '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor'),
+	(2, 2, 3, 'Rua Piquiá', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
+	24500, '14:37', 'O veí­culo se encontra com uma batida na porta lateral esquerda'),
+	(3, 3, 2, 'Rua Humberto Correia 1792', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
+	8500, '09:30', 'O veí­culo está em perfeito estado, e o serviço foi solicitado apenas para transporte de garagens'),
+	(4, 4, 8, 'Rua Cafarnaum', 'Jesus', '961054684', '25/12/2017', 'Mercedes', 'Ferrari', 'Branco', '2012', 'GOD-1313',
+	85000, '00:25', 'O veí­culo está em um estado impecável, e o serviço foi solicitado apenas para transporte de garagens'),
+	(5, 5, 10, 'Rua Trinta e Dois', 'Goku', '742246217', '07/10/2016', 'Ford', 'Mustang GT', 'Amarelo', '2014', 'KAM-3414',
+	75000, '20:15', 'O veí­culo está em um estado lámentavel, se encontra com batidas em várias partes, serviço solicitado foi o de reboque'),
+	(6, 6, 4, 'Rua Estefano Kusnick', 'Jean', '823482456', '01/11/2019', 'Chevrolet', 'Camaro', 'Vermelho', '2018', 'JAN-5671',
+	65000, '23:50', 'É verificável que a indiligência do condutor levou o veículo a uma série de arranhões e pancadas, serviço solicitado foi o de reboque'),
+	(7, 7, 5, 'Rua Ministro Salgado Filho', 'Link', '431795531', '25/10/2018', 'Volkswagen', 'Horse', 'Verde', '2017', 'EPO-7643',
+	45000, '14:20', 'Veículo em boas condições,e o serviço foi solicitado apenas para transporte de garagens'),
+	(8, 8, 6, 'Avenida Dom João VI', 'Michael', '812345723', '17/08/2016', 'Volvo', 'XC60', 'Vermelho', '2015', 'TOF-3291',
+	35000, '01:30', 'Veículo em condições críticas, serviço solicitado foi o de reboque'),
+	(9, 9, 7, 'Rua Engenho Bom Futuro', 'Saitama', '324671266', '02/05/2015', 'Mercedes', 'Classe S', 'Preto', '2015', 'ONE-1111',
+	62500, '15:40', 'Veículo em ótimas condições apenas com um pneu furado, serviço de troca de pneu solicitado'),
+	(10, 10, 9, 'Rua Felipe dos Santos', 'Sanji', '012342489', '10/07/2013', 'Mercedes', 'Classe G', 'Cinza', '2010', 'PIE-9752',
+	73500, '12:45', 'Veículo em condições críticas, serviço solicitado foi o de reboque.'),
+	(11, 11, 12, 'Rua Chalanger', 'Eduardo', '256212489', '09/06/2012', 'Agrale', 'MARRU', 'Dourado', '1997', 'KWA-0541',
+	76500, '13:50', 'O veí­culo se encontra com uma batida na porta lateral esquerda.'),
+	(12, 12, 11, 'Rua Fluminense', 'Leonardo', '346212949', '02/04/2011', 'Maserati', '3200 GT Cup', 'Amarelo', '1999', 'NAW-7790',
+	61200, '10:00', 'O veí­culo se encontra com uma batida na porta lateral esquerda.'),
+	(13, 13, 14, 'Rua Maria de Lourdes Pimentel', 'Sandro', '745723167', '01/07/2010', 'Hyundai', 'HB20S Copa do Mundo 1.0 Flex 12V Mec.', 'Azul', '2014', 'NES-5936',
+	52000, '09:00', 'Veículo em condições críticas, serviço solicitado foi o de reboque.'),
+	(14, 14, 13, 'Rua Arseno Rodrigues', 'Flávio', '521578321', '05/08/2012', 'Rover', 'Mini Cooper 1.3', 'Preto', '1992', 'JEA-4553',
+	64500, '08:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor.'),
+	(15, 15, 16, 'Avenida Fernando de Noronha 648', 'Rodrigo', '432464212', '06/04/2013', 'GM - Chevrolet', 'Astra Sedan 2.0/ CD 2.0 MPFI 8V 4p Aut.', 'Laranja', '2002', 'HQL-5800',
+	77500, '09:40', 'Veículo em condições críticas, serviço solicitado foi o de reboque.'),
+	(16, 16, 15, 'Rua Doutor Arlindo Sodré', 'Seará', '221456812', '17/09/2014', 'JPX', 'Jipe Montez Std 4x4 Teto de Lona Diesel', 'Vermelho', '1994', 'HVQ-7645',
+	80500, '11:42', 'O veí­culo está em perfeito estado, e o serviço foi solicitado apenas para transporte de garagens.'),
+	(17, 17, 18, 'Rua Visconde de Taunay', 'Byron', '721375421', '18/11/2015', 'Daewoo', 'Prince Ace 2.', 'Bege', '1994', 'KJK-8391',
+	81200, '12:50', 'Veículo em ótimas condições com falta de combustível, serviço de pane seca solicitado'),
+	(18, 18, 17, 'Rua Antônio Leão de Melo', 'Matheus', '998216312', '22/12/2017', 'Seat', 'Ibiza 1.0i 8v', 'Cinza', '1995', 'KOG-1504',
+	54100, '13:46', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor.'),
+	(19, 19, 20, 'Rua Wilson Almeida Santana', 'Akira', '478211544', '27/09/2018', 'Audi', 'A4 2.8 30V  Tiptronic/ Aut.', 'Cinza', '1997', 'HTR-1005',
+	63700, '13:46', 'O veí­culo se encontra com uma batida na porta lateral direita.'),
+	(20, 20, 19, 'Rua Abdon Assis Inojosa Andrade', 'Ryo', '278347128', '12/02/2019', 'Land Rover', 'Range R.EVOQUE Prestige Tech 2.0 Aut 5p0', 'Vermelho', '2012', 'MYY-7916',
+	76500, '15:20', 'Veículo em condições críticas, serviço solicitado foi o de reboque.')
 --------------------------------------------------------------------------------
 go
 create table Fechamento (
@@ -102,15 +183,67 @@ create table Fechamento (
 )
 go
 insert into Fechamento values
-	(1, 1, 1, 'Rua A', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
-	78000, '19:00', 'O veÃ­culo se encontra em perfeito estado, com problemas aparentemente no motor', 78040, '20:30', '0:20',
-	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'NÃ£o'),
-	(2, 1, 1, 'Rua B', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
-	24500, '14:00', 'O veÃ­culo se encontra com uma batida na porta lateral esquerda', 24550, '17:00', '1:30', '1:30', 'Localiza',
-	'Danificado estÃ©ticamente', 'Sim'),
-	(3, 1, 1, 'Rua C', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
-	8500, '09:30', 'O veÃ­culo estÃ¡ em perfeito estado, e o servoÃ§o foi solicitado apenas para transporte de garagens', 8520,
-	'10:30', '0:00', '1:00', 'Maria LÃºcia Mustang', 'NÃ£o danificado', 'NÃ£o')
+	insert into Fechamento values
+	(1, 1, 1, 'Rua Faceten', 'Ederson', '011000616', '25/01/2019', 'Chevrolet', 'Onix LT', 'Vermelho', '2018', 'EDR-2832',
+	78000, '19:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor', 80040, '20:30', '0:20',
+	'1:40', 'Robson Santos Onix', 'Danificado mecanicamente', 'Não'),
+	(2, 2, 3, 'Rua Piquiá', 'Rafael', '258558652', '13/05/2017', 'Volkswagen', 'Golf GTI', 'Azul', '2016', 'FGR-1334',
+	24500, '14:00', 'O veículo se encontra com uma batida na porta lateral esquerda', 25550, '17:00', '1:30', '1:30', 'Localiza',
+	'Danificado estéticamente', 'Sim'),
+	(3, 3, 2, 'Rua Humberto Correia 1792', 'Gabriel', '782493573', '02/12/2015', 'Ford', 'Mustang GT', 'Preto', '2013', 'ESP-4314',
+	8500, '09:30', 'O veículo está em perfeito estado, e o servoço foi solicitado apenas para transporte de garagens', 8920,
+	'10:30', '0:00', '1:00', 'Maria Lúcia Mustang', 'Não danificado', 'Não'),
+	(4, 4, 8, 'Rua Cafarnaum', 'Jesus', '961054684', '25/12/2017', 'Mercedes', 'Ferrari', 'Branco', '2012', 'GOD-1313',
+	85000, '00:25', 'O veí­culo está em um estado impecável, e o serviço foi solicitado apenas para transporte de garagens', 95040,
+	'05:30', '7:40', '1:50', 'Nair e Analu Pizzaria Ltda', 'Danificado mecanicamente', 'Não'),
+	(5, 5, 10, 'Rua Trinta e Dois', 'Goku', '742246217', '07/10/2016', 'Ford', 'Mustang GT', 'Amarelo', '2014', 'KAM-3414',
+	75000, '20:15', 'O veí­culo está em um estado lámentavel, se encontra com batidas em várias partes, serviço solicitado foi o de reboque', 85050,
+	'00:30', '2:00', '1:30', 'Elisa e Rita Entregas Expressas ME', 'Danificado mecanicamente', 'Não'),
+	(6, 6, 4, 'Rua Estefano Kusnick', 'Jean', '823482456', '01/11/2019', 'Chevrolet', 'Camaro', 'Vermelho', '2018', 'JAN-5671',
+	65000, '23:50', 'É verificável que a indiligência do condutor levou o veículo a uma série de arranhões e pancadas, serviço solicitado foi o de reboque', 70050,
+	'01:30', '02:40', '1:10', 'Allana Bruna Santos', 'Danificado mecanicamente', 'Não'),
+	(7, 7, 5, 'Rua Ministro Salgado Filho', 'Link', '431795531', '25/10/2018', 'Volkswagen', 'Horse', 'Verde', '2017', 'EPO-7643',
+	45000, '14:20', 'Veículo em boas condições,e o serviço foi solicitado apenas para transporte de garagens', 51000,
+	'17:30', '20:40', '2:50', 'Mariana Letícia Melo', 'Danificado mecanicamente', 'Sim'),
+	(8, 8, 6, 'Avenida Dom João VI', 'Michael', '812345723', '17/08/2016', 'Volvo', 'XC60', 'Vermelho', '2015', 'TOF-3291',
+	35000, '01:30', 'Veículo em condições críticas, serviço solicitado foi o de reboque', 40000,
+	'02:30', '04:00', '2:00', 'Felipe e Martin Marketing Ltda', 'Danificado mecanicamente', 'Sim'),
+	(9, 9, 7, 'Rua Engenho Bom Futuro', 'Saitama', '324671266', '02/05/2015', 'Mercedes', 'Classe S', 'Preto', '2015', 'ONE-1111',
+	62500, '15:40', 'Veículo em ótimas condições apenas com um pneu furado, serviço de troca de pneu solicitado', 70540,
+	'18:30', '20:00', '1:50', 'Betina e Cauê Ferragens Ltda', 'Danificado mecanicamente', 'Não'),
+	(10, 10, 9, 'Rua Felipe dos Santos', 'Sanji', '012342489', '10/07/2013', 'Mercedes', 'Classe G', 'Cinza', '2010', 'PIE-9752',
+	73500, '12:45', 'Veículo em ótimas condições com falta de combustível, serviço de pane seca solicitado', 78530,
+	'14:30', '16:00', '2:30', 'Son Goku', 'Danificado mecanicamente', 'Sim'),
+	(11, 11, 12, 'Rua Chalanger', 'Eduardo', '256212489', '09/06/2012', 'Agrale', 'MARRU', 'Dourado', '1997', 'KWA-0541',
+	76500, '13:50', 'O veí­culo se encontra com uma batida na porta lateral esquerda.', 78500,
+	'15:30', '18:00', '3:30', 'André', 'Danificado mecanicamente', 'Sim'),
+	(12, 12, 11, 'Rua Fluminense', 'Leonardo', '346212949', '02/04/2011', 'Maserati', '3200 GT Cup', 'Amarelo', '1999', 'NAW-7790',
+	61200, '10:00', 'O veí­culo se encontra com uma batida na porta lateral direita.', 70550,
+	'15:30', '20:00', '4:50', 'Geraldo', 'Danificado mecanicamente', 'Sim'),
+	(13, 13, 14, 'Rua Maria de Lourdes Pimentel', 'Sandro', '745723167', '01/07/2010', 'Hyundai', 'HB20S Copa do Mundo 1.0 Flex 12V Mec.', 'Azul', '2014', 'NES-5936',
+	52000, '09:00', 'Veículo em condições críticas, serviço solicitado foi o de reboque.', 60410,
+	'17:30', '21:00', '4:00', 'Jorge', 'Danificado mecanicamente', 'Sim'),
+	(14, 14, 13, 'Rua Arseno Rodrigues', 'Flávio', '521578321', '05/08/2012', 'Rover', 'Mini Cooper 1.3', 'Preto', '1992', 'JEA-4553',
+	64500, '08:00', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor.', 70030,
+	'10:30', '12:00', '5:00', 'Jorge', 'Danificado mecanicamente', 'Sim'),
+	(15, 15, 16, 'Avenida Fernando de Noronha 648', 'Rodrigo', '432464212', '06/04/2013', 'GM - Chevrolet', 'Astra Sedan 2.0/ CD 2.0 MPFI 8V 4p Aut.', 'Laranja', '2002', 'HQL-5800',
+	77500, '09:40', 'Veículo em condições críticas, serviço solicitado foi o de reboque.', 90020,
+	'10:30', '12:00', '5:00', 'Jorge', 'Danificado mecanicamente', 'Sim'),
+	(16, 16, 15, 'Rua Doutor Arlindo Sodré', 'Seará', '221456812', '17/09/2014', 'JPX', 'Jipe Montez Std 4x4 Teto de Lona Diesel', 'Vermelho', '1994', 'HVQ-7645',
+	80500, '11:42', 'O veí­culo está em perfeito estado, e o serviço foi solicitado apenas para transporte de garagens.', 90050,
+	'13:30', '15:00', '3:00', 'Guilherme', 'Não danificado', 'Não'),
+	(17, 17, 18, 'Rua Visconde de Taunay', 'Byron', '721375421', '18/11/2015', 'Daewoo', 'Prince Ace 2.', 'Bege', '1994', 'KJK-8391',
+	81200, '12:50', 'Veículo em ótimas condições com falta de combustível, serviço de pane seca solicitado', 100050,
+	'10:30', '14:00', '4:00', 'Tânia', 'Não danificado', 'Não'),
+	(18, 18, 17, 'Rua Antônio Leão de Melo', 'Matheus', '998216312', '22/12/2017', 'Seat', 'Ibiza 1.0i 8v', 'Cinza', '1995', 'KOG-1504',
+	54100, '13:46', 'O veículo se encontra em perfeito estado, com problemas aparentemente no motor.', 90090,
+	'15:30', '18:00', '2:30', 'Pedro', 'Não danificado', 'Não'),
+	(19, 19, 20, 'Rua Wilson Almeida Santana', 'Akira', '478211544', '27/09/2018', 'Audi', 'A4 2.8 30V  Tiptronic/ Aut.', 'Cinza', '1997', 'HTR-1005',
+	63700, '09:50', 'O veí­culo se encontra com uma batida na porta lateral direita.', 85090,
+	'11:20', '13:00', '2:40', 'Marcel', 'Danificado mecanicamente', 'Sim'),
+	(20, 20, 19, 'Rua Abdon Assis Inojosa Andrade', 'Ryo', '278347128', '12/02/2019', 'Land Rover', 'Range R.EVOQUE Prestige Tech 2.0 Aut 5p0', 'Vermelho', '2012', 'MYY-7916',
+	76500, '15:20', 'Veículo em condições críticas, serviço solicitado foi o de reboque.', 105090,
+	'18:20', '22:50', '4:30', 'Fred', 'Danificado mecanicamente', 'Não')
 --------------------------------------------------------------------------------
 go
 create table Destino (
@@ -122,9 +255,16 @@ create table Destino (
 )
 go
 insert into Destino values
-	(1, 1, 'R. Lopes Chaves, 243 - Barra Funda, SÃ£o Paulo', 'PrÃ³ximo ao centro automotivo Porto Seguro', '1'),
-	(2, 2, 'R. Faustolo, 1855 - Lapa, SÃ£o Paulo', 'PrÃ³ximo a estaÃ§Ã£o Lapa', '1'), 
-	(3, 3, 'R. FranÃ§a Pinto, 1115 - Vila Mariana, SÃ£o Paulo', 'PrÃ³ximo ao Ibirapuera', '1')
+	(1, 1, 'R. Lopes Chaves, 243 - Barra Funda, São Paulo', 'Próximo ao centro automotivo Porto Seguro', '1'),
+	(2, 2, 'R. Faustolo, 1855 - Lapa, São Paulo', 'Próximo a estação Lapa', '1'), 
+	(3, 3, 'R. França Pinto, 1115 - Vila Mariana, São Paulo', 'Próximo ao Ibirapuera', '1'),
+	(4, 4, 'R. Vila Gran Caprita, 6423 - Boa Vista, Roraima', 'Próximo ao Teatro Renault', '1'),
+	(5, 5, 'R. Juriti, 5895 - Prazeres, Pernambuco', 'Próximo a Marcearia DDJ', '1'),
+	(6, 6, 'R. Cinco, 1940 -  Vila Maria, Maranhão', 'Próximo a Padaria Sete', '1'),
+	(7, 7, 'R. Santa Alexandrina, 8492 -  Redenção, Espírito Santo', 'Próximo a Posto Apolo', '1'),
+	(8, 8, 'R. Rua Santana I, 2854 -  Alvorada, Espírito Santo', 'Próximo a Padaria Vila Verde', '1'),
+	(9, 9, 'R. Travessa Vasco da Gama, 4724 -  Capoeira, Acre', 'Próximo a UNIP', '1'),
+	(10, 10, 'R. Senhorinha Maria da Conceição, 715 -  Barra de Gramame, Paraíba', 'Próximo a Praia do Sol', '1')
 --------------------------------------------------------------------------------
 go
 create table Declaracao (
@@ -138,7 +278,15 @@ go
 insert into Declaracao values
 	(1, 1, 0x000, '', '20:00'),
 	(2, 2, 0x000, '', '19:00'),
-	(3, 3, 0x000, '', '20:00')
+	(3, 3, 0x000, '', '20:00'),
+	(4, 4, 0x000, '', '18:00'),
+	(5, 5, 0x000, '', '21:00'),
+	(6, 6, 0x000, '', '22:00'),
+	(7, 7, 0x000, '', '17:00'),
+	(8, 8, 0x000, '', '16:00'),
+	(9, 9, 0x000, '', '15:00'),
+	(10, 10, 0x000, '', '23:00')
+
 --------------------------------------------------------------------------------
 go
 create table Acessorios (
@@ -151,8 +299,8 @@ create table Acessorios (
 go
 insert into Acessorios values
 	(1, 1, 'Capa de banco traseiro', 'Usado', 'Encontra-se com uma mancha na parte inferior'), 
-	(2, 2, 'Extintor de incÃªndio', 'Novo', 'Lacrado'),
-	(3, 3, 'Trava de direÃ§Ã£o', 'Seminovo', 'Tem poucos riscos') 
+	(2, 2, 'Extintor de incêndio', 'Novo', 'Lacrado'),
+	(3, 3, 'Trava de direção', 'Seminovo', 'Tem poucos riscos') 
 --------------------------------------------------------------------------------
 go
 create table Funcionario (
@@ -180,14 +328,20 @@ create table Funcionario (
 )
 go
 insert into Funcionario values
-	(1, 'Ederson Gonzaga de Melo', 'Gerente', 33500, 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua JosÃ© Dias Paes', 'SÃ£o Paulo', '04851-003',
+	(1, 'Ederson Gonzaga de Melo', 'Gerente', 80001, 'eder.gon@outlook.com', '23.897.722-5', '56869728050', '373.36559.16-9', 'Rua JosÃ© Dias Paes', 'São Paulo', '04851-003',
 	'SP', '(11)5528-5550', '28/11/2002', 'Solteiro', 'Rem Gonzaga', '(11)95142-9829', 'ederzed', 'eder281102', 'n'),
 	(2, 'Rafael Hadzic Rico de Sousa', 'Gerente', 18700, 'rafael.hadzic@gmail.com', '54.352.151-5', '30979961802', '190.21697.31-1', 
-	'Rua ZÃ©lia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'RafaelHadzic', 'rafa130101', 'n'),
-	(3, 'Gabriel Gomes Gameiro', 'Motorista', 11300, 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua AtuaÃ­, 140', 'SÃ£o Paulo', '03646-000',
-	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Raquel Lopes Barbosa', '(11)96784-7184', 'ggameiro', 'gabr180902', 'n'),
-	(4, 'Jean-Luc Bonnet', 'Gerente', 12850, 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'SÃ£o Paulo', '08744-000',
-	'SP', '(11)29958-7064', '00/00/0000', 'Solteiro', '-', '-', 'Luc', '1234', 's')
+	'Rua Zolia Emerenciana de Alvarenga', 'Guarulhos', '07077-120', 'SP', '2485-8555', '13/01/2001', 'Solteiro', 'Andressa Hadzic', '(11)94871-8246', 'Rafael Hadzic', 'rafa130101', 'n'),
+	(3, 'Gabriel Gomes Gameiro', 'Motorista', 11300, 'ggameiro@outlook.com', '58.164.857-2', '32177491181', '171.68433.91-0', 'Rua Atual, 140', 'São Paulo', '03646-000',
+	'SP', '(11)2958-7064', '18/09/2002', 'Casado', 'Rachel Gameiro Gomes', '(11)96784-7184', 'Gameiro', '1234', 'n'),
+	(4, 'Jean-Luc Bonnet', 'Gerente', 12850, 'lucbonnet10@gmail.com', '22.483.241-9', '37498101232', '563.90685.89-0', 'Rua X', 'São Paulo', '08744-000',
+	'SP', '(11)49958-7064', '00/00/0000', 'Solteiro', '-', '-', 'Luc', '1234', 's'),
+	(5, 'Nicolas Castro Pereira', 'Gerente', 13710, 'luluchvisk@gmail.com', '44.302.377-3', '45792601734', '752.74124.98-0', 'Rua M', 'São Paulo', '02244-000',
+	'SP', '(11)75918-5469', '00/00/0000', 'Solteiro', '-', '-', 'Nio', '1234', 's'),
+	(6, 'Gustavo Akio Honda', 'Atendente', 10400, 'akiohonda@gmail.com', '33.125.817-2', '991577361278', '674.70643.75-0', 'Rua H', 'São Paulo', '08242-000',
+	'SP', '(11)92657-3967', '00/00/0000', 'Solteiro', '-', '-', 'Honda', '1234', 's'),
+	(7, 'Leonardo Agostinho Teixeira', 'Gerente', 10400, 'leonardoagostin@gmail.com', '44.302.377-3', '45792601734', '563.90685.89-0', 'Rua M', 'São Paulo', '05672-000',
+	'SP', '(11)62972-7395', '00/00/0000', 'Solteiro', '-', '-', 'Honda', '1234', 's')
 
 	select * from Funcionario
 --------------------------------------------------------------------------------
@@ -552,11 +706,11 @@ as
 	select Nome, Email as 'E-Mail', Telefone, e.IE as 'I.E.', e.CNPJ from Cliente as c inner join Empresa as e on c.ID_Cliente = e.ID_Cliente where c.CPF like '-' and e.IE like '%' + @ie + '%'
 go
 
-------------------FuncionÃ¡rio-----------------
+------------------Funcionário-----------------
 go
 create procedure usp_PesquisarTodosFuncionarios
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'SalÃ¡rio' from Funcionario 
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario 
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -569,7 +723,7 @@ go
 create procedure usp_PesquisarFuncionariosNome
 @nome varchar(50)
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'SalÃ¡rio' from Funcionario where Nome like '%' + @nome + '%' 
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario where Nome like '%' + @nome + '%' 
 go
 
 -------------------Adicionais-----------------
@@ -617,14 +771,14 @@ go
 go
 create procedure usp_PesquisarFuncionariosMotoristas
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'SalÃ¡rio' from Funcionario where Cargo like 'Motorista'
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario where Cargo like 'Motorista'
 go
 -----------------------------------------------------------------------------------------------
 go
 create procedure usp_PesquisarFuncionariosMotoristasNome
 @nome varchar(50)
 as
-	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'SalÃ¡rio' from Funcionario where Cargo like 'Motorista' and Nome like '%' + @nome + '%'
+	select Nome, Email as 'E-Mail', Telefone, Cargo, Telefone_Conjuge as 'Telefone Conjuge', Numero_Documento as 'RG', Salario as 'Salário' from Funcionario where Cargo like 'Motorista' and Nome like '%' + @nome + '%'
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -641,12 +795,6 @@ as
 go
 -----------------------------------------------------------------------------------------------
 go
-create procedure usp_PesquisarIdTodosCaminhoesChamada
-as
-	select * from Caminhao
-go
------------------------------------------------------------------------------------------------
-go
 create procedure usp_PesquisarTodosCaminhoesChamadaPlaca
 @placa varchar(8)
 as
@@ -658,13 +806,6 @@ create procedure usp_PesquisarIdCaminhoesChamadaPlaca
 @placa varchar(8)
 as
 	select * from Caminhao where Placa like '%' + @placa + '%'
-go
------------------------------------------------------------------------------------------------
-go
-create procedure usp_PesquisarTodosCaminhoesChamadoId
-@codigo varchar(8)
-as
-	select Marca, Modelo, Cor, Placa, Ano, KM_Rodados from Caminhao where ID_Caminhao like '%' + @codigo + '%'
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -981,7 +1122,7 @@ go
 
 create procedure usp_PesquisarRelatorio
 as
-	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as 'Cliente', (Select Placa from Caminhao ca where ca.ID_Caminhao = a.ID_Caminhao) as 'Placa CaminhÃ£o', (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as 'Motorista', a.Placa as 'Placa', a.Modelo as 'Modelo', a.Cor 'Cor', a.Ano 'Ano', a.Apolice 'Apolice', a.Marca 'Marca', a.Contato 'Contato', a.Data_Servico 'Data' from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
+	select (Select Nome from Cliente as c where c.ID_Cliente = a.ID_Cliente) as 'Cliente', (Select Placa from Caminhao ca where ca.ID_Caminhao = a.ID_Caminhao) as 'Placa Caminhão', (Select Nome from Funcionario as m inner join Funcionario_Abertura fa on m.ID_Funcionario = fa.ID_Funcionario where fa.ID_Chamado = a.ID_Chamado) as 'Motorista', a.Placa as 'Placa', a.Modelo as 'Modelo', a.Cor 'Cor', a.Ano 'Ano', a.Apolice 'Apolice', a.Marca 'Marca', a.Contato 'Contato', a.Data_Servico 'Data' from Fechamento as a full outer join Fechamento as f on a.ID_Chamado = f.ID_Chamado
 go
 -----------------------------------------------------------------------------------------------
 go
@@ -1046,7 +1187,7 @@ as
 	select count(ID_Chamado) as qtde from Abertura where Hora_Saida between '20:00' and '22:00'
 -----------------------------------------------------------------------------------------------
 go
-create procedure usp_QtdeServiÃ§os
+create procedure usp_QtdeServiços
 @tIn varchar(10),
 @tFim varchar(10)
 as 
@@ -1095,11 +1236,11 @@ select sum(Convert(float,KM_Chegada))-sum (Convert (float,KM_Saida)) as qtde fro
 /*Despesas*/
 go
 create procedure usp_QtdeSalario
-@preÃ§oIn varchar(8),
-@preÃ§oFim varchar(8)
+@preçoIn varchar(8),
+@preçoFim varchar(8)
 as
 	select count(*) as qtde from Funcionario 
-	where REPLACE(REPLACE(Salario,'R$',''),'.','') <= Convert (float,@preÃ§oFim) and REPLACE(REPLACE(Salario,'R$',''),'.','') > Convert (float,@preÃ§oIn)
+	where REPLACE(REPLACE(Salario,'R$',''),'.','') <= Convert (float,@preçoFim) and REPLACE(REPLACE(Salario,'R$',''),'.','') > Convert (float,@preçoIn)
 go
 create procedure usp_SalarioFuncionarios
 as
@@ -1133,7 +1274,7 @@ as
 	select Atendente as nome,count(*) as qtde from Fechamento where Data_Servico LIKE '%' AND CONVERT(DATE, Data_Servico, 103) BETWEEN CONVERT(DATE, @tIn, 103) AND CONVERT(DATE, @tFim, 103) group by Atendente order by qtde desc
 go
 
-/*CaminhÃ£o*/
+/*Caminhão*/
 go 
 create procedure usp_InserirCaminhao
 
@@ -1183,7 +1324,7 @@ as
  go 
  /*Vendas*/
 exec usp_PedidoEntre20he22h
-exec usp_QtdeServiÃ§os '01/12/2015','01/03/2016'
+exec usp_QtdeServiços '01/12/2015','01/03/2016'
 select * from Abertura
 exec usp_QtdeAdicionaisAbertura '10/10/2014','10/10/2019'
 exec usp_AdicionaisPeriodo '10/12/2015','10/01/2016'
