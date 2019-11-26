@@ -995,6 +995,7 @@ public class FrmCaminhão extends javax.swing.JFrame {
     
     public void Limpar()
     {
+        modTabela.setRowCount(0);
         txtMarca.setText("");
         txtModelo.setText("");
         txtPlaca.setText("");

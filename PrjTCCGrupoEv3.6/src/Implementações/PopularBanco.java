@@ -59,7 +59,7 @@ public class PopularBanco extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        popularAdicAbert(Integer.parseInt(txt1.getText()));
+        popularAbertura(Integer.parseInt(txt1.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
@@ -142,6 +142,8 @@ public class PopularBanco extends javax.swing.JFrame {
             int m = (int) (Math.random() * 11) + 1;
             int d = (int) (Math.random() * 27) + 1;
             int km = (int) (Math.random() * 100) * 1000;
+            int h  = (int) (Math.random() * 23 + 1);
+            int min = (int) (Math.random() * 59 + 1);
             System.out.println(padron
                     .replace("var1", (i + 1) + "")
                     .replace("var2", i % 7 + 1 + "")
@@ -156,7 +158,7 @@ public class PopularBanco extends javax.swing.JFrame {
                     .replace("var02", "200" + (int) (Math.random() * 5))
                     .replace("var03", "" + (int) (Math.random() * 1000))
                     .replace("var04", km + "")
-                    .replace("var05", (int) (Math.random() * 23 + 1) + ":" + (int) (Math.random() * 59 + 1))
+                    .replace("var05", ( h < 10 ? "0" + h : h) + ":" + ( min < 10 ? "0" + min : min))
                     .replace("var06", d5[(int) (Math.random() * 7)])
             );
         }
