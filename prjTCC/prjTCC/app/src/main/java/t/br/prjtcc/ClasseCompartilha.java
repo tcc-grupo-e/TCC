@@ -37,7 +37,7 @@ public class ClasseCompartilha {
     }
 
     static String id_Motorista;
-    static String ipRede = "192.168.1.8";
+    static String ipRede = "192.168.254.25/PrjAutoSocorro/View";
     public static String[] getEderecos() {
         return ederecos;
     }

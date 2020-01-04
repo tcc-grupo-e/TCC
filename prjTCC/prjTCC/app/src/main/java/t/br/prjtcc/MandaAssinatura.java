@@ -73,6 +73,7 @@ public class MandaAssinatura extends AppCompatActivity {
                     intent.putExtra(KEY_EXTRA, "AssinaturaC.png");
                     startActivity(intent);
 
+
                 } else if (yourDataObject.equals("AssinaturaC.png")) {
                     Intent intent = new Intent(MandaAssinatura.this, MainActivity.class);
                     startActivity(intent);
@@ -179,7 +180,7 @@ public class MandaAssinatura extends AppCompatActivity {
             }
         });
         ClasseCompartilha cp = new ClasseCompartilha();
-        webview.loadUrl("http://" + cp.ipRede + "/defaultAssinatura.aspx?path=" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS )+"/"+yourDataObject);
+        webview.loadUrl("http://" + cp.ipRede + "/defaultAssinatura.aspx?path=" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS )+"/"+yourDataObject+"&idChamado="+cp.getChamado() + "&horario="+cp.getHora());
 
     }
 

@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -31,8 +33,9 @@ public class ChecklistParte2 extends AppCompatActivity {
     final int CAPTURE_IMAGE_REQUEST = 1;
 
     public ImageButton btnTirafoto;
-    Button btnContratoFeito;
+    Button btnContratoFeito,btnFantasma;
     EditText objetosPortaLuva, objetosPortaMala, txtCPF;
+
     String bancoTraseiro = "", bancoDianteiro="", bagageiro="", chave="", extintor="", console="", tapete="",
             rodaespecial="", farol="", farolMilha="", lanterna="", radioDVD="", estepe="", triangulo="", macaco="", ferramentasCH="";
     File photoFile = null;
@@ -45,11 +48,43 @@ public class ChecklistParte2 extends AppCompatActivity {
         setContentView(R.layout.activity_checklist_parte2);
         btnTirafoto = findViewById(R.id.btnTiraFot);
         btnContratoFeito = findViewById(R.id.btnContrato);
+        btnFantasma = findViewById(R.id.btnFantasma);
         cp = new ClasseCompartilha();
         objetosPortaMala = findViewById(R.id.txtPortaMala);
         objetosPortaLuva = findViewById(R.id.txtPortaLuva);
         txtCPF = findViewById(R.id.txtCPFF);
+        //@TODO Botão fantasma
+btnFantasma.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
 
+
+    }
+});
+        ((TextView) findViewById(R.id.textView2)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtCPF.setText("114.858.794-17");
+                objetosPortaLuva.setText("Luva");
+                objetosPortaMala.setText("Mala");
+                bancoTraseiro = "A";
+                bancoDianteiro="U";
+                bagageiro="T";
+                chave="O";
+                extintor="C";
+                console="O";
+                tapete="M";
+                rodaespecial="P";
+                farol="L";
+                farolMilha="E";
+                lanterna="T";
+                radioDVD="E";
+                estepe="0";
+                triangulo="0";
+                macaco="0";
+                ferramentasCH="0";
+            }
+        });
         txtCPF.addTextChangedListener(Mask.insert(Mask.MaskType.CPF,  txtCPF));
     }
 
@@ -57,6 +92,8 @@ public class ChecklistParte2 extends AppCompatActivity {
     public void botaoRadio(View v) {
         switch (v.getId()) {
             case R.id.btnTiraFot:
+
+                cp.setCPF(txtCPF.getText().toString());
                 capturaImage();
                 break;
             case R.id.btnContrato:
@@ -79,16 +116,19 @@ public class ChecklistParte2 extends AppCompatActivity {
                 cp.setTriangulo(triangulo);
                 cp.setFerramentasCH(ferramentasCH);
                 cp.setBagageiro(bagageiro);
-                cp.setCPF(txtCPF.getText().toString());
 
                 Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         hour = hour - 3;
         int min = c.get(Calendar.MINUTE);
-
-                cp.setHora(hour + ":" + min);
+                String m = min+"";
+        if(min<10){
+                m = "0" + min;
+            }
+                cp.setHora(hour + ":" + m);
                 Intent intent = new Intent(this, Adicionais.class);
                 startActivity(intent);
+
 
                 break;
             case R.id.radioBagageiroUsado:

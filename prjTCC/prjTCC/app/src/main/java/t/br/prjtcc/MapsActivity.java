@@ -100,7 +100,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
             mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         }
+
         enderecos = cp.getEderecos();
+
         listEnd = findViewById(R.id.listEnd);
         ArrayAdapter<String> adpL = new ArrayAdapter<String>(getBaseContext(), R.layout.listview, enderecos);
         listEnd.setAdapter(adpL);
@@ -135,6 +137,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),CheckListParte1.class));
+
             }
         });
         // we add permissions we need to request location of the users
